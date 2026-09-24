@@ -26,12 +26,12 @@ export default function MobileNavigation() {
   const closeMenu = () => setOpen(false);
 
   return (
-    <div className="xl:hidden">
+    <div className="2xl:hidden">
       <button type="button" className="icon-button" aria-label={open ? "Đóng menu" : "Mở menu"} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen((value) => !value)}>
         <span aria-hidden="true" className="flex flex-col gap-1.5">{[0, 1, 2].map((bar) => <span key={bar} className={`block h-0.5 w-5 bg-current transition-transform ${open && bar === 0 ? "translate-y-2" : ""} ${open && bar === 1 ? "opacity-0" : ""} ${open && bar === 2 ? "-translate-y-2" : ""}`} />)}</span>
       </button>
       {open && <button type="button" aria-label="Đóng menu" className="fixed inset-0 z-30 bg-[var(--color-ink)]/30" onClick={closeMenu} />}
-      <aside id="mobile-navigation" aria-label="Điều hướng di động" className={`fixed right-0 top-0 z-40 flex h-dvh w-[min(88vw,360px)] flex-col bg-white p-6 shadow-[var(--shadow-menu)] transition-transform duration-200 ${open ? "translate-x-0" : "pointer-events-none translate-x-full"}`}>
+      <aside id="mobile-navigation" aria-label="Điều hướng di động" inert={!open} style={{ display: open ? undefined : "none" }} className={`fixed right-0 top-0 z-40 flex h-dvh w-[min(88vw,360px)] flex-col bg-white p-6 shadow-[var(--shadow-menu)] transition-transform duration-200 ${open ? "translate-x-0" : "pointer-events-none translate-x-full"}`}>
         <div className="mb-8 flex items-center justify-between"><span className="text-lg font-bold text-[var(--color-ink)]">Menu</span><button type="button" className="icon-button" aria-label="Đóng menu" onClick={closeMenu}>×</button></div>
         <nav aria-label="Điều hướng di động"><ul className="space-y-1">
           {navigationItems.map((item) => item.children ? (

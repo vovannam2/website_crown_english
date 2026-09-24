@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
+
 import { siteConfig } from "@/config/site";
 import { navigationItems } from "@/data/navigation";
 

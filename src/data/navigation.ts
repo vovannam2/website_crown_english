@@ -1,4 +1,10 @@
-export const navigationItems = [
+type NavigationItem = {
+  readonly label: string;
+  readonly href: string;
+  readonly children?: readonly { readonly label: string; readonly href: string }[];
+};
+
+export const navigationItems: readonly NavigationItem[] = [
   { label: "Trang chủ", href: "/" },
   { label: "Giới thiệu", href: "/gioi-thieu" },
   { label: "Khóa học", href: "/khoa-hoc" },

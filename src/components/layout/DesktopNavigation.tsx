@@ -14,7 +14,7 @@ export default function DesktopNavigation() {
   const [coursesOpen, setCoursesOpen] = useState(false);
 
   return (
-    <nav aria-label="Điều hướng chính" className="hidden flex-1 justify-center xl:flex">
+    <nav aria-label="Điều hướng chính" className="hidden shrink-0 2xl:flex">
       <ul className="flex items-center gap-1">
         {navigationItems.map((item) => {
           const active = isActive(pathname, item.href);

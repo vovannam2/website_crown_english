@@ -1,0 +1,93 @@
+.hangingPhoto {
+  transform-origin: 50% -18px;
+  animation: photoSway 5s ease-in-out infinite alternate;
+}
+
+.track { animation: photoLoop linear infinite; }
+.gallery:hover .track { animation-play-state: paused; }
+
+@keyframes photoLoop {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* A static, wrapping view keeps every original reachable when motion is paused. */
+.gallery[data-paused="true"] .track,
+.gallery:has(:focus-visible) .track {
+  animation: none;
+  width: 100%;
+}
+.gallery[data-paused="true"] .track > ul,
+.gallery:has(:focus-visible) .track > ul { flex-wrap: wrap; justify-content: center; width: 100%; }
+.gallery[data-paused="true"] [data-duplicate="true"],
+.gallery:has(:focus-visible) [data-duplicate="true"],
+.gallery[data-paused="true"] .track > ul[aria-hidden="true"],
+.gallery:has(:focus-visible) .track > ul[aria-hidden="true"] { display: none; }
+
+.bulb {
+  animation: bulbGlow 2.8s ease-in-out infinite;
+  position: relative;
+  width: 9px;
+  height: 13px;
+  border-radius: 35% 35% 50% 50%;
+  border: 1px solid rgb(145 113 63 / 0.25);
+  background: radial-gradient(ellipse at 35% 25%, #fffef6 0 12%, #ffe8ad 35%, #e8bc73 85%);
+  box-shadow: 0 0 7px 2px rgb(244 197 106 / 0.22), inset -1px -1px 2px rgb(118 77 25 / 0.15);
+}
+.bulb::after { content: ""; position: absolute; top: 3px; left: 2px; width: 2px; height: 5px; border-radius: 50%; background: rgb(255 255 255 / 0.8); }
+.bulbSocket { width: 6px; height: 7px; border-radius: 1px; background: repeating-linear-gradient(0deg, #61594a 0 1px, #8f846e 1px 3px); box-shadow: 1px 1px 2px rgb(0 0 0 / 0.12); }
+.photoSlot::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 0;
+  right: 0;
+  height: 7px;
+  border-bottom: 2px solid #ae9370;
+  border-radius: 0 0 50% 50%;
+  filter: drop-shadow(0 1px 1px rgb(74 55 32 / 0.15));
+}
+.woodClip {
+  pointer-events: none;
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  z-index: 10;
+  width: 12px;
+  height: 35px;
+  transform: translateX(-50%) rotate(7deg);
+  border: 1px solid #b48c57;
+  border-radius: 2px 2px 3px 3px;
+  background: repeating-linear-gradient(88deg, transparent 0 3px, rgb(133 86 32 / 0.14) 3px 4px), linear-gradient(90deg, #c7a16e, #efdbb4 35%, #dfbd89 75%, #b78d56);
+  box-shadow: inset 1px 0 rgb(255 255 255 / 0.5), 2px 3px 3px rgb(70 48 21 / 0.2);
+}
+.woodClip::after { content: ""; position: absolute; top: 2px; bottom: 2px; left: 5px; width: 1px; background: rgb(121 82 38 / 0.28); }
+.clipSpring { position: absolute; z-index: 1; top: 14px; left: -2px; width: 14px; height: 5px; border: 1px solid #827869; border-radius: 2px; background: repeating-linear-gradient(0deg, #aaa396 0 1px, #655e52 1px 2px); box-shadow: 0 1px 1px rgb(0 0 0 / 0.18); }
+.photoSlot:nth-child(even) .woodClip { transform: translateX(-50%) rotate(-5deg); }
+.photoSlot:nth-child(3n) .woodClip { transform: translateX(-50%) rotate(3deg); }
+
+.gallery[data-paused="true"] .bulb,
+.gallery:hover .bulb,
+.gallery:has(:focus-visible) .bulb,
+.gallery[data-paused="true"] .hangingPhoto,
+.gallery:hover .hangingPhoto,
+.gallery:has(:focus-visible) .hangingPhoto {
+  animation-play-state: paused;
+}
+
+@keyframes photoSway {
+  from { transform: rotate(-2deg); }
+  to { transform: rotate(2deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hangingPhoto, .bulb { animation: none; }
+  .track { animation: none; width: 100%; }
+  .track > ul { flex-wrap: wrap; justify-content: center; width: 100%; }
+  .track > ul[aria-hidden="true"], .gallery [data-duplicate="true"] { display: none; }
+}
+
+@keyframes bulbGlow {
+  0%, 100% { opacity: 0.5; box-shadow: 0 0 3px 1px rgb(244 197 106 / 0.12), inset -1px -1px 2px rgb(118 77 25 / 0.15); }
+  50% { opacity: 1; box-shadow: 0 0 10px 3px rgb(244 197 106 / 0.5), 0 0 18px 5px rgb(244 197 106 / 0.18); }
+}

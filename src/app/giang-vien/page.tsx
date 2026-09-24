@@ -1,8 +1,40 @@
 import type { Metadata } from "next";
-import PlaceholderPage from "@/components/ui/PlaceholderPage";
+import Container from "@/components/ui/Container";
+import TeachersHero from "@/components/teachers/TeachersHero";
+import TeacherStandards from "@/components/teachers/TeacherStandards";
+import TeacherShowcase from "@/components/teachers/TeacherShowcase";
+import { teachersPageData } from "@/data/teachers";
 
-export const metadata: Metadata = { title: "Giảng viên" };
+const { seo } = teachersPageData;
+
+export const metadata: Metadata = {
+  title: { absolute: seo.title },
+  description: seo.description,
+  alternates: { canonical: seo.canonical },
+  robots: seo.robots,
+  openGraph: {
+    title: seo.openGraph.title,
+    description: seo.openGraph.description,
+    url: seo.canonical,
+    type: "website",
+    ...(seo.openGraph.image ? { images: [seo.openGraph.image] } : {}),
+  },
+};
 
 export default function TeachersPage() {
-  return <PlaceholderPage eyebrow="Đội ngũ" title="Đội ngũ giảng viên" description="Thông tin chuyên môn và kinh nghiệm của đội ngũ Crown English đang được chuẩn bị." />;
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": [...seo.schemaTypes],
+    name: seo.h1,
+    description: seo.description,
+    url: seo.canonical,
+  };
+  return <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
+    <TeachersHero />
+    <Container>
+      <TeacherStandards />
+      <TeacherShowcase teachers={teachersPageData.teachers} />
+    </Container>
+  </>;
 }

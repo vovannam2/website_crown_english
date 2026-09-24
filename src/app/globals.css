@@ -21,6 +21,7 @@
   --font-sans: "Google Sans Flex Variable", "Avenir Next", "Segoe UI", sans-serif;
 }
 
+.layout-shell { width: 100%; padding-inline: clamp(20px, 4vw, 96px); }
 .home-section { padding-block: 64px; }
 .home-eyebrow { color: var(--color-brand-red); font-size: 12px; font-weight: 700; letter-spacing: 0.14em; }
 .home-hero { background: radial-gradient(ellipse at top right, color-mix(in srgb, var(--color-brand-gold) 18%, white), transparent 65%), var(--color-surface-soft); }
