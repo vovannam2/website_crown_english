@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { ClassMoment } from "@/types/student-results";
 import SectionTitle from "@/components/ui/SectionTitle";
+import Reveal from "@/components/ui/Reveal";
 import StudentImage from "./StudentImage";
 
 import styles from "./students.module.css";
@@ -29,7 +30,7 @@ export default function ClassroomGallery({
 
   return (
     <section className="py-12 sm:py-16">
-      <div className="mb-8 sm:mb-10">
+      <Reveal className="mb-8 sm:mb-10">
         <div className="flex flex-col items-start gap-5 lg:flex-row lg:items-end lg:justify-between lg:gap-8">
           <div className="min-w-0 [&>div]:mb-0 [&>div]:max-w-none">
             <SectionTitle
@@ -49,8 +50,8 @@ export default function ClassroomGallery({
         <p className="mt-4 text-base leading-7 text-[var(--color-ink-muted)]">
           Mỗi buổi học là một mảnh ghép nhỏ trong hành trình trưởng thành của học viên — nơi có sự cố gắng, những lần cùng nhau vượt qua khó khăn và cả những khoảnh khắc rất đỗi bình thường nhưng đáng nhớ tại Crown English.
         </p>
-      </div>
-      <div
+      </Reveal>
+      <Reveal delay={100}><div
         data-paused={paused}
         className={`${styles.gallery} overflow-hidden py-3`}
       >
@@ -116,7 +117,7 @@ export default function ClassroomGallery({
             </ul>
           ))}
         </div>
-      </div>
+      </div></Reveal>
     </section>
   );
 }

@@ -25,6 +25,11 @@ import studentsClassroomsClassroom04Image from "../../public/images/students/cla
 import studentsClassroomsClassroom05Image from "../../public/images/students/classrooms/classroom-05.jpg";
 import studentsClassroomsClassroom06Image from "../../public/images/students/classrooms/classroom-06.jpg";
 import studentsClassroomsClassroom07Image from "../../public/images/students/classrooms/classroom-07.jpg";
+import studentsClassroomsClassroom08Image from "../../public/images/students/classrooms/classroom-08.jpg";
+import studentsClassroomsClassroom09Image from "../../public/images/students/classrooms/classroom-09.jpg";
+import studentsClassroomsClassroom10Image from "../../public/images/students/classrooms/classroom-10.jpg";
+import studentsClassroomsClassroom11Image from "../../public/images/students/classrooms/classroom-11.jpg";
+
 import nhuYThumbnail from "../../public/images/students/thumbnails/nhu-y-7-0.png";
 import phuongAnhThumbnail from "../../public/images/students/thumbnails/phuong-anh-7-5.png";
 
@@ -293,6 +298,22 @@ export const studentResultsPageData = {
     },
     {
       image: studentsClassroomsClassroom07Image.src,
+      alt: "Học viên trong lớp học tại Crown English",
+    },
+    {
+      image: studentsClassroomsClassroom08Image.src,
+      alt: "Học viên trong lớp học tại Crown English",
+    },
+    {
+      image: studentsClassroomsClassroom09Image.src,
+      alt: "Học viên trong lớp học tại Crown English",
+    },
+    {
+      image: studentsClassroomsClassroom10Image.src,
+      alt: "Học viên trong lớp học tại Crown English",
+    },
+    {
+      image: studentsClassroomsClassroom11Image.src,
       alt: "Học viên trong lớp học tại Crown English",
     },
   ],

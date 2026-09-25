@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import SectionTitle from "@/components/ui/SectionTitle";
+import Reveal from "@/components/ui/Reveal";
 import TeacherDetail from "./TeacherDetail";
 import type { Teacher } from "@/types/teachers";
 import TeacherImage from "./TeacherImage";
@@ -20,9 +21,9 @@ export default function TeacherShowcase({ teachers }: { teachers: readonly Teach
   if (!selected) return null;
 
   return <section id="teacher-showcase" className="scroll-mt-[120px] pt-6 pb-20">
-    <SectionTitle eyebrow="CROWN ENGLISH" title="Đội ngũ giảng viên" />
+    <Reveal><SectionTitle eyebrow="CROWN ENGLISH" title="Đội ngũ giảng viên" /></Reveal>
     <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,0.38fr)_minmax(0,0.62fr)] lg:gap-10">
-      <div className="min-w-0 lg:col-start-2 lg:row-start-1">
+      <Reveal delay={100} className="min-w-0 lg:col-start-2 lg:row-start-1">
         <div className="flex items-baseline justify-between gap-4 border-b border-[var(--color-line)] pb-4 [&>h3]:text-base [&>h3]:font-bold [&>span]:text-[13px] [&>span]:text-[var(--color-ink-muted)]"><h3>Tất cả giáo viên</h3><span>{teachers.length} giảng viên</span></div>
         <p className="mt-3 mb-5 text-[13px] text-[var(--color-ink-muted)]">Chọn giảng viên để xem hồ sơ chi tiết.</p>
         <ul className="-mx-1 flex snap-x snap-mandatory gap-4 overflow-x-auto px-1 pt-1 pb-4 lg:mx-0 lg:grid lg:grid-cols-3 lg:overflow-visible lg:p-0">
@@ -40,11 +41,13 @@ export default function TeacherShowcase({ teachers }: { teachers: readonly Teach
           <button className={pageButtonClass} type="button" aria-label="Trang sau" disabled={currentPage === pageCount} onClick={() => setPage(currentPage + 1)}><ChevronRight size={20} aria-hidden="true" /></button>
         </nav>}
         <p className="mt-3 hidden text-center text-[13px] text-[var(--color-ink-muted)] lg:block" aria-live="polite" aria-atomic="true">Hiển thị {(currentPage - 1) * PAGE_SIZE + 1}–{Math.min(currentPage * PAGE_SIZE, teachers.length)} / {teachers.length} giảng viên</p>
-      </div>
-      <div id="teacher-profile" className="min-w-0 scroll-mt-[120px] lg:col-start-1 lg:row-start-1">
+      </Reveal>
+      <Reveal delay={160} className="min-w-0 scroll-mt-[120px] lg:col-start-1 lg:row-start-1">
+        <div id="teacher-profile">
         <p className="sr-only" role="status" aria-atomic="true">Đang xem hồ sơ {selected.name}</p>
         <TeacherDetail key={selected.id} teacher={selected} />
-      </div>
+        </div>
+      </Reveal>
     </div>
   </section>;
 }

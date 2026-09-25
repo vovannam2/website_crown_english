@@ -4,6 +4,7 @@ import { useState } from "react";
 import localFont from "next/font/local";
 import type { StudentResult } from "@/types/student-results";
 import SectionTitle from "@/components/ui/SectionTitle";
+import Reveal from "@/components/ui/Reveal";
 import StudentImage from "./StudentImage";
 import StudentDetailModal from "./StudentDetailModal";
 import styles from "./students.module.css";
@@ -31,12 +32,15 @@ export default function StudentResults({
 }) {
   const [paused, setPaused] = useState(false);
   const [selected, setSelected] = useState<StudentResult | null>(null);
+  const sortedResults = [...results].sort(
+    (a, b) => Number(a.overall) - Number(b.overall),
+  );
   const repeats = Math.max(1, Math.ceil(5 / Math.max(1, results.length)));
-  const loopItems = Array.from({ length: repeats }, () => results).flat();
+  const loopItems = Array.from({ length: repeats }, () => sortedResults).flat();
   if (!results.length) return null;
   return (
     <section id="student-results" className="scroll-mt-28 py-12 sm:py-16">
-      <div className="mb-8 sm:mb-10">
+      <Reveal className="mb-8 sm:mb-10">
         <div className="flex flex-col items-start gap-5 lg:flex-row lg:items-end lg:justify-between lg:gap-8">
           <div className="min-w-0 [&>div]:mb-0 [&>div]:max-w-none">
             <SectionTitle
@@ -58,8 +62,8 @@ export default function StudentResults({
         <p className="mt-4 text-base leading-7 text-[var(--color-ink-muted)]">
           Đằng sau mỗi cột mốc IELTS là một hành trình nỗ lực, thay đổi và trưởng thành. Đây là những kết quả nổi bật được chính học viên Crown English tạo nên trong quá trình học tập và chinh phục mục tiêu của mình.
         </p>
-      </div>
-      <div
+      </Reveal>
+      <Reveal delay={100}><div
         data-paused={paused || !!selected}
         className={`${styles.gallery} overflow-hidden py-3`}
       >
@@ -148,7 +152,7 @@ export default function StudentResults({
             </ul>
           ))}
         </div>
-      </div>
+      </div></Reveal>
       {selected && (
         <StudentDetailModal
           student={selected}

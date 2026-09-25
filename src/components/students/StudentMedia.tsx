@@ -4,6 +4,7 @@ import { useId, useRef, useState } from "react";
 import { Play, Film, ChevronLeft, ChevronRight } from "lucide-react";
 import type { ClassMoment, StudentVideo } from "@/types/student-results";
 import SectionTitle from "@/components/ui/SectionTitle";
+import Reveal from "@/components/ui/Reveal";
 import ClassroomGallery from "./ClassroomGallery";
 import styles from "./StudentMedia.module.css";
 
@@ -58,14 +59,14 @@ function StudentCinema({ videos }: { videos: readonly StudentVideo[] }) {
   return (
     <section aria-label="Góc chia sẻ" className="py-12 sm:py-16">
       <div className={styles.cinema}>
-        <div className={styles.header}>
+        <Reveal className={styles.header}>
           <SectionTitle
             eyebrow="GÓC CHIA SẺ"
             title="Lắng nghe học viên Crown"
             description="Mỗi câu chuyện là một hành trình rất riêng — từ những bỡ ngỡ ban đầu, những lần cố gắng vượt qua giới hạn của bản thân đến niềm vui khi nhìn thấy sự tiến bộ rõ ràng trên chặng đường học tập tại Crown English."
           />
-        </div>
-        <div className={styles.projection}>
+        </Reveal>
+        <Reveal delay={100} className={styles.projection}>
           <div className={styles.screenRail} aria-hidden="true" />
           <div className={styles.screen} id={screenId}>
             <div className={styles.screenDecor} aria-hidden="true">
@@ -103,15 +104,15 @@ function StudentCinema({ videos }: { videos: readonly StudentVideo[] }) {
             <span className={styles.result}>{selected.result}</span>
           </div>
           {error && <p role="alert" className={styles.error}>Không tải được video. <a href={selected.src}>Mở video trực tiếp</a></p>}
-        </div>
-        <div className={styles.pickerHeading}>
+        </Reveal>
+        <Reveal delay={160} className={styles.pickerHeading}>
           <Film size={18} aria-hidden="true" /><p>Chọn câu chuyện bạn muốn lắng nghe</p><span aria-hidden="true" />
           <div className={styles.scrollButtons}>
             <button type="button" aria-label="Cuộn câu chuyện sang trái" aria-controls={choicesId} onClick={() => scrollChoices(-1)}><ChevronLeft size={20} aria-hidden="true" /></button>
             <button type="button" aria-label="Cuộn câu chuyện sang phải" aria-controls={choicesId} onClick={() => scrollChoices(1)}><ChevronRight size={20} aria-hidden="true" /></button>
           </div>
-        </div>
-        <div className={styles.choices} ref={choices} id={choicesId}>
+        </Reveal>
+        <Reveal delay={220}><div className={styles.choices} ref={choices} id={choicesId}>
           {videos.map((video, index) => {
             const active = selected.id === video.id;
             return (
@@ -132,7 +133,7 @@ function StudentCinema({ videos }: { videos: readonly StudentVideo[] }) {
               </button>
             );
           })}
-        </div>
+        </div></Reveal>
       </div>
     </section>
   );
