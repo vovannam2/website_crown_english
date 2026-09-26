@@ -1,0 +1,22 @@
+.surface {
+  position: relative;
+  isolation: isolate;
+  border: 9px solid #947555;
+  border-radius: 3px;
+  background: linear-gradient(125deg, #fff8e51a, transparent 55%, #4b382510), var(--board-texture) repeat;
+  background-color: #bda079;
+  background-size: auto, 380px 380px;
+  box-shadow: 0 1px 2px #33271926, 0 8px 18px -10px #33271955, inset 0 2px 5px #49331d35;
+}
+.surface::before {
+  position: absolute;
+  inset: -7px;
+  border: 1px solid #e7d0a94d;
+  border-bottom-color: #49331d40;
+  content: "";
+  pointer-events: none;
+}
+@media (max-width: 760px) {
+  .surface { border-width: 6px; }
+  .surface::before { inset: -4px; }
+}

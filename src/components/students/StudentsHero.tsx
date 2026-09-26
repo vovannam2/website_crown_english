@@ -5,20 +5,7 @@ import { studentResultsPageData as data } from "@/data/student-results";
 import StudentImage from "./StudentImage";
 
 export default function StudentsHero() {
-  const portraits = [
-    {
-      src: "/images/students/classrooms/classroom-12.jpg",
-      alt: "Lớp học tại Crown English",
-    },
-    {
-      src: "/images/students/classrooms/classroom-15.jpg",
-      alt: "Hoạt động lớp học tại Crown English",
-    },
-    {
-      src: "/images/students/classrooms/classroom-13.jpg",
-      alt: "Lớp học tại Crown English",
-    },
-  ];
+  const portraits = data.hero.portraits;
   const heading = data.seo.h1.split(/(học viên)/i);
 
   return (
@@ -30,7 +17,7 @@ export default function StudentsHero() {
         <p className="home-eyebrow">CÂU CHUYỆN HỌC VIÊN</p>
         <h1
           id="students-title"
-          className="mt-4 max-w-[800px] text-[clamp(2.25rem,5vw,3.5rem)] font-[750] leading-[1.15] tracking-[-0.035em] text-balance lg:text-[clamp(2.5rem,4vw,3.5rem)]"
+          className="mt-4 max-w-[800px] text-[length:var(--type-hero-size)] font-[750] leading-[1.15] tracking-[-0.035em] text-balance"
         >
           {heading.map((part, index) =>
             part.toLowerCase() === "học viên" ? (
@@ -42,7 +29,7 @@ export default function StudentsHero() {
             ),
           )}
         </h1>
-        <p className="mt-6 max-w-[820px] text-[17px] leading-[1.8] text-[var(--color-ink-muted)] lg:text-base lg:leading-[1.8]">
+        <p className="mt-6 max-w-[820px] text-[length:var(--type-intro-size)] leading-[1.8] text-[var(--color-ink-muted)]">
           {data.intro}
         </p>
         <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3 [&>a]:transition-[transform,background-color] [&>a]:duration-200 motion-safe:[&>a:hover]:-translate-y-0.5 motion-reduce:[&>a]:transition-none">

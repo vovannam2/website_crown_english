@@ -1,6 +1,17 @@
 @import "tailwindcss";
 
 :root {
+  /* Typography reference: TeachersHero and TeacherShowcase. */
+  --type-hero-size: clamp(2.25rem, 5vw, 3.5rem);
+  --type-section-size: 30px;
+  --type-card-size: 20px;
+  --type-body-size: 16px;
+  --type-intro-size: 17px;
+  --type-label-size: 12px;
+  --type-link-size: 15px;
+  --type-section-leading: 1.25;
+  --type-body-leading: 1.75;
+  --type-heading-tracking: -.025em;
   /* TODO: Replace temporary tokens when Crown's official brand guide is provided. */
   --color-brand-red: #d42525;
   --color-brand-red-dark: #a91d1d;
@@ -57,3 +68,10 @@ body {
 .floating-contact:hover { transform: translateY(-2px); }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; } }
+
+@media (min-width: 640px) {
+  :root { --type-section-size: 36px; }
+}
+@media (min-width: 1024px) {
+  :root { --type-hero-size: clamp(2.5rem, 4vw, 3.5rem); --type-intro-size: 16px; }
+}

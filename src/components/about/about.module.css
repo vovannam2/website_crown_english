@@ -1,15 +1,15 @@
 .page { background: #fff; --story-rule: var(--color-line); }
 .page section { scroll-margin-top: 100px; }
-.page h1, .page h2, .page h3 { letter-spacing: -.035em; text-wrap: balance; }
-.page h3 { font-size: 22px; font-weight: 650; line-height: 1.35; }
+.page h1, .page h2, .page h3 { text-wrap: balance; }
+.page h3 { font-size: var(--type-card-size); font-weight: 700; line-height: 1.45; letter-spacing: normal; }
 .section { padding-block: 48px; }
-.eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .13em; color: var(--color-brand-red); line-height: 1.8; }
-.bodyCopy, .storyParagraph { font-size: 16px; line-height: 1.85; color: var(--color-ink-muted); }
+.eyebrow { color: var(--color-brand-red); font-size: var(--type-label-size); font-weight: 700; line-height: 1.55; letter-spacing: .14em; }
+.bodyCopy, .storyParagraph { color: var(--color-ink-muted); font-size: var(--type-body-size); line-height: var(--type-body-leading); }
 .storyParagraph + .storyParagraph { margin-top: 18px; }
-.sectionTitle { font-size: clamp(28px, 3.3vw, 38px); line-height: 1.2; font-weight: 700; margin-block: 14px 28px; }
+.sectionTitle { margin-block: 14px 28px; font-size: var(--type-section-size); font-weight: 700; line-height: var(--type-section-leading); letter-spacing: var(--type-heading-tracking); }
 .lineMask { display: block; overflow: hidden; padding-block: .08em .15em; margin-block: -.08em -.15em; }
 .textLine { display: block; }
-.textLink { display: inline-flex; align-items: center; gap: 14px; min-height: 44px; font-size: 13px; font-weight: 600; color: var(--color-brand-red-dark); margin-top: 14px; }
+.textLink { display: inline-flex; align-items: center; gap: 14px; min-height: 44px; color: var(--color-brand-red-dark); margin-top: 14px; font-size: var(--type-link-size); font-weight: 650; }
 .textLink span, .actions a span { transition: transform 250ms ease; }
 .textLink:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
@@ -22,8 +22,8 @@
 .neutralWord span { display: block; }
 .neutralRule { position: absolute; width: 18%; height: 2px; bottom: 15%; background: var(--color-brand-red); }
 .hero { display: grid; grid-template-columns: 1.15fr 1fr; align-items: center; gap: 48px; padding-block: 56px 40px; }
-.hero > *, .aboutGrid > *, .journeyGrid > *, .metricsGrid > *, .supportComposition > *, .experienceGrid > * { min-width: 0; }
-.heroTitle { margin-block: 20px; font-size: clamp(30px, 3.2vw, 42px); line-height: 1.2; font-weight: 750; }
+.hero > *, .aboutGrid > *, .journeyGrid > * { min-width: 0; }
+.heroTitle { margin-block: 20px; font-size: var(--type-hero-size); font-weight: 750; line-height: 1.15; letter-spacing: -.035em; }
 .heroTitle > span:last-child { color: var(--color-brand-red); }
 .heroCopy .bodyCopy { max-width: 520px; }
 .heroImage { aspect-ratio: 4 / 4.5; }
@@ -31,22 +31,6 @@
 .aboutImage { aspect-ratio: 4 / 4.5; }
 .aboutGrid .storyParagraph { margin-bottom: 16px; }
 .aboutGrid .sectionTitle { margin-bottom: 22px; }
-.values { padding-block: 12px 48px; }
-.chapters { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; }
-.valuesCordDesktop { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
-.valuesCordDesktop svg { width: 100%; height: 100%; overflow: visible; }
-.valuesCordDesktop path, .valuesCordMobile path { fill: none; stroke: color-mix(in srgb, var(--color-brand-red) 55%, var(--color-line)); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
-.valuesCordMobile { display: none; }
-.valueChapter { position: relative; z-index: 1; display: grid; grid-template-columns: 52px 1fr; gap: 18px; padding-block: 24px; }
-.valueChapter::before { content: ""; position: absolute; top: -4px; left: 0; width: 9px; height: 9px; border: 2px solid var(--color-brand-red); border-radius: 50%; background: #fff; box-shadow: 0 0 0 5px #fff; transition: background-color 250ms; }
-.chapterNumber { color: var(--color-line-strong); font-size: 44px; line-height: 1; letter-spacing: -.06em; transition: color 250ms; }
-.english { color: var(--color-ink-muted); font-size: 12px; letter-spacing: .06em; margin-block: 5px 12px; }
-.valueChapter .bodyCopy { font-size: 15px; }
-.philosophy { background: var(--color-brand-red-dark); color: #fff; border-radius: 8px; padding: 40px 48px; }
-.philosophy .eyebrow { color: #fff; }
-.philosophyIntro { margin-top: 12px; font-size: 15px; line-height: 1.8; }
-.statement { margin-top: 22px; font-size: clamp(28px, 3.6vw, 44px); line-height: 1.25; font-weight: 650; }
-.statementLead { display: block; font-weight: 450; margin-bottom: 8px; }
 .journeyGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: stretch; }
 .roadmap { position: relative; padding-top: 40px; margin-bottom: 28px; }
 .startLabel { position: absolute; top: 0; left: 0; font-size: 10px; letter-spacing: .14em; color: var(--color-ink-muted); }
@@ -62,11 +46,8 @@
 .method { display: grid; grid-template-columns: 24px 1fr; gap: 16px; height: 100%; align-content: center; padding-block: 20px; border-top: 1px solid var(--story-rule); }
 .method:first-child { padding-top: 18px; }
 .smallNumber { color: var(--color-brand-red); font-size: 12px; padding-top: 5px; }
-.method h3 { font-size: 20px; margin-bottom: 10px; }
-.method .bodyCopy { font-size: 15px; }
-.metricsGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; border-block: 1px solid var(--story-rule); }
-.metricItem { padding-block: 28px; }
-.metricItem h3 { margin-top: 12px; min-height: 60px; }
+.method h3 { margin-bottom: 10px; font-size: var(--type-card-size); font-weight: 700; line-height: 1.45; letter-spacing: normal; }
+.method .bodyCopy { font-size: var(--type-body-size); line-height: var(--type-body-leading); }
 .price { display: flex; flex-direction: column; justify-content: center; min-height: 152px; color: var(--color-brand-red); margin-block: 12px 20px; }
 .price span { font-size: 11px; letter-spacing: .12em; font-weight: 600; }
 .price strong { font-size: clamp(52px, 6.5vw, 80px); line-height: 1.15; letter-spacing: -.06em; font-weight: 650; margin-block: 4px; }
@@ -75,7 +56,6 @@
 .sessions > span { font-size: 22px; }
 .sessions small { display: block; font-size: 10px; letter-spacing: .08em; margin-top: 5px; max-width: 160px; }
 .policyNote { margin-top: 14px; font-size: 12px; line-height: 1.8; color: var(--color-ink-muted); }
-.metricItem .textLink { font-size: 12px; margin-top: 4px; }
 .differenceRow { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; padding-block: 48px; border-top: 1px solid var(--story-rule); }
 .differenceRow:last-child { border-bottom: 1px solid var(--story-rule); }
 .differenceRow > * { min-width: 0; }
@@ -87,69 +67,50 @@
 .imageLeft .differenceImage, .imageLeft .supportImage, .imageLeft .experienceImage { grid-column: 1; grid-row: 1; }
 .imageLeft .differenceCopy { grid-column: 2; grid-row: 1; }
 .differenceRow .price, .differenceRow .sessions { min-height: 0; margin-block: 22px 24px; }
-.supportComposition, .experienceGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-top: 48px; }
 .supportImage { aspect-ratio: 4 / 3; }
-.featureTitle { font-size: clamp(26px, 3vw, 34px) !important; margin-block: 14px 20px; }
+.featureTitle { margin-block: 14px 20px; font-size: var(--type-card-size); font-weight: 700; line-height: 1.45; letter-spacing: normal; }
 .experienceImage { grid-column: 2; grid-row: 1; aspect-ratio: 4 / 3; }
 .experienceCopy { grid-column: 1; grid-row: 1; }
 .experienceWords { display: flex; flex-wrap: wrap; gap: 8px 16px; color: var(--color-brand-red-dark); font-size: 13px; font-weight: 600; margin-block: 18px; }
-.closing { padding-block: 26px; border-block: 1px solid var(--story-rule); text-align: center; }
-.closing h2 { font-size: clamp(22px, 2.6vw, 30px); line-height: 1.4; font-weight: 600; color: var(--color-brand-red); margin-top: 12px; }
-.closing h2 > span { color: var(--color-ink); }
 .cta { padding-block: 40px 64px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 32px; }
 .cta .sectionTitle { margin-bottom: 14px; }
 .cta .actions { margin-top: 0; }
 @media (hover: hover) {
   .textLink:hover span, .actions a:hover span { transform: translateX(4px); }
-  .valueChapter:hover .chapterNumber { color: var(--color-brand-red); }
-  .valueChapter:hover::before { background: var(--color-brand-red); }
 }
 @media (max-width: 1023px) {
-  .hero, .aboutGrid, .journeyGrid, .differenceRow, .supportComposition, .experienceGrid { gap: 28px; }
-  .heroTitle { font-size: 31px; }
+  .hero, .aboutGrid, .journeyGrid, .differenceRow { gap: 28px; }
+  .heroTitle { font-size: var(--type-hero-size); font-weight: 750; line-height: 1.15; letter-spacing: -.035em; }
   .heroImage { aspect-ratio: 3 / 4; }
-  .chapters, .metricsGrid { gap: 0 28px; }
   .cta { grid-template-columns: 1fr; gap: 24px; }
 }
 @media (max-width: 767px) {
   .section { padding-block: 36px; }
   .hero { grid-template-columns: 1fr; padding-block: 36px 28px; }
-  .heroTitle { font-size: clamp(27px, 5.7vw, 40px); }
+  .heroTitle { font-size: var(--type-hero-size); font-weight: 750; line-height: 1.15; letter-spacing: -.035em; }
   .heroImage { aspect-ratio: 4 / 3; }
-  .aboutGrid, .journeyGrid, .differenceRow, .supportComposition, .experienceGrid { grid-template-columns: 1fr; gap: 24px; }
+  .aboutGrid, .journeyGrid, .differenceRow { grid-template-columns: 1fr; gap: 24px; }
   .methods { display: block; height: auto; }
   .method { height: auto; align-content: initial; }
   .aboutImage { aspect-ratio: 4 / 3; }
-  .sectionTitle { font-size: 28px; margin-bottom: 22px; }
-  .chapters { grid-template-columns: 1fr; padding-left: 22px; }
-  .valuesCordDesktop { display: none; }
-  .valuesCordMobile { display: block; position: absolute; top: 0; bottom: 0; left: 0; width: 20px; pointer-events: none; }
-  .valuesCordMobile svg { width: 100%; height: 100%; }
-  .valueChapter::before { top: 24px; left: -26px; }
-  .values { padding-bottom: 28px; }
-  .philosophy { padding: 28px 24px; }
-  .statement { font-size: clamp(25px, 5.7vw, 36px); }
-  .metricsGrid { grid-template-columns: 1fr; }
+  .sectionTitle { margin-bottom: 22px; font-size: var(--type-section-size); font-weight: 700; line-height: var(--type-section-leading); letter-spacing: var(--type-heading-tracking); }
   .differenceRow { padding-block: 36px; }
   .differenceRow .differenceCopy, .differenceRow .differenceImage, .differenceRow .supportImage, .differenceRow .experienceImage { grid-column: 1; grid-row: auto; }
   .differenceRow .differenceCopy { order: 1; }
   .differenceRow .differenceImage, .differenceRow .supportImage, .differenceRow .experienceImage { order: 2; }
-  .metricItem + .metricItem { border-top: 1px solid var(--story-rule); }
-  .metricItem h3 { min-height: 0; }
   .price, .sessions { min-height: 0; margin-block: 24px; }
   .price strong { font-size: 64px; }
   .sessions strong { font-size: 86px; }
-  .supportComposition, .experienceGrid { margin-top: 36px; }
   .experienceImage, .experienceCopy { grid-column: auto; grid-row: auto; }
-  .bodyCopy, .storyParagraph { font-size: 15px; }
+  .bodyCopy, .storyParagraph { font-size: var(--type-body-size); line-height: var(--type-body-leading); }
   .cta { padding-block: 32px 48px; }
 }
 @media (max-width: 379px) {
   .roadmap h3 { font-size: 14px; }
   .roadmap li p { font-size: 28px; }
-  .valueChapter { grid-template-columns: 40px 1fr; gap: 14px; }
-  .chapterNumber { font-size: 36px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .page *, .page *::before, .page *::after { transition: none !important; animation: none !important; }
 }
+
+.heroCopy .bodyCopy { font-size: var(--type-intro-size); line-height: 1.8; }

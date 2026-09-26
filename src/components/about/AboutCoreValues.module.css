@@ -1,6 +1,6 @@
 .section { padding-block: 42px 58px; }
-.eyebrow { color: var(--color-brand-red); font-size: 11px; font-weight: 700; letter-spacing: .14em; line-height: 1.8; }
-.title { max-width: 660px; margin-top: 14px; font-size: clamp(30px, 3.5vw, 42px); font-weight: 700; line-height: 1.18; letter-spacing: -.035em; }
+.eyebrow { color: var(--color-brand-red); font-size: var(--type-label-size); font-weight: 700; line-height: 1.55; letter-spacing: .14em; }
+.title { max-width: 660px; margin-top: 14px; font-size: var(--type-section-size); font-weight: 700; line-height: var(--type-section-leading); letter-spacing: var(--type-heading-tracking); }
 .network { position: relative; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 112px 160px; margin-top: 58px; padding: 18px 28px; }
 .connections { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
 .connections svg { width: 100%; height: 100%; overflow: visible; }
@@ -13,9 +13,9 @@
 .valueSlot { position: relative; z-index: 1; min-width: 0; }
 .valueItem { display: grid; grid-template-columns: 72px 1fr; gap: 22px; min-height: 182px; border-top: 1px solid var(--color-line); padding-block: 24px 10px; background: #fff; outline: none; transition: border-color 250ms, transform 250ms cubic-bezier(.22,1,.36,1); }
 .number { color: var(--color-line-strong); font-size: 58px; line-height: .9; letter-spacing: -.07em; transition: color 250ms; }
-.valueItem h3 { font-size: 24px; font-weight: 700; line-height: 1.25; transition: color 250ms; }
+.valueItem h3 { transition: color 250ms; font-size: var(--type-card-size); font-weight: 700; line-height: 1.45; letter-spacing: normal; }
 .english { margin-block: 5px 14px; color: var(--color-ink-muted); font-size: 12px; letter-spacing: .06em; }
-.description { color: var(--color-ink-muted); font-size: 15px; line-height: 1.8; }
+.description { color: var(--color-ink-muted); font-size: var(--type-body-size); line-height: var(--type-body-leading); }
 .valueItem:hover, .valueItem:focus-visible { border-color: var(--color-brand-red); transform: translateY(-3px); }
 .valueItem:hover .number, .valueItem:focus-visible .number, .valueItem:hover h3, .valueItem:focus-visible h3 { color: var(--color-brand-red); }
 .network:has(.value1:hover, .value1:focus-visible) .line1, .network:has(.value2:hover, .value2:focus-visible) .line2, .network:has(.value3:hover, .value3:focus-visible) .line3, .network:has(.value4:hover, .value4:focus-visible) .line4 { stroke: var(--color-brand-red); stroke-width: .55; }

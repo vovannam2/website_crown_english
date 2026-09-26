@@ -1,12 +1,13 @@
 import Reveal from "@/components/ui/Reveal";
+import type { CSSProperties } from "react";
 import { aboutPageData } from "@/data/about";
 import styles from "./AboutManifesto.module.css";
 
 export default function AboutManifesto() {
   const data = aboutPageData.manifesto;
   return (
-    <section className={styles.section} aria-labelledby="manifesto-title">
-      <div className={styles.board}>
+    <section id="manifesto" className={styles.section} aria-labelledby="manifesto-title">
+      <div className={styles.board} style={{ "--board-texture": `url("${data.boardTexture}")` } as CSSProperties}>
         <Reveal className={styles.label}>
           <span className={styles.labelPin} aria-hidden="true" />
           {data.eyebrow}

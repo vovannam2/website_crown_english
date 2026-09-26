@@ -1,0 +1,71 @@
+.section { margin-top: clamp(56px, 7vw, 96px); }
+.heading { display: flex; justify-content: space-between; gap: 32px; align-items: center; }
+.eyebrow { color: var(--color-brand-red); font-size: var(--type-label-size); font-weight: 700; line-height: 1.55; letter-spacing: .14em; }
+.heading h3 { margin: 12px 0 16px; font-size: var(--type-section-size); font-weight: 700; line-height: var(--type-section-leading); letter-spacing: var(--type-heading-tracking); }
+.heading p:last-child { max-width: 680px; color: var(--color-ink-muted); font-size: var(--type-body-size); line-height: var(--type-body-leading); }
+.date { flex-shrink: 0; border-left: 1px solid var(--color-line); padding-left: 32px; font-size: 11px; font-weight: 650; letter-spacing: .1em; color: var(--color-ink-muted); }
+.date span { display: block; font-size: 52px; line-height: 1.2; letter-spacing: -.05em; color: var(--color-brand-red); }
+.board { margin-top: 28px; }
+.section button:focus-visible, .dialog a:focus-visible { outline: 3px solid var(--color-brand-red); outline-offset: 5px; }
+.board { composes: surface from "../ui/NoticeBoard.module.css"; padding: clamp(18px, 3vw, 40px); color: #443121; }
+.boardTop { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.boardLabel { position: relative; display: inline-block; padding: 12px 20px; background: #fff9e9; box-shadow: 0 1px 2px #44312126, 1px 3px 4px #44312118; transform: rotate(-.7deg); font-size: 12px; font-weight: 800; letter-spacing: .12em; }
+@font-face {
+  font-family: "Crown Chalk";
+  src: url("/fonts/patrick-hand/PatrickHand-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+.boardTop p, .hint, .boardFooter {
+  font-family: "Crown Chalk", "Segoe Print", cursive;
+  font-size: clamp(20px, 2vw, 24px);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: .015em;
+  color: #fffdf5;
+  /* Fine breaks in the strokes, with solid text as the fallback. */
+  background-image: radial-gradient(ellipse at center, #fffdf599 .45px, #fffdf5 .85px);
+  background-size: 3px 2px;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+@supports (background-clip: text) {
+  .boardTop p, .hint, .boardFooter { color: transparent; }
+}
+.boardTop p { rotate: .4deg; }
+.hint { margin: 24px 0 28px; rotate: -.5deg; transform-origin: left center; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); align-items: start; gap: 24px 18px; }
+.note { justify-self: center; position: relative; display: block; width: 100%; max-width: 160px; min-width: 0; padding: 6px 6px 0; background: #fffdf7; box-shadow: 0 1px 2px #44312135, 2px 5px 6px -3px #44312140; transform: rotate(-1.2deg); cursor: zoom-in; transition: transform .2s, box-shadow .2s; }
+.note:nth-child(3n + 2) { transform: translateY(8px) rotate(.8deg); }
+.note:nth-child(3n) { transform: translateY(3px) rotate(-.4deg); }
+.note:nth-child(5n) { transform: translateY(-3px) rotate(1.3deg); }
+.note:hover, .note:focus-visible { z-index: 1; transform: translateY(-2px) rotate(0); box-shadow: 1px 3px 4px #44312126, 2px 7px 10px -4px #44312140; }
+.pin { position: absolute; z-index: 1; top: -3px; left: calc(48% - 5px); width: 10px; height: 10px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #bd5d52, #943f36 65%); box-shadow: 1px 2px 2px #38271e55; }
+.note:nth-child(3n + 2) .pin { left: 54%; background: radial-gradient(circle at 35% 30%, #a3a093, #68685e 65%); }
+.boardLabel::before { position: absolute; top: -7px; left: 35%; width: 46px; height: 17px; background: #e6d6af99; border-inline: 1px dashed #bca57766; transform: rotate(-4deg); content: ""; pointer-events: none; }
+.image { position: relative; display: block; aspect-ratio: 9 / 16; background: var(--color-surface-soft); }
+.image img { object-fit: contain; }
+.caption { display: flex; align-items: center; justify-content: space-between; gap: 4px; padding: 10px 2px; font-size: 10px; font-weight: 700; color: var(--color-ink); }
+.caption svg { flex-shrink: 0; }
+.boardFooter { margin-top: 36px; padding-top: 20px; border-top: 1px dashed #44312140; text-align: center; rotate: -.3deg; }
+@media (forced-colors: active) {
+  .boardTop p, .hint, .boardFooter { color: CanvasText; background-image: none; }
+}
+.dialog { position: fixed; inset: 0; margin: auto; width: min(900px, calc(100vw - 24px)); height: 92dvh; max-height: 92dvh; padding: 0 0 var(--radius-md); border: 0; border-radius: var(--radius-md); background: white; color: var(--color-ink); overflow: hidden; }
+.dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
+.dialog::backdrop { background: #17120fde; }
+.dialogHeader { position: sticky; top: 0; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 20px; background: white; border-bottom: 1px solid var(--color-line); }
+.dialogHeader h4 { font-size: 14px; font-weight: 700; }
+.dialogHeader button { display: grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: var(--color-surface-soft); cursor: pointer; }
+.dialogHeader button:hover { background: var(--color-line); }
+.dialogBody { min-height: 0; padding: 16px; overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable; }
+.dialogBody a { display: inline-flex; align-items: center; min-height: 44px; margin-bottom: 12px; color: var(--color-brand-red); text-decoration: underline; font-size: 14px; }
+.fullImage { display: block; width: 100%; height: auto; }
+@media (max-width: 639px) {
+  .heading { align-items: flex-start; }
+  .date { display: none; }
+  .board { border-width: 6px; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 12px; }
+}
+@media (prefers-reduced-motion: reduce) { .note { transition: none; } }
