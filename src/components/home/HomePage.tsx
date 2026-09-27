@@ -114,13 +114,14 @@ export default function HomePage() {
           </Reveal>
         </div>
         <div className={styles.features}>
-          <Reveal><article className={styles.teamFeature}>
+          <Reveal><article>
             <div className={styles.featureImage}><HomeVisual src={team.image} alt={team.title} label={data.teachers.eyebrow} /></div>
             <h3>{team.title}</h3><p>{team.description}</p><TextLink href={team.link.href}>{team.link.label}</TextLink>
           </article></Reveal>
           <Reveal delay={100}><article className={styles.experienceFeature}>
-            <div className={styles.featureWords}>{experience.keywords.map((word) => <strong key={word}>{word}</strong>)}</div>
-            <h3>{experience.title}</h3><p>{experience.description}</p>
+            <h3>{experience.title}</h3>
+            <ul className={styles.featureWords}>{experience.keywords.map((word) => <li key={word}>{word}</li>)}</ul>
+            <p>{experience.description}</p>
           </article></Reveal>
         </div>
       </Container>

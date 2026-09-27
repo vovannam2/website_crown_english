@@ -17,3 +17,7 @@ Các ảnh đang dùng `import` có đường dẫn ở đầu file data. Thay �
 Với feedback, thêm nhóm `{ month: 9, images: ["feedback-thang-9-1.jpg"] }` vào `months`. Có thể thêm/xóa tên ảnh hoặc cả nhóm tháng. Số ảnh và khoảng tháng được tính tự động; nhóm rỗng được bỏ qua, và bảng tin được ẩn khi không còn ảnh.
 
 Khi chạy development, lưu file data để giao diện cập nhật. Với website production, cần build và triển khai lại sau khi sửa data hoặc thay ảnh.
+
+## Dữ liệu chưa được nối vào giao diện
+
+`courses.ts`, `contact.ts`, `commitments.ts` và `faqs.ts` chứa nội dung soạn sẵn. Các route tương ứng hiện dùng `PlaceholderPage`, nên chưa import những file này. Đây là nội dung dành cho các trang sẽ triển khai, không phải dữ liệu đang hiển thị.

@@ -1,6 +1,6 @@
 import Button from "@/components/ui/Button";
-import HeroDecoration from "@/components/teachers/HeroDecoration";
-import effects from "@/components/teachers/teachers.module.css";
+import HeroDecoration from "@/components/ui/HeroDecoration";
+import effects from "@/components/ui/PortraitHero.module.css";
 import { studentResultsPageData as data } from "@/data/student-results";
 import StudentImage from "./StudentImage";
 
@@ -13,38 +13,42 @@ export default function StudentsHero() {
       aria-labelledby="students-title"
       className="grid items-center gap-9 bg-white py-14 sm:py-16 lg:grid-cols-[1.05fr_1fr] lg:gap-12"
     >
-      <div className={effects.heroCopy}>
-        <p className="home-eyebrow">CÂU CHUYỆN HỌC VIÊN</p>
-        <h1
-          id="students-title"
-          className="mt-4 max-w-[800px] text-[length:var(--type-hero-size)] font-[750] leading-[1.15] tracking-[-0.035em] text-balance"
-        >
-          {heading.map((part, index) =>
-            part.toLowerCase() === "học viên" ? (
-              <span key={index} className="text-[var(--color-brand-red)]">
-                {part}
-              </span>
-            ) : (
-              part
-            ),
-          )}
-        </h1>
-        <p className="mt-6 max-w-[820px] text-[length:var(--type-intro-size)] leading-[1.8] text-[var(--color-ink-muted)]">
-          {data.intro}
-        </p>
-        <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3 [&>a]:transition-[transform,background-color] [&>a]:duration-200 motion-safe:[&>a:hover]:-translate-y-0.5 motion-reduce:[&>a]:transition-none">
-          <Button href="/lien-he">Đăng ký tư vấn</Button>
-          <a
-            href="#student-results"
-            className="inline-flex min-h-11 items-center gap-6 font-[650] text-[var(--color-brand-red)] hover:text-[var(--color-brand-red-dark)] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-brand-red-dark)]"
+      <div className={`${effects.heroCopy} max-lg:contents`}>
+        <div>
+          <p className="home-eyebrow">CÂU CHUYỆN HỌC VIÊN</p>
+          <h1
+            id="students-title"
+            className="mt-4 max-w-[800px] text-[length:var(--type-hero-size)] font-[750] leading-[1.15] tracking-[-0.035em] text-balance"
           >
-            Khám phá kết quả <span aria-hidden="true">↘</span>
-          </a>
+            {heading.map((part, index) =>
+              part.toLowerCase() === "học viên" ? (
+                <span key={index} className="text-[var(--color-brand-red)]">
+                  {part}
+                </span>
+              ) : (
+                part
+              ),
+            )}
+          </h1>
+        </div>
+        <div className="max-lg:order-3">
+          <p className="max-w-[820px] text-[length:var(--type-intro-size)] leading-[1.8] text-[var(--color-ink-muted)] lg:mt-6">
+            {data.intro}
+          </p>
+          <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3 [&>a]:transition-[transform,background-color] [&>a]:duration-200 motion-safe:[&>a:hover]:-translate-y-0.5 motion-reduce:[&>a]:transition-none">
+            <Button href="/lien-he">Đăng ký tư vấn</Button>
+            <a
+              href="#student-results"
+              className="inline-flex min-h-11 items-center gap-6 font-[650] text-[var(--color-brand-red)] hover:text-[var(--color-brand-red-dark)] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-brand-red-dark)]"
+            >
+              Khám phá kết quả <span aria-hidden="true">↘</span>
+            </a>
+          </div>
         </div>
       </div>
       {!!portraits.length && (
         <div
-          className="relative mx-auto aspect-[1.3] w-full max-w-[540px]"
+          className="relative mx-auto aspect-[1.3] w-full max-w-[540px] max-lg:order-2"
           aria-label="Học viên Crown English"
         >
           <HeroDecoration />

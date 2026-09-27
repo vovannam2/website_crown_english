@@ -42,9 +42,9 @@ export default function HomeHero() {
               </span>
             ))}
           </h1>
-            <ul className={styles.heroProgramChips} aria-label="Chương trình đào tạo">
-              {hero.programChips.map((program) => <li key={program}>{program}</li>)}
-            </ul>
+          <ul className={styles.heroProgramChips} aria-label="Chương trình đào tạo">
+            {hero.programChips.map((program) => <li key={program}>{program}</li>)}
+          </ul>
           <p className={styles.heroCampaignDescription}>{hero.description}</p>
           <div className={styles.heroCampaignActions}>
             <Button href={hero.primaryCta.href}>{hero.primaryCta.label}</Button>

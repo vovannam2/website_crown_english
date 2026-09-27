@@ -183,7 +183,8 @@ export const homePageData = {
       tone: "red",
       category: "LUYỆN THI IELTS",
       note: "Từng bước tới band điểm mục tiêu.",
-      description: "Xây nền tảng vững, luyện đủ bốn kỹ năng và làm quen với bài thi IELTS.",
+      description:
+        "Xây nền tảng vững, luyện đủ bốn kỹ năng và làm quen với bài thi IELTS.",
     },
     {
       number: "02",
@@ -194,7 +195,8 @@ export const homePageData = {
       tone: "cream",
       category: "TIẾNG ANH MỖI NGÀY",
       note: "Bắt đầu từ một cuộc trò chuyện.",
-      description: "Luyện nghe, tập nói và dùng tiếng Anh trong những tình huống gần gũi mỗi ngày.",
+      description:
+        "Luyện nghe, tập nói và dùng tiếng Anh trong những tình huống gần gũi mỗi ngày.",
     },
     {
       number: "03",
@@ -205,7 +207,8 @@ export const homePageData = {
       tone: "ink",
       category: "HỌC CÙNG GIẢNG VIÊN",
       note: "Một lộ trình. Dành riêng cho bạn.",
-      description: "Tập trung vào kỹ năng cần cải thiện với lộ trình theo mục tiêu và trình độ của bạn.",
+      description:
+        "Tập trung vào kỹ năng cần cải thiện với lộ trình theo mục tiêu và trình độ của bạn.",
     },
   ],
   studentResults: {
@@ -214,7 +217,7 @@ export const homePageData = {
     description:
       "Kết quả và trải nghiệm thực tế của học viên trong quá trình học tập tại Crown English.",
     link: {
-      label: "Xem kết quả học viên",
+      label: "Xem thêm học viên xuất sắc",
       href: "/hoc-vien",
     },
     featuredIds: ["viet-bao-8-0", "khanh-linh-7-5", "nhu-y-7-0"],
@@ -354,14 +357,76 @@ export const homePageData = {
       // Ảnh đặt trong public/images/home. Thêm/xóa ảnh hoặc cả nhóm tháng tại đây.
       // Ví dụ: { month: 9, images: ["feedback-thang-9-1.jpg"] },
       months: [
-        { month: 1, images: ["feedback-thang-1-1.jpg", "feedback-thang-1-2.jpg", "feedback-thang-1-3.jpg", "feedback-thang-1-4.jpg"] },
-        { month: 2, images: ["feedback-thang-2-1.jpg", "feedback-thang-2-2.jpg", "feedback-thang-2-3.jpg"] },
-        { month: 3, images: ["feedback-thang-3-1.jpg", "feedback-thang-3-2.jpg", "feedback-thang-3-3.jpg"] },
-        { month: 4, images: ["feedback-thang-4-1.jpg", "feedback-thang-4-2.jpg", "feedback-thang-4-3.jpg", "feedback-thang-4-4.jpg"] },
-        { month: 5, images: ["feedback-thang-5-1.jpg", "feedback-thang-5-2.jpg", "feedback-thang-5-3.jpg", "feedback-thang-5-4.jpg"] },
-        { month: 6, images: ["feedback-thang-6-1.jpg", "feedback-thang-6-2.jpg", "feedback-thang-6-3.jpg", "feedback-thang-6-4.jpg"] },
-        { month: 7, images: ["feedback-thang-7-1.jpg", "feedback-thang-7-2.jpg", "feedback-thang-7-3.jpg", "feedback-thang-7-4.jpg"] },
-        { month: 8, images: ["feedback-thang-8-1.jpg", "feedback-thang-8-2.jpg", "feedback-thang-8-3.jpg", "feedback-thang-8-4.jpg"] },
+        {
+          month: 1,
+          images: [
+            "feedback-thang-1-1.jpg",
+            "feedback-thang-1-2.jpg",
+            "feedback-thang-1-3.jpg",
+            "feedback-thang-1-4.jpg",
+          ],
+        },
+        {
+          month: 2,
+          images: [
+            "feedback-thang-2-1.jpg",
+            "feedback-thang-2-2.jpg",
+            "feedback-thang-2-3.jpg",
+          ],
+        },
+        {
+          month: 3,
+          images: [
+            "feedback-thang-3-1.jpg",
+            "feedback-thang-3-2.jpg",
+            "feedback-thang-3-3.jpg",
+          ],
+        },
+        {
+          month: 4,
+          images: [
+            "feedback-thang-4-1.jpg",
+            "feedback-thang-4-2.jpg",
+            "feedback-thang-4-3.jpg",
+            "feedback-thang-4-4.jpg",
+          ],
+        },
+        {
+          month: 5,
+          images: [
+            "feedback-thang-5-1.jpg",
+            "feedback-thang-5-2.jpg",
+            "feedback-thang-5-3.jpg",
+            "feedback-thang-5-4.jpg",
+          ],
+        },
+        {
+          month: 6,
+          images: [
+            "feedback-thang-6-1.jpg",
+            "feedback-thang-6-2.jpg",
+            "feedback-thang-6-3.jpg",
+            "feedback-thang-6-4.jpg",
+          ],
+        },
+        {
+          month: 7,
+          images: [
+            "feedback-thang-7-1.jpg",
+            "feedback-thang-7-2.jpg",
+            "feedback-thang-7-3.jpg",
+            "feedback-thang-7-4.jpg",
+          ],
+        },
+        {
+          month: 8,
+          images: [
+            "feedback-thang-8-1.jpg",
+            "feedback-thang-8-2.jpg",
+            "feedback-thang-8-3.jpg",
+            "feedback-thang-8-4.jpg",
+          ],
+        },
       ],
     },
   },

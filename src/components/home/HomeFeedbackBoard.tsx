@@ -65,7 +65,7 @@ export default function HomeFeedbackBoard({ data }: { data: FeedbackData }) {
         {feedbacks.map((feedback) => <button type="button" key={feedback.id} className={styles.note} onClick={() => openFeedback(feedback)} aria-label={`Mở ${feedback.label.toLowerCase()}`} aria-haspopup="dialog">
           <span className={styles.pin} aria-hidden="true" />
           <span className={styles.image}>
-            <Image src={feedback.src} alt={feedback.label} fill sizes="160px" />
+            <Image src={feedback.src} alt={feedback.label} fill sizes="(min-width: 1280px) 180px, 15vw" />
           </span>
           <span className={styles.caption}><span>Tháng {String(feedback.month).padStart(2, "0")} / {data.year}</span><ArrowUpRight size={17} aria-hidden="true" /></span>
         </button>)}

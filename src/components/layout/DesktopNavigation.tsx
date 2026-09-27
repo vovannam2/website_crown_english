@@ -4,10 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { navigationItems } from "@/data/navigation";
-
-function isActive(pathname: string, href: string) {
-  return href === "/" ? pathname === href : pathname === href || pathname.startsWith(`${href}/`);
-}
+import { isActivePath as isActive } from "@/lib/navigation";
 
 export default function DesktopNavigation() {
   const pathname = usePathname();

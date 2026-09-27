@@ -16,18 +16,20 @@ export default function AboutStory() {
         sizes="(min-width: 1200px) 450px, (min-width: 768px) 40vw, 90vw"
         className={styles.aboutImage}
       />
-      <div>
+      <div className={styles.storyCopy}>
         <Reveal>
           <p className={styles.eyebrow}>{about.chapter}</p>
           <h2 id="story-title" className={styles.sectionTitle}>
             {about.title}
           </h2>
         </Reveal>
-        {about.paragraphs.map((paragraph, index) => (
-          <Reveal key={paragraph} delay={index * 80}>
-            <p className={styles.storyParagraph}>{paragraph}</p>
-          </Reveal>
-        ))}
+        <div className={styles.storyDetails}>
+          {about.paragraphs.map((paragraph, index) => (
+            <Reveal key={paragraph} delay={index * 80}>
+              <p className={styles.storyParagraph}>{paragraph}</p>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );
