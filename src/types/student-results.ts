@@ -36,7 +36,11 @@ export type StudentResultsPageData = {
       readonly image: string;
     };
   };
-  readonly hero: { readonly title: string; readonly description: string };
+  readonly hero: {
+    readonly title: string;
+    readonly description: string;
+    readonly portraits: readonly { readonly src: string; readonly alt: string }[];
+  };
   readonly intro: string;
   readonly results: readonly StudentResult[];
   readonly videos: readonly StudentVideo[];

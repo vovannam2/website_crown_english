@@ -38,6 +38,7 @@ export type TeachersPageSeo = {
 export type TeachersPageData = {
   readonly seo: TeachersPageSeo;
   readonly hero: {
+    readonly featuredIds: readonly string[];
     readonly title: string;
     readonly description: string;
   };

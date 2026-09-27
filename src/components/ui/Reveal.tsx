@@ -3,11 +3,11 @@
 import { useEffect, useRef, type ReactNode } from "react";
 
 type Preset = "fadeUp" | "fade" | "image" | "line" | "lineX" | "draw" | "text";
-type RevealProps = { children: ReactNode; className?: string; preset?: Preset; delay?: number; as?: "div" | "span"; group?: boolean };
+type RevealProps = { children: ReactNode; className?: string; preset?: Preset; delay?: number; duration?: number; easing?: string; as?: "div" | "span"; group?: boolean };
 
 // Server HTML stays visible. Animation only starts when the content enters view.
 // Missing JavaScript or IntersectionObserver never hides content.
-export default function Reveal({ children, className = "", preset = "fadeUp", delay = 0, as: Tag = "div", group = false }: RevealProps) {
+export default function Reveal({ children, className = "", preset = "fadeUp", delay = 0, duration, easing = "cubic-bezier(0.22, 1, 0.36, 1)", as: Tag = "div", group = false }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const hasRevealed = useRef(false);
   useEffect(() => {
@@ -15,6 +15,8 @@ export default function Reveal({ children, className = "", preset = "fadeUp", de
     if (!element || hasRevealed.current || !("IntersectionObserver" in window) || !element.animate) return;
     const revealGroup = element.closest('[data-reveal-group="true"]');
     if (revealGroup && revealGroup !== element) return;
+    const pageEasing = element.closest<HTMLElement>("[data-reveal-easing]")?.dataset.revealEasing;
+    const resolvedEasing = pageEasing || easing;
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     let animation: Animation | undefined;
     const observer = new IntersectionObserver(([entry]) => {
@@ -35,12 +37,12 @@ export default function Reveal({ children, className = "", preset = "fadeUp", de
         text: [{ opacity: 0, transform: `translateY(${mobile ? "16px" : "100%"})` }, { opacity: 1, transform: "translateY(0)" }],
       };
       const target = preset === "draw" ? element.querySelector("path") ?? element : element;
-      animation = target.animate(frames[preset], { duration: preset === "image" || preset === "draw" ? 750 : 650, delay, easing: "cubic-bezier(0.22, 1, 0.36, 1)", fill: "backwards" });
+      animation = target.animate(frames[preset], { duration: duration ?? (preset === "image" || preset === "draw" ? 750 : 650), delay, easing: resolvedEasing, fill: "backwards" });
     }, { threshold: 0.08 });
     const cancelMotion = () => { if (motion.matches) animation?.cancel(); };
     motion.addEventListener("change", cancelMotion);
     observer.observe(element);
     return () => { observer.disconnect(); animation?.cancel(); motion.removeEventListener("change", cancelMotion); };
-  }, [preset, delay]);
+  }, [preset, delay, duration, easing]);
   return <Tag ref={ref} className={className} data-reveal-group={group ? "true" : undefined}>{children}</Tag>;
 }

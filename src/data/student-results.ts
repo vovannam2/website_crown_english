@@ -17,6 +17,7 @@ import studentsResultsVanDuc70Image from "../../public/images/students/results/v
 import studentsResultsVietBao80Image from "../../public/images/students/results/viet-bao-8-0.jpg";
 import studentsResultsYenNhi70Image from "../../public/images/students/results/yen-nhi-7-0.png";
 import studentsThumbnailsYenPhuong70Image from "../../public/images/students/thumbnails/yen-phuong-7-0.png";
+import studentsThumbnailsVietBao70Image from "../../public/images/students/thumbnails/viet-bao-8-0.png";
 import studentsResultsYenPhuong70Image from "../../public/images/students/results/yen-phuong-7-0.jpg";
 import studentsClassroomsClassroom01Image from "../../public/images/students/classrooms/classroom-01.jpg";
 import studentsClassroomsClassroom02Image from "../../public/images/students/classrooms/classroom-02.jpg";
@@ -60,6 +61,21 @@ export const studentResultsPageData = {
   },
 
   hero: {
+    // Ba ảnh đầu trang, theo thứ tự trái / giữa / phải.
+    portraits: [
+      {
+        src: "/images/students/classrooms/classroom-12.jpg",
+        alt: "Lớp học tại Crown English",
+      },
+      {
+        src: "/images/students/classrooms/classroom-15.jpg",
+        alt: "Hoạt động lớp học tại Crown English",
+      },
+      {
+        src: "/images/students/classrooms/classroom-13.jpg",
+        alt: "Lớp học tại Crown English",
+      },
+    ],
     title: "Học viên",
     description: "",
   },
@@ -90,7 +106,12 @@ export const studentResultsPageData = {
       exam: "IELTS",
       overall: "7.5",
 
-      highlights: ["7.5 Listening", "7.5 Reading"],
+      highlights: [
+        "7.5 Listening",
+        "7.5 Reading",
+        "7.5 Writing",
+        "7.0 Speaking",
+      ],
 
       thumbnail: studentsThumbnailsKhanhLinh75Image.src,
 
@@ -106,7 +127,12 @@ export const studentResultsPageData = {
       exam: "IELTS",
       overall: "7.0",
 
-      highlights: ["7.5 Listening", "7.0 Reading"],
+      highlights: [
+        "7.5 Listening",
+        "7.0 Reading",
+        "6.5 Writing",
+        "6.5 Speaking",
+      ],
 
       thumbnail: nhuYThumbnail.src,
 
@@ -209,7 +235,7 @@ export const studentResultsPageData = {
         "8.0 Speaking",
       ],
 
-      thumbnail: "",
+      thumbnail: studentsThumbnailsVietBao70Image.src,
 
       fullImage: studentsResultsVietBao80Image.src,
 

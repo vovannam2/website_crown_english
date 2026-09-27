@@ -5,10 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { navigationItems } from "@/data/navigation";
 import Button from "@/components/ui/Button";
-
-function isActive(pathname: string, href: string) {
-  return href === "/" ? pathname === href : pathname === href || pathname.startsWith(`${href}/`);
-}
+import { isActivePath as isActive } from "@/lib/navigation";
 
 export default function MobileNavigation() {
   const pathname = usePathname();
@@ -18,9 +15,10 @@ export default function MobileNavigation() {
   useEffect(() => {
     if (!open) return;
     const closeOnEscape = (event: KeyboardEvent) => { if (event.key === "Escape") setOpen(false); };
+    const previousOverflow = document.body.style.overflow;
     document.addEventListener("keydown", closeOnEscape);
     document.body.style.overflow = "hidden";
-    return () => { document.removeEventListener("keydown", closeOnEscape); document.body.style.overflow = ""; };
+    return () => { document.removeEventListener("keydown", closeOnEscape); document.body.style.overflow = previousOverflow; };
   }, [open]);
 
   const closeMenu = () => setOpen(false);

@@ -1,3 +1,4 @@
+/** Shared portrait decoration for the teacher and student page heroes. */
 export default function HeroDecoration() {
   return (
     <svg

@@ -60,6 +60,8 @@ export const teachersPageData = {
   },
 
   hero: {
+    // Chọn ba hồ sơ để hiển thị ảnh ở đầu trang, theo thứ tự trái / giữa / phải.
+    featuredIds: ["ms-minh-tu", "ms-nguyen-khanh", "mr-hung"],
     title: "Giảng viên",
     description: "",
   },

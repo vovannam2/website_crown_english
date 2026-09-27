@@ -1,17 +1,12 @@
 import heroImage from "../../public/images/about/crown-hero.jpg";
+import { sharedMedia } from "./media";
 import aboutImage from "../../public/images/about/crown-about.jpg";
 import methodImage from "../../public/images/about/crown-method.jpg";
 import supportImage from "../../public/images/about/crown-support.jpg";
 import experienceImage from "../../public/images/about/crown-experience.jpg";
 import investmentImage from "../../public/images/about/crown-investment-800k.png";
 import commitmentImage from "../../public/images/about/crown-commitment-24-sessions.png";
-export type AboutImageSlot = {
-  src: string;
-  fallback?: string;
-  alt: string;
-  position?: string;
-  placeholder: string;
-};
+import type { AboutImageSlot } from "@/types/about";
 
 // Các ảnh chính của trang Giới thiệu.
 // Static imports tạo URL theo nội dung ảnh và cập nhật khi thay file.
@@ -138,9 +133,10 @@ export const aboutPageData = {
   // BRAND MANIFESTO
   // ==================================================
   manifesto: {
+    boardTexture: sharedMedia.corkTexture,
     eyebrow: "MÔI TRƯỜNG HỌC TẬP",
 
-    words: ["Tinh gọn", "Tối ưu", "Chuẩn hóa"],
+    words: ["Tinh gọn.", "Tối ưu.", "Chuẩn hóa."],
     translations: ["Streamlined", "Optimized", "Standardized"],
 
     description:
