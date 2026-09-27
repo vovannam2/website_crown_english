@@ -14,9 +14,11 @@ export default function Footer() {
       <Container>
         <div className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.35fr_1fr_1fr_1.35fr]">
           <div>
-            <Link href="/" className="footer-brand mb-5 inline-flex items-center gap-5" aria-label="Crown English - Trang chủ">
-              <Image src="/logo/logoKhongChu.png" alt="" width={164} height={116} className="h-[116px] w-[164px] shrink-0 object-contain" />
-              <span className="flex flex-col leading-none">
+            <Link href="/" className="mb-5 inline-flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-3 shadow-[0_18px_42px_rgb(0_0_0/0.18)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-brand-gold)]" aria-label="Crown English - Trang chủ">
+              <span className="flex h-20 w-20 shrink-0 items-center justify-center rounded-xl bg-white p-1.5">
+                <Image src={sharedMedia.logo} alt="" width={80} height={80} className="h-full w-full object-contain" />
+              </span>
+              <span className="flex min-w-0 flex-col justify-center leading-none">
                 <span className="footer-brand-crown">CROWN</span>
                 <span className="footer-brand-english">ENGLISH</span>
               </span>

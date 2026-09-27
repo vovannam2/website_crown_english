@@ -767,7 +767,7 @@ export function CoursesOverviewPage({ title, description, heroImage = "/images/s
                 <Link href={course.href} className="flex h-full flex-col focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-brand-red)]">
                   <div className="relative aspect-[1.25/1] overflow-hidden bg-[#eff8ff] p-3">
                     <div className="relative h-full w-full overflow-hidden rounded-[var(--radius-sm)] bg-white/70">
-                      <Image src={course.image} alt={`Không gian học ${course.title} tại Crown English`} fill sizes="(min-width: 1024px) 360px, 90vw" className="object-contain transition-transform duration-300 group-hover:scale-[1.03]" />
+                      <Image src={course.image} alt={`Không gian học ${course.title} tại Crown English`} fill sizes="(min-width: 1024px) 360px, 90vw" className="object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
                     </div>
                     <div className="absolute left-5 top-5 rounded-full bg-white/95 px-4 py-2 shadow-[var(--shadow-header)]">
                       <p className="type-label text-[var(--color-brand-red)]">{course.levels.length} cấp độ</p>

@@ -43,14 +43,14 @@ export const coursesPageData = {
         title: "Học Offline",
         description:
           "Học trực tiếp tại trung tâm với không gian hiện đại, tương tác cao, được giảng viên hướng dẫn sát sao.",
-        image: "/images/Design/HocOffline.png",
+        image: "/images/courses/course-format-offline-real.png",
         icon: "monitor",
       },
       {
         title: "Học Online",
         description:
           "Học online linh hoạt, chất lượng cao với lớp học trực tuyến tương tác, phù hợp với người bận rộn hoặc ở xa.",
-        image: "/images/Design/hocOnline.png",
+        image: "/images/courses/course-format-online-real.png",
         icon: "laptop",
       },
     ],
@@ -61,21 +61,21 @@ export const coursesPageData = {
       title: "IELTS",
       href: "/khoa-hoc/ielts",
       description: "",
-      image: "/images/Design/IElTS.png",
+      image: "/images/courses/course-ielts-real.png",
     },
     {
       id: "giao-tiep",
       title: "Tiếng Anh giao tiếp",
       href: "/khoa-hoc/giao-tiep",
       description: "",
-      image: "/images/Design/LopGiaoTiep.png",
+      image: "/images/courses/course-communication-real.png",
     },
     {
       id: "ielts-1-kem-1",
       title: "IELTS 1 kèm 1",
       href: "/khoa-hoc/ielts-1-kem-1",
       description: "",
-      image: "/images/Design/Ielts1kem1.png",
+      image: "/images/courses/course-ielts-1-1-real.png",
     },
   ],
 } as const;
