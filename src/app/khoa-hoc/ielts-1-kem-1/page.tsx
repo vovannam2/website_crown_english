@@ -1,8 +1,20 @@
 import type { Metadata } from "next";
-import PlaceholderPage from "@/components/ui/PlaceholderPage";
+import CourseLandingPage from "@/components/courses/CourseLandingPage";
+import { ieltsOneToOnePageData } from "@/data/courses";
 
-export const metadata: Metadata = { title: "IELTS 1 kèm 1" };
+export const metadata: Metadata = {
+  title: { absolute: ieltsOneToOnePageData.seo.title },
+  description: ieltsOneToOnePageData.seo.description,
+  alternates: { canonical: ieltsOneToOnePageData.seo.canonical },
+  robots: ieltsOneToOnePageData.seo.robots,
+  openGraph: {
+    title: ieltsOneToOnePageData.seo.openGraph.title,
+    description: ieltsOneToOnePageData.seo.openGraph.description,
+    url: ieltsOneToOnePageData.seo.canonical,
+    type: "website",
+  },
+};
 
 export default function OneToOnePage() {
-  return <PlaceholderPage eyebrow="Khóa học" title="IELTS 1 kèm 1" description="Trang thông tin lộ trình học cá nhân hóa IELTS 1 kèm 1 đang được Crown English chuẩn bị." />;
+  return <CourseLandingPage data={ieltsOneToOnePageData} />;
 }

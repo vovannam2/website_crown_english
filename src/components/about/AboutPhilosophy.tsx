@@ -11,10 +11,10 @@ function MethodBadge({ label, index }: { label: string; index: number }) {
   return (
     <Reveal delay={120 + index * 80}>
       <div className="grid grid-cols-[24px_1fr] gap-4 border-t border-[var(--color-line)] py-5 text-neutral-800">
-        <span className="pt-1 text-xs text-[var(--color-brand-red)]">
+        <span className="pt-1 type-label text-[var(--color-brand-red)]">
           {String(index + 1).padStart(2, "0")}
         </span>
-        <span className="text-lg font-semibold tracking-[-0.02em]">{label}</span>
+        <span className="type-h4">{label}</span>
       </div>
     </Reveal>
   );
@@ -29,13 +29,13 @@ export default function AboutPhilosophy() {
       aria-labelledby="philosophy-title"
     >
       <Reveal>
-        <p className="text-[11px] leading-5 font-bold tracking-[0.13em] text-[var(--color-brand-red)] uppercase">
+        <p className="type-label text-[var(--color-brand-red)]">
           {data.eyebrow}
         </p>
-        <h2 id="philosophy-title" className="mt-3 text-[clamp(28px,3.3vw,38px)] leading-[1.2] font-bold tracking-[-0.035em] text-[var(--color-ink)]">
+        <h2 id="philosophy-title" className="mt-3 type-h2 text-[var(--color-ink)]">
           Định hướng đào tạo tại Crown English
         </h2>
-        <p className="mt-4 max-w-2xl text-base leading-[1.85] text-[var(--color-ink-muted)]">
+        <p className="mt-4 max-w-2xl type-body-lg text-[var(--color-ink-muted)]">
           {data.intro}
         </p>
       </Reveal>
@@ -45,17 +45,17 @@ export default function AboutPhilosophy() {
           <span className="pointer-events-none absolute -right-1 -top-9 font-serif text-[8rem] leading-none text-[var(--color-brand-red)]/[0.07]" aria-hidden="true">
             ”
           </span>
-          <p className="relative tracking-[-0.035em]">
+          <p className="relative">
             <Reveal
               as="span"
-              className="block text-[clamp(21px,2.3vw,28px)] leading-[1.3] font-normal text-[var(--color-ink-muted)]"
+              className="block type-h3 type-weight-normal text-[var(--color-ink-muted)]"
               delay={80}
             >
               {data.lead}
             </Reveal>
             <Reveal
               as="span"
-              className="mt-3 block max-w-xl text-[clamp(30px,3.6vw,44px)] leading-[1.12] font-bold text-[var(--color-brand-red-dark)]"
+              className="mt-3 block max-w-xl type-h2 text-[var(--color-brand-red-dark)]"
               preset="text"
               delay={150}
             >

@@ -15,11 +15,11 @@ export default function TeachersHero() {
     <Container className="grid items-center gap-9 lg:grid-cols-[1.05fr_1fr] lg:gap-12">
       <div className={styles.heroCopy}>
       <p className="home-eyebrow">ĐỘI NGŨ GIẢNG VIÊN</p>
-      <h1 id="teachers-title" className="mt-4 max-w-[800px] text-[clamp(2.25rem,5vw,3.5rem)] font-[750] leading-[1.15] tracking-[-0.035em] text-balance lg:text-[clamp(2.5rem,4vw,3.5rem)] [&_span]:text-[var(--color-brand-red)]">{heading[0]}<span>giảng viên</span>{heading[1]}</h1>
-      <p className="mt-6 max-w-[820px] text-[17px] leading-[1.8] text-[var(--color-ink-muted)] lg:text-base lg:leading-[1.8]">{teachersPageData.intro}</p>
+      <h1 id="teachers-title" className="type-h1 mt-4 max-w-[800px] [&_span]:text-[var(--color-brand-red)]">{heading[0]}<span>giảng viên</span>{heading[1]}</h1>
+      <p className="type-body-lg mt-6 max-w-[820px] text-[var(--color-ink-muted)]">{teachersPageData.intro}</p>
       <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3 [&>a]:transition-[transform,background-color] [&>a]:duration-200 motion-safe:[&>a:hover]:-translate-y-0.5 motion-reduce:[&>a]:transition-none">
         <Button href="/lien-he">Đăng ký tư vấn</Button>
-        <a className="inline-flex min-h-11 items-center gap-6 font-[650] text-[var(--color-brand-red)] hover:text-[var(--color-brand-red-dark)] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-brand-red-dark)]" href="#teacher-showcase">Gặp gỡ giảng viên <span aria-hidden="true">↘</span></a>
+        <a className="type-button inline-flex min-h-11 items-center gap-6 text-[var(--color-brand-red)] hover:text-[var(--color-brand-red-dark)] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-brand-red-dark)]" href="#teacher-showcase">Gặp gỡ giảng viên <span aria-hidden="true">↘</span></a>
       </div>
       </div>
       <div className="relative mx-auto aspect-[1.3] w-full max-w-[540px]" aria-label="Giảng viên Crown English">

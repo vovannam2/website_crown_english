@@ -13,15 +13,15 @@ export default function StudentDetailModal({ student, onClose }: { student: Stud
           </div>
         </div>
         <div tabIndex={0} role="region" aria-label={`Thông tin và chia sẻ của ${student.name}`} className="min-w-0 p-5 focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-[var(--color-brand-red)] sm:p-8 lg:max-h-[calc(90dvh-72px)] lg:overflow-y-auto lg:overscroll-contain">
-          <p className="text-xs font-bold tracking-[0.14em] text-[var(--color-brand-red)]">THÀNH TÍCH HỌC VIÊN</p>
-          <h3 className="mt-3 text-[28px] font-bold leading-tight sm:text-4xl">{student.name}</h3>
+          <p className="type-label text-[var(--color-brand-red)]">THÀNH TÍCH HỌC VIÊN</p>
+          <h3 className="mt-3 type-h3">{student.name}</h3>
           <div className="mt-5 inline-flex items-center gap-5 rounded-xl border border-[var(--color-line)] px-4 py-3">
-            <span className="text-sm font-semibold text-[var(--color-ink-muted)]">{student.exam} Overall</span>
+            <span className="type-small font-semibold text-[var(--color-ink-muted)]">{student.exam} Overall</span>
             <strong className="text-3xl leading-none text-[var(--color-brand-red)]">{student.overall}</strong>
           </div>
           {student.feedback && <section className="mt-8 border-t border-[var(--color-line)] pt-6">
-            <div className="mb-4 flex items-center gap-3"><Quote size={20} className="shrink-0 text-[var(--color-brand-red)]" aria-hidden="true" /><h4 className="text-lg font-bold">Chia sẻ từ học viên</h4></div>
-            <blockquote className="whitespace-pre-line text-[15px] leading-8 text-[var(--color-ink)] sm:text-base">{student.feedback}</blockquote>
+            <div className="mb-4 flex items-center gap-3"><Quote size={20} className="shrink-0 text-[var(--color-brand-red)]" aria-hidden="true" /><h4 className="type-h4">Chia sẻ từ học viên</h4></div>
+            <blockquote className="type-body whitespace-pre-line text-[var(--color-ink)]">{student.feedback}</blockquote>
           </section>}
         </div>
       </div>

@@ -1,8 +1,38 @@
 import type { Metadata } from "next";
-import PlaceholderPage from "@/components/ui/PlaceholderPage";
+import CommitmentsPage from "@/components/commitments/CommitmentsPage";
+import { commitmentsPageData as data } from "@/data/commitments";
 
-export const metadata: Metadata = { title: "Cam kết" };
+export const metadata: Metadata = {
+  title: { absolute: data.seo.title },
+  description: data.seo.description,
+  alternates: { canonical: data.seo.canonical },
+  robots: data.seo.robots,
+  openGraph: {
+    title: data.seo.openGraph.title,
+    description: data.seo.openGraph.description,
+    images: data.seo.openGraph.image ? [data.seo.openGraph.image] : undefined,
+    url: data.seo.canonical,
+    type: "website",
+  },
+};
 
 export default function CommitmentPage() {
-  return <PlaceholderPage eyebrow="Crown English" title="Cam kết đào tạo" description="Nội dung cam kết về chất lượng đào tạo và hỗ trợ học viên đang được Crown English chuẩn bị." />;
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": data.seo.schemaTypes,
+    name: data.seo.h1,
+    description: data.seo.description,
+    url: data.seo.canonical,
+    about: data.seo.secondaryTopics,
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }}
+      />
+      <CommitmentsPage data={data} />
+    </>
+  );
 }

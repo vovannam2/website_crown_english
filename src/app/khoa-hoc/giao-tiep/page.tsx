@@ -1,8 +1,20 @@
 import type { Metadata } from "next";
-import PlaceholderPage from "@/components/ui/PlaceholderPage";
+import CourseLandingPage from "@/components/courses/CourseLandingPage";
+import { communicationPageData } from "@/data/courses";
 
-export const metadata: Metadata = { title: "Tiếng Anh giao tiếp" };
+export const metadata: Metadata = {
+  title: { absolute: communicationPageData.seo.title },
+  description: communicationPageData.seo.description,
+  alternates: { canonical: communicationPageData.seo.canonical },
+  robots: communicationPageData.seo.robots,
+  openGraph: {
+    title: communicationPageData.seo.openGraph.title,
+    description: communicationPageData.seo.openGraph.description,
+    url: communicationPageData.seo.canonical,
+    type: "website",
+  },
+};
 
 export default function CommunicationPage() {
-  return <PlaceholderPage eyebrow="Khóa học" title="Tiếng Anh giao tiếp" description="Trang thông tin khóa học tiếng Anh giao tiếp đang được Crown English chuẩn bị." />;
+  return <CourseLandingPage data={communicationPageData} />;
 }

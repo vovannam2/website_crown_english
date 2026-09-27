@@ -1,8 +1,45 @@
 import type { Metadata } from "next";
-import PlaceholderPage from "@/components/ui/PlaceholderPage";
+import FaqsPage from "@/components/faqs/FaqsPage";
+import { faqsPageData as data } from "@/data/faqs";
 
-export const metadata: Metadata = { title: "Câu hỏi thường gặp" };
+const description =
+  "Giải đáp các câu hỏi thường gặp về khóa học, học phí, giảng viên, đăng ký, ưu đãi và chính sách tại Crown English.";
+
+export const metadata: Metadata = {
+  title: { absolute: data.seo.title },
+  description,
+  alternates: { canonical: data.seo.canonical },
+  robots: data.seo.robots,
+  openGraph: {
+    title: data.seo.openGraph.title,
+    description,
+    images: ["/images/Design/QA.png"],
+    url: data.seo.canonical,
+    type: "website",
+  },
+};
 
 export default function FaqPage() {
-  return <PlaceholderPage eyebrow="Hỗ trợ" title="Câu hỏi thường gặp" description="Các câu hỏi thường gặp về chương trình học và quy trình tư vấn đang được cập nhật." />;
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: data.items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer.join("\n"),
+      },
+    })),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }}
+      />
+      <FaqsPage items={data.items} />
+    </>
+  );
 }

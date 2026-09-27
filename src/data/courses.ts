@@ -26,13 +26,34 @@ export const coursesPageData = {
       title: "Các khóa học tại Crown English",
       description:
         "IELTS, Tiếng Anh giao tiếp và IELTS 1 kèm 1 tại Crown English.",
-      image: "",
+      image: "/images/Design/classrom09.png",
     },
   },
 
   hero: {
     title: "Khóa học",
     description: "",
+    image: "/images/Design/classrom09.png",
+  },
+  learningFormats: {
+    title: "Hình thức học linh hoạt",
+    description: "Dễ dàng lựa chọn hình thức phù hợp với lịch trình và mục tiêu của bạn.",
+    items: [
+      {
+        title: "Học Offline",
+        description:
+          "Học trực tiếp tại trung tâm với không gian hiện đại, tương tác cao, được giảng viên hướng dẫn sát sao.",
+        image: "/images/Design/HocOffline.png",
+        icon: "monitor",
+      },
+      {
+        title: "Học Online",
+        description:
+          "Học online linh hoạt, chất lượng cao với lớp học trực tuyến tương tác, phù hợp với người bận rộn hoặc ở xa.",
+        image: "/images/Design/hocOnline.png",
+        icon: "laptop",
+      },
+    ],
   },
   courses: [
     {
@@ -40,30 +61,30 @@ export const coursesPageData = {
       title: "IELTS",
       href: "/khoa-hoc/ielts",
       description: "",
-      image: "",
+      image: "/images/Design/IElTS.png",
     },
     {
       id: "giao-tiep",
       title: "Tiếng Anh giao tiếp",
       href: "/khoa-hoc/giao-tiep",
       description: "",
-      image: "",
+      image: "/images/Design/LopGiaoTiep.png",
     },
     {
       id: "ielts-1-kem-1",
       title: "IELTS 1 kèm 1",
       href: "/khoa-hoc/ielts-1-kem-1",
       description: "",
-      image: "",
+      image: "/images/Design/Ielts1kem1.png",
     },
   ],
 } as const;
 
 export const ieltsPageData = {
   seo: {
-    title: "Khóa học IELTS 0–7.5+ | Crown English",
+    title: "Khóa học IELTS 0–7.5+ sĩ số nhỏ | Crown English",
     description:
-      "Khám phá lộ trình IELTS tại Crown English từ Foundation, Newbie, Advance đến Intensive cùng thông tin lớp học, học phí và chính sách cam kết.",
+      "Khóa học IELTS tại Crown English với lộ trình cá nhân hóa, lớp Standard 12-15 học viên, Premium 6-8 học viên, học phí từ 800.000đ/tháng.",
     h1: "Khóa học IELTS tại Crown English",
     canonical: "/khoa-hoc/ielts",
     searchIntent: "Tìm hiểu và đăng ký khóa học IELTS",
@@ -89,10 +110,10 @@ export const ieltsPageData = {
       follow: true,
     },
     openGraph: {
-      title: "Khóa học IELTS 0–7.5+ | Crown English",
+      title: "Khóa học IELTS 0–7.5+ sĩ số nhỏ | Crown English",
       description:
-        "Lộ trình IELTS từ Foundation đến Intensive tại Crown English.",
-      image: "",
+        "Lộ trình IELTS cá nhân hóa, lớp học sĩ số nhỏ và học phí từ 800.000đ/tháng tại Crown English.",
+      image: "/images/Design/800_1.png",
     },
   },
 
@@ -101,19 +122,80 @@ export const ieltsPageData = {
   href: "/khoa-hoc/ielts",
 
   hero: {
+    eyebrow: "KHÓA HỌC IELTS TẠI CROWN ENGLISH",
     title: "IELTS",
+    titlePrefix: "Chinh phục IELTS\ntừ nền tảng",
+    titleAccent: "vững chắc,",
     subtitle: "Lộ trình nhanh nhất",
     highlight: "0-7.5+",
-    description: "",
-    image: "",
+    description:
+      "Lộ trình cá nhân hóa, lớp học sĩ số nhỏ, giảng viên giàu kinh nghiệm giúp bạn đạt mục tiêu IELTS trong thời gian ngắn nhất.",
+    image: "/images/students/classrooms/classroom-13.jpg",
+    badge: {
+      title: "Học thật - Ứng dụng thật",
+      description: "Đạt mục tiêu thật",
+    },
+    stats: [
+      {
+        title: "Sĩ số nhỏ",
+        description: "Premium 6-8 học viên/lớp",
+        icon: "users",
+      },
+      {
+        title: "Học phí chỉ",
+        description: "800.000đ/tháng",
+        icon: "coins",
+        tone: "red",
+      },
+      {
+        title: "Lộ trình cá nhân hóa",
+        description: "Theo mục tiêu của bạn",
+        icon: "layers",
+      },
+    ],
   },
 
   suitableFor: [],
   studentProblems: [],
 
   overview: {
-    title: "",
-    paragraphs: [],
+    eyebrow: "TỔNG QUAN KHÓA HỌC",
+    title: "Khóa học IELTS\ndành cho ai?",
+    titleAccent: "ai?",
+    paragraphs: [
+      "Khóa học IELTS tại Crown English phù hợp cho học viên từ mất gốc đến nâng cao, mong muốn xây dựng nền tảng vững chắc và đạt mục tiêu IELTS trong thời gian ngắn với lộ trình cá nhân hóa, lớp học ít học viên và chi phí hợp lý.",
+    ],
+    cards: [
+      {
+        title: "Người mới bắt đầu",
+        description: "Chưa có nền tảng IELTS, mất gốc tiếng Anh",
+        icon: "graduation",
+        tone: "red",
+      },
+      {
+        title: "Học để cải thiện",
+        description: "Muốn nâng band từ 4.0 - 6.0",
+        icon: "trending",
+        tone: "blue",
+      },
+      {
+        title: "Học để đạt mục tiêu cao hơn",
+        description: "Hướng đến IELTS 6.5 - 7.5+",
+        icon: "target",
+        tone: "gold",
+      },
+      {
+        title: "Học cho mục đích cụ thể",
+        description: "Du học, định cư, học tập hoặc công việc",
+        icon: "briefcase",
+        tone: "green",
+      },
+    ],
+    featurePanel: {
+      image: "/images/Design/800_1.png",
+      alt: "Học phí IELTS từ 800.000đ một tháng, lớp Premium 6-8 học viên tại Crown English",
+      ctaLabel: "Đăng ký tư vấn ngay",
+    },
   },
 
   roadmap: [
@@ -251,6 +333,29 @@ export const ieltsPageData = {
     paragraphs: [],
   },
 
+  highlights: [
+    {
+      title: "Sĩ số lớp rõ ràng",
+      description: "Standard 12-15 học viên; Premium 6-8 học viên, dễ được theo sát hơn.",
+      icon: "users",
+    },
+    {
+      title: "Học phí hợp lý",
+      description: "Chỉ từ 800.000đ/tháng, phù hợp học sinh - sinh viên.",
+      icon: "coins",
+    },
+    {
+      title: "Giảng viên giàu kinh nghiệm",
+      description: "Chuyên sâu IELTS, định hướng cá nhân hóa theo mục tiêu.",
+      icon: "teacher",
+    },
+    {
+      title: "Học thật - ứng dụng thật",
+      description: "Bám sát đề thi, rèn kỹ năng toàn diện 4 kỹ năng.",
+      icon: "book",
+    },
+  ],
+
   benefits: {
     standard: [
       "Hỗ trợ cá nhân: Lớp 15 học viên nhưng giáo viên đảm bảo ai cũng được chăm sóc từng người, sửa bài, feedback trực tiếp, giải thích kỹ từng lỗi và đưa ví dụ minh họa.",
@@ -266,74 +371,71 @@ export const ieltsPageData = {
   },
 
   classTypes: {
-    // Tạm lấy thông tin A về sĩ số.
     standard: {
-      classSize: "13-15 học viên",
+      classSize: "12-15 học viên",
       frequency: "2 buổi/tuần",
       tuition: [
         {
-          course: "Foundation",
+          course: "Lớp Foundation - lớp nền tảng",
           duration: "3 tháng",
           sessions: "24 buổi",
           price: "2.400.000/ khoá",
-          sessionDuration: "1.5h",
+          sessionDuration: "1 buổi 1.5h",
         },
         {
-          course: "Newbie",
+          course: "Lớp Newbie - Nhập Môn IELTS",
           duration: "3 tháng",
           sessions: "24 buổi",
           price: "2.400.000/ khoá",
-          sessionDuration: "1.5h",
+          sessionDuration: "1 buổi 1.5h",
         },
         {
-          course: "Advance",
+          course: "Lớp Advance - Giải Đề Thực Chiến",
           duration: "",
           sessions: "32 buổi",
           price: "4.200.000/ khoá",
-          sessionDuration: "2h",
+          sessionDuration: "1 buổi 2h",
         },
         {
-          course: "Intensive 7.0+",
+          course: "Lớp Intensive 7.0+ - cường độ cao",
           duration: "",
           sessions: "32 buổi",
           price: "4.200.000/ khoá",
-          // Tạm lấy thông tin A.
-          sessionDuration: "1.5h",
+          sessionDuration: "1 buổi 2h",
         },
       ],
     },
     premium: {
-      classSize: "5-8 học viên",
-      frequency: "2-3buổi/tuần",
+      classSize: "6-8 học viên",
+      frequency: "2 buổi/tuần",
       tuition: [
         {
-          course: "Foundation",
+          course: "Lớp Foundation - lớp nền tảng",
           duration: "3 tháng",
           sessions: "24 buổi",
           price: "5.900.000/ khoá",
-          sessionDuration: "2h",
+          sessionDuration: "1 buổi 2h",
         },
         {
-          course: "Newbie",
+          course: "Lớp Newbie - Nhập Môn IELTS",
           duration: "3 tháng",
           sessions: "24 buổi",
           price: "5.900.000/ khoá",
-          sessionDuration: "2h",
+          sessionDuration: "1 buổi 2h",
         },
         {
-          course: "Advance",
+          course: "Lớp Advance - Giải Đề Thực Chiến",
           duration: "",
           sessions: "32 buổi",
           price: "7.900.000/ khoá",
-          sessionDuration: "2h",
+          sessionDuration: "1 buổi 2h",
         },
         {
-          course: "Intensive 7.0+",
+          course: "Lớp Intensive 7.0+ - cường độ cao",
           duration: "",
           sessions: "32 buổi",
           price: "8.900.000/ khoá",
-          // Tạm lấy thông tin A.
-          sessionDuration: "1.5h",
+          sessionDuration: "1 buổi 2h",
         },
       ],
     },
@@ -382,7 +484,7 @@ export const communicationPageData = {
       title: "Khóa học Tiếng Anh giao tiếp | Crown English",
       description:
         "Các lớp Tiếng Anh giao tiếp theo trình độ tại Crown English.",
-      image: "",
+      image: "/images/Design/giao-tiep-hero.png",
     },
   },
 
@@ -394,7 +496,7 @@ export const communicationPageData = {
     title: "LỚP GIAO TIẾP",
     subtitle: "",
     description: "",
-    image: "",
+    image: "/images/Design/giao-tiep-hero.png",
   },
 
   suitableFor: [],
@@ -403,6 +505,11 @@ export const communicationPageData = {
   overview: {
     title: "",
     paragraphs: [],
+    featurePanel: {
+      image: "/images/Design/giao-tiep-overview.png",
+      alt: "Học viên luyện nói tiếng Anh giao tiếp với sách tại Crown English",
+      ctaLabel: "Đăng ký tư vấn giao tiếp",
+    },
   },
 
   roadmap: [
@@ -444,6 +551,9 @@ export const communicationPageData = {
   classTypes: {
     // Tạm lấy thông tin A.
     standard: {
+      title: "Lớp nhóm tiêu chuẩn",
+      description:
+        "Phù hợp với học viên muốn học theo lớp nhỏ, có lịch học cố định và chi phí dễ tiếp cận.",
       classSize: "5-8 học viên",
       frequency: "2 buổi/tuần",
       schedule: ["Ca 1: 18:15-19:45", "Ca 2: 20:00-21:30"],
@@ -474,12 +584,26 @@ export const communicationPageData = {
 
     // Tạm lấy thông tin A: brochure trang phương pháp vẫn có nhóm 3.
     premiumGroup3: {
-      classSize: "kèm nhóm 3 học viên",
-      frequency: "2-3buổi/tuần",
-      tuition: [],
+      title: "Lớp bán kèm",
+      description:
+        "Nếu bạn có bạn học chung và cùng trình độ thì lớp này rất hợp lý: vừa có sự kèm cặp kỹ hơn, vừa được chọn giờ học cho tiện.",
+      classSize: "1 giáo viên - 3 học viên",
+      frequency: "Linh hoạt sáng - trưa - tối",
+      tuition: [
+        {
+          course: "Lớp bán kèm",
+          duration: "3 tháng",
+          sessions: "24 buổi",
+          price: "6.000.000/ khoá",
+          sessionDuration: "Linh hoạt theo lịch nhóm",
+        },
+      ],
     },
 
     oneToOne: {
+      title: "Lớp kèm 1:1",
+      description:
+        "Dành cho học viên cần lộ trình cá nhân hóa sâu, muốn giáo viên theo sát trực tiếp từng buổi.",
       classSize: "1:1",
       frequency: "",
       standardTime:
@@ -560,7 +684,7 @@ export const ieltsOneToOnePageData = {
       title: "IELTS 1 kèm 1 | Crown English",
       description:
         "Lộ trình IELTS 1 kèm 1 cá nhân hóa tại Crown English.",
-      image: "",
+      image: "/images/Design/ielts-1-1-hero.png",
     },
   },
 
@@ -572,7 +696,14 @@ export const ieltsOneToOnePageData = {
     title: "Lộ trình kèm 1:1 nhanh nhất",
     subtitle: "0-7.5+",
     description: "",
-    image: "",
+    image: "/images/Design/ielts-1-1-hero.png",
+    proofCard: {
+      eyebrow: "KẾT QUẢ HỌC VIÊN",
+      title: "Khánh Linh - IELTS 7.5",
+      description: "Minh chứng cho lộ trình học có theo sát và cá nhân hóa.",
+      image: "/images/students/results/khanh-linh-7-5.png",
+      alt: "Kết quả IELTS 7.5 của học viên Khánh Linh tại Crown English",
+    },
   },
 
   suitableFor: [

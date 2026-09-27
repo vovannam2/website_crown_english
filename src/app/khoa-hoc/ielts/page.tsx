@@ -1,8 +1,21 @@
 import type { Metadata } from "next";
-import PlaceholderPage from "@/components/ui/PlaceholderPage";
+import CourseLandingPage from "@/components/courses/CourseLandingPage";
+import { ieltsPageData } from "@/data/courses";
 
-export const metadata: Metadata = { title: "IELTS" };
+export const metadata: Metadata = {
+  title: { absolute: ieltsPageData.seo.title },
+  description: ieltsPageData.seo.description,
+  alternates: { canonical: ieltsPageData.seo.canonical },
+  robots: ieltsPageData.seo.robots,
+  openGraph: {
+    title: ieltsPageData.seo.openGraph.title,
+    description: ieltsPageData.seo.openGraph.description,
+    images: ieltsPageData.seo.openGraph.image ? [ieltsPageData.seo.openGraph.image] : undefined,
+    url: ieltsPageData.seo.canonical,
+    type: "website",
+  },
+};
 
 export default function IeltsPage() {
-  return <PlaceholderPage eyebrow="Khóa học" title="IELTS" description="Trang thông tin khóa học IELTS đang được Crown English chuẩn bị." />;
+  return <CourseLandingPage data={ieltsPageData} />;
 }

@@ -53,13 +53,13 @@ export default function StudentResults({
               type="button"
               aria-pressed={paused}
               onClick={() => setPaused((value) => !value)}
-              className="min-h-11 rounded-full border border-[var(--color-line)] px-4 text-sm text-[var(--color-ink-muted)] focus-visible:outline-2 focus-visible:outline-[var(--color-brand-red)]"
+              className="min-h-11 rounded-full border border-[var(--color-line)] px-4 type-small text-[var(--color-ink-muted)] focus-visible:outline-2 focus-visible:outline-[var(--color-brand-red)]"
             >
               {paused ? "Tiếp tục hiệu ứng" : "Tạm dừng hiệu ứng"}
             </button>
           </div>
         </div>
-        <p className="mt-4 text-base leading-7 text-[var(--color-ink-muted)]">
+        <p className="mt-4 type-body-lg text-[var(--color-ink-muted)]">
           Đằng sau mỗi cột mốc IELTS là một hành trình nỗ lực, thay đổi và trưởng thành. Đây là những kết quả nổi bật được chính học viên Crown English tạo nên trong quá trình học tập và chinh phục mục tiêu của mình.
         </p>
       </Reveal>

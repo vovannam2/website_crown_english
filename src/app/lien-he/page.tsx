@@ -1,8 +1,20 @@
 import type { Metadata } from "next";
-import PlaceholderPage from "@/components/ui/PlaceholderPage";
+import ContactPage from "@/components/contact/ContactPage";
+import { contactPageData as data } from "@/data/contact";
 
-export const metadata: Metadata = { title: "Liên hệ" };
+export const metadata: Metadata = {
+  title: data.seo.title,
+  description: data.seo.description,
+  alternates: {
+    canonical: data.seo.canonical,
+  },
+  openGraph: {
+    title: data.seo.openGraph.title,
+    description: data.seo.openGraph.description,
+    url: data.seo.canonical,
+  },
+};
 
-export default function ContactPage() {
-  return <PlaceholderPage eyebrow="Kết nối với Crown" title="Liên hệ Crown English" description="Thông tin trung tâm và form đăng ký tư vấn sẽ được bổ sung sau khi Crown xác nhận dữ liệu liên hệ." />;
+export default function Page() {
+  return <ContactPage data={data} />;
 }

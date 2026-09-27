@@ -42,12 +42,12 @@ export default function ClassroomGallery({
             type="button"
             aria-pressed={paused}
             onClick={() => setPaused((value) => !value)}
-            className="min-h-11 shrink-0 rounded-full border border-[var(--color-line)] px-4 text-sm text-[var(--color-ink-muted)] focus-visible:outline-2 focus-visible:outline-[var(--color-brand-red)]"
+            className="min-h-11 shrink-0 rounded-full border border-[var(--color-line)] px-4 type-small text-[var(--color-ink-muted)] focus-visible:outline-2 focus-visible:outline-[var(--color-brand-red)]"
           >
             {paused ? "Tiếp tục hiệu ứng" : "Tạm dừng hiệu ứng"}
           </button>
         </div>
-        <p className="mt-4 text-base leading-7 text-[var(--color-ink-muted)]">
+        <p className="mt-4 type-body-lg text-[var(--color-ink-muted)]">
           Mỗi buổi học là một mảnh ghép nhỏ trong hành trình trưởng thành của học viên — nơi có sự cố gắng, những lần cùng nhau vượt qua khó khăn và cả những khoảnh khắc rất đỗi bình thường nhưng đáng nhớ tại Crown English.
         </p>
       </Reveal>
