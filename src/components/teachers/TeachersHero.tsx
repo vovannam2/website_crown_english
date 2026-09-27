@@ -24,7 +24,7 @@ export default function TeachersHero() {
       </div>
       <div className="relative mx-auto aspect-[1.3] w-full max-w-[540px]" aria-label="Giảng viên Crown English">
         <HeroDecoration />
-        {portraits.map((teacher, index) => <div key={teacher.id} className={`${styles.heroPortrait} absolute aspect-[4/5] w-[43%] overflow-hidden rounded-[28px] border-[5px] border-white bg-white shadow-[0_18px_40px_rgb(35_35_35/0.1)] transition-[translate,box-shadow] duration-[220ms] motion-safe:hover:-translate-y-1.5 hover:shadow-[0_24px_44px_rgb(35_35_35/0.15)] motion-reduce:transition-none ${index === 1 ? "left-[28.5%] top-[3%] z-1 [animation-delay:160ms]" : index === 0 ? "left-[3%] top-[20%] -rotate-8 [animation-delay:100ms]" : "right-[3%] top-[20%] rotate-8 [animation-delay:220ms]"}`}>
+        {portraits.map((teacher, index) => <div key={teacher.id} className={`${styles.heroPortrait} absolute aspect-[4/5] w-[43%] overflow-hidden rounded-[28px] border-[5px] border-white bg-white shadow-[0_18px_40px_rgb(35_35_35/0.1)] transition-[translate,box-shadow] duration-[220ms] motion-safe:hover:-translate-y-1.5 hover:shadow-[0_24px_44px_rgb(35_35_35/0.15)] motion-reduce:transition-none ${index === 1 ? "left-[28.5%] top-[3%] z-[1] [animation-delay:160ms]" : index === 0 ? "left-[3%] top-[20%] -rotate-8 [animation-delay:100ms]" : "right-[3%] top-[20%] rotate-8 [animation-delay:220ms]"}`}>
           <Image src={teacher.image} alt={`Giảng viên ${teacher.name} - Crown English`} fill sizes="(min-width: 1024px) 240px, (min-width: 640px) 240px, 42vw" preload={index === 1} className="object-cover object-top" />
         </div>)}
       </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import localFont from "next/font/local";
 import type { StudentResult } from "@/types/student-results";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Reveal from "@/components/ui/Reveal";
@@ -17,13 +16,6 @@ const bulbColors = [
   "text-violet-400",
   "text-pink-400",
 ];
-
-const handwriting = localFont({
-  src: "../../../public/fonts/PatrickHand-Regular.ttf",
-  weight: "400",
-  style: "normal",
-  display: "swap",
-});
 
 export default function StudentResults({
   results,
@@ -129,9 +121,7 @@ export default function StudentResults({
                         aria-hidden="true"
                         className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent"
                       />
-                      <span
-                        className={`${handwriting.className} absolute right-4 bottom-4 left-4 text-[28px] leading-tight text-white drop-shadow-md`}
-                      >
+                      <span className="type-h4 absolute right-4 bottom-4 left-4 text-white drop-shadow-md">
                         {result.name}
                       </span>
                       <span className="absolute inset-x-0 top-1/2 -translate-y-1/2 bg-black/45 py-3 text-center text-xs font-bold text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100 motion-reduce:transition-none">

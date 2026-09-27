@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 :root {
-  /* TODO: Replace temporary tokens when Crown's official brand guide is provided. */
   --color-brand-red: #d42525;
   --color-brand-red-dark: #a91d1d;
   --color-brand-gold: #e2b84b;
@@ -33,11 +32,11 @@
   --leading-body-lg: 1.78;
   --leading-body: 1.72;
   --leading-small: 1.65;
-  --tracking-hero: -0.045em;
-  --tracking-h1: -0.042em;
-  --tracking-h2: -0.035em;
-  --tracking-h3: -0.028em;
-  --tracking-h4: -0.018em;
+  --tracking-hero: 0;
+  --tracking-h1: 0;
+  --tracking-h2: 0;
+  --tracking-h3: 0;
+  --tracking-h4: 0;
   --tracking-label: 0.13em;
 }
 
@@ -61,6 +60,7 @@ body {
   font-weight: 400;
   letter-spacing: 0;
   line-height: var(--leading-body);
+  overflow-x: clip;
 }
 
 .type-hero { font-family: var(--font-family-heading); font-size: var(--text-hero-size); font-weight: 700; letter-spacing: var(--tracking-hero); line-height: 1.05; text-wrap: balance; }
@@ -71,12 +71,12 @@ body {
 .type-body-lg { font-size: var(--text-body-lg-size); font-weight: 400; line-height: var(--leading-body-lg); }
 .type-body { font-size: var(--text-body-size); font-weight: 400; line-height: var(--leading-body); }
 .type-small { font-size: var(--text-small-size); line-height: var(--leading-small); }
-.type-nav { font-size: var(--text-nav-size); font-weight: 600; letter-spacing: -0.005em; line-height: 1.2; }
-.type-button { font-size: var(--text-button-size); font-weight: 600; letter-spacing: -0.005em; line-height: 1.1; }
+.type-nav { font-size: var(--text-nav-size); font-weight: 600; letter-spacing: 0; line-height: 1.2; }
+.type-button { font-size: var(--text-button-size); font-weight: 600; letter-spacing: 0; line-height: 1.1; }
 .type-weight-normal { font-weight: 400; }
 
-.nav-link { min-height: 48px; display: inline-flex; align-items: center; white-space: nowrap; border-bottom: 2px solid transparent; padding: 0 14px; color: var(--color-ink); font-size: var(--text-nav-size); font-weight: 600; letter-spacing: -0.005em; line-height: 1.2; transition: color 180ms ease, border-color 180ms ease; }
-.brand-crown, .brand-english { display: block; font-family: "Bodoni MT", "Baskerville", Georgia, serif; font-size: 18px; font-weight: 700; letter-spacing: 0.06em; line-height: 1; text-align: left; white-space: nowrap; }
+.nav-link { min-height: 48px; display: inline-flex; align-items: center; white-space: nowrap; border-bottom: 2px solid transparent; padding: 0 14px; color: var(--color-ink); font-size: var(--text-nav-size); font-weight: 600; letter-spacing: 0; line-height: 1.2; transition: color 180ms ease, border-color 180ms ease; }
+.brand-crown, .brand-english { display: block; font-family: var(--font-family-heading); font-size: 18px; font-weight: 700; letter-spacing: 0.06em; line-height: 1; text-align: left; white-space: nowrap; }
 .brand-crown { color: var(--color-brand-red); }
 .brand-english { margin-top: 5px; color: var(--color-ink); }
 .nav-link:hover, .nav-link-active { color: var(--color-brand-red); border-bottom-color: var(--color-brand-red); }
@@ -87,13 +87,13 @@ body {
 .mobile-link { display: block; border-radius: var(--radius-sm); padding: 12px; color: var(--color-ink-muted); font-size: 1rem; font-weight: 600; line-height: 1.35; text-align: left; }
 .mobile-link.type-small { font-size: var(--text-small-size); line-height: var(--leading-small); }
 .mobile-link:hover, .mobile-link-active { background: var(--color-surface-soft); color: var(--color-brand-red); }
-.footer-heading { margin-bottom: 16px; color: #fff; font-size: var(--text-nav-size); font-weight: 700; letter-spacing: -0.005em; line-height: 1.35; }
-.footer-link { color: rgba(255, 255, 255, 0.7); font-size: var(--text-small-size); line-height: var(--leading-small); transition: color 180ms ease; }
+.footer-heading { margin-bottom: 16px; color: #fff; font-size: var(--text-nav-size); font-weight: 700; letter-spacing: 0; line-height: 1.35; }
+.footer-link { color: rgba(255, 255, 255, 0.7); font-size: var(--text-small-size); line-height: var(--leading-small); overflow-wrap: anywhere; transition: color 180ms ease; }
 .footer-link:hover { color: var(--color-brand-gold); }
-.footer-brand-crown, .footer-brand-english { font-family: "Bodoni MT", "Baskerville", Georgia, serif; font-size: 21px; font-weight: 700; line-height: 1; white-space: nowrap; }
+.footer-brand-crown, .footer-brand-english { font-family: var(--font-family-heading); font-size: 21px; font-weight: 700; line-height: 1; white-space: nowrap; }
 .footer-brand-crown { color: var(--color-brand-red); }
 .footer-brand-english { margin-top: 5px; color: #fff; letter-spacing: 0.06em; }
-.floating-contact { display: inline-flex; min-height: 44px; min-width: 44px; align-items: center; justify-content: center; gap: 7px; border-radius: 999px; background: var(--color-brand-red); padding: 0 14px; color: #fff; font-size: 13px; font-weight: 700; letter-spacing: -0.005em; line-height: 1; box-shadow: var(--shadow-menu); }
+.floating-contact { display: inline-flex; min-height: 44px; min-width: 44px; align-items: center; justify-content: center; gap: 7px; border-radius: 999px; background: var(--color-brand-red); padding: 0 14px; color: #fff; font-size: 13px; font-weight: 700; letter-spacing: 0; line-height: 1; box-shadow: var(--shadow-menu); }
 .floating-contact-gold { background: var(--color-brand-gold); color: var(--color-ink); }
 .floating-contact:hover { transform: translateY(-2px); }
 

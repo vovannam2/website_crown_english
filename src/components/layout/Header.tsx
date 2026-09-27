@@ -12,7 +12,7 @@ export default function Header() {
         <span className="flex min-w-0 flex-col justify-center leading-none"><span className="brand-crown">CROWN</span><span className="brand-english">ENGLISH</span></span>
       </Link>
       <DesktopNavigation />
-      <div className="hidden shrink-0 items-center gap-3 2xl:flex"><Button href="/lien-he" variant="primary" className="min-w-[142px] whitespace-nowrap">Đăng ký tư vấn</Button></div>
+      <div className="hidden shrink-0 items-center gap-3 xl:flex"><Button href="/lien-he" variant="primary" className="min-w-[142px] whitespace-nowrap">Đăng ký tư vấn</Button></div>
       <MobileNavigation />
     </div></div>
   </header>;

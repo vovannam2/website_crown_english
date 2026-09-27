@@ -5,7 +5,7 @@
   --contact-muted: #607086;
   --contact-line: #e5edf5;
   color: var(--contact-navy);
-  overflow: hidden;
+  overflow-x: clip;
   background: #fff;
 }
 

@@ -42,7 +42,7 @@ export default function AboutPhilosophy() {
 
       <div className="mt-8 grid items-start gap-12 md:grid-cols-2 max-md:gap-7">
         <div className="relative overflow-hidden border-l-2 border-[var(--color-brand-red)] bg-[var(--color-surface-soft)] px-6 py-7 sm:px-8 sm:py-9">
-          <span className="pointer-events-none absolute -right-1 -top-9 font-serif text-[8rem] leading-none text-[var(--color-brand-red)]/[0.07]" aria-hidden="true">
+          <span className="pointer-events-none absolute -right-1 -top-9 text-[8rem] font-bold leading-none text-[var(--color-brand-red)]/[0.07]" aria-hidden="true">
             ”
           </span>
           <p className="relative">

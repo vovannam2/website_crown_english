@@ -35,7 +35,7 @@
   background: linear-gradient(110deg, #f4ede2, #e8dcc9 50%, #f4ede2);
   z-index: -1;
 }
-.screenDecor > span:first-child { font: 160px/1 Georgia, serif; opacity: 0.35; }
+.screenDecor > span:first-child { font-family: var(--font-family-heading); font-size: 160px; font-weight: 700; line-height: 1; opacity: 0.35; }
 .screenDecor > span:last-child { font-size: 11px; letter-spacing: 0.22em; line-height: 1.8; }
 .video {
   display: block;

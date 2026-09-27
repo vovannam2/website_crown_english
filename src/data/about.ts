@@ -18,7 +18,7 @@ export type AboutImageSlot = {
 const images = {
   hero: {
     src: heroImage.src,
-    fallback: "/images/about/crown-hero-classroom.jpg",
+    fallback: "/images/about/crown-hero.jpg",
     alt: "Giáo viên và học viên trong lớp học tại Crown English",
     position: "55% center",
     placeholder: "Crown English",
@@ -32,7 +32,7 @@ const images = {
 
   method: {
     src: methodImage.src,
-    fallback: "/images/about/crown-training-method.jpg",
+    fallback: "/images/about/crown-method.jpg",
     alt: "Giảng viên hướng dẫn học viên trong giờ học tại Crown English",
     position: "center 65%",
     placeholder: "Phương pháp đào tạo",
@@ -40,7 +40,7 @@ const images = {
 
   support: {
     src: supportImage.src,
-    fallback: "/images/about/crown-student-support.jpg",
+    fallback: "/images/about/crown-support.jpg",
     alt: "Giảng viên và học viên trao đổi trong quá trình học tại Crown English",
     position: "center 60%",
     placeholder: "Đồng hành cùng học viên",

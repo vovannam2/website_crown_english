@@ -64,7 +64,7 @@ export default function StudentsHero() {
           {portraits.map((student, index) => (
             <div
               key={student.src}
-              className={`${effects.heroPortrait} absolute aspect-square w-[43%] overflow-hidden rounded-[28px] border-[5px] border-white bg-white shadow-[0_18px_40px_rgb(35_35_35/0.1)] transition-[translate,box-shadow] duration-[220ms] motion-safe:hover:-translate-y-1.5 hover:shadow-[0_24px_44px_rgb(35_35_35/0.15)] motion-reduce:transition-none ${index === 1 ? "left-[28.5%] top-[7%] z-1 [animation-delay:160ms]" : index === 0 ? "left-[3%] top-[29%] -rotate-8 [animation-delay:100ms]" : "right-[3%] top-[29%] rotate-8 [animation-delay:220ms]"}`}
+              className={`${effects.heroPortrait} absolute aspect-square w-[43%] overflow-hidden rounded-[28px] border-[5px] border-white bg-white shadow-[0_18px_40px_rgb(35_35_35/0.1)] transition-[translate,box-shadow] duration-[220ms] motion-safe:hover:-translate-y-1.5 hover:shadow-[0_24px_44px_rgb(35_35_35/0.15)] motion-reduce:transition-none ${index === 1 ? "left-[28.5%] top-[7%] z-[1] [animation-delay:160ms]" : index === 0 ? "left-[3%] top-[29%] -rotate-8 [animation-delay:100ms]" : "right-[3%] top-[29%] rotate-8 [animation-delay:220ms]"}`}
             >
               <StudentImage
                 src={student.src}

@@ -26,7 +26,7 @@ export default function TeacherDetail({ teacher }: { teacher: Teacher }) {
       <DetailList title="Thành tích" items={teacher.achievements} />
       <DetailList title="Kinh nghiệm" items={teacher.experience} />
       <DetailList title="Sở trường" items={teacher.strengths} />
-      {teacher.quote && <blockquote className={`${styles.quote} relative mt-7 mb-6 rounded-[28px] border-4 border-[var(--color-brand-red)] bg-white px-[22px] py-5 text-center font-[Georgia,Times_New_Roman,serif] text-xl font-bold not-italic leading-[1.45] text-pretty text-[var(--color-ink)] [overflow-wrap:anywhere]`}>{teacher.quote}</blockquote>}
+      {teacher.quote && <blockquote className={`${styles.quote} type-h4 relative mt-7 mb-6 rounded-[28px] border-4 border-[var(--color-brand-red)] bg-white px-[22px] py-5 text-center not-italic text-pretty text-[var(--color-ink)] [overflow-wrap:anywhere]`}>{teacher.quote}</blockquote>}
     </div>
   </article>;
 }

@@ -638,7 +638,7 @@ function CoursesLearningFormats({ data }: { data?: CoursesOverviewPageProps["lea
   if (!data || data.items.length === 0) return null;
 
   return (
-    <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#EEF8FF] py-14 sm:py-16" aria-labelledby="learning-formats-title">
+    <section className="relative left-1/2 right-1/2 -mx-[50dvw] w-[100dvw] overflow-x-clip bg-[#EEF8FF] py-14 sm:py-16" aria-labelledby="learning-formats-title">
       <Container>
         <Reveal>
           <h2 id="learning-formats-title" className="type-h2 text-[#143B69]">{data.title}</h2>

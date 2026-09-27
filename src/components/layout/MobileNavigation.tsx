@@ -26,7 +26,7 @@ export default function MobileNavigation() {
   const closeMenu = () => setOpen(false);
 
   return (
-    <div className="2xl:hidden">
+    <div className="xl:hidden">
       <button type="button" className="icon-button" aria-label={open ? "Đóng menu" : "Mở menu"} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen((value) => !value)}>
         <span aria-hidden="true" className="flex flex-col gap-1.5">{[0, 1, 2].map((bar) => <span key={bar} className={`block h-0.5 w-5 bg-current transition-transform ${open && bar === 0 ? "translate-y-2" : ""} ${open && bar === 1 ? "opacity-0" : ""} ${open && bar === 2 ? "-translate-y-2" : ""}`} />)}</span>
       </button>

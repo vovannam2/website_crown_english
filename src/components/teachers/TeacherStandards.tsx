@@ -11,8 +11,8 @@ export default function TeacherStandards() {
       const Icon = standardIcons[index] ?? BookOpenCheck;
       return <StandardCard index={index} key={standard.title}>
       <span className="inline-flex size-10 items-center justify-center rounded-[var(--radius-sm)] bg-white text-[var(--color-brand-red)]" aria-hidden="true"><Icon size={28} strokeWidth={1.75} /></span>
-      <h2 className="mt-5 text-xl font-bold leading-[1.45]">{standard.title}</h2>
-      <ul className="mt-5 grid gap-4 leading-[1.8] text-[var(--color-ink-muted)]">{standard.items.map((item) => <li key={item}>{item}</li>)}</ul>
+      <h2 className="mt-5 type-h4">{standard.title}</h2>
+      <ul className="mt-5 grid gap-4 type-body text-[var(--color-ink-muted)]">{standard.items.map((item) => <li key={item}>{item}</li>)}</ul>
     </StandardCard>;
     })}
   </section>;

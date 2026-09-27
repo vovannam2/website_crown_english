@@ -197,7 +197,7 @@
   color: #202022;
   font-size: clamp(1.55rem, 2.4vw, 2.45rem);
   font-weight: 800;
-  letter-spacing: -0.055em;
+  letter-spacing: 0;
   line-height: 0.95;
   text-transform: uppercase;
 }

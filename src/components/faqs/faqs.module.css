@@ -11,7 +11,7 @@
   --qa-yellow: #fff1c9;
   --qa-yellow-strong: #ffe7a3;
   color: var(--qa-text);
-  overflow: hidden;
+  overflow-x: clip;
   background: #fff;
 }
 
