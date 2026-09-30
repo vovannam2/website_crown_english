@@ -216,13 +216,6 @@
   overflow: hidden;
   animation: hero-background-fade 1.1s cubic-bezier(.22,1,.36,1) both;
 }
-.heroCampaignSlide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  animation: hero-banner-cycle 24s linear infinite;
-}
-.heroCampaignSlide:first-child { opacity: 1; }
 .heroCampaignImage {
   object-fit: cover;
   object-position: center;
@@ -394,11 +387,6 @@
 .heroFilm:hover .heroFilmTrack { animation-play-state: paused; }
 @keyframes hero-background-fade { from { opacity: 0; transform: scale(1.025); } to { opacity: 1; transform: scale(1); } }
 @keyframes hero-background-drift { from { transform: scale(1); } to { transform: scale(1.025); } }
-@keyframes hero-banner-cycle {
-  0%, 24% { opacity: 1; }
-  29%, 95% { opacity: 0; }
-  100% { opacity: 1; }
-}
 @keyframes hero-film-scroll { to { transform: translateY(-50%); } }
 
 @media (max-width: 1050px) {
@@ -438,8 +426,6 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .heroCampaignBackground, .heroCampaignImage, .heroFilmTrack { animation: none; }
-  .heroCampaignSlide { display: none; animation: none; }
-  .heroCampaignSlide:first-child { display: block; opacity: 1; }
 }
 
 /* Course posters */

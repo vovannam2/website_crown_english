@@ -1,6 +1,12 @@
 /* Teacher detail animation and speech-bubble geometry. Layout uses Tailwind. */
 .detail { animation: reveal 200ms ease; }
 
+.featuredTeacher > button {
+  border-color: var(--color-brand-red);
+  background: #fff7f2;
+  box-shadow: 0 6px 20px rgb(169 29 29 / 10%);
+}
+
 @keyframes reveal {
   from { opacity: 0; }
   to { opacity: 1; }

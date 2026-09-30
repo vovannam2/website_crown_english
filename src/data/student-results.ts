@@ -1,3 +1,6 @@
+import localClassroom12Image from "../../public/images/students/classrooms/classroom-12.jpg";
+import localClassroom15Image from "../../public/images/students/classrooms/classroom-15.jpg";
+import localClassroom13Image from "../../public/images/students/classrooms/classroom-13.jpg";
 import type { StudentResultsPageData } from "@/types/student-results";
 // Static imports give updated images a new URL automatically on dev/build.
 import studentsThumbnailsHaiNguyen70Image from "../../public/images/students/thumbnails/hai-nguyen-7-0.png";
@@ -30,6 +33,11 @@ import studentsClassroomsClassroom08Image from "../../public/images/students/cla
 import studentsClassroomsClassroom09Image from "../../public/images/students/classrooms/classroom-09.jpg";
 import studentsClassroomsClassroom10Image from "../../public/images/students/classrooms/classroom-10.jpg";
 import studentsClassroomsClassroom11Image from "../../public/images/students/classrooms/classroom-11.jpg";
+import studentsClassroomsClassroom16Image from "../../public/images/students/classrooms/classroom-16.jpg";
+import studentsClassroomsClassroom17Image from "../../public/images/students/classrooms/classroom-17.jpg";
+import studentsClassroomsClassroom18Image from "../../public/images/students/classrooms/classroom-18.jpg";
+import studentsClassroomsClassroom19Image from "../../public/images/students/classrooms/classroom-19.png";
+import studentsClassroomsClassroom20Image from "../../public/images/students/classrooms/classroom-20.png";
 
 import nhuYThumbnail from "../../public/images/students/thumbnails/nhu-y-7-0.png";
 import phuongAnhThumbnail from "../../public/images/students/thumbnails/phuong-anh-7-5.png";
@@ -64,15 +72,15 @@ export const studentResultsPageData = {
     // Ba ảnh đầu trang, theo thứ tự trái / giữa / phải.
     portraits: [
       {
-        src: "/images/students/classrooms/classroom-12.jpg",
+        src: localClassroom12Image.src,
         alt: "Lớp học tại Crown English",
       },
       {
-        src: "/images/students/classrooms/classroom-15.jpg",
+        src: localClassroom15Image.src,
         alt: "Hoạt động lớp học tại Crown English",
       },
       {
-        src: "/images/students/classrooms/classroom-13.jpg",
+        src: localClassroom13Image.src,
         alt: "Lớp học tại Crown English",
       },
     ],
@@ -340,6 +348,26 @@ export const studentResultsPageData = {
     },
     {
       image: studentsClassroomsClassroom11Image.src,
+      alt: "Học viên trong lớp học tại Crown English",
+    },
+    {
+      image: studentsClassroomsClassroom16Image.src,
+      alt: "Học viên trong lớp học tại Crown English",
+    },
+    {
+      image: studentsClassroomsClassroom17Image.src,
+      alt: "Học viên trong lớp học tại Crown English",
+    },
+    {
+      image: studentsClassroomsClassroom18Image.src,
+      alt: "Học viên trong lớp học tại Crown English",
+    },
+    {
+      image: studentsClassroomsClassroom19Image.src,
+      alt: "Học viên trong lớp học tại Crown English",
+    },
+    {
+      image: studentsClassroomsClassroom20Image.src,
       alt: "Học viên trong lớp học tại Crown English",
     },
   ],

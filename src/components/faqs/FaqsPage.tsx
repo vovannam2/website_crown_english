@@ -1,5 +1,8 @@
 "use client";
 
+import localKhanh3Image from "../../../public/images/Design/Khanh-3.png";
+import localFaqKhanhCleanImage from "../../../public/images/Design/faq-khanh-clean.png";
+
 import Image from "next/image";
 import { useMemo, useState, type ComponentType, type FormEvent } from "react";
 import {
@@ -46,8 +49,8 @@ type FaqsPageProps = {
   readonly items: readonly FaqItem[];
 };
 
-const MS_KHANH_HERO_IMAGE = "/images/Design/Khanh-3.png";
-const MS_KHANH_PORTRAIT_IMAGE = "/images/Design/faq-khanh-clean.png";
+const MS_KHANH_HERO_IMAGE = localKhanh3Image.src;
+const MS_KHANH_PORTRAIT_IMAGE = localFaqKhanhCleanImage.src;
 
 const HERO_FAQ_IDS = [
   "qa-01-hoc-voi-ms-khanh",

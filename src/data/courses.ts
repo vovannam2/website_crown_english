@@ -1,3 +1,15 @@
+import localClassrom09Image from "../../public/images/Design/classrom09.png";
+import localCourseFormatOfflineRealImage from "../../public/images/courses/course-format-offline-real.png";
+import localCourseFormatOnlineRealImage from "../../public/images/courses/course-format-online-real.png";
+import localCourseIeltsRealImage from "../../public/images/courses/course-ielts-real.png";
+import localCourseCommunicationRealImage from "../../public/images/courses/course-communication-real.png";
+import localCourseIelts11RealImage from "../../public/images/courses/course-ielts-1-1-real.png";
+import local8001Image from "../../public/images/Design/800_1.png";
+import localClassroom13Image from "../../public/images/students/classrooms/classroom-13.jpg";
+import localGiaoTiepHeroImage from "../../public/images/Design/giao-tiep-hero.png";
+import localGiaoTiepOverviewImage from "../../public/images/Design/giao-tiep-overview.png";
+import localIelts11HeroImage from "../../public/images/Design/ielts-1-1-hero.png";
+import localKhanhLinh75Image from "../../public/images/students/results/khanh-linh-7-5.png";
 export const coursesPageData = {
   seo: {
     title: "Các khóa học tại Crown English | IELTS, Giao tiếp & 1:1",
@@ -26,14 +38,14 @@ export const coursesPageData = {
       title: "Các khóa học tại Crown English",
       description:
         "IELTS, Tiếng Anh giao tiếp và IELTS 1 kèm 1 tại Crown English.",
-      image: "/images/Design/classrom09.png",
+      image: localClassrom09Image.src,
     },
   },
 
   hero: {
     title: "Khóa học",
     description: "",
-    image: "/images/Design/classrom09.png",
+    image: localClassrom09Image.src,
   },
   learningFormats: {
     title: "Hình thức học linh hoạt",
@@ -43,14 +55,14 @@ export const coursesPageData = {
         title: "Học Offline",
         description:
           "Học trực tiếp tại trung tâm với không gian hiện đại, tương tác cao, được giảng viên hướng dẫn sát sao.",
-        image: "/images/courses/course-format-offline-real.png",
+        image: localCourseFormatOfflineRealImage.src,
         icon: "monitor",
       },
       {
         title: "Học Online",
         description:
           "Học online linh hoạt, chất lượng cao với lớp học trực tuyến tương tác, phù hợp với người bận rộn hoặc ở xa.",
-        image: "/images/courses/course-format-online-real.png",
+        image: localCourseFormatOnlineRealImage.src,
         icon: "laptop",
       },
     ],
@@ -61,21 +73,21 @@ export const coursesPageData = {
       title: "IELTS",
       href: "/khoa-hoc/ielts",
       description: "",
-      image: "/images/courses/course-ielts-real.png",
+      image: localCourseIeltsRealImage.src,
     },
     {
       id: "giao-tiep",
       title: "Tiếng Anh giao tiếp",
       href: "/khoa-hoc/giao-tiep",
       description: "",
-      image: "/images/courses/course-communication-real.png",
+      image: localCourseCommunicationRealImage.src,
     },
     {
       id: "ielts-1-kem-1",
       title: "IELTS 1 kèm 1",
       href: "/khoa-hoc/ielts-1-kem-1",
       description: "",
-      image: "/images/courses/course-ielts-1-1-real.png",
+      image: localCourseIelts11RealImage.src,
     },
   ],
 } as const;
@@ -113,7 +125,7 @@ export const ieltsPageData = {
       title: "Khóa học IELTS 0–7.5+ sĩ số nhỏ | Crown English",
       description:
         "Lộ trình IELTS cá nhân hóa, lớp học sĩ số nhỏ và học phí từ 800.000đ/tháng tại Crown English.",
-      image: "/images/Design/800_1.png",
+      image: local8001Image.src,
     },
   },
 
@@ -130,7 +142,7 @@ export const ieltsPageData = {
     highlight: "0-7.5+",
     description:
       "Lộ trình cá nhân hóa, lớp học sĩ số nhỏ, giảng viên giàu kinh nghiệm giúp bạn đạt mục tiêu IELTS trong thời gian ngắn nhất.",
-    image: "/images/students/classrooms/classroom-13.jpg",
+    image: localClassroom13Image.src,
     badge: {
       title: "Học thật - Ứng dụng thật",
       description: "Đạt mục tiêu thật",
@@ -192,7 +204,7 @@ export const ieltsPageData = {
       },
     ],
     featurePanel: {
-      image: "/images/Design/800_1.png",
+      image: local8001Image.src,
       alt: "Học phí IELTS từ 800.000đ một tháng, lớp Premium 6-8 học viên tại Crown English",
       ctaLabel: "Đăng ký tư vấn ngay",
     },
@@ -484,7 +496,7 @@ export const communicationPageData = {
       title: "Khóa học Tiếng Anh giao tiếp | Crown English",
       description:
         "Các lớp Tiếng Anh giao tiếp theo trình độ tại Crown English.",
-      image: "/images/Design/giao-tiep-hero.png",
+      image: localGiaoTiepHeroImage.src,
     },
   },
 
@@ -496,7 +508,7 @@ export const communicationPageData = {
     title: "LỚP GIAO TIẾP",
     subtitle: "",
     description: "",
-    image: "/images/Design/giao-tiep-hero.png",
+    image: localGiaoTiepHeroImage.src,
   },
 
   suitableFor: [],
@@ -506,7 +518,7 @@ export const communicationPageData = {
     title: "",
     paragraphs: [],
     featurePanel: {
-      image: "/images/Design/giao-tiep-overview.png",
+      image: localGiaoTiepOverviewImage.src,
       alt: "Học viên luyện nói tiếng Anh giao tiếp với sách tại Crown English",
       ctaLabel: "Đăng ký tư vấn giao tiếp",
     },
@@ -684,7 +696,7 @@ export const ieltsOneToOnePageData = {
       title: "IELTS 1 kèm 1 | Crown English",
       description:
         "Lộ trình IELTS 1 kèm 1 cá nhân hóa tại Crown English.",
-      image: "/images/Design/ielts-1-1-hero.png",
+      image: localIelts11HeroImage.src,
     },
   },
 
@@ -696,12 +708,12 @@ export const ieltsOneToOnePageData = {
     title: "Lộ trình kèm 1:1 nhanh nhất",
     subtitle: "0-7.5+",
     description: "",
-    image: "/images/Design/ielts-1-1-hero.png",
+    image: localIelts11HeroImage.src,
     proofCard: {
       eyebrow: "KẾT QUẢ HỌC VIÊN",
       title: "Khánh Linh - IELTS 7.5",
       description: "Minh chứng cho lộ trình học có theo sát và cá nhân hóa.",
-      image: "/images/students/results/khanh-linh-7-5.png",
+      image: localKhanhLinh75Image.src,
       alt: "Kết quả IELTS 7.5 của học viên Khánh Linh tại Crown English",
     },
   },

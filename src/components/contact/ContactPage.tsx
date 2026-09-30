@@ -1,3 +1,4 @@
+import localAnhTrungTamImage from "../../../public/images/Design/AnhTrungTam.webp";
 import Image from "next/image";
 import {
   ArrowUpRight,
@@ -108,7 +109,7 @@ export default function ContactPage({ data }: ContactPageProps) {
 
           <Reveal preset="image" delay={120} className={styles.heroPanel}>
             <Image
-              src="/images/Design/AnhTrungTam.webp"
+              src={localAnhTrungTamImage.src}
               alt="Mặt tiền trung tâm Crown English tại Nguyễn Gia Trí"
               fill
               priority

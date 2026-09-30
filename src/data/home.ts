@@ -1,9 +1,37 @@
+import feedback11Image from "../../public/images/home/feedback-thang-1-1.jpg";
+import feedback12Image from "../../public/images/home/feedback-thang-1-2.jpg";
+import feedback13Image from "../../public/images/home/feedback-thang-1-3.jpg";
+import feedback14Image from "../../public/images/home/feedback-thang-1-4.jpg";
+import feedback21Image from "../../public/images/home/feedback-thang-2-1.jpg";
+import feedback22Image from "../../public/images/home/feedback-thang-2-2.jpg";
+import feedback23Image from "../../public/images/home/feedback-thang-2-3.jpg";
+import feedback31Image from "../../public/images/home/feedback-thang-3-1.jpg";
+import feedback32Image from "../../public/images/home/feedback-thang-3-2.jpg";
+import feedback33Image from "../../public/images/home/feedback-thang-3-3.jpg";
+import feedback41Image from "../../public/images/home/feedback-thang-4-1.jpg";
+import feedback42Image from "../../public/images/home/feedback-thang-4-2.jpg";
+import feedback43Image from "../../public/images/home/feedback-thang-4-3.jpg";
+import feedback44Image from "../../public/images/home/feedback-thang-4-4.jpg";
+import feedback51Image from "../../public/images/home/feedback-thang-5-1.jpg";
+import feedback52Image from "../../public/images/home/feedback-thang-5-2.jpg";
+import feedback53Image from "../../public/images/home/feedback-thang-5-3.jpg";
+import feedback54Image from "../../public/images/home/feedback-thang-5-4.jpg";
+import feedback61Image from "../../public/images/home/feedback-thang-6-1.jpg";
+import feedback62Image from "../../public/images/home/feedback-thang-6-2.jpg";
+import feedback63Image from "../../public/images/home/feedback-thang-6-3.jpg";
+import feedback64Image from "../../public/images/home/feedback-thang-6-4.jpg";
+import feedback71Image from "../../public/images/home/feedback-thang-7-1.jpg";
+import feedback72Image from "../../public/images/home/feedback-thang-7-2.jpg";
+import feedback73Image from "../../public/images/home/feedback-thang-7-3.jpg";
+import feedback74Image from "../../public/images/home/feedback-thang-7-4.jpg";
+import feedback81Image from "../../public/images/home/feedback-thang-8-1.jpg";
+import feedback82Image from "../../public/images/home/feedback-thang-8-2.jpg";
+import feedback83Image from "../../public/images/home/feedback-thang-8-3.jpg";
+import feedback84Image from "../../public/images/home/feedback-thang-8-4.jpg";
 // Homepage content and image slots. Featured IDs resolve against existing datasets.
 import { sharedMedia } from "./media";
 import homeBannerPrimary from "../../public/images/home/banner-01.png";
-import homeBannerMentoring from "../../public/images/home/banner-02.jpg";
-import homeBannerProgress from "../../public/images/home/banner-03.png";
-import homeBannerSupport from "../../public/images/home/banner-04.jpg";
+import homeAboutImage from "../../public/images/home/crown-hero.jpg";
 import homeFilm01 from "../../public/images/home/film-01.jpg";
 import homeFilm02 from "../../public/images/home/film-02.jpg";
 import homeFilm03 from "../../public/images/home/film-03.jpg";
@@ -12,8 +40,10 @@ import homeFilm05 from "../../public/images/home/film-05.png";
 import homeFilm06 from "../../public/images/home/film-06.jpg";
 import homeFilm07 from "../../public/images/home/film-07.png";
 import homeFilm08 from "../../public/images/home/film-08.jpg";
-import homeFilm09 from "../../public/images/home/film-09.jpg";
-import homeFilm10 from "../../public/images/home/film-10.jpg";
+import homeFilm09 from "../../public/images/home/film-09.png";
+import homeFilm10 from "../../public/images/home/film-10.png";
+import homeFilm11 from "../../public/images/home/film-11.png";
+import homeFilm12 from "../../public/images/home/film-12.png";
 import crownStudentHallOfFame from "../../public/images/home/crown-student-hall-of-fame.png";
 
 const heroFilmSources = [
@@ -27,6 +57,8 @@ const heroFilmSources = [
   homeFilm08,
   homeFilm09,
   homeFilm10,
+  homeFilm11,
+  homeFilm12,
 ] as const;
 
 export const homePageData = {
@@ -67,11 +99,6 @@ export const homePageData = {
       "Từng lộ trình được thiết kế riêng biệt để nâng tầm năng lực cho mỗi học viên.",
     backgroundImage: homeBannerPrimary,
     backgroundImageAlt: "Học viên học tập tại Crown English",
-    bannerAlternatives: [
-      homeBannerMentoring,
-      homeBannerProgress,
-      homeBannerSupport,
-    ],
     primaryCta: {
       label: "Khám phá khóa học",
       href: "/khoa-hoc",
@@ -212,10 +239,11 @@ export const homePageData = {
     },
   ],
   studentResults: {
-    eyebrow: "KẾT QUẢ HỌC VIÊN",
-    title: "Dấu ấn học tập tại Crown English",
+    eyebrow: "BẢNG VÀNG THÀNH TÍCH",
+    title: "Những cột mốc đáng tự hào của học viên Crown",
     description:
-      "Kết quả và trải nghiệm thực tế của học viên trong quá trình học tập tại Crown English.",
+      "Những kết quả IELTS nổi bật ghi dấu hành trình nỗ lực và tiến bộ của học viên tại Crown English.",
+
     link: {
       label: "Xem thêm học viên xuất sắc",
       href: "/hoc-vien",
@@ -351,80 +379,79 @@ export const homePageData = {
     },
     featuredVideoIds: ["huong-linh-7-5"],
     feedback: {
-      imageDirectory: "/images/home",
       boardTexture: sharedMedia.corkTexture,
       year: 2026,
-      // Ảnh đặt trong public/images/home. Thêm/xóa ảnh hoặc cả nhóm tháng tại đây.
-      // Ví dụ: { month: 9, images: ["feedback-thang-9-1.jpg"] },
+      // Import ảnh từ public/images/home ở đầu file để URL tự đổi khi thay ảnh.
+      // Thêm ảnh mới: khai báo import rồi thêm tenAnh.src vào nhóm tháng tương ứng.
       months: [
         {
           month: 1,
           images: [
-            "feedback-thang-1-1.jpg",
-            "feedback-thang-1-2.jpg",
-            "feedback-thang-1-3.jpg",
-            "feedback-thang-1-4.jpg",
+            feedback11Image.src,
+            feedback12Image.src,
+            feedback13Image.src,
+            feedback14Image.src,
           ],
         },
         {
           month: 2,
           images: [
-            "feedback-thang-2-1.jpg",
-            "feedback-thang-2-2.jpg",
-            "feedback-thang-2-3.jpg",
+            feedback21Image.src,
+            feedback22Image.src,
+            feedback23Image.src,
           ],
         },
         {
           month: 3,
           images: [
-            "feedback-thang-3-1.jpg",
-            "feedback-thang-3-2.jpg",
-            "feedback-thang-3-3.jpg",
+            feedback31Image.src,
+            feedback32Image.src,
+            feedback33Image.src,
           ],
         },
         {
           month: 4,
           images: [
-            "feedback-thang-4-1.jpg",
-            "feedback-thang-4-2.jpg",
-            "feedback-thang-4-3.jpg",
-            "feedback-thang-4-4.jpg",
+            feedback41Image.src,
+            feedback42Image.src,
+            feedback43Image.src,
+            feedback44Image.src,
           ],
         },
         {
           month: 5,
           images: [
-            "feedback-thang-5-1.jpg",
-            "feedback-thang-5-2.jpg",
-            "feedback-thang-5-3.jpg",
-            "feedback-thang-5-4.jpg",
+            feedback51Image.src,
+            feedback52Image.src,
+            feedback53Image.src,
+            feedback54Image.src,
           ],
         },
         {
           month: 6,
           images: [
-            "feedback-thang-6-1.jpg",
-            "feedback-thang-6-2.jpg",
-            "feedback-thang-6-3.jpg",
-            "feedback-thang-6-4.jpg",
+            feedback61Image.src,
+            feedback62Image.src,
+            feedback63Image.src,
+            feedback64Image.src,
           ],
         },
         {
           month: 7,
           images: [
-            "feedback-thang-7-1.jpg",
-            "feedback-thang-7-2.jpg",
-            "feedback-thang-7-3.jpg",
-            "feedback-thang-7-4.jpg",
+            feedback71Image.src,
+            feedback72Image.src,
+            feedback73Image.src,
+            feedback74Image.src,
           ],
         },
         {
           month: 8,
           images: [
-            "feedback-thang-8-1.jpg",
-            "feedback-thang-8-2.jpg",
-            "feedback-thang-8-3.jpg",
-            "feedback-thang-8-4.jpg",
+            feedback81Image.src,
+            feedback82Image.src,
+            feedback83Image.src,
+            feedback84Image.src,
           ],
         },
       ],
@@ -435,7 +462,7 @@ export const homePageData = {
     title: "Tinh gọn. Tối ưu. Chuẩn hóa.",
     description:
       "Được xây dựng trên nền tảng chuyên môn vững chắc và tư duy đào tạo hiện đại, Crown English là trung tâm luyện thi IELTS và Tiếng Anh học thuật chất lượng cao.",
-    image: "/images/home/crown-hero.jpg",
+    image: homeAboutImage,
     keywords: ["Tận Tụy", "Minh Bạch", "Hiệu Quả", "Tối Ưu"],
     link: {
       label: "Tìm hiểu câu chuyện Crown English",

@@ -1,3 +1,4 @@
+import localQAImage from "../../../public/images/Design/QA.png";
 import type { Metadata } from "next";
 import FaqsPage from "@/components/faqs/FaqsPage";
 import { faqsPageData as data } from "@/data/faqs";
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: data.seo.openGraph.title,
     description,
-    images: ["/images/Design/QA.png"],
+    images: [localQAImage.src],
     url: data.seo.canonical,
     type: "website",
   },

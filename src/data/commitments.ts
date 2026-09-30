@@ -1,3 +1,13 @@
+import localCamketImage from "../../public/images/Design/Camket.png";
+import localClassroom08Image from "../../public/images/students/classrooms/classroom-08.jpg";
+import localMsHuongGiangImage from "../../public/images/teachers/ms-huong-giang.png";
+import localMsCamCatImage from "../../public/images/teachers/ms-cam-cat.png";
+import localMrMinhQuocImage from "../../public/images/teachers/mr-minh-quoc.png";
+import localCommitmentQualityTeachingImage from "../../public/images/Design/commitment-quality-teaching.png";
+import localCommitmentProgressSupportImage from "../../public/images/Design/commitment-progress-support.png";
+import localClassroom13Image from "../../public/images/students/classrooms/classroom-13.jpg";
+import localClassroom15Image from "../../public/images/students/classrooms/classroom-15.jpg";
+import localClassroom04Image from "../../public/images/students/classrooms/classroom-04.jpg";
 export const commitmentsPageData = {
   seo: {
     title: "Cam kết đầu ra | Crown English",
@@ -22,7 +32,7 @@ export const commitmentsPageData = {
       title: "Cam kết đầu ra | Crown English",
       description:
         "Cam kết đầu ra IELTS và Tiếng Anh giao tiếp tại Crown English.",
-      image: "/images/Design/Camket.png",
+      image: localCamketImage.src,
     },
   },
 
@@ -34,20 +44,20 @@ export const commitmentsPageData = {
       "Crown cam kết mang đến môi trường học tập chất lượng, phương pháp giảng dạy rõ ràng, theo sát và phù hợp với từng mục tiêu.",
     visual: {
       classroom: {
-        image: "/images/students/classrooms/classroom-08.jpg",
+        image: localClassroom08Image.src,
         alt: "Lớp học IELTS tại Crown English",
       },
       portraits: [
         {
-          image: "/images/teachers/ms-huong-giang.png",
+          image: localMsHuongGiangImage.src,
           alt: "Giảng viên Crown English",
         },
         {
-          image: "/images/teachers/ms-cam-cat.png",
+          image: localMsCamCatImage.src,
           alt: "Giảng viên Crown English",
         },
         {
-          image: "/images/teachers/mr-minh-quoc.png",
+          image: localMrMinhQuocImage.src,
           alt: "Giảng viên Crown English",
         },
       ],
@@ -106,7 +116,7 @@ export const commitmentsPageData = {
       {
         icon: "book",
         title: "Cam kết về Chất lượng giảng dạy",
-        image: "/images/Design/commitment-quality-teaching.png",
+        image: localCommitmentQualityTeachingImage.src,
         imageAlt: "Lớp học tiếng Anh chất lượng tại Crown English",
         description:
           "Chúng tôi đảm bảo tính minh bạch và chuẩn mực trong toàn bộ chương trình đào tạo. Đội ngũ giảng viên luôn đồng hành với tinh thần trách nhiệm và sự tận tụy cao nhất.",
@@ -120,7 +130,7 @@ export const commitmentsPageData = {
       {
         icon: "target",
         title: "Cam kết về Tiến độ & Đồng hành",
-        image: "/images/Design/commitment-progress-support.png",
+        image: localCommitmentProgressSupportImage.src,
         imageAlt: "Giáo viên Crown English theo sát tiến độ học viên",
         description:
           "Hệ thống quản lý học tập chủ động theo dõi sát sao tiến trình làm bài, mức độ hoàn thành bài tập và những điểm cần cải thiện của từng cá nhân.",
@@ -144,7 +154,7 @@ export const commitmentsPageData = {
         icon: "clipboard",
         title: "IELTS",
         href: "/khoa-hoc/ielts",
-        image: "/images/students/classrooms/classroom-13.jpg",
+        image: localClassroom13Image.src,
         imageAlt: "Lớp IELTS tại Crown English",
         bullets: [
           "Lộ trình theo band mục tiêu",
@@ -157,7 +167,7 @@ export const commitmentsPageData = {
         icon: "message",
         title: "Tiếng Anh giao tiếp",
         href: "/khoa-hoc/giao-tiep",
-        image: "/images/students/classrooms/classroom-15.jpg",
+        image: localClassroom15Image.src,
         imageAlt: "Lớp Tiếng Anh giao tiếp tại Crown English",
         bullets: [
           "Tăng phản xạ giao tiếp tự nhiên",
@@ -170,7 +180,7 @@ export const commitmentsPageData = {
         icon: "personal",
         title: "IELTS 1:1",
         href: "/khoa-hoc/ielts-1-kem-1",
-        image: "/images/students/classrooms/classroom-04.jpg",
+        image: localClassroom04Image.src,
         imageAlt: "Buổi học kèm tại Crown English",
         bullets: [
           "Lộ trình cá nhân hóa theo mục tiêu",
