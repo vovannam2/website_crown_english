@@ -10,29 +10,43 @@ import localClassroom15Image from "../../public/images/students/classrooms/class
 import localClassroom04Image from "../../public/images/students/classrooms/classroom-04.jpg";
 export const commitmentsPageData = {
   seo: {
-    title: "Cam kết đầu ra | Crown English",
+    title: "Cam kết đầu ra IELTS & Tiếng Anh giao tiếp | Crown English",
+
     description:
-      "Thông tin cam kết đầu ra IELTS và Tiếng Anh giao tiếp tại Crown English, điều kiện áp dụng, chính sách hỗ trợ và theo dõi tiến độ học tập.",
-    h1: "Cam kết đầu ra tại Crown English",
+      "Tìm hiểu cam kết đầu ra IELTS và Tiếng Anh giao tiếp tại Crown English, điều kiện áp dụng, cách theo dõi tiến độ và chính sách hỗ trợ khi học viên chưa đạt mục tiêu.",
+
+    h1: "Cam kết đầu ra IELTS & Tiếng Anh giao tiếp tại Crown English",
+
     canonical: "/cam-ket",
-    searchIntent: "Tìm hiểu chính sách cam kết đầu ra và điều kiện áp dụng",
+
+    searchIntent:
+      "Tìm hiểu cam kết đầu ra IELTS, Tiếng Anh giao tiếp, điều kiện áp dụng và chính sách hỗ trợ tại Crown English",
+
     primaryTopic: "cam kết đầu ra Crown English",
+
     secondaryTopics: [
-      "cam kết đầu ra IELTS",
-      "cam kết đầu ra tiếng Anh giao tiếp",
-      "điều kiện cam kết đầu ra",
+      "cam kết đầu ra IELTS Crown English",
+      "cam kết đầu ra Tiếng Anh giao tiếp",
+      "điều kiện áp dụng cam kết đầu ra",
+      "chính sách hỗ trợ khi chưa đạt đầu ra",
     ],
+
     localSignals: [],
+
     schemaTypes: ["WebPage"],
+
     robots: {
       index: true,
       follow: true,
     },
+
     openGraph: {
-      title: "Cam kết đầu ra | Crown English",
+      title: "Cam kết đầu ra IELTS & Tiếng Anh giao tiếp | Crown English",
+
       description:
-        "Cam kết đầu ra IELTS và Tiếng Anh giao tiếp tại Crown English.",
-      image: localCamketImage.src,
+        "Tìm hiểu điều kiện cam kết đầu ra và chính sách hỗ trợ dành cho học viên IELTS và Tiếng Anh giao tiếp tại Crown English.",
+
+      image: "",
     },
   },
 
@@ -69,8 +83,16 @@ export const commitmentsPageData = {
     },
     actions: [
       { label: "IELTS", href: "/khoa-hoc/ielts", variant: "primary" },
-      { label: "Tiếng Anh giao tiếp", href: "/khoa-hoc/giao-tiep", variant: "outline" },
-      { label: "IELTS 1:1", href: "/khoa-hoc/ielts-1-kem-1", variant: "outline" },
+      {
+        label: "Tiếng Anh giao tiếp",
+        href: "/khoa-hoc/giao-tiep",
+        variant: "outline",
+      },
+      {
+        label: "IELTS 1:1",
+        href: "/khoa-hoc/ielts-1-kem-1",
+        variant: "outline",
+      },
     ],
   },
 
@@ -89,8 +111,7 @@ export const commitmentsPageData = {
         number: "02",
         icon: "users",
         title: "Lớp học sĩ số nhỏ",
-        description:
-          "Tăng tương tác, giáo viên dễ theo sát từng học viên hơn.",
+        description: "Tăng tương tác, giáo viên dễ theo sát từng học viên hơn.",
       },
       {
         number: "03",
@@ -208,11 +229,7 @@ export const commitmentsPageData = {
 
   policies: {
     ielts: {
-      outcomes: [
-        "FOUNDATION - 3.5+",
-        "NEWBIE - 5.0+",
-        "ADVANCE - 6.0+",
-      ],
+      outcomes: ["FOUNDATION - 3.5+", "NEWBIE - 5.0+", "ADVANCE - 6.0+"],
       conditions: [
         "Làm đủ trên 95% bài tập được giao",
         "Không nghỉ quá 2 buổi/tháng",

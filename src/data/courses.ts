@@ -12,33 +12,41 @@ import localIelts11HeroImage from "../../public/images/Design/ielts-1-1-hero.png
 import localKhanhLinh75Image from "../../public/images/students/results/khanh-linh-7-5.png";
 export const coursesPageData = {
   seo: {
-    title: "Các khóa học tại Crown English | IELTS, Giao tiếp & 1:1",
+    title: "Các khóa học tiếng Anh tại Crown English | IELTS, Giao tiếp & 1:1",
+
     description:
-      "Khám phá các chương trình đào tạo tại Crown English gồm IELTS, Tiếng Anh giao tiếp và IELTS 1 kèm 1.",
-    h1: "Các khóa học tại Crown English",
+      "Khám phá các khóa học tiếng Anh tại Crown English gồm IELTS, Tiếng Anh giao tiếp và IELTS 1 kèm 1, với lộ trình và hình thức học phù hợp từng mục tiêu.",
+
+    h1: "Các khóa học tiếng Anh tại Crown English",
+
     canonical: "/khoa-hoc",
+
     searchIntent: "Tìm và so sánh các chương trình học tại Crown English",
-    primaryTopic: "các khóa học tại Crown English",
+
+    primaryTopic: "các khóa học tiếng Anh tại Crown English",
+
     secondaryTopics: [
       "khóa học IELTS",
       "khóa học tiếng Anh giao tiếp",
-      "IELTS 1 kèm 1",
+      "khóa học IELTS 1 kèm 1",
     ],
-    localSignals: [
-      "Bình Thạnh",
-      "Nguyễn Gia Trí",
-      "TP.HCM",
-    ],
+
+    localSignals: ["Bình Thạnh", "TP.HCM"],
+
     schemaTypes: ["CollectionPage"],
+
     robots: {
       index: true,
       follow: true,
     },
+
     openGraph: {
-      title: "Các khóa học tại Crown English",
+      title: "Các khóa học tiếng Anh tại Crown English",
+
       description:
-        "IELTS, Tiếng Anh giao tiếp và IELTS 1 kèm 1 tại Crown English.",
-      image: localClassrom09Image.src,
+        "Khám phá IELTS, Tiếng Anh giao tiếp và IELTS 1 kèm 1 với các lộ trình học tại Crown English.",
+
+      image: "",
     },
   },
 
@@ -49,7 +57,8 @@ export const coursesPageData = {
   },
   learningFormats: {
     title: "Hình thức học linh hoạt",
-    description: "Dễ dàng lựa chọn hình thức phù hợp với lịch trình và mục tiêu của bạn.",
+    description:
+      "Dễ dàng lựa chọn hình thức phù hợp với lịch trình và mục tiêu của bạn.",
     items: [
       {
         title: "Học Offline",
@@ -94,38 +103,48 @@ export const coursesPageData = {
 
 export const ieltsPageData = {
   seo: {
-    title: "Khóa học IELTS 0–7.5+ sĩ số nhỏ | Crown English",
+    title: "Khóa học IELTS tại Crown English | Lộ trình 0–7.5+",
+
     description:
-      "Khóa học IELTS tại Crown English với lộ trình cá nhân hóa, lớp Standard 12-15 học viên, Premium 6-8 học viên, học phí từ 800.000đ/tháng.",
+      "Khóa học IELTS tại Crown English với lộ trình từ nền tảng đến 7.5+, lớp Standard và Premium, chương trình theo từng trình độ và học phí từ 800.000đ/tháng.",
+
     h1: "Khóa học IELTS tại Crown English",
+
     canonical: "/khoa-hoc/ielts",
-    searchIntent: "Tìm hiểu và đăng ký khóa học IELTS",
-    primaryTopic: "khóa học IELTS",
+
+    searchIntent:
+      "Tìm hiểu khóa học IELTS, lộ trình, học phí và hình thức lớp tại Crown English",
+
+    primaryTopic: "khóa học IELTS tại Crown English",
+
     secondaryTopics: [
-      "lộ trình IELTS",
+      "lộ trình IELTS 0-7.5+",
       "luyện thi IELTS",
+      "học phí IELTS",
+      "lớp IELTS sĩ số nhỏ",
       "IELTS Foundation",
       "IELTS Newbie",
       "IELTS Advance",
-      "IELTS Intensive",
-      "học phí IELTS",
+      "IELTS Intense",
       "cam kết đầu ra IELTS",
     ],
-    localSignals: [
-      "Bình Thạnh",
-      "Nguyễn Gia Trí",
-      "TP.HCM",
-    ],
+
+    localSignals: ["Bình Thạnh", "TP.HCM"],
+
     schemaTypes: ["Course", "WebPage"],
+
     robots: {
       index: true,
       follow: true,
     },
+
     openGraph: {
-      title: "Khóa học IELTS 0–7.5+ sĩ số nhỏ | Crown English",
+      title: "Khóa học IELTS tại Crown English | Lộ trình 0–7.5+",
+
       description:
-        "Lộ trình IELTS cá nhân hóa, lớp học sĩ số nhỏ và học phí từ 800.000đ/tháng tại Crown English.",
-      image: local8001Image.src,
+        "Khám phá lộ trình IELTS từ nền tảng đến 7.5+, các hình thức lớp và học phí tại Crown English.",
+
+      image: "",
     },
   },
 
@@ -348,7 +367,8 @@ export const ieltsPageData = {
   highlights: [
     {
       title: "Sĩ số lớp rõ ràng",
-      description: "Standard 12-15 học viên; Premium 6-8 học viên, dễ được theo sát hơn.",
+      description:
+        "Standard 12-15 học viên; Premium 6-8 học viên, dễ được theo sát hơn.",
       icon: "users",
     },
     {
@@ -468,35 +488,44 @@ export const ieltsPageData = {
 export const communicationPageData = {
   seo: {
     title: "Khóa học Tiếng Anh giao tiếp | Crown English",
+
     description:
-      "Khóa Tiếng Anh giao tiếp tại Crown English tập trung Listening, Speaking, phản xạ, phát âm, Daily Topics và Business English theo từng trình độ.",
+      "Khóa học Tiếng Anh giao tiếp tại Crown English theo từng trình độ, tập trung Listening, Speaking, phản xạ, phát âm IPA và các chủ đề giao tiếp thực tế.",
+
     h1: "Khóa học Tiếng Anh giao tiếp tại Crown English",
+
     canonical: "/khoa-hoc/giao-tiep",
-    searchIntent: "Tìm hiểu và đăng ký khóa học Tiếng Anh giao tiếp",
-    primaryTopic: "khóa học tiếng Anh giao tiếp",
+
+    searchIntent:
+      "Tìm hiểu khóa học Tiếng Anh giao tiếp theo trình độ, phương pháp học và hình thức lớp tại Crown English",
+
+    primaryTopic: "khóa học Tiếng Anh giao tiếp tại Crown English",
+
     secondaryTopics: [
-      "tiếng Anh giao tiếp",
       "luyện phản xạ tiếng Anh",
-      "Listening Speaking",
+      "luyện nghe nói tiếng Anh",
       "phát âm IPA",
-      "Business English",
+      "Tiếng Anh giao tiếp A1-C1",
       "Daily Topics",
+      "Business English",
     ],
-    localSignals: [
-      "Bình Thạnh",
-      "Nguyễn Gia Trí",
-      "TP.HCM",
-    ],
+
+    localSignals: ["Bình Thạnh", "TP.HCM"],
+
     schemaTypes: ["Course", "WebPage"],
+
     robots: {
       index: true,
       follow: true,
     },
+
     openGraph: {
       title: "Khóa học Tiếng Anh giao tiếp | Crown English",
+
       description:
-        "Các lớp Tiếng Anh giao tiếp theo trình độ tại Crown English.",
-      image: localGiaoTiepHeroImage.src,
+        "Khóa học giao tiếp theo từng trình độ, tập trung nghe nói, phản xạ và phát âm tại Crown English.",
+
+      image: "",
     },
   },
 
@@ -669,34 +698,44 @@ export const communicationPageData = {
 
 export const ieltsOneToOnePageData = {
   seo: {
-    title: "IELTS 1 kèm 1 | Lộ trình cá nhân hóa | Crown English",
+    title: "Khóa học IELTS 1 kèm 1 | Lộ trình cá nhân hóa | Crown English",
+
     description:
-      "IELTS 1 kèm 1 tại Crown English với lộ trình cá nhân hóa, lịch học linh hoạt, sửa bài chuyên sâu và chương trình theo từng trình độ.",
+      "Khóa học IELTS 1 kèm 1 tại Crown English với lộ trình cá nhân hóa theo trình độ, lịch học linh hoạt, sửa bài chuyên sâu và tập trung vào kỹ năng cần cải thiện.",
+
     h1: "Khóa học IELTS 1 kèm 1 tại Crown English",
+
     canonical: "/khoa-hoc/ielts-1-kem-1",
-    searchIntent: "Tìm hiểu và đăng ký khóa IELTS 1 kèm 1",
-    primaryTopic: "IELTS 1 kèm 1",
+
+    searchIntent:
+      "Tìm hiểu khóa học IELTS 1 kèm 1, lộ trình cá nhân hóa, lịch học và chương trình theo từng trình độ",
+
+    primaryTopic: "khóa học IELTS 1 kèm 1 tại Crown English",
+
     secondaryTopics: [
       "IELTS 1:1",
-      "luyện IELTS cá nhân",
-      "lộ trình IELTS cá nhân hóa",
       "học IELTS 1 kèm 1",
+      "lộ trình IELTS cá nhân hóa",
+      "IELTS 1 kèm 1 lịch linh hoạt",
+      "luyện IELTS theo trình độ",
     ],
-    localSignals: [
-      "Bình Thạnh",
-      "Nguyễn Gia Trí",
-      "TP.HCM",
-    ],
+
+    localSignals: ["Bình Thạnh", "TP.HCM"],
+
     schemaTypes: ["Course", "WebPage"],
+
     robots: {
       index: true,
       follow: true,
     },
+
     openGraph: {
-      title: "IELTS 1 kèm 1 | Crown English",
+      title: "Khóa học IELTS 1 kèm 1 | Crown English",
+
       description:
-        "Lộ trình IELTS 1 kèm 1 cá nhân hóa tại Crown English.",
-      image: localIelts11HeroImage.src,
+        "Lộ trình IELTS 1 kèm 1 cá nhân hóa theo trình độ, lịch học linh hoạt và được giảng viên theo sát tại Crown English.",
+
+      image: "",
     },
   },
 
@@ -817,13 +856,11 @@ export const ieltsOneToOnePageData = {
     },
     {
       title: "Lịch học linh hoạt",
-      description:
-        "Chủ động sắp xếp thời gian theo lịch rảnh cá nhân.",
+      description: "Chủ động sắp xếp thời gian theo lịch rảnh cá nhân.",
     },
     {
       title: "Tiết kiệm thời gian",
-      description:
-        "Tăng tốc tiến độ, rút ngắn tối đa thời gian ôn luyện.",
+      description: "Tăng tốc tiến độ, rút ngắn tối đa thời gian ôn luyện.",
     },
     {
       title: "Tương tác tối đa",

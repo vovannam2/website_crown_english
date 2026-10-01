@@ -63,30 +63,42 @@ const heroFilmSources = [
 
 export const homePageData = {
   seo: {
-    title: "Crown English | IELTS & Tiếng Anh giao tiếp",
+    title: "Crown English | IELTS, Tiếng Anh giao tiếp & 1 kèm 1",
+
     description:
-      "Crown English cung cấp các chương trình IELTS, Tiếng Anh giao tiếp và IELTS 1 kèm 1 với lộ trình rõ ràng, cam kết đầu ra và đội ngũ giảng viên đồng hành cùng học viên.",
+      "Crown English cung cấp các khóa học IELTS, Tiếng Anh giao tiếp và IELTS 1 kèm 1 với lộ trình cá nhân hóa, chương trình theo từng mục tiêu và đội ngũ giảng viên đồng hành cùng học viên.",
+
     h1: "Crown English",
+
     canonical: "/",
+
     searchIntent:
-      "Thương hiệu + tìm hiểu trung tâm và các chương trình đào tạo",
+      "Tìm hiểu Crown English và các chương trình IELTS, Tiếng Anh giao tiếp, IELTS 1 kèm 1",
+
     primaryTopic: "Crown English",
+
     secondaryTopics: [
-      "khóa học IELTS",
-      "tiếng Anh giao tiếp",
-      "IELTS 1 kèm 1",
-      "trung tâm tiếng Anh",
+      "khóa học IELTS tại Crown English",
+      "khóa học Tiếng Anh giao tiếp",
+      "khóa học IELTS 1 kèm 1",
+      "trung tâm tiếng Anh Crown English",
     ],
-    localSignals: ["Bình Thạnh", "Nguyễn Gia Trí", "TP.HCM"],
+
+    localSignals: ["Nguyễn Gia Trí", "phường Thạnh Mỹ Tây", "TP.HCM"],
+
     schemaTypes: ["EducationalOrganization", "WebSite"],
+
     robots: {
       index: true,
       follow: true,
     },
+
     openGraph: {
-      title: "Crown English | IELTS & Tiếng Anh giao tiếp",
+      title: "Crown English | IELTS, Tiếng Anh giao tiếp & 1 kèm 1",
+
       description:
-        "Các chương trình IELTS, Tiếng Anh giao tiếp và IELTS 1 kèm 1 tại Crown English.",
+        "Khám phá các chương trình IELTS, Tiếng Anh giao tiếp và IELTS 1 kèm 1 tại Crown English.",
+
       image: "",
     },
   },

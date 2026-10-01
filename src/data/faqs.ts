@@ -18,27 +18,44 @@ import localQA18Image from "../../public/images/Q&A/QA18.jpg";
 import localQA19Image from "../../public/images/Q&A/QA19.jpg";
 export const faqsPageData = {
   seo: {
-    title: "Câu hỏi thường gặp | Crown English",
+    title: "Câu hỏi thường gặp về khóa học | Crown English",
+
     description:
-      "Giải đáp các câu hỏi thường gặp về khóa học, lộ trình, IELTS, Tiếng Anh giao tiếp và việc lựa chọn chương trình phù hợp tại Crown English.",
-    h1: "Câu hỏi thường gặp",
+      "Giải đáp các câu hỏi thường gặp về khóa học, học phí, lộ trình, giảng viên, học online, IELTS và Tiếng Anh giao tiếp tại Crown English.",
+
+    h1: "Câu hỏi thường gặp tại Crown English",
+
     canonical: "/cau-hoi-thuong-gap",
-    searchIntent: "Giải đáp thắc mắc trước khi chọn khóa học",
+
+    searchIntent:
+      "Giải đáp thắc mắc về khóa học, học phí, lộ trình và chính sách tại Crown English trước khi đăng ký",
+
     primaryTopic: "câu hỏi thường gặp Crown English",
+
     secondaryTopics: [
-      "nên học IELTS hay giao tiếp",
-      "lộ trình học tiếng Anh",
+      "học phí Crown English",
+      "lộ trình học Crown English",
+      "giảng viên Crown English",
+      "học online Crown English",
+      "chính sách học tại Crown English",
+      "IELTS hay Tiếng Anh giao tiếp",
     ],
+
     localSignals: [],
+
     schemaTypes: ["FAQPage"],
+
     robots: {
       index: true,
       follow: true,
     },
+
     openGraph: {
-      title: "Câu hỏi thường gặp | Crown English",
+      title: "Câu hỏi thường gặp về khóa học | Crown English",
+
       description:
-        "Giải đáp các câu hỏi thường gặp khi tìm hiểu khóa học tại Crown English.",
+        "Giải đáp về khóa học, học phí, lộ trình, giảng viên và các chính sách học tập tại Crown English.",
+
       image: "",
     },
   },
@@ -64,7 +81,8 @@ export const faqsPageData = {
     needsReview: [
       {
         file: "QA7.jpg",
-        reason: "Câu trả lời trong ảnh kết thúc bằng dấu phẩy, có thể thiếu phần sau.",
+        reason:
+          "Câu trả lời trong ảnh kết thúc bằng dấu phẩy, có thể thiếu phần sau.",
       },
       {
         file: "QA17.jpg",
@@ -94,7 +112,7 @@ export const faqsPageData = {
       answer: [
         "Việc lựa chọn giữa Tiếng Anh Giao Tiếp và Chứng chỉ Học thuật (IELTS/TOEIC) phụ thuộc rất lớn vào mục tiêu đầu ra và thời gian đầu tư của bạn. Mỗi chương trình đòi hỏi định hướng, phương pháp tiếp cận và mức độ cam kết khác nhau:",
         "1. Tiếng Anh Giao Tiếp Thực Chiến (Focus: Listening & Speaking)",
-        "- Đặc điểm: Tập trung 100% vào phản xạ Nghe - Nói chủ động thông qua các chủ đề đời sống, công việc và thảo luận/tranh luận (Debate). Môi trường hoàn toàn bằng Tiếng Anh giúp tạo hiệu ứng \"tắm ngôn ngữ\" ngay tại lớp.",
+        '- Đặc điểm: Tập trung 100% vào phản xạ Nghe - Nói chủ động thông qua các chủ đề đời sống, công việc và thảo luận/tranh luận (Debate). Môi trường hoàn toàn bằng Tiếng Anh giúp tạo hiệu ứng "tắm ngôn ngữ" ngay tại lớp.',
         "- Ưu điểm: Phương pháp thực tế, áp dụng được ngay, giảm tối đa áp lực học tập và xây dựng sự tự tin nhanh chóng.",
         "- Phù hợp với bạn khi: Bạn cần sử dụng tiếng Anh ngay trong công việc/cuộc sống hằng ngày, muốn giao tiếp tự nhiên và chưa có kế hoạch thi lấy chứng chỉ gấp.",
         "2. Luyện Thi Chứng Chỉ Học Thuật – IELTS / TOEIC (Focus: 4 Kỹ Năng Học Thuật)",
@@ -122,7 +140,8 @@ export const faqsPageData = {
       category: "refund-policy",
       speaker: "Ms. Khanh",
       sourceImage: localQA2Image.src,
-      question: "Sau này em bận em không theo học nữa, chị có hoàn học phí không",
+      question:
+        "Sau này em bận em không theo học nữa, chị có hoàn học phí không",
       answer: [
         "Chị cũng rất buồn vì học viên vì bất kì lý do nào không thể theo học được em nè. Tuy nhiên, khi em đã đóng học phí thì em chính thức trở thành học viên của lớp/khóa mà em đã đăng ký, và hiện tại bên chị chưa có chính sách hoàn học phí. Dù vậy, chị luôn cố gắng hỗ trợ tối đa cho học viên. Trong trường hợp này, bên chị sẽ hỗ trợ em bảo lưu và đóng băng học phí, để khi em ổn định lại, em có thể quay lại học bất cứ lúc nào, và không có thời hạn. Ngoài ra, em cũng có thể chuyển học phí cho bạn bè hoặc người thân học tiếp khóa đó, với điều kiện là đúng level phù hợp với chương trình đã đăng ký nha em. Chị mong em hiểu là mọi chính sách đều hướng đến việc bảo vệ quyền lợi học viên lâu dài, và chị luôn sẵn sàng đồng hành, hỗ trợ học viên nè.",
       ],
@@ -173,7 +192,8 @@ export const faqsPageData = {
       speaker: "Ms. Khanh",
       sourceImage: localQA7Image.src,
       needsReview: true,
-      reviewNote: "Câu trả lời trong ảnh kết thúc bằng dấu phẩy, có thể thiếu phần sau.",
+      reviewNote:
+        "Câu trả lời trong ảnh kết thúc bằng dấu phẩy, có thể thiếu phần sau.",
       conflictsWith: ["qa-18-cam-ket-dau-ra"],
       question: "chị chỉ cam kết 6.0-6.5 thôi hả? em muốn đạt 7.0 thì sao ạ?",
       answer: [
@@ -185,7 +205,8 @@ export const faqsPageData = {
       category: "promotion",
       speaker: "Ms. Khanh",
       sourceImage: localQA9Image.src,
-      question: "Em đăng kí 2 khóa trở lên thì mình có ưu đãi gì không chị ha ?",
+      question:
+        "Em đăng kí 2 khóa trở lên thì mình có ưu đãi gì không chị ha ?",
       answer: [
         "Có chứ em nè, đặc biệt lớp kèm, hay lớp Premium, bên chị đều hỗ trợ và ưu đãi cho em hết nhen ^^",
       ],
@@ -195,7 +216,8 @@ export const faqsPageData = {
       category: "ielts-one-to-one",
       speaker: "Ms. Khanh",
       sourceImage: localQA10Image.src,
-      question: "Bên chị có lớp nào cấp tốc đẩy nhanh thời gian học không ha chị ?",
+      question:
+        "Bên chị có lớp nào cấp tốc đẩy nhanh thời gian học không ha chị ?",
       answer: [
         "Chị có em nè, nếu em muốn học cấp tốc thì chị có lớp kèm 1:1 nè, Lớp kèm giáo viên sẽ theo sát level của học viên, soạn giáo án và lộ trình cá nhân hóa để học viên đạt đầu ra sớm nhất, lộ trình lớp kèm thì sẽ rút ngắn và nhanh hơn lớp nhóm đồng tuỳ vào level input của em nha.",
       ],
@@ -215,7 +237,8 @@ export const faqsPageData = {
       category: "trial-class",
       speaker: "Ms. Khanh",
       sourceImage: localQA12Image.src,
-      question: "Chị ơi phí học thử buổi đầu nếu em không theo lớp thì có được hoàn lại không ạ?",
+      question:
+        "Chị ơi phí học thử buổi đầu nếu em không theo lớp thì có được hoàn lại không ạ?",
       answer: [
         "Buổi học thử em sẽ nhận đầy đủ giáo trình và nắm được phương pháp dạy bên chị nè. Đây sẽ là phí học thử & giáo trình không hoàn lại được em nhen. Trộm vía, hầu hết các bạn học thử đều tiếp tục theo lớp, chỉ có một vài trường hợp cần điều chỉnh lớp thôi nè.",
       ],
@@ -245,7 +268,8 @@ export const faqsPageData = {
       category: "ielts-writing",
       speaker: "Ms. Khanh",
       sourceImage: localQA15Image.src,
-      question: "Đối với kĩ năng Writing ở lớp Advance thì chị dạy như nào vậy ạ ??",
+      question:
+        "Đối với kĩ năng Writing ở lớp Advance thì chị dạy như nào vậy ạ ??",
       answer: [
         "Writing ở Lớp Advance mình học full writing task 1 và tasks 2. Ở lớp Advance chị không dạy và xẻ nhỏ từng phần như Newbie á, nhưng chị vẫn đi lại lý thuyết kĩ và bày em ráp những CỤM từ vựng band cao vào writing task, Task 2 viết luận thì paraphrase và phát triển ý tưởng em sâu hơn, có thể viết được đoạn văn dài và dùng nhiều câu phức hen. xong hết rồi tụi mình sẽ practice thực hành ngay tại lớp, chị sẽ chấm bài cho TỪNG BẠN Luôn ha, trực tiếp tại lớp luôn để em hiểu em sai cái gì, e yếu chỗ nào và vidu của giáo viên cho em dễ hiểu nhen.",
       ],
@@ -255,7 +279,8 @@ export const faqsPageData = {
       category: "online-learning",
       speaker: "Ms. Khanh",
       sourceImage: localQA16Image.src,
-      question: "Chị ơi, em ở xa quá, không biết là bên mình có nhận dạy online không ạ ???",
+      question:
+        "Chị ơi, em ở xa quá, không biết là bên mình có nhận dạy online không ạ ???",
       answer: [
         "Bên chị dạy theo mô hình Hybrid online offline kết hợp nè. Nếu em học online thì khi chị gọi tương tác trong lớp em phải mở mic nè, với lại cần tập trung hơn nữa nha. Còn lại thì kiến thức đều như nhau ấy. Em yên tâm là giáo viên vẫn đảm bảo follow cả các bạn online và offline nè.",
       ],
@@ -268,7 +293,8 @@ export const faqsPageData = {
       needsReview: true,
       reviewNote:
         "Cụm mở đầu trong ảnh giống 'Từ level em-6.5+'; giữ nguyên để tránh tự sửa nguồn.",
-      question: "Nếu em học lại từ mất gốc thì học trong bao lâu để đạt aim 6.5 ạ chị ?",
+      question:
+        "Nếu em học lại từ mất gốc thì học trong bao lâu để đạt aim 6.5 ạ chị ?",
       answer: [
         "Từ level em-6.5+ em sẽ học qua 3 khoá lớp tiêu chuẩn trong vòng 10 tháng nè",
         "Lớp Foundation (0-3.5+) - lớp nền tảng (3 tháng) - 24b",
@@ -295,7 +321,8 @@ export const faqsPageData = {
       category: "tuition",
       speaker: "Ms. Khanh",
       sourceImage: localQA19Image.src,
-      question: "Vì sao học phí bên chị giá lại rẻ hơn các trung tâm ở ngoài nhiều vậy ạ?",
+      question:
+        "Vì sao học phí bên chị giá lại rẻ hơn các trung tâm ở ngoài nhiều vậy ạ?",
       answer: [
         "Bên chị giá như vậy là hợp lý chứ không phải giá rẻ do chị không chạy quảng cáo rầm rộ làm cho học phí của em bị độn lên. Bên cạnh đó chị cần đầu ra của mọi người hơn và hầu hết các bạn đến học bên chị đều được giới thiệu mà đến nên chất lượng được đảm bảo nha. Các học viên bên chị chủ yếu là sinh viên và người đi làm, bây giờ kinh tế đang đi xuống mà thu học phí đắt thì sẽ khó cho mọi người nè. Chị hỗ trợ cho mọi người học phí tối ưu nhất nè.",
       ],

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import CommitmentsPage from "@/components/commitments/CommitmentsPage";
 import { commitmentsPageData as data } from "@/data/commitments";
 
+const defaultOgImage = "/images/og/crown-english.jpg";
+
 export const metadata: Metadata = {
   title: { absolute: data.seo.title },
   description: data.seo.description,
@@ -10,28 +12,55 @@ export const metadata: Metadata = {
   openGraph: {
     title: data.seo.openGraph.title,
     description: data.seo.openGraph.description,
-    images: data.seo.openGraph.image ? [data.seo.openGraph.image] : undefined,
-    url: data.seo.canonical,
+    images: [
+      {
+        url: data.seo.openGraph.image || defaultOgImage,
+      },
+    ],
     type: "website",
   },
 };
 
 export default function CommitmentPage() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+
+  const pageUrl = `${siteUrl}${data.seo.canonical}`;
+
   const schema = {
     "@context": "https://schema.org",
-    "@type": data.seo.schemaTypes,
+
+    "@type": "WebPage",
+
+    "@id": `${pageUrl}#webpage`,
+
+    url: pageUrl,
+
     name: data.seo.h1,
+
     description: data.seo.description,
-    url: data.seo.canonical,
-    about: data.seo.secondaryTopics,
+
+    inLanguage: "vi-VN",
+
+    isPartOf: {
+      "@id": `${siteUrl}/#website`,
+    },
+
+    about: {
+      "@id": `${siteUrl}/#organization`,
+    },
+
+    keywords: data.seo.secondaryTopics.join(", "),
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
+        }}
       />
+
       <CommitmentsPage data={data} />
     </>
   );
