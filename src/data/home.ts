@@ -55,7 +55,7 @@ export const homePageData = {
       title: "Crown English | IELTS & Tiếng Anh giao tiếp",
       description:
         "Các chương trình IELTS, Tiếng Anh giao tiếp và IELTS 1 kèm 1 tại Crown English.",
-      image: "",
+      image: "/images/og/crown-og.png",
     },
   },
   hero: {

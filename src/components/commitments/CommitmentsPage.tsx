@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
+import HeroDecoration from "@/components/ui/HeroDecoration";
 import Reveal from "@/components/ui/Reveal";
 import type { CommitmentsPageData } from "@/data/commitments";
 import styles from "./commitments.module.css";
@@ -93,16 +94,7 @@ function renderTitle(title: string, accent: string) {
 function HeroVisual({ visual }: { visual: CommitmentsPageData["hero"]["visual"] }) {
   return (
     <Reveal preset="image" delay={120} className={styles.heroVisual}>
-      <div className={styles.classroomCard}>
-        <Image
-          src={visual.classroom.image}
-          alt={visual.classroom.alt}
-          fill
-          sizes="(min-width: 1200px) 520px, (min-width: 768px) 45vw, 92vw"
-          className={styles.coverImage}
-          priority
-        />
-      </div>
+      <HeroDecoration />
       <div className={styles.portraitCluster} aria-label="Đội ngũ giảng viên Crown English">
         {visual.portraits.map((portrait, index) => (
           <div
@@ -113,20 +105,13 @@ function HeroVisual({ visual }: { visual: CommitmentsPageData["hero"]["visual"] 
               src={portrait.image}
               alt={portrait.alt}
               fill
-              sizes="(min-width: 1200px) 180px, (min-width: 768px) 15vw, 34vw"
+              sizes="(min-width: 1200px) 250px, (min-width: 768px) 22vw, 44vw"
               className={styles.portraitImage}
+              preload={index === 1}
             />
           </div>
         ))}
       </div>
-      <dl className={styles.heroNotes}>
-        {visual.notes.map((note) => (
-          <div key={note.label}>
-            <dt>{note.label}</dt>
-            <dd>{note.value}</dd>
-          </div>
-        ))}
-      </dl>
     </Reveal>
   );
 }

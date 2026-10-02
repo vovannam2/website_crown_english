@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: data.seo.openGraph.title,
     description: data.seo.openGraph.description,
     url: data.seo.canonical,
+    images: data.seo.openGraph.image ? [data.seo.openGraph.image] : undefined,
   },
 };
 

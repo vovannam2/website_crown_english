@@ -935,12 +935,14 @@
 .ctaVisual {
   position: relative;
   min-height: 360px;
+  overflow: hidden;
+  border-radius: 28px;
 }
 
 .ctaImage {
-  object-fit: contain;
-  object-position: center bottom;
-  filter: drop-shadow(0 24px 42px rgb(8 43 92 / 0.08));
+  object-fit: cover;
+  object-position: 50% 32%;
+  filter: saturate(1.02);
 }
 
 .ctaBubbleBlue,

@@ -28,7 +28,7 @@ export const contactPageData = {
       title: "Liên hệ Crown English",
       description:
         "Địa chỉ, hotline, email, Zalo OA, Fanpage và Google Maps Crown English.",
-      image: "",
+      image: "/images/Design/AnhTrungTamMoi.png",
     },
   },
 
@@ -49,6 +49,8 @@ export const contactPageData = {
     emailHref: siteConfig.contact.emailHref,
     zaloOA: siteConfig.contact.zalo,
     zaloUrl: siteConfig.contact.zaloHref,
+    zaloHotline: siteConfig.contact.zaloHotline,
+    zaloHotlineUrl: siteConfig.contact.zaloHotlineHref,
     fanpage: siteConfig.contact.facebookHref,
     workingHours: siteConfig.contact.workingHours,
   },

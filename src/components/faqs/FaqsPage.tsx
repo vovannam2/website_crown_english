@@ -46,8 +46,9 @@ type FaqsPageProps = {
   readonly items: readonly FaqItem[];
 };
 
-const MS_KHANH_HERO_IMAGE = "/images/Design/Khanh-3.png";
-const MS_KHANH_PORTRAIT_IMAGE = "/images/Design/faq-khanh-clean.png";
+const MS_KHANH_HERO_IMAGE = "/images/Design/ChiKhanh5.jpg";
+const MS_KHANH_PORTRAIT_IMAGE = "/images/Design/ChiKhanh4.jpg";
+const MS_KHANH_FEATURED_IMAGE = "/images/Design/ChiKhanh2.jpg";
 
 const HERO_FAQ_IDS = [
   "qa-01-hoc-voi-ms-khanh",
@@ -472,7 +473,7 @@ export default function FaqsPage({ items }: FaqsPageProps) {
 
             <div className={styles.featuredVisual} aria-hidden="true">
               <Image
-                src={MS_KHANH_PORTRAIT_IMAGE}
+                src={MS_KHANH_FEATURED_IMAGE}
                 alt=""
                 fill
                 sizes="(min-width: 1024px) 420px, 86vw"
@@ -523,7 +524,7 @@ export default function FaqsPage({ items }: FaqsPageProps) {
 
             <div className={styles.ctaVisual} aria-hidden="true">
               <Image
-                src={MS_KHANH_PORTRAIT_IMAGE}
+                src={MS_KHANH_FEATURED_IMAGE}
                 alt=""
                 fill
                 sizes="(min-width: 1024px) 500px, 90vw"

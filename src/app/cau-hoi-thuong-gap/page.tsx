@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: data.seo.openGraph.title,
     description,
-    images: ["/images/Design/QA.png"],
+    images: ["/images/Design/ChiKhanh5.jpg"],
     url: data.seo.canonical,
     type: "website",
   },

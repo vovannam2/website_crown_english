@@ -19,13 +19,15 @@ type ContactPageProps = {
   readonly data: ContactPageData;
 };
 
-type ContactCard = {
-  readonly label: string;
+type ContactActionLink = {
   readonly value: string;
   readonly href: string;
-  readonly action: string;
+};
+
+type ContactRow = {
+  readonly label: string;
   readonly icon: typeof PhoneCall;
-  readonly tone: "red" | "blue";
+  readonly links: readonly ContactActionLink[];
 };
 
 function ContactAction({
@@ -50,39 +52,41 @@ function ContactAction({
   );
 }
 
+function externalLinkProps(href: string) {
+  return href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {};
+}
+
+function phoneHrefFromDisplayNumber(phone: string) {
+  return `tel:${phone.replace(/\D/g, "")}`;
+}
+
 export default function ContactPage({ data }: ContactPageProps) {
-  const contactCards: ContactCard[] = [
+  const contactRows: ContactRow[] = [
     {
       label: "Hotline",
-      value: data.center.hotline,
-      href: data.center.phoneHref,
-      action: "Gọi ngay",
       icon: PhoneCall,
-      tone: "red",
+      links: [
+        { value: data.center.hotline, href: data.center.phoneHref },
+        { value: data.center.zaloOA, href: phoneHrefFromDisplayNumber(data.center.zaloOA) },
+      ],
     },
     {
       label: "Email",
-      value: data.center.email,
-      href: data.center.emailHref,
-      action: "Gửi email",
       icon: Mail,
-      tone: "blue",
+      links: [{ value: data.center.email, href: data.center.emailHref }],
     },
     {
-      label: "Zalo OA",
-      value: data.center.zaloOA,
-      href: data.center.zaloUrl,
-      action: "Nhắn Zalo",
+      label: "Zalo",
       icon: MessageCircle,
-      tone: "blue",
+      links: [
+        { value: data.center.zaloOA, href: data.center.zaloUrl },
+        { value: data.center.zaloHotline, href: data.center.zaloHotlineUrl },
+      ],
     },
     {
       label: "Fanpage",
-      value: "facebook.com/ieltsgiaotiepcrown",
-      href: data.center.fanpage,
-      action: "Mở Fanpage",
       icon: Send,
-      tone: "blue",
+      links: [{ value: "facebook.com/ieltsgiaotiepcrown", href: data.center.fanpage }],
     },
   ];
 
@@ -108,7 +112,7 @@ export default function ContactPage({ data }: ContactPageProps) {
 
           <Reveal preset="image" delay={120} className={styles.heroPanel}>
             <Image
-              src="/images/Design/AnhTrungTam.webp"
+              src="/images/Design/AnhTrungTamMoi.png"
               alt="Mặt tiền trung tâm Crown English tại Nguyễn Gia Trí"
               fill
               priority
@@ -131,35 +135,39 @@ export default function ContactPage({ data }: ContactPageProps) {
         <Container>
           <div className={styles.sectionHeader}>
             <p className={styles.eyebrow}>Kênh liên hệ</p>
-            <h2 id="contact-channels-title">Chọn cách Crown có thể hỗ trợ bạn nhanh nhất</h2>
+            <h2 id="contact-channels-title">Liên hệ Crown English</h2>
           </div>
 
-          <div className={styles.cardGrid}>
-            {contactCards.map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <Reveal key={item.label} delay={index * 70}>
-                  <a
-                    href={item.href}
-                    target={item.href.startsWith("http") ? "_blank" : undefined}
-                    rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className={`${styles.contactCard} ${styles[item.tone]}`}
-                    aria-label={`${item.action} ${item.label} Crown English`}
-                  >
-                    <span className={styles.cardIcon}>
-                      <Icon aria-hidden size={24} strokeWidth={2.35} />
-                    </span>
-                    <span className={styles.cardLabel}>{item.label}</span>
-                    <strong>{item.value}</strong>
-                    <span className={styles.cardAction}>
-                      {item.action}
-                      <ArrowUpRight aria-hidden size={17} strokeWidth={2.5} />
-                    </span>
-                  </a>
-                </Reveal>
-              );
-            })}
-          </div>
+          <Reveal className={styles.contactPanel}>
+            <div className={styles.contactPanelHeader}>
+              <p>Thông tin liên hệ</p>
+              <span>Hotline, Zalo, Email và Fanpage chính thức</span>
+            </div>
+            <div className={styles.contactList}>
+              {contactRows.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <article key={item.label} className={styles.contactRow} aria-label={`${item.label} Crown English`}>
+                    <div className={styles.contactRowMain}>
+                      <span className={styles.contactRowIcon}>
+                        <Icon aria-hidden size={22} strokeWidth={2.35} />
+                      </span>
+                      <div className={styles.contactRowText}>
+                        <span className={styles.contactRowTitle}>{item.label}</span>
+                        <div className={styles.contactRowValues}>
+                          {item.links.map((link) => (
+                            <a key={link.value} href={link.href} title={link.value} {...externalLinkProps(link.href)}>
+                              {link.value}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </Reveal>
         </Container>
       </section>
 

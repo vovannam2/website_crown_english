@@ -101,9 +101,9 @@ body {
 .footer-heading { margin-bottom: 16px; color: #fff; font-size: var(--text-nav-size); font-weight: 700; letter-spacing: 0; line-height: 1.35; }
 .footer-link { color: rgba(255, 255, 255, 0.7); font-size: var(--text-small-size); line-height: var(--leading-small); overflow-wrap: anywhere; transition: color 180ms ease; }
 .footer-link:hover { color: var(--color-brand-gold); }
-.footer-brand-crown, .footer-brand-english { display: block; font-family: var(--font-family-heading); font-weight: 800; line-height: 1; white-space: nowrap; }
+.footer-brand-crown, .footer-brand-english { display: block; font-family: var(--font-family-heading); font-weight: 800; line-height: 1; text-align: left; white-space: nowrap; }
 .footer-brand-crown { color: #fff; font-size: 22px; letter-spacing: 0.07em; }
-.footer-brand-english { margin-top: 6px; color: rgb(255 255 255 / 0.78); font-size: 12px; letter-spacing: 0.24em; }
+.footer-brand-english { margin-top: 6px; color: rgb(255 255 255 / 0.78); font-size: 12px; letter-spacing: 0.24em; text-indent: 0; }
 .floating-contact { display: inline-flex; min-height: 44px; min-width: 44px; align-items: center; justify-content: center; gap: 7px; border-radius: 999px; background: var(--color-brand-red); padding: 0 14px; color: #fff; font-size: 13px; font-weight: 700; letter-spacing: 0; line-height: 1; box-shadow: var(--shadow-menu); }
 .floating-contact-gold { background: var(--color-brand-gold); color: var(--color-ink); }
 .floating-contact:hover { transform: translateY(-2px); }

@@ -12,6 +12,22 @@ export const metadata: Metadata = {
     description: data.seo.openGraph.description,
     url: data.seo.canonical,
     type: "website",
+    images: data.seo.openGraph.image
+      ? [
+          {
+            url: data.seo.openGraph.image,
+            width: 1200,
+            height: 630,
+            alt: "Crown English IELTS & Tiếng Anh giao tiếp",
+          },
+        ]
+      : undefined,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: data.seo.openGraph.title,
+    description: data.seo.openGraph.description,
+    images: data.seo.openGraph.image ? [data.seo.openGraph.image] : undefined,
   },
 };
 

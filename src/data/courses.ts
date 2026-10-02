@@ -43,14 +43,14 @@ export const coursesPageData = {
         title: "Học Offline",
         description:
           "Học trực tiếp tại trung tâm với không gian hiện đại, tương tác cao, được giảng viên hướng dẫn sát sao.",
-        image: "/images/courses/course-format-offline-real.png",
+        image: "/images/Design/LopHoc6.PNG",
         icon: "monitor",
       },
       {
         title: "Học Online",
         description:
           "Học online linh hoạt, chất lượng cao với lớp học trực tuyến tương tác, phù hợp với người bận rộn hoặc ở xa.",
-        image: "/images/courses/course-format-online-real.png",
+        image: "/images/Design/LopHoc5.PNG",
         icon: "laptop",
       },
     ],
@@ -61,21 +61,21 @@ export const coursesPageData = {
       title: "IELTS",
       href: "/khoa-hoc/ielts",
       description: "",
-      image: "/images/courses/course-ielts-real.png",
+      image: "/images/Design/LopHoc_1.JPG",
     },
     {
       id: "giao-tiep",
       title: "Tiếng Anh giao tiếp",
       href: "/khoa-hoc/giao-tiep",
       description: "",
-      image: "/images/courses/course-communication-real.png",
+      image: "/images/Design/LopHoc3.JPG",
     },
     {
       id: "ielts-1-kem-1",
       title: "IELTS 1 kèm 1",
       href: "/khoa-hoc/ielts-1-kem-1",
       description: "",
-      image: "/images/courses/course-ielts-1-1-real.png",
+      image: "/images/Design/LopHoc4.JPG",
     },
   ],
 } as const;
@@ -461,12 +461,12 @@ export const communicationPageData = {
     h1: "Khóa học Tiếng Anh giao tiếp tại Crown English",
     canonical: "/khoa-hoc/giao-tiep",
     searchIntent: "Tìm hiểu và đăng ký khóa học Tiếng Anh giao tiếp",
-    primaryTopic: "khóa học tiếng Anh giao tiếp",
+    primaryTopic: "Khóa học tiếng Anh giao tiếp",
     secondaryTopics: [
-      "tiếng Anh giao tiếp",
-      "luyện phản xạ tiếng Anh",
+      "Tiếng Anh giao tiếp",
+      "Luyện phản xạ tiếng Anh",
       "Listening Speaking",
-      "phát âm IPA",
+      "Phát âm IPA",
       "Business English",
       "Daily Topics",
     ],
@@ -484,7 +484,7 @@ export const communicationPageData = {
       title: "Khóa học Tiếng Anh giao tiếp | Crown English",
       description:
         "Các lớp Tiếng Anh giao tiếp theo trình độ tại Crown English.",
-      image: "/images/Design/giao-tiep-hero.png",
+      image: "/images/Design/LopHoc3.JPG",
     },
   },
 
@@ -496,7 +496,7 @@ export const communicationPageData = {
     title: "LỚP GIAO TIẾP",
     subtitle: "",
     description: "",
-    image: "/images/Design/giao-tiep-hero.png",
+    image: "/images/Design/LopHoc3.JPG",
   },
 
   suitableFor: [],
@@ -506,7 +506,7 @@ export const communicationPageData = {
     title: "",
     paragraphs: [],
     featurePanel: {
-      image: "/images/Design/giao-tiep-overview.png",
+      image: "/images/Design/LopHoc_1.JPG",
       alt: "Học viên luyện nói tiếng Anh giao tiếp với sách tại Crown English",
       ctaLabel: "Đăng ký tư vấn giao tiếp",
     },
@@ -684,7 +684,7 @@ export const ieltsOneToOnePageData = {
       title: "IELTS 1 kèm 1 | Crown English",
       description:
         "Lộ trình IELTS 1 kèm 1 cá nhân hóa tại Crown English.",
-      image: "/images/Design/ielts-1-1-hero.png",
+      image: "/images/Design/LopHoc2.JPG",
     },
   },
 
@@ -696,13 +696,13 @@ export const ieltsOneToOnePageData = {
     title: "Lộ trình kèm 1:1 nhanh nhất",
     subtitle: "0-7.5+",
     description: "",
-    image: "/images/Design/ielts-1-1-hero.png",
+    image: "/images/Design/LopHoc2.JPG",
     proofCard: {
-      eyebrow: "KẾT QUẢ HỌC VIÊN",
-      title: "Khánh Linh - IELTS 7.5",
-      description: "Minh chứng cho lộ trình học có theo sát và cá nhân hóa.",
-      image: "/images/students/results/khanh-linh-7-5.png",
-      alt: "Kết quả IELTS 7.5 của học viên Khánh Linh tại Crown English",
+      eyebrow: "LỚP HỌC 1:1",
+      title: "Theo sát từng học viên",
+      description: "Giáo viên đồng hành trực tiếp theo lộ trình cá nhân hóa.",
+      image: "/images/Design/LopHoc5.PNG",
+      alt: "Lớp học IELTS 1 kèm 1 tại Crown English",
     },
   },
 

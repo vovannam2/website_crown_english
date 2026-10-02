@@ -12,12 +12,52 @@ const baiJamjuree = Bai_Jamjuree({
   variable: "--font-bai-jamjuree",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+const vercelSiteUrl =
+  process.env.VERCEL_PROJECT_PRODUCTION_URL ||
+  process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL ||
+  process.env.VERCEL_URL;
+const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+const isLocalSiteUrl =
+  configuredSiteUrl?.includes("localhost") ||
+  configuredSiteUrl?.includes("127.0.0.1");
+const siteUrl =
+  configuredSiteUrl && !(process.env.VERCEL && isLocalSiteUrl)
+    ? configuredSiteUrl
+    : vercelSiteUrl || "https://www.crownenglish.com.vn";
+
+const siteOrigin = siteUrl.startsWith("http") ? siteUrl : `https://${siteUrl}`;
+const defaultTitle = "Crown English | IELTS & Tiếng Anh giao tiếp";
+const defaultDescription =
+  "Crown English cung cấp các chương trình IELTS, Tiếng Anh giao tiếp và IELTS 1 kèm 1 với lộ trình rõ ràng, cam kết đầu ra và đội ngũ giảng viên đồng hành cùng học viên.";
+const defaultShareImage = {
+  url: "/images/og/crown-og.png",
+  width: 1200,
+  height: 630,
+  alt: "Crown English IELTS & Tiếng Anh giao tiếp",
+};
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: { default: "Crown English", template: "%s | Crown English" },
-  description: "Trung tâm tiếng Anh Crown English.",
+  metadataBase: new URL(siteOrigin),
+  title: { default: defaultTitle, template: "%s | Crown English" },
+  description: defaultDescription,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: defaultTitle,
+    description: defaultDescription,
+    url: "/",
+    siteName: "Crown English",
+    locale: "vi_VN",
+    type: "website",
+    images: [defaultShareImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: defaultTitle,
+    description: defaultDescription,
+    images: [defaultShareImage.url],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
