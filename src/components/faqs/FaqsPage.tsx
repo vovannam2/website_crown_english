@@ -292,10 +292,11 @@ export default function FaqsPage({ items }: FaqsPageProps) {
       <section className={styles.hero} aria-labelledby="faq-hero-title">
           <Container className={styles.heroInner}>
             <div className={styles.heroContent}>
-            <p className={styles.eyebrow}>Q &amp; A</p>
+            <p className={`hero-eyebrow-badge ${styles.eyebrow}`}>Question &amp; Answer</p>
             <h1 id="faq-hero-title" className={styles.heroTitle}>
-              Câu hỏi thường gặp <br />
-              về <span>Crown English</span>
+              <span className={styles.heroLine}>Câu hỏi</span>
+              <span className={styles.heroLine}>thường gặp về</span>
+              <span className={`${styles.heroLine} ${styles.heroBrand}`}>Crown English</span>
             </h1>
             <p className={styles.heroDescription}>
               Giải đáp những thắc mắc phổ biến về khóa học, lộ trình, học phí,
@@ -431,8 +432,8 @@ export default function FaqsPage({ items }: FaqsPageProps) {
             <Reveal>
               <p className={styles.sectionEyebrow}>Giải đáp cùng Crown</p>
               <h2 id="faq-list-title">
-                Mọi điều bạn muốn biết <br />
-                về Crown English
+                <span className={styles.explorerTitleLine}>Mọi điều bạn muốn biết</span>
+                <span className={styles.explorerTitleLine}>về Crown English</span>
               </h2>
               <p>
                 Chọn chủ đề, tìm nhanh bằng từ khóa và xem câu trả lời ngay bên
@@ -470,31 +471,35 @@ export default function FaqsPage({ items }: FaqsPageProps) {
           {filteredFaqs.length > 0 ? (
             <>
               <div className={styles.desktopFaqGrid}>
-                <div className={styles.questionList} aria-label="Danh sách câu hỏi">
-                  {filteredFaqs.map((item, index) => (
-                    <Reveal key={item.id} delay={Math.min(index, 5) * 55}>
-                      <button
-                        type="button"
-                        className={
-                          selectedFaq?.id === item.id ? styles.questionActive : ""
-                        }
-                        aria-pressed={selectedFaq?.id === item.id}
-                        onClick={() => chooseFaq(item.id)}
-                      >
-                        <span>{String(index + 1).padStart(2, "0")}</span>
-                        <strong>{item.question}</strong>
-                        <ChevronRight aria-hidden size={20} strokeWidth={2.3} />
-                      </button>
-                    </Reveal>
-                  ))}
+                <div className={styles.questionListFrame}>
+                  <div className={styles.questionList} aria-label="Danh sách câu hỏi">
+                    {filteredFaqs.map((item, index) => (
+                      <Reveal key={item.id} delay={Math.min(index, 5) * 55}>
+                        <button
+                          type="button"
+                          className={
+                            selectedFaq?.id === item.id ? styles.questionActive : ""
+                          }
+                          aria-pressed={selectedFaq?.id === item.id}
+                          onClick={() => chooseFaq(item.id)}
+                        >
+                          <span>{String(index + 1).padStart(2, "0")}</span>
+                          <strong>{item.question}</strong>
+                          <ChevronRight aria-hidden size={20} strokeWidth={2.3} />
+                        </button>
+                      </Reveal>
+                    ))}
+                  </div>
                 </div>
 
                 <Reveal className={styles.detailPanel} delay={100} aria-live="polite">
-                  {selectedFaq && (
-                    <div key={selectedFaq.id} className={styles.answerMotion}>
-                      <QuestionAnswer item={selectedFaq} />
-                    </div>
-                  )}
+                  <div className={styles.detailScroll}>
+                    {selectedFaq && (
+                      <div key={selectedFaq.id} className={styles.answerMotion}>
+                        <QuestionAnswer item={selectedFaq} />
+                      </div>
+                    )}
+                  </div>
                 </Reveal>
               </div>
 
@@ -543,11 +548,14 @@ export default function FaqsPage({ items }: FaqsPageProps) {
           aria-labelledby="featured-faq-title"
         >
           <Container className={styles.featuredInner}>
-            <Reveal className={styles.conversationCopy}>
+            <Reveal className={styles.conversationHeading}>
               <p className={styles.sectionEyebrow}>Câu hỏi được quan tâm</p>
               <h2 id="featured-faq-title">
                 Một cuộc trò chuyện ngắn với Crown
               </h2>
+            </Reveal>
+
+            <Reveal className={styles.conversationCopy}>
               <div className={styles.chatStack}>
                 <div className={styles.chatQuestion}>
                   <span>Q</span>

@@ -12,14 +12,14 @@ export default function StudentsHero() {
   return (
     <section
       aria-labelledby="students-title"
-      className="grid items-center gap-9 bg-white py-14 sm:py-16 lg:grid-cols-[1.05fr_1fr] lg:gap-12"
+      className="grid items-start gap-9 bg-white pb-14 pt-[var(--page-hero-top)] sm:pb-16 lg:grid-cols-[1.05fr_1fr] lg:gap-12"
     >
       <div className={`${effects.heroCopy} max-lg:contents`}>
         <div>
-          <p className="home-eyebrow">CÂU CHUYỆN HỌC VIÊN</p>
+          <p className="hero-eyebrow-badge">CÂU CHUYỆN HỌC VIÊN</p>
           <h1
             id="students-title"
-            className="mt-4 max-w-[800px] text-[length:var(--type-hero-size)] font-[750] leading-[1.15] tracking-[-0.035em] text-balance"
+            className="mt-4 max-w-[800px] type-h1"
           >
             {heading.map((part, index) =>
               part.toLowerCase() === "học viên" ? (

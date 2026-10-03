@@ -42,7 +42,7 @@ export const contactPageData = {
   },
   hero: {
     eyebrow: "Kết nối với Crown English",
-    title: "Cần tư vấn lộ trình? Crown luôn sẵn sàng hỗ trợ.",
+    title: "Cần tư vấn lộ trình? Crown luôn sẵn sàng hỗ trợ",
     description:
       "Chọn kênh liên hệ phù hợp để được đội ngũ Crown tư vấn khóa học, lịch học, học phí và hướng dẫn đến trung tâm.",
   },

@@ -8,7 +8,7 @@ export default function AboutHero() {
   return <section className={styles.hero} aria-labelledby="about-title">
     <Reveal className={styles.heroCopy}>
       <div>
-        <p className={styles.eyebrow}>{data.hero.eyebrow}</p>
+        <p className="hero-eyebrow-badge">{data.hero.eyebrow}</p>
         <h1 id="about-title" className={styles.heroTitle}>{data.hero.lines.map((line, i) =>
           <span className={styles.lineMask} key={line}><span className={styles.textLine}>{line}{i < data.hero.lines.length - 1 ? " " : ""}</span></span>,
         )}</h1>

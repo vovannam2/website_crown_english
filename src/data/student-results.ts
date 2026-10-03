@@ -107,7 +107,7 @@ export const studentResultsPageData = {
   },
 
   intro:
-    "Tại Crown English, mỗi kết quả là một dấu mốc ghi nhận quá trình nỗ lực của học viên và sự đồng hành xuyên suốt từ đội ngũ giảng viên. Từ những cột mốc IELTS 7.0, 7.5 đến 8.0, các học viên đã chia sẻ những trải nghiệm thực tế về lộ trình học, quá trình cải thiện từng kỹ năng và sự hỗ trợ trong suốt quá trình học tập. Đây là nơi Crown English lưu lại những kết quả và cảm nhận chân thực từ chính học viên.",
+    "Tại Crown English, mỗi kết quả là một dấu mốc ghi nhận quá trình nỗ lực của học viên và sự đồng hành xuyên suốt từ đội ngũ giảng viên. Đây là nơi Crown English lưu lại những kết quả và cảm nhận chân thực từ chính học viên.",
 
   results: [
     {

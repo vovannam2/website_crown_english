@@ -114,13 +114,18 @@ export default function CommitmentsPage({ data }: CommitmentsPageProps) {
     <article className={styles.page}>
       <section className={styles.hero} aria-labelledby="commitments-title">
         <Container className={styles.heroInner}>
-          <div className={styles.heroCopy}>
+          <div className={styles.heroHeading}>
             <Reveal>
-              <p className={styles.heroEyebrow}>{data.hero.eyebrow}</p>
+              <p className="hero-eyebrow-badge">{data.hero.eyebrow}</p>
             </Reveal>
             <Reveal delay={80}>
               <h1 id="commitments-title">{renderTitle(data.hero.title, data.hero.accent)}</h1>
             </Reveal>
+          </div>
+
+          <HeroVisual visual={data.hero.visual} />
+
+          <div className={styles.heroCopy}>
             <Reveal delay={140}>
               <p className={styles.heroDescription}>{data.hero.description}</p>
             </Reveal>
@@ -134,7 +139,6 @@ export default function CommitmentsPage({ data }: CommitmentsPageProps) {
             </Reveal>
           </div>
 
-          <HeroVisual visual={data.hero.visual} />
         </Container>
       </section>
 

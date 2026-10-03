@@ -8,7 +8,7 @@ function DetailList({ title, items }: TeacherDetailListProps) {
     <h4 className="type-label text-[var(--color-brand-red)]">{title}</h4>
     <ul className="mt-3 grid gap-2.5">
       {items.map((item, index) => (
-        <li key={`${index}-${item}`} className="type-small flex gap-2.5 text-[var(--color-ink-muted)]">
+        <li key={`${index}-${item}`} className="type-body flex gap-2.5 text-[var(--color-ink-muted)]">
           <span aria-hidden="true" className="text-[var(--color-brand-red)]">✓</span>
           <span>{item}</span>
         </li>

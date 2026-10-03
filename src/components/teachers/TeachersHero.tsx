@@ -12,12 +12,12 @@ export default function TeachersHero() {
     .filter((teacher) => teacher !== undefined)
     .filter((teacher) => teacher.image);
   const heading = teachersPageData.seo.h1.split("giảng viên");
-  return <section className="bg-white py-14 sm:py-16" aria-labelledby="teachers-title">
-    <Container className="grid items-center gap-9 lg:grid-cols-[1.05fr_1fr] lg:gap-12">
+  return <section className="bg-white pb-14 pt-[var(--page-hero-top)] sm:pb-16" aria-labelledby="teachers-title">
+    <Container className="grid items-start gap-9 lg:grid-cols-[1.05fr_1fr] lg:gap-12">
       <div className={`${styles.heroCopy} max-lg:contents`}>
         <div>
-          <p className="home-eyebrow">ĐỘI NGŨ GIẢNG VIÊN</p>
-          <h1 id="teachers-title" className="mt-4 max-w-[800px] text-[length:var(--type-hero-size)] font-[750] leading-[1.15] tracking-[-0.035em] text-balance [&_span]:text-[var(--color-brand-red)]">{heading[0]}<span>giảng viên</span>{heading[1]}</h1>
+          <p className="hero-eyebrow-badge">ĐỘI NGŨ GIẢNG VIÊN</p>
+          <h1 id="teachers-title" className="mt-4 max-w-[800px] type-h1 [&_span]:text-[var(--color-brand-red)]">{heading[0]}<span>giảng viên</span>{heading[1]}</h1>
         </div>
         <div className="max-lg:order-3">
           <p className="max-w-[820px] text-[length:var(--type-intro-size)] leading-[1.8] text-[var(--color-ink-muted)] lg:mt-6">{teachersPageData.intro}</p>

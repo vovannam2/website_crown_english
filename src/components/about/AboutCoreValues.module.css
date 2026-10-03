@@ -7,7 +7,7 @@
 .anchor span { color: #fff4e8; font-weight: 600; font-size: 9px; letter-spacing: .12em; }
 .anchor strong { margin-top: 7px; color: #fff; font-weight: 800; font-size: 12px; letter-spacing: .08em; }
 .valueSlot { position: relative; z-index: 1; min-width: 0; }
-.valueItem { display: grid; grid-template-columns: 72px 1fr; gap: 22px; min-height: 182px; border-top: 1px solid #9ca3ad; padding-block: 24px 10px; background: #fff; outline: none; transition: border-color 250ms, transform 250ms cubic-bezier(.22,1,.36,1); }
+.valueItem { display: grid; grid-template-columns: 72px 1fr; gap: 22px; min-height: 182px; border-top: 1px solid var(--color-line); padding-block: 24px 10px; background: #fff; outline: none; transition: border-color 250ms, transform 250ms cubic-bezier(.22,1,.36,1); }
 .number { color: var(--color-line-strong); font-size: 58px; line-height: .9; letter-spacing: -.07em; transition: color 250ms; }
 .valueItem h3 { transition: color 250ms; font-size: var(--type-card-size); font-weight: 700; line-height: 1.45; letter-spacing: normal; }
 .english { margin-block: 5px 14px; color: var(--color-ink-muted); font-size: 12px; letter-spacing: .06em; }
@@ -18,7 +18,7 @@
 .branch { display: none; }
 @media (min-width: 768px) {
   .valueItem { height: 100%; }
-  .slot1 .valueItem, .slot2 .valueItem { border-top: 0; border-bottom: 1px solid #9ca3ad; padding-block: 10px 24px; }
+  .slot1 .valueItem, .slot2 .valueItem { border-top: 0; border-bottom: 1px solid var(--color-line); padding-block: 10px 24px; }
   .valueItem:hover, .valueItem:focus-visible { transform: none; border-color: var(--color-brand-red); }
   .branch { position: absolute; display: block; width: 80px; height: 56px; overflow: visible; pointer-events: none; }
   .branch line { stroke: #cc8582; stroke-width: 1.1; vector-effect: non-scaling-stroke; transition: stroke 250ms, stroke-width 250ms; }
@@ -31,14 +31,16 @@
 @media (max-width: 767px) {
   .section { padding-block: 34px 42px; }
   .network { display: block; margin-top: 34px; padding: 92px 0 0 34px; }
-  .anchor { top: 0; left: 0; width: 76px; height: 76px; transform: none; }
+  .anchor { top: 0; left: -16px; width: 76px; height: 76px; transform: none; }
   .anchor span { font-size: 7px; } .anchor strong { margin-top: 4px; font-size: 8px; }
   .connections { top: 76px; right: auto; bottom: 10px; left: 12px; width: 20px; }
-  .connections::before { content: ""; position: absolute; top: 0; bottom: 0; left: 9px; width: 1.5px; background: #cc8582; }
-  .valueSlot::before { content: ""; position: absolute; z-index: 2; top: 30px; left: -26px; width: 9px; height: 9px; border: 2px solid #cc8582; border-radius: 50%; background: #fff; transition: background-color 250ms, border-color 250ms; }
+  .connections::before { content: ""; position: absolute; top: 0; bottom: 0; left: 9px; width: 2px; background: #cc8582; }
+  .valueSlot::before { content: ""; position: absolute; z-index: 2; top: 30px; left: -12px; width: 9px; height: 9px; border: 2px solid #cc8582; border-radius: 50%; background: #fff; transform: translateX(-50%); transition: background-color 250ms, border-color 250ms; }
+  .valueSlot::after { content: ""; position: absolute; top: 0; right: 0; left: -12px; height: 1px; background: var(--color-line); }
   .valueSlot:has(.valueItem:hover, .valueItem:focus-visible)::before { border-color: var(--color-brand-red); background: var(--color-brand-red); }
-  .valueItem { grid-template-columns: 54px 1fr; gap: 16px; min-height: 0; padding-block: 24px; }
-  .number { font-size: 44px; } .valueItem h3 { font-size: 21px; } .description { font-size: 14px; }
+  .valueSlot:has(.valueItem:hover, .valueItem:focus-visible)::after { background: var(--color-brand-red); }
+  .valueItem { grid-template-columns: 54px 1fr; gap: 16px; min-height: 0; border-top: 0; padding-block: 24px; }
+  .number { font-size: 44px; } .valueItem h3 { font-size: var(--type-card-size); } .description { font-size: var(--type-body-size); }
 }
 @media (prefers-reduced-motion: reduce) {
   .section *, .section *::before, .section *::after { transition: none !important; animation: none !important; }

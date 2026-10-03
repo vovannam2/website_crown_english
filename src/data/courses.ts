@@ -147,7 +147,7 @@ export const ieltsPageData = {
     eyebrow: "KHÓA HỌC IELTS TẠI CROWN ENGLISH",
     title: "IELTS",
     titlePrefix: "Chinh phục IELTS\ntừ nền tảng",
-    titleAccent: "vững chắc,",
+    titleAccent: "vững chắc",
     subtitle: "Lộ trình nhanh nhất",
     highlight: "0-7.5+",
     description:

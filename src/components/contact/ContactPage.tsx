@@ -98,6 +98,9 @@ export default function ContactPage({ data }: ContactPageProps) {
             <Reveal className={styles.heroIntro}>
               <p className={styles.eyebrow}>{data.hero.eyebrow}</p>
               <h1 id="contact-title">{data.hero.title}</h1>
+            </Reveal>
+
+            <Reveal className={styles.heroDetails}>
               <p>{data.hero.description}</p>
               <div className={styles.heroActions}>
                 <ContactAction href={data.center.phoneHref}>

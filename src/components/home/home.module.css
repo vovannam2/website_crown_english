@@ -199,7 +199,7 @@
 .page .heroCampaign {
   position: relative;
   min-height: 740px;
-  padding: 64px max(28px, calc((100vw - 1320px) / 2));
+  padding: var(--page-hero-top) max(28px, calc((100vw - 1320px) / 2));
   display: flex;
   align-items: center;
   isolation: isolate;
@@ -241,13 +241,6 @@
   z-index: 2;
   width: min(100%, 720px);
 }
-.heroCampaignEyebrow {
-  color: var(--color-brand-red);
-  font-size: 11px;
-  font-weight: 750;
-  letter-spacing: .19em;
-  line-height: 1.6;
-}
 .heroCampaignTitle {
   margin-top: 20px;
   color: var(--color-brand-red);
@@ -281,8 +274,8 @@
   max-width: 535px;
   margin-top: 18px;
   color: #52565d;
-  font-size: 16px;
-  line-height: 1.75;
+  font-size: var(--text-body-lg-size);
+  line-height: var(--leading-body-lg);
 }
 .heroCampaignActions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 23px; }
 .heroMetrics {
@@ -401,14 +394,14 @@
   .heroMetricValue strong { font-size: 34px; }
 }
 @media (max-width: 760px) {
-  .page .heroCampaign { min-height: auto; padding: 52px 20px 44px; }
+  .page .heroCampaign { min-height: auto; padding: var(--page-hero-top) 20px 44px; }
   .heroCampaignBackground { inset: 0; }
   .heroCampaignImage { object-position: 66% center; }
   .heroCampaignTint { background: linear-gradient(90deg, #fffdf9f3 0%, #fffdf9df 58%, #fffdf9a8 100%); }
   .heroCampaignInner { display: block; }
   .heroCampaignCopy { max-width: 600px; }
   .heroCampaignTitle { font-size: clamp(61px, 18vw, 92px); }
-  .heroCampaignDescription { max-width: 470px; font-size: 15px; }
+  .heroCampaignDescription { max-width: 470px; }
   .heroMetrics { grid-template-columns: 1.18fr .88fr .94fr; margin-top: 30px; }
   .heroMetric { padding-inline: 10px; }
   .heroMetricValue { display: block; }
