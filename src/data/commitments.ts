@@ -51,7 +51,7 @@ export const commitmentsPageData = {
       portraits: [
         {
           image: "/images/teachers/ms-minh-tu.png",
-          alt: "Giảng viên Crown English",
+          alt: "Giảng viên Ms Minh Tu tại Crown English",
         },
         {
           image: "/images/Design/ChiKhanh6.jpg",
@@ -59,7 +59,7 @@ export const commitmentsPageData = {
         },
         {
           image: "/images/teachers/mr-hung.png",
-          alt: "Giảng viên Crown English",
+          alt: "Giảng viên Mr Hung tại Crown English",
         },
       ],
     },

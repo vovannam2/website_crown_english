@@ -39,6 +39,9 @@ export const metadata: Metadata = {
     description: defaultDescription,
     images: [defaultShareImage.url],
   },
+  verification: {
+    google: "5Huji_pt8op8thbaNnbrZTA8mdvRAIUGtiCdJyZJtM8",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

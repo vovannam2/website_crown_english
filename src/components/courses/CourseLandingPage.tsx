@@ -968,6 +968,8 @@ export default function CourseLandingPage({ data }: { data: CoursePageData }) {
           <Reveal delay={100} className="flex flex-wrap gap-3 lg:justify-end">
             <Button href="/lien-he">{data.cta?.buttonLabel || "Đăng ký tư vấn"}</Button>
             <Button href="/khoa-hoc" variant="outline">Xem 3 khóa học</Button>
+            <Link href="/cam-ket" className="inline-flex min-h-11 items-center type-small font-semibold text-[var(--color-brand-red)] underline-offset-4 hover:underline">Xem cam kết đầu ra</Link>
+            <Link href="/hoc-vien" className="inline-flex min-h-11 items-center type-small font-semibold text-[var(--color-brand-red)] underline-offset-4 hover:underline">Xem kết quả học viên</Link>
           </Reveal>
         </section>
         </Container>

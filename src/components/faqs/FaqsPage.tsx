@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useMemo, useState, type ComponentType, type FormEvent } from "react";
 import {
   ArrowRight,
@@ -648,6 +649,7 @@ export default function FaqsPage({ items }: FaqsPageProps) {
                 Đăng ký tư vấn ngay
                 <ArrowRight aria-hidden size={18} strokeWidth={2.4} />
               </Button>
+              <Link href="/khoa-hoc" className="ml-5 inline-flex min-h-11 items-center font-semibold text-[var(--color-brand-red)] underline-offset-4 hover:underline">Xem các khóa học</Link>
             </div>
 
             <div className={styles.ctaVisual} aria-hidden="true">

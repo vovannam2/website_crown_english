@@ -1,4 +1,5 @@
 import Button from "@/components/ui/Button";
+import Link from "next/link";
 import HeroDecoration from "@/components/ui/HeroDecoration";
 import effects from "@/components/ui/PortraitHero.module.css";
 import { studentResultsPageData as data } from "@/data/student-results";
@@ -37,6 +38,7 @@ export default function StudentsHero() {
           </p>
           <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3 [&>a]:transition-[transform,background-color] [&>a]:duration-200 motion-safe:[&>a:hover]:-translate-y-0.5 motion-reduce:[&>a]:transition-none">
             <Button href="/lien-he">Đăng ký tư vấn</Button>
+            <Link href="/khoa-hoc" className="inline-flex min-h-11 items-center font-[650] text-[var(--color-brand-red)] hover:text-[var(--color-brand-red-dark)] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-brand-red-dark)]">Xem các khóa học</Link>
             <a
               href="#student-results"
               className="inline-flex min-h-11 items-center gap-6 font-[650] text-[var(--color-brand-red)] hover:text-[var(--color-brand-red-dark)] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-brand-red-dark)]"

@@ -89,7 +89,7 @@ export default function HomePage() {
           {results.map((result, index) => <Reveal key={result.id} delay={index * 100} className={styles.achievement}>
             <article>
               <strong className={styles.score}>{result.overall}<small>{result.exam}</small></strong>
-              <div className={styles.resultImage}><Image src={result.fullImage} alt={`Kết quả IELTS của ${result.name}`} fill sizes="(min-width: 900px) 330px, 76vw" /></div>
+              <div className={styles.resultImage}><Image src={result.fullImage} alt={`Kết quả ${result.exam} ${result.overall} của ${result.name}`} fill sizes="(min-width: 900px) 330px, 76vw" /></div>
               <h3>{result.name}</h3>
               {!!result.highlights.length && <ul className={styles.skillList}>{result.highlights.map((item) => <li key={item}>{item}</li>)}</ul>}
             </article>

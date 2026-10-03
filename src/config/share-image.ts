@@ -1,7 +1,7 @@
 export const defaultShareImage = {
   url: "/images/og/preview.jpg",
-  width: 2772,
-  height: 1024,
+  width: 1200,
+  height: 443,
   alt: "Crown English IELTS & Tiếng Anh giao tiếp",
 };
 
