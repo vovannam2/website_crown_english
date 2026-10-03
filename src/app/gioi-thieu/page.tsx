@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/config/site";
+import { getShareImage } from "@/config/share-image";
 import Container from "@/components/ui/Container";
 import AboutCoreValues from "@/components/about/AboutCoreValues";
 import AboutCta from "@/components/about/AboutCta";
@@ -11,8 +13,6 @@ import AboutStory from "@/components/about/AboutStory";
 import { aboutPageData as data } from "@/data/about";
 import styles from "@/components/about/about.module.css";
 
-const defaultOgImage = "/images/og/crown-english.jpg";
-
 export const metadata: Metadata = {
   title: { absolute: data.seo.title },
   description: data.seo.description,
@@ -22,17 +22,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: data.seo.openGraph.title,
     description: data.seo.openGraph.description,
-    images: [
-      {
-        url: data.seo.openGraph.image || defaultOgImage,
-      },
-    ],
+    images: [getShareImage(data.seo.openGraph.image)],
     type: "website",
   },
 };
 
 export default function AboutPage() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.crownenglish.com.vn";
+  const siteUrl = siteConfig.url;
 
   const pageUrl = `${siteUrl}${data.seo.canonical}`;
 

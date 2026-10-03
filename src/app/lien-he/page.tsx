@@ -1,31 +1,24 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/config/site";
+import { getShareImage } from "@/config/share-image";
 import ContactPage from "@/components/contact/ContactPage";
 import { contactPageData as data } from "@/data/contact";
 
 export const metadata: Metadata = {
-  title: {
-    absolute: data.seo.title,
-  },
-
+  title: { absolute: data.seo.title },
   description: data.seo.description,
-
-  alternates: {
-    canonical: data.seo.canonical,
-  },
-
+  alternates: { canonical: data.seo.canonical },
   robots: data.seo.robots,
-
   openGraph: {
     title: data.seo.openGraph.title,
     description: data.seo.openGraph.description,
-    url: data.seo.canonical,
-    images: data.seo.openGraph.image ? [data.seo.openGraph.image] : undefined,
+    images: [getShareImage(data.seo.openGraph.image)],
     type: "website",
   },
 };
 
 export default function Page() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.crownenglish.com.vn";
+  const siteUrl = siteConfig.url;
 
   const pageUrl = `${siteUrl}${data.seo.canonical}`;
 

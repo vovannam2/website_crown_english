@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/config/site";
+import { getShareImage } from "@/config/share-image";
 import CommitmentsPage from "@/components/commitments/CommitmentsPage";
 import { commitmentsPageData as data } from "@/data/commitments";
-
-const defaultOgImage = "/images/og/crown-english.jpg";
 
 export const metadata: Metadata = {
   title: { absolute: data.seo.title },
@@ -12,17 +12,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: data.seo.openGraph.title,
     description: data.seo.openGraph.description,
-    images: [
-      {
-        url: data.seo.openGraph.image || defaultOgImage,
-      },
-    ],
+    images: [getShareImage(data.seo.openGraph.image)],
     type: "website",
   },
 };
 
 export default function CommitmentPage() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.crownenglish.com.vn";
+  const siteUrl = siteConfig.url;
 
   const pageUrl = `${siteUrl}${data.seo.canonical}`;
 

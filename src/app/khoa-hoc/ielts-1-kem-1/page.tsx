@@ -1,33 +1,26 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/config/site";
+import { getShareImage } from "@/config/share-image";
 import CourseLandingPage from "@/components/courses/CourseLandingPage";
-import { ieltsOneToOnePageData } from "@/data/courses";
-
-const defaultOgImage = "/images/og/crown-english.jpg";
+import { ieltsOneToOnePageData as data } from "@/data/courses";
 
 export const metadata: Metadata = {
-  title: { absolute: ieltsOneToOnePageData.seo.title },
-  description: ieltsOneToOnePageData.seo.description,
-  alternates: {
-    canonical: ieltsOneToOnePageData.seo.canonical,
-  },
-  robots: ieltsOneToOnePageData.seo.robots,
-
+  title: { absolute: data.seo.title },
+  description: data.seo.description,
+  alternates: { canonical: data.seo.canonical },
+  robots: data.seo.robots,
   openGraph: {
-    title: ieltsOneToOnePageData.seo.openGraph.title,
-    description: ieltsOneToOnePageData.seo.openGraph.description,
-    images: [
-      {
-        url: ieltsOneToOnePageData.seo.openGraph.image || defaultOgImage,
-      },
-    ],
+    title: data.seo.openGraph.title,
+    description: data.seo.openGraph.description,
+    images: [getShareImage(data.seo.openGraph.image)],
     type: "website",
   },
 };
 
 export default function OneToOnePage() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.crownenglish.com.vn";
+  const siteUrl = siteConfig.url;
 
-  const pageUrl = `${siteUrl}${ieltsOneToOnePageData.seo.canonical}`;
+  const pageUrl = `${siteUrl}${data.seo.canonical}`;
 
   const schema = {
     "@context": "https://schema.org",
@@ -38,9 +31,9 @@ export default function OneToOnePage() {
 
     url: pageUrl,
 
-    name: ieltsOneToOnePageData.seo.h1,
+    name: data.seo.h1,
 
-    description: ieltsOneToOnePageData.seo.description,
+    description: data.seo.description,
 
     inLanguage: "vi-VN",
 
@@ -62,7 +55,7 @@ export default function OneToOnePage() {
         }}
       />
 
-      <CourseLandingPage data={ieltsOneToOnePageData} />
+      <CourseLandingPage data={data} />
     </>
   );
 }

@@ -1,5 +1,6 @@
 export const siteConfig = {
   name: "Crown English",
+  url: "https://www.crownenglish.com.vn",
   shortDescription:
     "Trung tâm tiếng Anh đồng hành cùng người học trên hành trình phát triển năng lực ngôn ngữ.",
   contact: {

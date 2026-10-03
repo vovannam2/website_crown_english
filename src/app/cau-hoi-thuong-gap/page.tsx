@@ -1,26 +1,24 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/config/site";
+import { getShareImage } from "@/config/share-image";
 import FaqsPage from "@/components/faqs/FaqsPage";
 import { faqsPageData as data } from "@/data/faqs";
 
-const description =
-  "Giải đáp các câu hỏi thường gặp về khóa học, học phí, giảng viên, đăng ký, ưu đãi và chính sách tại Crown English.";
-
 export const metadata: Metadata = {
   title: { absolute: data.seo.title },
-  description,
+  description: data.seo.description,
   alternates: { canonical: data.seo.canonical },
   robots: data.seo.robots,
   openGraph: {
     title: data.seo.openGraph.title,
-    description,
-    images: ["/images/Design/ChiKhanh5.jpg"],
-    url: data.seo.canonical,
+    description: data.seo.openGraph.description,
+    images: [getShareImage(data.seo.openGraph.image)],
     type: "website",
   },
 };
 
 export default function FaqPage() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.crownenglish.com.vn";
+  const siteUrl = siteConfig.url;
 
   const pageUrl = `${siteUrl}${data.seo.canonical}`;
 

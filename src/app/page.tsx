@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/config/site";
+import { defaultShareImage } from "@/config/share-image";
 import HomePage from "@/components/home/HomePage";
 import { homePageData as data } from "@/data/home";
 
@@ -20,18 +22,18 @@ export const metadata: Metadata = {
             alt: "Crown English IELTS & Tiếng Anh giao tiếp",
           },
         ]
-      : undefined,
+      : [defaultShareImage],
   },
   twitter: {
     card: "summary_large_image",
     title: data.seo.openGraph.title,
     description: data.seo.openGraph.description,
-    images: data.seo.openGraph.image ? [data.seo.openGraph.image] : undefined,
+    images: [data.seo.openGraph.image || defaultShareImage.url],
   },
 };
 
 export default function Page() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.crownenglish.com.vn";
+  const siteUrl = siteConfig.url;
 
   const jsonLd = {
     "@context": "https://schema.org",

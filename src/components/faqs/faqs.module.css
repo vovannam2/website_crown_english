@@ -934,14 +934,14 @@
 
 .ctaVisual {
   position: relative;
-  min-height: 360px;
+  aspect-ratio: 828 / 1028;
   overflow: hidden;
   border-radius: 28px;
 }
 
 .ctaImage {
   object-fit: cover;
-  object-position: 50% 32%;
+  object-position: center;
   filter: saturate(1.02);
 }
 
@@ -1006,9 +1006,12 @@
   }
 
   .explorerHeader,
-  .featuredInner,
-  .ctaCard {
+  .featuredInner {
     grid-template-columns: 0.9fr 1.1fr;
+  }
+
+  .ctaCard {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
   }
 
   .filterPills {
@@ -1022,10 +1025,6 @@
   .ctaCard {
     min-height: 410px;
     padding: 56px 56px 0;
-  }
-
-  .ctaVisual {
-    min-height: 420px;
   }
 }
 

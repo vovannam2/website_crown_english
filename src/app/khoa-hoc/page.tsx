@@ -1,36 +1,32 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/config/site";
+import { getShareImage } from "@/config/share-image";
 import { CoursesOverviewPage } from "@/components/courses/CourseLandingPage";
 import {
   communicationPageData,
-  coursesPageData,
+  coursesPageData as data,
   ieltsOneToOnePageData,
   ieltsPageData,
 } from "@/data/courses";
 import { studentResultsPageData } from "@/data/student-results";
 
-const defaultOgImage = "/images/og/crown-english.jpg";
-
 export const metadata: Metadata = {
-  title: { absolute: coursesPageData.seo.title },
-  description: coursesPageData.seo.description,
-  alternates: { canonical: coursesPageData.seo.canonical },
-  robots: coursesPageData.seo.robots,
+  title: { absolute: data.seo.title },
+  description: data.seo.description,
+  alternates: { canonical: data.seo.canonical },
+  robots: data.seo.robots,
   openGraph: {
-    title: coursesPageData.seo.openGraph.title,
-    description: coursesPageData.seo.openGraph.description,
-    images: [
-      {
-        url: coursesPageData.seo.openGraph.image || defaultOgImage,
-      },
-    ],
+    title: data.seo.openGraph.title,
+    description: data.seo.openGraph.description,
+    images: [getShareImage(data.seo.openGraph.image)],
     type: "website",
   },
 };
 
 export default function CoursesPage() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.crownenglish.com.vn";
+  const siteUrl = siteConfig.url;
 
-  const pageUrl = `${siteUrl}${coursesPageData.seo.canonical}`;
+  const pageUrl = `${siteUrl}${data.seo.canonical}`;
 
   const schema = {
     "@context": "https://schema.org",
@@ -41,9 +37,9 @@ export default function CoursesPage() {
 
     url: pageUrl,
 
-    name: coursesPageData.seo.h1,
+    name: data.seo.h1,
 
-    description: coursesPageData.seo.description,
+    description: data.seo.description,
 
     inLanguage: "vi-VN",
 
@@ -108,7 +104,7 @@ export default function CoursesPage() {
   };
 
   const courseImages = Object.fromEntries(
-    coursesPageData.courses.map((course) => [course.id, course.image]),
+    data.courses.map((course) => [course.id, course.image]),
   );
 
   const featuredVideo = studentResultsPageData.videos.find(
@@ -125,10 +121,10 @@ export default function CoursesPage() {
       />
 
       <CoursesOverviewPage
-        title={coursesPageData.seo.h1}
-        description={coursesPageData.seo.description}
-        heroImage={coursesPageData.hero.image}
-        learningFormats={coursesPageData.learningFormats}
+        title={data.seo.h1}
+        description={data.seo.description}
+        heroImage={data.hero.image}
+        learningFormats={data.learningFormats}
         achievements={{
           title: "Bảng vàng thành tích học viên Crown English",
           description:

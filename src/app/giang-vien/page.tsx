@@ -1,35 +1,29 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/config/site";
+import { getShareImage } from "@/config/share-image";
 import Container from "@/components/ui/Container";
 import TeachersHero from "@/components/teachers/TeachersHero";
 import TeacherStandards from "@/components/teachers/TeacherStandards";
 import TeacherShowcase from "@/components/teachers/TeacherShowcase";
-import { teachersPageData } from "@/data/teachers";
-
-const { seo } = teachersPageData;
-
-const defaultOgImage = "/images/og/crown-english.jpg";
+import { teachersPageData as data } from "@/data/teachers";
 
 export const metadata: Metadata = {
-  title: { absolute: seo.title },
-  description: seo.description,
-  alternates: { canonical: seo.canonical },
-  robots: seo.robots,
+  title: { absolute: data.seo.title },
+  description: data.seo.description,
+  alternates: { canonical: data.seo.canonical },
+  robots: data.seo.robots,
   openGraph: {
-    title: seo.openGraph.title,
-    description: seo.openGraph.description,
-    images: [
-      {
-        url: seo.openGraph.image || defaultOgImage,
-      },
-    ],
+    title: data.seo.openGraph.title,
+    description: data.seo.openGraph.description,
+    images: [getShareImage(data.seo.openGraph.image)],
     type: "website",
   },
 };
 
 export default function TeachersPage() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.crownenglish.com.vn";
+  const siteUrl = siteConfig.url;
 
-  const pageUrl = `${siteUrl}${seo.canonical}`;
+  const pageUrl = `${siteUrl}${data.seo.canonical}`;
 
   const schema = {
     "@context": "https://schema.org",
@@ -40,9 +34,9 @@ export default function TeachersPage() {
 
     url: pageUrl,
 
-    name: seo.h1,
+    name: data.seo.h1,
 
-    description: seo.description,
+    description: data.seo.description,
 
     inLanguage: "vi-VN",
 
@@ -57,7 +51,7 @@ export default function TeachersPage() {
     mainEntity: {
       "@type": "ItemList",
 
-      itemListElement: teachersPageData.teachers.map((teacher, index) => ({
+      itemListElement: data.teachers.map((teacher, index) => ({
         "@type": "ListItem",
 
         position: index + 1,
@@ -89,7 +83,7 @@ export default function TeachersPage() {
       <Container>
         <TeacherStandards />
 
-        <TeacherShowcase teachers={teachersPageData.teachers} />
+        <TeacherShowcase teachers={data.teachers} />
       </Container>
     </>
   );

@@ -1,33 +1,26 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/config/site";
+import { getShareImage } from "@/config/share-image";
 import CourseLandingPage from "@/components/courses/CourseLandingPage";
-import { ieltsPageData } from "@/data/courses";
-
-const defaultOgImage = "/images/og/crown-english.jpg";
+import { ieltsPageData as data } from "@/data/courses";
 
 export const metadata: Metadata = {
-  title: { absolute: ieltsPageData.seo.title },
-  description: ieltsPageData.seo.description,
-  alternates: {
-    canonical: ieltsPageData.seo.canonical,
-  },
-  robots: ieltsPageData.seo.robots,
-
+  title: { absolute: data.seo.title },
+  description: data.seo.description,
+  alternates: { canonical: data.seo.canonical },
+  robots: data.seo.robots,
   openGraph: {
-    title: ieltsPageData.seo.openGraph.title,
-    description: ieltsPageData.seo.openGraph.description,
-    images: [
-      {
-        url: ieltsPageData.seo.openGraph.image || defaultOgImage,
-      },
-    ],
+    title: data.seo.openGraph.title,
+    description: data.seo.openGraph.description,
+    images: [getShareImage(data.seo.openGraph.image)],
     type: "website",
   },
 };
 
 export default function IeltsPage() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.crownenglish.com.vn";
+  const siteUrl = siteConfig.url;
 
-  const pageUrl = `${siteUrl}${ieltsPageData.seo.canonical}`;
+  const pageUrl = `${siteUrl}${data.seo.canonical}`;
 
   const schema = {
     "@context": "https://schema.org",
@@ -38,9 +31,9 @@ export default function IeltsPage() {
 
     url: pageUrl,
 
-    name: ieltsPageData.seo.h1,
+    name: data.seo.h1,
 
-    description: ieltsPageData.seo.description,
+    description: data.seo.description,
 
     inLanguage: "vi-VN",
 
@@ -62,7 +55,7 @@ export default function IeltsPage() {
         }}
       />
 
-      <CourseLandingPage data={ieltsPageData} />
+      <CourseLandingPage data={data} />
     </>
   );
 }
