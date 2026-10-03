@@ -1,10 +1,11 @@
 ﻿"use client";
 
-import { useEffect, useRef, type ReactNode } from "react";
+import { useEffect, useRef } from "react";
+import type { ManifestoMotionProps } from "@/types/about";
 
 // A single viewport trigger coordinates the notes and connecting strokes.
 // Server content stays visible without JavaScript or with reduced motion.
-export default function ManifestoMotion({ children }: { children: ReactNode }) {
+export default function ManifestoMotion({ children }: ManifestoMotionProps) {
   const ref = useRef<HTMLDivElement>(null);
   const revealed = useRef(false);
   useEffect(() => {

@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import type { TeacherImageProps } from "@/types/teachers";
 
-export default function TeacherImage({ name, src, sizes }: { name: string; src: string; sizes: string }) {
+export default function TeacherImage({ name, src, sizes }: TeacherImageProps) {
   const [failedSource, setFailedSource] = useState<string | null>(null);
   const alt = `Giảng viên ${name} - Crown English`;
   return <div className="relative aspect-[4/5] w-full overflow-hidden bg-white">

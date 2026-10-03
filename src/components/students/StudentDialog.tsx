@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useRef, type ReactNode } from "react";
+import { useEffect, useRef } from "react";
 import { X } from "lucide-react";
+import type { StudentDialogProps } from "@/types/student-results";
 
-export default function StudentDialog({ title, children, onClose, variant = "image" }: { title: string; children: ReactNode; onClose: () => void; variant?: "image" | "result" }) {
+export default function StudentDialog({ title, children, onClose, variant = "image" }: StudentDialogProps) {
   const ref = useRef<HTMLDialogElement>(null);
   useEffect(() => {
     const dialog = ref.current;

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { StudentResult } from "@/types/student-results";
+import type { StudentResult, StudentResultsProps } from "@/types/student-results";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Reveal from "@/components/ui/Reveal";
 import StudentImage from "./StudentImage";
@@ -17,11 +17,7 @@ const bulbColors = [
   "text-pink-400",
 ];
 
-export default function StudentResults({
-  results,
-}: {
-  results: readonly StudentResult[];
-}) {
+export default function StudentResults({ results }: StudentResultsProps) {
   const [paused, setPaused] = useState(false);
   const [selected, setSelected] = useState<StudentResult | null>(null);
   const sortedResults = [...results].sort(

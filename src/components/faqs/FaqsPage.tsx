@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState, type ComponentType, type FormEvent } from "react";
+import { useMemo, useState, type FormEvent } from "react";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -24,43 +24,21 @@ import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import styles from "./faqs.module.css";
 
-type FaqItem = {
-  readonly id: string;
-  readonly question: string;
-  readonly answer: readonly string[];
-  readonly category?: string;
-  readonly speaker?: string;
-  readonly sourceImage?: string;
-  readonly needsReview?: boolean;
-};
+import type {
+  CategoryKey,
+  CategoryMeta,
+  FaqChipIconProps,
+  FaqItem,
+  FaqQuestionAnswerProps,
+  FaqsPageProps,
+  FaqSpeechBubbleProps,
+  FaqTeacherAvatarProps,
+} from "@/types/faqs";
 
-type CategoryKey =
-  | "all"
-  | "courses"
-  | "tuition"
-  | "teachers"
-  | "registration"
-  | "policy";
-
-type CategoryMeta = {
-  readonly label: string;
-  readonly shortLabel: string;
-  readonly eyebrow: string;
-  readonly icon: ComponentType<{
-    size?: number;
-    strokeWidth?: number;
-    "aria-hidden"?: boolean;
-  }>;
-};
-
-type FaqsPageProps = {
-  readonly items: readonly FaqItem[];
-};
-
-const MS_KHANH_HERO_IMAGE = "/images/Design/ChiKhanh5.jpg";
-const MS_KHANH_PORTRAIT_IMAGE = "/images/Design/ChiKhanh4.jpg";
-const MS_KHANH_FEATURED_IMAGE_1 = "/images/Design/ChiKhanh7.jpg";
-const MS_KHANH_FEATURED_IMAGE_2 = "/images/Design/ChiKhanh6.jpg";
+const MS_KHANH_HERO_IMAGE = "/images/design/ms-khanh-faq-hero.jpg";
+const MS_KHANH_PORTRAIT_IMAGE = "/images/design/ms-khanh-white-outfit-portrait.jpg";
+const MS_KHANH_FEATURED_IMAGE_1 = "/images/design/ms-khanh-white-shirt-flowers.jpg";
+const MS_KHANH_FEATURED_IMAGE_2 = "/images/design/ms-khanh-black-blazer-portrait.jpg";
 
 const HERO_FAQ_IDS = [
   "qa-01-hoc-voi-ms-khanh",
@@ -166,7 +144,7 @@ function scrollToExplorer() {
     ?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-function ChipIcon({ category }: { category: CategoryKey }) {
+function ChipIcon({ category }: FaqChipIconProps) {
   const Icon = categoryMeta[category].icon;
   return <Icon aria-hidden size={18} strokeWidth={2.2} />;
 }
@@ -175,11 +153,7 @@ function SpeechBubble({
   item,
   tone,
   className = "",
-}: {
-  item: FaqItem;
-  tone: "blue" | "pink" | "yellow";
-  className?: string;
-}) {
+}: FaqSpeechBubbleProps) {
   return (
     <div
       className={`${styles.speechBubble} ${styles[`bubble${tone}`]} ${className}`}
@@ -190,7 +164,7 @@ function SpeechBubble({
   );
 }
 
-function TeacherAvatar({ className = "" }: { className?: string }) {
+function TeacherAvatar({ className = "" }: FaqTeacherAvatarProps) {
   return (
     <span className={`${styles.teacherAvatar} ${className}`} aria-hidden="true">
       <Image
@@ -207,10 +181,7 @@ function TeacherAvatar({ className = "" }: { className?: string }) {
 function QuestionAnswer({
   item,
   compact = false,
-}: {
-  item: FaqItem;
-  compact?: boolean;
-}) {
+}: FaqQuestionAnswerProps) {
   const speaker = item.speaker || "Crown English";
 
   return (

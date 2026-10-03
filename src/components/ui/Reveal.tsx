@@ -1,9 +1,7 @@
 "use client";
 
-import { useEffect, useRef, type ReactNode } from "react";
-
-type Preset = "fadeUp" | "fade" | "image" | "line" | "lineX" | "draw" | "text";
-type RevealProps = { children: ReactNode; className?: string; preset?: Preset; delay?: number; duration?: number; easing?: string; as?: "div" | "span"; group?: boolean };
+import { useEffect, useRef } from "react";
+import type { RevealPreset, RevealProps } from "@/types/ui";
 
 // Server HTML stays visible. Animation only starts when the content enters view.
 // Missing JavaScript or IntersectionObserver never hides content.
@@ -27,7 +25,7 @@ export default function Reveal({ children, className = "", preset = "fadeUp", de
       observer.disconnect();
       if (motion.matches) return;
       const mobile = window.matchMedia("(max-width: 767px)").matches;
-      const frames: Record<Preset, Keyframe[]> = {
+      const frames: Record<RevealPreset, Keyframe[]> = {
         fadeUp: [{ opacity: 0, transform: `translateY(${mobile ? 14 : 28}px)` }, { opacity: 1, transform: "translateY(0)" }],
         fade: [{ opacity: 0 }, { opacity: 1 }],
         image: [{ clipPath: "inset(100% 0 0 0)", transform: "scale(1.03)" }, { clipPath: "inset(0 0 0 0)", transform: "scale(1)" }],

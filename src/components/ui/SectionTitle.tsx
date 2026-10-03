@@ -1,4 +1,4 @@
-type SectionTitleProps = { eyebrow: string; title: string; description?: string };
+import type { SectionTitleProps } from "@/types/ui";
 
 export default function SectionTitle({ eyebrow, title, description }: SectionTitleProps) {
   return <div className="mb-8 max-w-2xl sm:mb-10">

@@ -1,6 +1,6 @@
-import localClassrom09Image from "../../public/images/Design/classrom09.png";
-import local8001Image from "../../public/images/Design/800_1.png";
-import localClassroom13Image from "../../public/images/students/classrooms/classroom-13.jpg";
+import classroomSocialPostImage from "../../public/images/design/crown-english-classroom-social-post-blue.png";
+import ieltsTuitionImage from "../../public/images/design/ielts-tuition-800k-premium-class.png";
+import localClassroom13Image from "../../public/images/students/classrooms/ielts-class-social-post-study-tables.jpg";
 export const coursesPageData = {
   seo: {
     title: "Các khóa học tiếng Anh tại Crown English | IELTS, Giao tiếp & 1:1",
@@ -44,7 +44,7 @@ export const coursesPageData = {
   hero: {
     title: "Khóa học",
     description: "",
-    image: localClassrom09Image.src,
+    image: classroomSocialPostImage.src,
   },
   learningFormats: {
     title: "Hình thức học linh hoạt",
@@ -55,14 +55,14 @@ export const coursesPageData = {
         title: "Học Offline",
         description:
           "Học trực tiếp tại trung tâm với không gian hiện đại, tương tác cao, được giảng viên hướng dẫn sát sao.",
-        image: "/images/Design/LopHoc6.PNG",
+        image: "/images/design/students-studying-in-classroom.jpg",
         icon: "monitor",
       },
       {
         title: "Học Online",
         description:
           "Học online linh hoạt, chất lượng cao với lớp học trực tuyến tương tác, phù hợp với người bận rộn hoặc ở xa.",
-        image: "/images/Design/LopHoc5.PNG",
+        image: "/images/design/english-teacher-classroom-portrait.jpg",
         icon: "laptop",
       },
     ],
@@ -73,21 +73,21 @@ export const coursesPageData = {
       title: "IELTS",
       href: "/khoa-hoc/ielts",
       description: "",
-      image: "/images/Design/LopHoc_1.JPG",
+      image: "/images/design/ielts-writing-class-with-teacher.jpg",
     },
     {
       id: "giao-tiep",
       title: "Tiếng Anh giao tiếp",
       href: "/khoa-hoc/giao-tiep",
       description: "",
-      image: "/images/Design/LopHoc3.JPG",
+      image: "/images/design/ielts-writing-classroom.jpg",
     },
     {
       id: "ielts-1-kem-1",
       title: "IELTS 1 kèm 1",
       href: "/khoa-hoc/ielts-1-kem-1",
       description: "",
-      image: "/images/Design/LopHoc4.JPG",
+      image: "/images/design/ielts-writing-classroom-portrait.jpg",
     },
   ],
 } as const;
@@ -214,7 +214,7 @@ export const ieltsPageData = {
       },
     ],
     featurePanel: {
-      image: local8001Image.src,
+      image: ieltsTuitionImage.src,
       alt: "Học phí IELTS từ 800.000đ một tháng, lớp Premium 6-8 học viên tại Crown English",
       ctaLabel: "Đăng ký tư vấn ngay",
     },
@@ -526,7 +526,7 @@ export const communicationPageData = {
     title: "LỚP GIAO TIẾP",
     subtitle: "",
     description: "",
-    image: "/images/Design/LopHoc3.JPG",
+    image: "/images/design/ielts-writing-classroom.jpg",
   },
 
   suitableFor: [],
@@ -536,7 +536,7 @@ export const communicationPageData = {
     title: "",
     paragraphs: [],
     featurePanel: {
-      image: "/images/Design/LopHoc_1.JPG",
+      image: "/images/design/ielts-writing-class-with-teacher.jpg",
       alt: "Học viên luyện nói tiếng Anh giao tiếp với sách tại Crown English",
       ctaLabel: "Đăng ký tư vấn giao tiếp",
     },
@@ -735,12 +735,12 @@ export const ieltsOneToOnePageData = {
     title: "Lộ trình kèm 1:1 nhanh nhất",
     subtitle: "0-7.5+",
     description: "",
-    image: "/images/Design/LopHoc2.JPG",
+    image: "/images/design/teacher-guiding-student-at-laptop.jpg",
     proofCard: {
       eyebrow: "LỚP HỌC 1:1",
       title: "Theo sát từng học viên",
       description: "Giáo viên đồng hành trực tiếp theo lộ trình cá nhân hóa.",
-      image: "/images/Design/LopHoc5.PNG",
+      image: "/images/design/english-teacher-classroom-portrait.jpg",
       alt: "Lớp học IELTS 1 kèm 1 tại Crown English",
     },
   },
@@ -754,6 +754,8 @@ export const ieltsOneToOnePageData = {
   overview: {
     title: "",
     paragraphs: [],
+    image: "/images/design/students-studying-in-classroom.jpg",
+    imageAlt: "Giảng viên Crown English hướng dẫn học viên trong lớp",
   },
 
   roadmap: [

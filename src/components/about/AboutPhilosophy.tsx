@@ -1,5 +1,6 @@
 import Reveal from "@/components/ui/Reveal";
 import { aboutPageData } from "@/data/about";
+import type { AboutMethodBadgeProps } from "@/types/about";
 
 const badges = [
   "Lộ trình cá nhân hóa",
@@ -7,7 +8,7 @@ const badges = [
   "Phản hồi đa chiều",
 ] as const;
 
-function MethodBadge({ label, index }: { label: string; index: number }) {
+function MethodBadge({ label, index }: AboutMethodBadgeProps) {
   return (
     <Reveal delay={120 + index * 80}>
       <div className="grid grid-cols-[24px_1fr] gap-4 border-t border-[var(--color-line)] py-5 text-neutral-800">

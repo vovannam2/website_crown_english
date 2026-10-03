@@ -1,8 +1,8 @@
-import localClassroom13Image from "../../../public/images/students/classrooms/classroom-13.jpg";
-import localClassroom04Image from "../../../public/images/students/classrooms/classroom-04.jpg";
-import localClassroom08Image from "../../../public/images/students/classrooms/classroom-08.jpg";
-import localClassroom01Image from "../../../public/images/students/classrooms/classroom-01.jpg";
-import localClassroom12Image from "../../../public/images/students/classrooms/classroom-12.jpg";
+import localClassroom13Image from "../../../public/images/students/classrooms/ielts-class-social-post-study-tables.jpg";
+import localClassroom04Image from "../../../public/images/students/classrooms/teacher-tutoring-student-at-desk.jpg";
+import localClassroom08Image from "../../../public/images/students/classrooms/teacher-leading-small-ielts-class.jpg";
+import localClassroom01Image from "../../../public/images/students/classrooms/ielts-grammar-class-with-teacher.jpg";
+import localClassroom12Image from "../../../public/images/students/classrooms/ielts-class-social-post-side-view.jpg";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -27,208 +27,19 @@ import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 import CourseRoadmap from "./CourseRoadmap";
 
-type SeoData = {
-  title: string;
-  description: string;
-  h1: string;
-  primaryTopic: string;
-  secondaryTopics: readonly string[];
-  localSignals: readonly string[];
-};
-
-type RoadmapItem = {
-  name: string;
-  range?: string;
-  note?: string;
-  items?: readonly string[];
-  content?: readonly string[];
-};
-
-type LevelItem = {
-  id?: string;
-  name?: string;
-  level?: string;
-  sourceHeading?: string;
-  range?: string;
-  tuition?: string;
-  duration?: string;
-  sessions?: string;
-  suitableFor?: string;
-  entryRequirement?: string;
-  description?: string;
-  content?: string | readonly string[];
-  detail?: string | readonly string[];
-  schedule?: readonly string[];
-  refund?: readonly string[];
-  benefits?: readonly string[];
-  priceAfter18?: string;
-  priceBefore18?: string;
-};
-
-type TuitionItem = {
-  course: string;
-  duration?: string;
-  sessions?: string;
-  price?: string;
-  sessionDuration?: string;
-};
-
-type ClassType = {
-  title?: string;
-  description?: string;
-  classSize?: string;
-  frequency?: string;
-  schedule?: readonly string[];
-  standardTime?: string;
-  offline?: string;
-  evening?: string;
-  benefits?: readonly string[];
-  tuition?: readonly TuitionItem[];
-};
-
-type BenefitCard = {
-  title: string;
-  description: string;
-};
-
-type IconName =
-  | "book"
-  | "briefcase"
-  | "coins"
-  | "graduation"
-  | "layers"
-  | "target"
-  | "teacher"
-  | "trending"
-  | "users";
-
-type VisualTone = "red" | "blue" | "gold" | "green";
-
-type VisualCard = {
-  title: string;
-  description: string;
-  icon?: IconName;
-  tone?: VisualTone;
-};
-
-type HighlightItem = {
-  title: string;
-  description: string;
-  icon?: IconName;
-  tone?: VisualTone;
-};
-
-type CourseFeaturePanel = {
-  image: string;
-  alt: string;
-  ctaLabel?: string;
-};
-
-type CoursePageData = {
-  id: string;
-  href: string;
-  seo: SeoData;
-  hero: {
-    eyebrow?: string;
-    title: string;
-    titlePrefix?: string;
-    titleAccent?: string;
-    subtitle?: string;
-    highlight?: string;
-    description?: string;
-    image?: string;
-    badge?: {
-      title: string;
-      description: string;
-    };
-    proofCard?: {
-      eyebrow: string;
-      title: string;
-      description: string;
-      image: string;
-      alt: string;
-    };
-    stats?: readonly VisualCard[];
-  };
-  suitableFor: readonly string[];
-  studentProblems: readonly string[];
-  overview: {
-    eyebrow?: string;
-    title: string;
-    titleAccent?: string;
-    paragraphs: readonly string[];
-    cards?: readonly VisualCard[];
-    featurePanel?: CourseFeaturePanel;
-  };
-  roadmap: readonly RoadmapItem[];
-  levels?: readonly LevelItem[];
-  personalizedRoadmap?: readonly LevelItem[];
-  method?: {
-    title?: string;
-    description?: string;
-    paragraphs?: readonly string[];
-  };
-  benefits?: readonly string[] | readonly BenefitCard[] | Record<string, readonly string[]>;
-  highlights?: readonly HighlightItem[];
-  classTypes?: Record<string, ClassType>;
-  schedule?: readonly string[];
-  cta?: {
-    title?: string;
-    description?: string;
-    buttonLabel?: string;
-  };
-};
-
-type CourseSummary = {
-  id: string;
-  title: string;
-  href: string;
-  description: string;
-  levels: readonly string[];
-  image: string;
-};
-
-type LearningFormat = {
-  title: string;
-  description: string;
-  image: string;
-  icon?: "monitor" | "laptop";
-};
-
-type AchievementResult = {
-  id: string;
-  name: string;
-  exam: string;
-  overall: string;
-  highlights: readonly string[];
-  fullImage: string;
-  thumbnail?: string;
-};
-
-type AchievementVideo = {
-  id: string;
-  name: string;
-  result: string;
-  src: string;
-};
-
-type CoursesOverviewPageProps = {
-  title: string;
-  description: string;
-  heroImage?: string;
-  learningFormats?: {
-    title: string;
-    description: string;
-    items: readonly LearningFormat[];
-  };
-  achievements?: {
-    title: string;
-    description: string;
-    results: readonly AchievementResult[];
-    video?: AchievementVideo;
-  };
-  courses: readonly CourseSummary[];
-};
+import type {
+  ClassType,
+  CourseDataProps,
+  CoursePageData,
+  CoursesAchievementsProps,
+  CoursesLearningFormatsProps,
+  CoursesOverviewPageProps,
+  HighlightItem,
+  IconName,
+  LevelItem,
+  VisualCard,
+  VisualTone,
+} from "@/types/courses";
 
 const courseImages: Record<string, string> = {
   ielts: localClassroom13Image.src,
@@ -398,12 +209,12 @@ function renderAccentTitle(title: string, accent?: string) {
   );
 }
 
-function CourseHeroTitle({ data }: { data: CoursePageData }) {
+function CourseHeroTitle({ data }: CourseDataProps) {
   if (data.hero.titlePrefix) return renderAccentTitle(`${data.hero.titlePrefix} ${data.hero.titleAccent ?? ""}`.trim(), data.hero.titleAccent);
   return <>{data.seo.h1}</>;
 }
 
-function CourseHeroStats({ data }: { data: CoursePageData }) {
+function CourseHeroStats({ data }: CourseDataProps) {
   if (data.hero.stats && data.hero.stats.length > 0) {
     return (
       <dl className="mt-8 grid gap-5 sm:grid-cols-3">
@@ -447,14 +258,14 @@ function CourseHeroStats({ data }: { data: CoursePageData }) {
   );
 }
 
-function CourseAudienceSection({ data }: { data: CoursePageData }) {
+function CourseAudienceSection({ data }: CourseDataProps) {
   const cards = getAudienceCards(data);
   const featurePanel = data.overview.featurePanel;
 
   return (
     <section className="w-full bg-white py-16 sm:py-20" aria-labelledby="overview-title">
       <Container>
-        <div className="grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
+        <div className={`grid gap-10 lg:items-center ${data.overview.image ? "lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-14" : "lg:grid-cols-[0.88fr_1.12fr]"}`}>
           <Reveal>
             <div className="max-w-3xl">
               <p className="home-eyebrow">{data.overview.eyebrow || "TỔNG QUAN KHÓA HỌC"}</p>
@@ -472,7 +283,7 @@ function CourseAudienceSection({ data }: { data: CoursePageData }) {
               </div>
             </div>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <div className={`mt-8 grid gap-4 ${cards.length === 1 ? "max-w-xl" : "sm:grid-cols-2"}`}>
               {cards.map((card) => {
                 const Icon = getIcon(card.icon, "graduation");
                 return (
@@ -503,6 +314,10 @@ function CourseAudienceSection({ data }: { data: CoursePageData }) {
               <ArrowRight aria-hidden="true" size={18} />
             </Button>
           </Reveal>
+          ) : data.overview.image ? (
+          <Reveal preset="image" delay={120} className="relative mx-auto aspect-[482/651] w-full max-w-[440px] overflow-hidden rounded-[var(--radius-sm)] bg-white shadow-[var(--shadow-menu)]">
+            <Image src={data.overview.image} alt={data.overview.imageAlt || "Giảng viên hướng dẫn học viên tại Crown English"} fill sizes="(min-width: 1024px) 440px, 90vw" className="object-cover" />
+          </Reveal>
           ) : (
           <Reveal preset="image" delay={120} className="relative min-h-[360px] overflow-hidden rounded-[var(--radius-sm)] bg-white shadow-[var(--shadow-menu)]">
             <Image src={getCourseImage(data)} alt={`Không gian học ${data.hero.title} tại Crown English`} fill sizes="(min-width: 1024px) 480px, 90vw" className="object-cover" />
@@ -514,7 +329,7 @@ function CourseAudienceSection({ data }: { data: CoursePageData }) {
   );
 }
 
-function CourseHighlightsSection({ data }: { data: CoursePageData }) {
+function CourseHighlightsSection({ data }: CourseDataProps) {
   const highlights = getCourseHighlights(data);
   if (highlights.length === 0) return null;
 
@@ -548,7 +363,7 @@ function CourseHighlightsSection({ data }: { data: CoursePageData }) {
   );
 }
 
-function CourseTuitionSection({ data }: { data: CoursePageData }) {
+function CourseTuitionSection({ data }: CourseDataProps) {
   if (!data.classTypes || Object.keys(data.classTypes).length === 0) return null;
 
   const title = data.id === "ielts"
@@ -639,7 +454,7 @@ function CourseTuitionSection({ data }: { data: CoursePageData }) {
   );
 }
 
-function CoursesLearningFormats({ data }: { data?: CoursesOverviewPageProps["learningFormats"] }) {
+function CoursesLearningFormats({ data }: CoursesLearningFormatsProps) {
   if (!data || data.items.length === 0) return null;
 
   return (
@@ -678,7 +493,7 @@ function CoursesLearningFormats({ data }: { data?: CoursesOverviewPageProps["lea
   );
 }
 
-function CoursesAchievements({ data }: { data?: CoursesOverviewPageProps["achievements"] }) {
+function CoursesAchievements({ data }: CoursesAchievementsProps) {
   if (!data || data.results.length === 0) return null;
 
   return (
@@ -805,7 +620,7 @@ export function CoursesOverviewPage({ title, description, heroImage = localClass
   );
 }
 
-export default function CourseLandingPage({ data }: { data: CoursePageData }) {
+export default function CourseLandingPage({ data }: CourseDataProps) {
   const levels = data.id === "ielts" ? [] : data.levels ?? data.personalizedRoadmap ?? [];
   const description = getCourseDescription(data);
   const methodParagraphs = data.method ? asList(data.method.description).concat(data.method.paragraphs ?? []) : [];

@@ -12,45 +12,23 @@ import {
   Navigation,
   PhoneCall,
   Share2,
-  type LucideIcon,
 } from "lucide-react";
-import type { ReactNode } from "react";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
-import type { ContactPageData } from "@/data/contact";
 import styles from "./contact.module.css";
 
-type ContactPageProps = {
-  readonly data: ContactPageData;
-};
-
-type ContactActionLink = {
-  readonly value: string;
-  readonly href: string;
-};
-
-type ContactRow = {
-  readonly label: string;
-  readonly icon: LucideIcon;
-  readonly description: string;
-  readonly links: readonly ContactActionLink[];
-};
-
-type LocationFact = {
-  readonly label: string;
-  readonly value: string;
-  readonly icon: LucideIcon;
-};
+import type {
+  ContactActionProps,
+  ContactPageProps,
+  ContactRow,
+  LocationFact,
+} from "@/types/contact";
 
 function ContactAction({
   href,
   children,
   variant = "primary",
-}: {
-  href: string;
-  children: ReactNode;
-  variant?: "primary" | "secondary";
-}) {
+}: ContactActionProps) {
   return (
     <a
       href={href}
@@ -135,7 +113,7 @@ export default function ContactPage({ data }: ContactPageProps) {
 
             <Reveal preset="image" delay={120} className={styles.heroPanel}>
               <Image
-                src="/images/Design/AnhTrungTamMoi.png"
+                src="/images/design/crown-english-center-daytime.png"
                 alt="Mặt tiền trung tâm Crown English tại Nguyễn Gia Trí"
                 fill
                 priority

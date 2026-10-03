@@ -1,21 +1,21 @@
-import localQA1Image from "../../public/images/Q&A/QA1.jpg";
-import localQA2Image from "../../public/images/Q&A/QA2.jpg";
-import localQA3Image from "../../public/images/Q&A/QA3.jpg";
-import localQA4Image from "../../public/images/Q&A/QA4.jpg";
-import localQA5Image from "../../public/images/Q&A/QA5.jpg";
-import localQA6Image from "../../public/images/Q&A/QA6.jpg";
-import localQA7Image from "../../public/images/Q&A/QA7.jpg";
-import localQA9Image from "../../public/images/Q&A/QA9.jpg";
-import localQA10Image from "../../public/images/Q&A/QA10.jpg";
-import localQA11Image from "../../public/images/Q&A/QA11.jpg";
-import localQA12Image from "../../public/images/Q&A/QA12.jpg";
-import localQA13Image from "../../public/images/Q&A/QA13.jpg";
-import localQA14Image from "../../public/images/Q&A/QA14.jpg";
-import localQA15Image from "../../public/images/Q&A/QA15.jpg";
-import localQA16Image from "../../public/images/Q&A/QA16.jpg";
-import localQA17Image from "../../public/images/Q&A/QA17.jpg";
-import localQA18Image from "../../public/images/Q&A/QA18.jpg";
-import localQA19Image from "../../public/images/Q&A/QA19.jpg";
+import localQA1Image from "../../public/images/Q&A/faq-hoc-voi-ms-khanh.jpg";
+import localQA2Image from "../../public/images/Q&A/faq-khong-the-theo-hoc-hoan-hoc-phi.jpg";
+import localQA3Image from "../../public/images/Q&A/faq-dong-hoc-phi-theo-khoa.jpg";
+import localQA4Image from "../../public/images/Q&A/faq-cham-soc-hoc-vien-va-cham-bai.jpg";
+import localQA5Image from "../../public/images/Q&A/faq-so-giao-vien-trong-mot-khoa.jpg";
+import localQA6Image from "../../public/images/Q&A/faq-hoat-dong-nhom-trong-lop.jpg";
+import localQA7Image from "../../public/images/Q&A/faq-cam-ket-6-0-6-5-va-aim-7-0.jpg";
+import localQA9Image from "../../public/images/Q&A/faq-uu-dai-khi-dang-ki-nhieu-khoa.jpg";
+import localQA10Image from "../../public/images/Q&A/faq-lop-cap-toc-day-nhanh-thoi-gian.jpg";
+import localQA11Image from "../../public/images/Q&A/faq-dong-hoc-phi-theo-thang-hay-khoa.jpg";
+import localQA12Image from "../../public/images/Q&A/faq-phi-hoc-thu-co-hoan-lai-khong.jpg";
+import localQA13Image from "../../public/images/Q&A/faq-hoc-online-hoc-phi-co-thap-hon-offline.jpg";
+import localQA14Image from "../../public/images/Q&A/faq-vao-sau-lop-hoc-phi-nhu-the-nao.jpg";
+import localQA15Image from "../../public/images/Q&A/faq-writing-lop-advance-day-nhu-nao.jpg";
+import localQA16Image from "../../public/images/Q&A/faq-co-day-online-khong.jpg";
+import localQA17Image from "../../public/images/Q&A/faq-lo-trinh-mat-goc-den-6-5.jpg";
+import localQA18Image from "../../public/images/Q&A/faq-cam-ket-dau-ra.jpg";
+import localQA19Image from "../../public/images/Q&A/faq-vi-sao-hoc-phi-re-hon-trung-tam-khac.jpg";
 export const faqsPageData = {
   seo: {
     title: "Câu hỏi thường gặp về khóa học | Crown English",
@@ -72,7 +72,7 @@ export const faqsPageData = {
     extractedFaqs: 18,
     skippedImages: [
       {
-        file: "QA8.jpg",
+        file: "faq-ms-khanh-faq-cover.jpg",
         status: "SKIPPED_NON_QA",
         reason: "Ảnh bìa/chủ đề, không có cặp câu hỏi và câu trả lời.",
       },
@@ -80,24 +80,24 @@ export const faqsPageData = {
     duplicates: [],
     needsReview: [
       {
-        file: "QA7.jpg",
+        file: "faq-cam-ket-6-0-6-5-va-aim-7-0.jpg",
         reason:
           "Câu trả lời trong ảnh kết thúc bằng dấu phẩy, có thể thiếu phần sau.",
       },
       {
-        file: "QA17.jpg",
+        file: "faq-lo-trinh-mat-goc-den-6-5.jpg",
         reason:
           "Cụm mở đầu trong ảnh giống 'Từ level em-6.5+'; giữ nguyên nhưng cần rà lại với nguồn gốc.",
       },
       {
-        file: "QA18.jpg",
+        file: "faq-cam-ket-dau-ra.jpg",
         reason:
           "Nội dung về cam kết đầu ra có thể chưa thống nhất với QA7 nên cần chốt lại wording.",
       },
     ],
     conflicts: [
       {
-        files: ["QA7.jpg", "QA18.jpg"],
+        files: ["faq-cam-ket-6-0-6-5-va-aim-7-0.jpg", "faq-cam-ket-dau-ra.jpg"],
         reason:
           "QA7 nói chỉ cam kết đầu ra 6.0-6.5, còn QA18 nói không truyền thông cam kết đầu ra.",
       },

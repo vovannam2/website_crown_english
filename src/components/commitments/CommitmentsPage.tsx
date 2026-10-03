@@ -17,7 +17,7 @@ import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import HeroDecoration from "@/components/ui/HeroDecoration";
 import Reveal from "@/components/ui/Reveal";
-import type { CommitmentsPageData } from "@/data/commitments";
+import type { CommitmentIconName, CommitmentIconBadgeProps, CommitmentSectionHeaderProps, CommitmentCheckListProps, CommitmentHeroVisualProps, CommitmentsPageProps } from "@/types/commitments";
 import styles from "./commitments.module.css";
 
 const iconMap = {
@@ -29,11 +29,9 @@ const iconMap = {
   progress: TrendingUp,
   target: Target,
   users: UsersRound,
-} satisfies Record<string, LucideIcon>;
+} satisfies Record<CommitmentIconName, LucideIcon>;
 
-type IconName = keyof typeof iconMap;
-
-function IconBadge({ icon, className = "" }: { icon: IconName; className?: string }) {
+function IconBadge({ icon, className = "" }: CommitmentIconBadgeProps) {
   const Icon = iconMap[icon];
 
   return (
@@ -48,12 +46,7 @@ function SectionHeader({
   eyebrow,
   title,
   description,
-}: {
-  id: string;
-  eyebrow: string;
-  title: string;
-  description?: string;
-}) {
+}: CommitmentSectionHeaderProps) {
   return (
     <Reveal className={styles.sectionHeader}>
       <p className={styles.eyebrow}>{eyebrow}</p>
@@ -64,7 +57,7 @@ function SectionHeader({
   );
 }
 
-function CheckList({ items }: { items: readonly string[] }) {
+function CheckList({ items }: CommitmentCheckListProps) {
   return (
     <ul className={styles.checkList}>
       {items.map((item) => (
@@ -91,7 +84,7 @@ function renderTitle(title: string, accent: string) {
   );
 }
 
-function HeroVisual({ visual }: { visual: CommitmentsPageData["hero"]["visual"] }) {
+function HeroVisual({ visual }: CommitmentHeroVisualProps) {
   return (
     <Reveal preset="image" delay={120} className={styles.heroVisual}>
       <HeroDecoration />
@@ -116,7 +109,7 @@ function HeroVisual({ visual }: { visual: CommitmentsPageData["hero"]["visual"] 
   );
 }
 
-export default function CommitmentsPage({ data }: { data: CommitmentsPageData }) {
+export default function CommitmentsPage({ data }: CommitmentsPageProps) {
   return (
     <article className={styles.page}>
       <section className={styles.hero} aria-labelledby="commitments-title">

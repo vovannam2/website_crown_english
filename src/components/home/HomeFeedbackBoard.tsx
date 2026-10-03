@@ -5,15 +5,10 @@ import { useEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 import { ArrowUpRight, X } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
+import type { HomeFeedbackBoardProps } from "@/types/home";
 import styles from "./HomeFeedbackBoard.module.css";
 
-type FeedbackData = {
-  readonly boardTexture: string;
-  readonly year: number;
-  readonly months: readonly { readonly month: number; readonly images: readonly string[] }[];
-};
-
-export default function HomeFeedbackBoard({ data }: { data: FeedbackData }) {
+export default function HomeFeedbackBoard({ data }: HomeFeedbackBoardProps) {
   const groups = [...data.months].filter((group) => group.images.length > 0).sort((a, b) => a.month - b.month);
   const feedbacks = groups.flatMap((group) => group.images.map((src, index) => ({
     id: src,

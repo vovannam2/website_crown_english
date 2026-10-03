@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { ClassMoment } from "@/types/student-results";
+import type { ClassroomGalleryProps } from "@/types/student-results";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Reveal from "@/components/ui/Reveal";
 import StudentImage from "./StudentImage";
@@ -17,11 +17,7 @@ const colors = [
   "text-pink-400",
 ];
 
-export default function ClassroomGallery({
-  moments,
-}: {
-  moments: readonly ClassMoment[];
-}) {
+export default function ClassroomGallery({ moments }: ClassroomGalleryProps) {
   const [paused, setPaused] = useState(false);
 
   const repeats = Math.max(1, Math.ceil(5 / Math.max(1, moments.length)));

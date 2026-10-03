@@ -1,20 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState, type CSSProperties } from "react";
+import type { CourseRoadmapProps, RoadmapItem } from "@/types/courses";
 import styles from "./CourseRoadmap.module.css";
-
-type RoadmapItem = {
-  name: string;
-  range?: string;
-  note?: string;
-  items?: readonly string[];
-  content?: readonly string[];
-};
-
-type CourseRoadmapProps = {
-  items: readonly RoadmapItem[];
-  courseTitle: string;
-};
 
 function asList(value?: readonly string[]) {
   return value ?? [];

@@ -2,14 +2,11 @@
 
 import Link from "next/link";
 import { useRef, useState } from "react";
-import type { StudentVideo } from "@/types/student-results";
+import type { HomeVideoTeaserProps } from "@/types/home";
 import Reveal from "@/components/ui/Reveal";
 import styles from "./home.module.css";
 
-export default function HomeVideoTeaser({ videos, moreLink }: {
-  videos: readonly StudentVideo[];
-  moreLink: { readonly href: string; readonly label: string };
-}) {
+export default function HomeVideoTeaser({ videos, moreLink }: HomeVideoTeaserProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [started, setStarted] = useState(false);
 

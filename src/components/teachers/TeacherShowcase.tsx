@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Reveal from "@/components/ui/Reveal";
 import TeacherDetail from "./TeacherDetail";
-import type { Teacher } from "@/types/teachers";
+import type { TeacherShowcaseProps } from "@/types/teachers";
 import TeacherImage from "./TeacherImage";
 import styles from "./teachers.module.css";
 
@@ -14,7 +14,7 @@ const PAGE_SIZE = 9;
 const FEATURED_TEACHER_ID = "ms-nguyen-khanh";
 const pageButtonClass = "inline-flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-[var(--color-line)] bg-white text-sm transition-colors enabled:hover:border-[var(--color-brand-red)] disabled:cursor-not-allowed disabled:opacity-40 aria-[current=page]:border-[var(--color-brand-red)] aria-[current=page]:bg-[var(--color-brand-red)] aria-[current=page]:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-brand-red)]";
 
-export default function TeacherShowcase({ teachers: allTeachers }: { teachers: readonly Teacher[] }) {
+export default function TeacherShowcase({ teachers: allTeachers }: TeacherShowcaseProps) {
   const teachers = [...allTeachers].sort((a, b) => Number(b.id === FEATURED_TEACHER_ID) - Number(a.id === FEATURED_TEACHER_ID));
   const [selectedId, setSelectedId] = useState<string | undefined>(teachers[0]?.id);
   const [page, setPage] = useState(1);

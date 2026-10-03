@@ -1,5 +1,5 @@
-import localClassroom13Image from "../../public/images/students/classrooms/classroom-13.jpg";
-import localClassroom15Image from "../../public/images/students/classrooms/classroom-15.jpg";
+import localClassroom13Image from "../../public/images/students/classrooms/ielts-class-social-post-study-tables.jpg";
+import localClassroom15Image from "../../public/images/students/classrooms/one-to-one-laptop-lesson-social-post.jpg";
 export const commitmentsPageData = {
   seo: {
     title: "Cam kết đầu ra IELTS & Tiếng Anh giao tiếp | Crown English",
@@ -54,7 +54,7 @@ export const commitmentsPageData = {
           alt: "Giảng viên Ms Minh Tu tại Crown English",
         },
         {
-          image: "/images/Design/ChiKhanh6.jpg",
+          image: "/images/design/ms-khanh-black-blazer-portrait.jpg",
           alt: "Ms. Khanh - Crown English",
         },
         {
@@ -119,7 +119,7 @@ export const commitmentsPageData = {
       {
         icon: "book",
         title: "Cam kết về Chất lượng giảng dạy",
-        image: "/images/Design/TeamHoTro3.png",
+        image: "/images/design/teacher-supporting-student-in-class.png",
         imageAlt: "Học viên trong lớp học tại Crown English",
         description:
           "Chúng tôi đảm bảo tính minh bạch và chuẩn mực trong toàn bộ chương trình đào tạo. Đội ngũ giảng viên luôn đồng hành với tinh thần trách nhiệm và sự tận tụy cao nhất.",
@@ -133,7 +133,7 @@ export const commitmentsPageData = {
       {
         icon: "target",
         title: "Cam kết về Tiến độ & Đồng hành",
-        image: "/images/Design/LopHoc2.JPG",
+        image: "/images/design/teacher-guiding-student-at-laptop.jpg",
         imageAlt: "Giáo viên Crown English theo sát học viên trong buổi học",
         description:
           "Hệ thống quản lý học tập chủ động theo dõi sát sao tiến trình làm bài, mức độ hoàn thành bài tập và những điểm cần cải thiện của từng cá nhân.",
@@ -183,7 +183,7 @@ export const commitmentsPageData = {
         icon: "personal",
         title: "IELTS 1:1",
         href: "/khoa-hoc/ielts-1-kem-1",
-        image: "/images/Design/LopHoc4.JPG",
+        image: "/images/design/ielts-writing-classroom-portrait.jpg",
         imageAlt: "Lớp IELTS tại Crown English",
         bullets: [
           "Lộ trình cá nhân hóa theo mục tiêu",

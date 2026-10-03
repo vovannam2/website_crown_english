@@ -1,5 +1,4 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
@@ -7,6 +6,7 @@ import Reveal from "@/components/ui/Reveal";
 import { homePageData as data } from "@/data/home";
 import { studentResultsPageData } from "@/data/student-results";
 import { teachersPageData } from "@/data/teachers";
+import type { HomeHeadingProps, HomeTextLinkProps } from "@/types/home";
 import HomeHero from "./HomeHero";
 import HomeVisual from "./HomeVisual";
 import HomeTeacherStage from "./HomeTeacherStage";
@@ -14,13 +14,11 @@ import HomeVideoTeaser from "./HomeVideoTeaser";
 import HomeFeedbackBoard from "./HomeFeedbackBoard";
 import styles from "./home.module.css";
 
-function TextLink({ href, children }: { href: string; children: ReactNode }) {
+function TextLink({ href, children }: HomeTextLinkProps) {
   return <Link className={styles.textLink} href={href}>{children}<span aria-hidden="true">↗</span></Link>;
 }
 
-function Heading({ eyebrow, title, description, link }: {
-  eyebrow: string; title: string; description?: string; link?: { href: string; label: string };
-}) {
+function Heading({ eyebrow, title, description, link }: HomeHeadingProps) {
   return <Reveal className={styles.heading}>
     <div><p className={styles.eyebrow}>{eyebrow}</p><h2>{title}</h2>{description && <p className={styles.description}>{description}</p>}</div>
     {link && <TextLink href={link.href}>{link.label}</TextLink>}

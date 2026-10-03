@@ -1,11 +1,6 @@
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
-
-type PlaceholderPageProps = {
-  eyebrow: string;
-  title: string;
-  description: string;
-};
+import type { PlaceholderPageProps } from "@/types/ui";
 
 export default function PlaceholderPage({ eyebrow, title, description }: PlaceholderPageProps) {
   return (
