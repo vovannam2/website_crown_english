@@ -46,26 +46,43 @@ import phuongAnhThumbnail from "../../public/images/students/thumbnails/phuong-a
 
 export const studentResultsPageData = {
   seo: {
-    title: "Kết quả & Feedback học viên | Crown English",
+    title: "Kết quả IELTS & Feedback học viên | Crown English",
+
     description:
-      "Kết quả, bảng điểm, hình ảnh, video và feedback học viên tại Crown English.",
-    h1: "Kết quả học viên tại Crown English",
+      "Xem kết quả IELTS, bảng điểm, feedback và video chia sẻ thực tế từ học viên Crown English, cùng những cột mốc 7.0, 7.5 và 8.0 IELTS.",
+
+    h1: "Kết quả IELTS & Feedback học viên Crown English",
+
     canonical: "/hoc-vien",
-    searchIntent: "Xem kết quả và trải nghiệm thực tế của học viên",
+
+    searchIntent:
+      "Xem kết quả IELTS và trải nghiệm thực tế của học viên Crown English",
+
     primaryTopic: "kết quả học viên Crown English",
+
     secondaryTopics: [
+      "kết quả IELTS học viên Crown English",
       "feedback học viên Crown English",
-      "bảng điểm học viên IELTS",
+      "bảng điểm IELTS học viên",
+      "review Crown English",
+      "trải nghiệm học tại Crown English",
     ],
+
     localSignals: [],
+
     schemaTypes: ["CollectionPage"],
+
     robots: {
       index: true,
       follow: true,
     },
+
     openGraph: {
-      title: "Kết quả & Feedback học viên | Crown English",
-      description: "Kết quả và feedback học viên tại Crown English.",
+      title: "Kết quả IELTS & Feedback học viên | Crown English",
+
+      description:
+        "Khám phá kết quả IELTS, bảng điểm và những chia sẻ thực tế từ học viên Crown English.",
+
       image: "",
     },
   },

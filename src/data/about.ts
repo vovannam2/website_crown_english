@@ -68,30 +68,30 @@ export const aboutPageData = {
   // SEO
   // ==================================================
   seo: {
-    title: "Giới thiệu Crown English | Phương pháp & giá trị đào tạo",
+    title: "Giới thiệu Crown English | Lộ trình & phương pháp đào tạo",
 
     description:
-      "Tìm hiểu Crown English, giá trị cốt lõi, định hướng đào tạo, lộ trình cá nhân hóa và những điểm khác biệt trong quá trình học IELTS và Tiếng Anh học thuật.",
+      "Tìm hiểu Crown English, giá trị cốt lõi, phương pháp đào tạo, lộ trình cá nhân hóa và cách trung tâm đồng hành cùng học viên trong quá trình học IELTS và Tiếng Anh học thuật.",
 
-    h1: "Tiếng Anh không đơn thuần là một môn học hay một tấm bằng chứng chỉ.",
+    h1: "Giới thiệu Crown English",
 
     canonical: "/gioi-thieu",
 
     searchIntent:
-      "Tìm hiểu về Crown English, phương pháp đào tạo, giá trị cốt lõi và điểm khác biệt",
+      "Tìm hiểu Crown English, phương pháp đào tạo, lộ trình học và giá trị cốt lõi",
 
     primaryTopic: "giới thiệu Crown English",
 
     secondaryTopics: [
       "phương pháp đào tạo Crown English",
+      "lộ trình cá nhân hóa Crown English",
       "giá trị cốt lõi Crown English",
-      "lộ trình học Crown English",
-      "trung tâm IELTS Crown English",
+      "định hướng đào tạo Crown English",
     ],
 
     localSignals: [],
 
-    schemaTypes: ["AboutPage", "EducationalOrganization"],
+    schemaTypes: ["AboutPage"],
 
     robots: {
       index: true,
@@ -99,12 +99,12 @@ export const aboutPageData = {
     },
 
     openGraph: {
-      title: "Giới thiệu Crown English | Phương pháp & giá trị đào tạo",
+      title: "Giới thiệu Crown English | Lộ trình & phương pháp đào tạo",
 
       description:
-        "Tìm hiểu Crown English, giá trị cốt lõi, định hướng đào tạo và những điểm khác biệt trong hành trình học IELTS và Tiếng Anh học thuật.",
+        "Khám phá định hướng đào tạo, giá trị cốt lõi và lộ trình cá nhân hóa tại Crown English.",
 
-      image: heroImage.src,
+      image: "",
     },
   },
 

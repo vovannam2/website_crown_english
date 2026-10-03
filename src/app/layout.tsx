@@ -62,8 +62,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="vi" className={`${baiJamjuree.variable} h-full antialiased`} suppressHydrationWarning>
-      <body className="flex min-h-full flex-col"><Header /><main className="flex-1">{children}</main><Footer /><FloatingContact /></body>
+    <html
+      lang="vi"
+      className={`${baiJamjuree.variable} h-full antialiased`}
+      suppressHydrationWarning
+    >
+      <body className="flex min-h-full flex-col">
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+        <FloatingContact />
+      </body>
     </html>
   );
 }

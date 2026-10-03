@@ -20,12 +20,38 @@ export const metadata: Metadata = {
 };
 
 export default function FaqPage() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.crownenglish.com.vn";
+
+  const pageUrl = `${siteUrl}${data.seo.canonical}`;
+
   const schema = {
     "@context": "https://schema.org",
+
     "@type": "FAQPage",
+
+    "@id": `${pageUrl}#faqpage`,
+
+    url: pageUrl,
+
+    name: data.seo.h1,
+
+    description: data.seo.description,
+
+    inLanguage: "vi-VN",
+
+    isPartOf: {
+      "@id": `${siteUrl}/#website`,
+    },
+
+    about: {
+      "@id": `${siteUrl}/#organization`,
+    },
+
     mainEntity: data.items.map((item) => ({
       "@type": "Question",
+
       name: item.question,
+
       acceptedAnswer: {
         "@type": "Answer",
         text: item.answer.join("\n"),
@@ -37,8 +63,11 @@ export default function FaqPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
+        }}
       />
+
       <FaqsPage items={data.items} />
     </>
   );

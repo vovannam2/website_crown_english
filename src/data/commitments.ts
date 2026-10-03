@@ -2,28 +2,41 @@ import localClassroom13Image from "../../public/images/students/classrooms/class
 import localClassroom15Image from "../../public/images/students/classrooms/classroom-15.jpg";
 export const commitmentsPageData = {
   seo: {
-    title: "Cam kết đầu ra | Crown English",
+    title: "Cam kết đầu ra IELTS & Tiếng Anh giao tiếp | Crown English",
+
     description:
-      "Thông tin cam kết đầu ra IELTS và Tiếng Anh giao tiếp tại Crown English, điều kiện áp dụng, chính sách hỗ trợ và theo dõi tiến độ học tập.",
-    h1: "Cam kết đầu ra tại Crown English",
+      "Tìm hiểu cam kết đầu ra IELTS và Tiếng Anh giao tiếp tại Crown English, điều kiện áp dụng, cách theo dõi tiến độ và chính sách hỗ trợ khi học viên chưa đạt mục tiêu.",
+
+    h1: "Cam kết đầu ra IELTS & Tiếng Anh giao tiếp tại Crown English",
+
     canonical: "/cam-ket",
-    searchIntent: "Tìm hiểu chính sách cam kết đầu ra và điều kiện áp dụng",
+
+    searchIntent:
+      "Tìm hiểu cam kết đầu ra IELTS, Tiếng Anh giao tiếp, điều kiện áp dụng và chính sách hỗ trợ tại Crown English",
+
     primaryTopic: "cam kết đầu ra Crown English",
+
     secondaryTopics: [
-      "cam kết đầu ra IELTS",
-      "cam kết đầu ra tiếng Anh giao tiếp",
-      "điều kiện cam kết đầu ra",
+      "cam kết đầu ra IELTS Crown English",
+      "cam kết đầu ra Tiếng Anh giao tiếp",
+      "điều kiện áp dụng cam kết đầu ra",
+      "chính sách hỗ trợ khi chưa đạt đầu ra",
     ],
+
     localSignals: [],
+
     schemaTypes: ["WebPage"],
+
     robots: {
       index: true,
       follow: true,
     },
+
     openGraph: {
-      title: "Cam kết đầu ra | Crown English",
+      title: "Cam kết đầu ra IELTS & Tiếng Anh giao tiếp | Crown English",
+
       description:
-        "Cam kết đầu ra IELTS và Tiếng Anh giao tiếp tại Crown English.",
+        "Tìm hiểu điều kiện cam kết đầu ra và chính sách hỗ trợ dành cho học viên IELTS và Tiếng Anh giao tiếp tại Crown English.",
       image: "/images/Design/TeamHoTro2.png",
     },
   },
