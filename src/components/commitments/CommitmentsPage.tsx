@@ -246,21 +246,23 @@ export default function CommitmentsPage({ data }: CommitmentsPageProps) {
         </Container>
       </section>
 
-      <Container className={styles.ctaWrap}>
-        <section className={styles.cta} aria-labelledby="commitments-cta-title">
-          <Reveal>
-            <p className={styles.eyebrow}>{data.cta.eyebrow}</p>
-            <h2 id="commitments-cta-title">{data.cta.title}</h2>
-            <p>{data.cta.description}</p>
-          </Reveal>
-          <Reveal delay={100} className={styles.ctaAction}>
-            <Button href={data.cta.href} className={styles.ctaButton}>
-              {data.cta.buttonLabel}
-              <ArrowRight aria-hidden="true" size={18} />
-            </Button>
-          </Reveal>
-        </section>
-      </Container>
+      <div className={styles.ctaBand}>
+        <Container className={styles.ctaWrap}>
+          <section className={styles.cta} aria-labelledby="commitments-cta-title">
+            <Reveal>
+              <p className={styles.eyebrow}>{data.cta.eyebrow}</p>
+              <h2 id="commitments-cta-title">{data.cta.title}</h2>
+              <p>{data.cta.description}</p>
+            </Reveal>
+            <Reveal delay={100} className={styles.ctaAction}>
+              <Button href={data.cta.href} className={styles.ctaButton}>
+                {data.cta.buttonLabel}
+                <ArrowRight aria-hidden="true" size={18} />
+              </Button>
+            </Reveal>
+          </section>
+        </Container>
+      </div>
     </article>
   );
 }

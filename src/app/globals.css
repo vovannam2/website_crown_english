@@ -77,6 +77,10 @@ body {
   overflow-x: clip;
 }
 
+button:not(:disabled) {
+  cursor: pointer;
+}
+
 .type-hero { font-family: var(--font-family-heading); font-size: var(--text-hero-size); font-weight: 700; letter-spacing: var(--tracking-hero); line-height: 1.05; text-wrap: balance; }
 .type-h1 { font-family: var(--font-family-heading); font-size: var(--text-h1-size); font-weight: 750; letter-spacing: var(--tracking-h1); line-height: var(--leading-heading-tight); text-wrap: balance; }
 .type-h2 { font-family: var(--font-family-heading); font-size: var(--text-h2-size); font-weight: 700; letter-spacing: var(--tracking-h2); line-height: var(--leading-heading); text-wrap: balance; }

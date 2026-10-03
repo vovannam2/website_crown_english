@@ -24,7 +24,6 @@
 .hero {
   position: relative;
   overflow: hidden;
-  border-bottom: 1px solid var(--commit-blue-line);
   background: #f7fbff;
 }
 
@@ -221,7 +220,7 @@
 }
 
 .promiseBand {
-  background: var(--commit-blue-soft);
+  background: #fff;
   padding-block: 42px;
 }
 
@@ -238,7 +237,7 @@
   flex-direction: column;
   justify-content: center;
   border-radius: var(--radius-sm);
-  background: rgb(255 255 255 / 0.45);
+  background: #fff;
   padding: 28px;
 }
 
@@ -268,11 +267,11 @@
 .promiseCard {
   height: 100%;
   min-height: 210px;
-  border: 1px solid rgb(255 255 255 / 0.82);
+  border: 1px solid #c8def2;
   border-radius: var(--radius-sm);
-  background: rgb(255 255 255 / 0.84);
+  background: linear-gradient(180deg, #f7fbff 0%, #fff 38%);
   padding: 24px 22px;
-  box-shadow: 0 12px 32px rgb(14 71 130 / 0.08);
+  box-shadow: 0 6px 12px rgb(14 71 130 / 0.06), 0 18px 38px rgb(14 71 130 / 0.13);
 }
 
 .iconBadge {
@@ -311,6 +310,10 @@
 .detailsSection,
 .courseSection {
   padding-block: 66px;
+}
+
+.detailsSection {
+  background: #f7fbff;
 }
 
 .sectionHeader {
@@ -426,7 +429,7 @@
 }
 
 .courseSection {
-  background: linear-gradient(180deg, #ffffff 0%, #f2fbff 100%);
+  background: #fff;
 }
 
 .courseGrid {
@@ -519,9 +522,21 @@
   gap: 7px;
   margin-top: auto;
   padding-top: 18px;
-  color: var(--commit-red);
+  color: var(--commit-blue);
   font-size: 15px;
-  font-weight: 750;
+  font-weight: 500;
+}
+
+.courseCta svg {
+  transition: transform 180ms ease;
+}
+
+.courseLink:hover .courseCta {
+  font-weight: 700;
+}
+
+.courseLink:hover .courseCta svg {
+  transform: translateX(4px);
 }
 
 .policyPanel {
@@ -588,6 +603,10 @@
   line-height: 1.72;
 }
 
+.ctaBand {
+  background: #f7fbff;
+}
+
 .ctaWrap {
   padding-block: 38px 72px;
 }
@@ -597,10 +616,9 @@
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: 24px;
-  border: 1px solid var(--commit-blue-line);
   border-radius: var(--radius-sm);
-  background: #eaf8ff;
-  padding: 34px 44px;
+  background: transparent;
+  padding-block: 34px;
 }
 
 .cta h2 {
@@ -696,7 +714,7 @@
 
 @media (max-width: 767px) {
   .hero {
-    background: #f2fbff;
+    background: #f7fbff;
   }
 
   .heroInner {
@@ -756,7 +774,7 @@
   }
 
   .cta {
-    padding: 26px 22px;
+    padding-block: 26px;
   }
 
   .policyPanel {
@@ -785,6 +803,10 @@
 
 @media (prefers-reduced-motion: reduce) {
   .courseCard {
+    transition: none;
+  }
+
+  .courseCta svg {
     transition: none;
   }
 
