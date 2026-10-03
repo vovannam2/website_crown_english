@@ -33,13 +33,23 @@ type FaqItem = {
   readonly needsReview?: boolean;
 };
 
-type CategoryKey = "all" | "courses" | "tuition" | "teachers" | "registration" | "policy";
+type CategoryKey =
+  | "all"
+  | "courses"
+  | "tuition"
+  | "teachers"
+  | "registration"
+  | "policy";
 
 type CategoryMeta = {
   readonly label: string;
   readonly shortLabel: string;
   readonly eyebrow: string;
-  readonly icon: ComponentType<{ size?: number; strokeWidth?: number; "aria-hidden"?: boolean }>;
+  readonly icon: ComponentType<{
+    size?: number;
+    strokeWidth?: number;
+    "aria-hidden"?: boolean;
+  }>;
 };
 
 type FaqsPageProps = {
@@ -48,7 +58,8 @@ type FaqsPageProps = {
 
 const MS_KHANH_HERO_IMAGE = "/images/Design/ChiKhanh5.jpg";
 const MS_KHANH_PORTRAIT_IMAGE = "/images/Design/ChiKhanh4.jpg";
-const MS_KHANH_FEATURED_IMAGE = "/images/Design/ChiKhanh2.jpg";
+const MS_KHANH_FEATURED_IMAGE_1 = "/images/Design/ChiKhanh7.jpg";
+const MS_KHANH_FEATURED_IMAGE_2 = "/images/Design/ChiKhanh6.jpg";
 
 const HERO_FAQ_IDS = [
   "qa-01-hoc-voi-ms-khanh",
@@ -103,7 +114,14 @@ const categoryMeta: Record<CategoryKey, CategoryMeta> = {
   },
 };
 
-const categoryOrder: readonly CategoryKey[] = ["all", "courses", "tuition", "teachers", "registration", "policy"];
+const categoryOrder: readonly CategoryKey[] = [
+  "all",
+  "courses",
+  "tuition",
+  "teachers",
+  "registration",
+  "policy",
+];
 
 function getCategoryKey(item: FaqItem): CategoryKey {
   switch (item.category) {
@@ -142,7 +160,9 @@ function getFaqById(items: readonly FaqItem[], id: string) {
 }
 
 function scrollToExplorer() {
-  document.getElementById("faq-explorer")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  document
+    .getElementById("faq-explorer")
+    ?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 function ChipIcon({ category }: { category: CategoryKey }) {
@@ -160,7 +180,9 @@ function SpeechBubble({
   className?: string;
 }) {
   return (
-    <div className={`${styles.speechBubble} ${styles[`bubble${tone}`]} ${className}`}>
+    <div
+      className={`${styles.speechBubble} ${styles[`bubble${tone}`]} ${className}`}
+    >
       <UserRound aria-hidden size={24} strokeWidth={2.3} />
       <span>{item.question}</span>
     </div>
@@ -191,7 +213,9 @@ function QuestionAnswer({
   const speaker = item.speaker || "Crown English";
 
   return (
-    <div className={`${styles.answerShell} ${compact ? styles.answerShellCompact : ""}`}>
+    <div
+      className={`${styles.answerShell} ${compact ? styles.answerShellCompact : ""}`}
+    >
       <div className={styles.questionBlock}>
         <span className={styles.badgeQ}>Q</span>
         <h3>{item.question}</h3>
@@ -223,15 +247,28 @@ export default function FaqsPage({ items }: FaqsPageProps) {
   const [selectedId, setSelectedId] = useState<string>(HERO_FAQ_IDS[0]);
   const [openMobileId, setOpenMobileId] = useState<string>(HERO_FAQ_IDS[0]);
 
-  const faqs = useMemo(() => items.filter((item) => item.question && item.answer.length > 0), [items]);
-  const faqById = useMemo(() => new Map(faqs.map((item) => [item.id, item])), [faqs]);
-  const heroFaqs = HERO_FAQ_IDS.map((id) => faqById.get(id)).filter(Boolean) as FaqItem[];
+  const faqs = useMemo(
+    () => items.filter((item) => item.question && item.answer.length > 0),
+    [items],
+  );
+  const faqById = useMemo(
+    () => new Map(faqs.map((item) => [item.id, item])),
+    [faqs],
+  );
+  const heroFaqs = HERO_FAQ_IDS.map((id) => faqById.get(id)).filter(
+    Boolean,
+  ) as FaqItem[];
   const featuredFaq = getFaqById(faqs, FEATURED_FAQ_ID) ?? faqs[0];
-  const policyFaqs = POLICY_FAQ_IDS.map((id) => getFaqById(faqs, id)).filter(Boolean) as FaqItem[];
+  const policyFaqs = POLICY_FAQ_IDS.map((id) => getFaqById(faqs, id)).filter(
+    Boolean,
+  ) as FaqItem[];
 
   const categories = useMemo(
     () =>
-      categoryOrder.filter((key) => key === "all" || faqs.some((item) => getCategoryKey(item) === key)),
+      categoryOrder.filter(
+        (key) =>
+          key === "all" || faqs.some((item) => getCategoryKey(item) === key),
+      ),
     [faqs],
   );
 
@@ -239,19 +276,25 @@ export default function FaqsPage({ items }: FaqsPageProps) {
     const searchNeedle = normalizeSearch(query);
 
     return faqs.filter((item) => {
-      const matchesCategory = category === "all" || getCategoryKey(item) === category;
+      const matchesCategory =
+        category === "all" || getCategoryKey(item) === category;
       if (!matchesCategory) return false;
       if (!searchNeedle) return true;
 
-      const searchable = normalizeSearch(`${item.question} ${answerText(item)}`);
+      const searchable = normalizeSearch(
+        `${item.question} ${answerText(item)}`,
+      );
       return searchable.includes(searchNeedle);
     });
   }, [category, faqs, query]);
 
-  const selectedFaq = filteredFaqs.find((item) => item.id === selectedId) ?? filteredFaqs[0];
-  const visibleMobileOpenId = filteredFaqs.some((item) => item.id === openMobileId)
+  const selectedFaq =
+    filteredFaqs.find((item) => item.id === selectedId) ?? filteredFaqs[0];
+  const visibleMobileOpenId = filteredFaqs.some(
+    (item) => item.id === openMobileId,
+  )
     ? openMobileId
-    : selectedFaq?.id ?? "";
+    : (selectedFaq?.id ?? "");
   const resultCountLabel = query
     ? `Tìm thấy ${filteredFaqs.length} câu hỏi`
     : `${filteredFaqs.length} câu hỏi`;
@@ -282,10 +325,15 @@ export default function FaqsPage({ items }: FaqsPageProps) {
               về <span>Crown English</span>
             </h1>
             <p className={styles.heroDescription}>
-              Giải đáp những thắc mắc phổ biến về khóa học, lộ trình, học phí, giảng viên và chính sách tại Crown English.
+              Giải đáp những thắc mắc phổ biến về khóa học, lộ trình, học phí,
+              giảng viên và chính sách tại Crown English.
             </p>
 
-            <form className={styles.searchForm} role="search" onSubmit={submitSearch}>
+            <form
+              className={styles.searchForm}
+              role="search"
+              onSubmit={submitSearch}
+            >
               <label className={styles.srOnly} htmlFor="faq-search">
                 Tìm kiếm câu hỏi thường gặp
               </label>
@@ -305,22 +353,27 @@ export default function FaqsPage({ items }: FaqsPageProps) {
             <div className={styles.heroTopics} aria-label="Chủ đề câu hỏi">
               <p>Hoặc chọn chủ đề bạn quan tâm:</p>
               <div>
-                {categories.filter((item) => item !== "all").map((item) => (
-                  <button
-                    key={item}
-                    type="button"
-                    className={category === item ? styles.topicActive : ""}
-                    onClick={() => chooseCategory(item, true)}
-                  >
-                    <ChipIcon category={item} />
-                    {categoryMeta[item].label}
-                  </button>
-                ))}
+                {categories
+                  .filter((item) => item !== "all")
+                  .map((item) => (
+                    <button
+                      key={item}
+                      type="button"
+                      className={category === item ? styles.topicActive : ""}
+                      onClick={() => chooseCategory(item, true)}
+                    >
+                      <ChipIcon category={item} />
+                      {categoryMeta[item].label}
+                    </button>
+                  ))}
               </div>
             </div>
           </div>
 
-          <div className={styles.heroVisual} aria-label="Ms. Khanh giải đáp câu hỏi học viên">
+          <div
+            className={styles.heroVisual}
+            aria-label="Ms. Khanh giải đáp câu hỏi học viên"
+          >
             <div className={styles.heroImageWrap}>
               <Image
                 src={MS_KHANH_HERO_IMAGE}
@@ -332,28 +385,74 @@ export default function FaqsPage({ items }: FaqsPageProps) {
               />
             </div>
 
-            {heroFaqs[0] && <SpeechBubble item={heroFaqs[0]} tone="blue" className={styles.heroBubbleOne} />}
-            {heroFaqs[1] && <SpeechBubble item={heroFaqs[1]} tone="pink" className={styles.heroBubbleTwo} />}
-            {heroFaqs[2] && <SpeechBubble item={heroFaqs[2]} tone="yellow" className={styles.heroBubbleThree} />}
+            {heroFaqs[0] && (
+              <SpeechBubble
+                item={heroFaqs[0]}
+                tone="blue"
+                className={styles.heroBubbleOne}
+              />
+            )}
+            {heroFaqs[1] && (
+              <SpeechBubble
+                item={heroFaqs[1]}
+                tone="pink"
+                className={styles.heroBubbleTwo}
+              />
+            )}
+            {heroFaqs[2] && (
+              <SpeechBubble
+                item={heroFaqs[2]}
+                tone="yellow"
+                className={styles.heroBubbleThree}
+              />
+            )}
 
-            <div className={`${styles.questionIcon} ${styles.questionIconOne}`} aria-hidden="true">
+            <div
+              className={`${styles.questionIcon} ${styles.questionIconOne}`}
+              aria-hidden="true"
+            >
               <HelpCircle size={28} strokeWidth={2.4} />
             </div>
-            <div className={`${styles.questionIcon} ${styles.questionIconTwo}`} aria-hidden="true">
+            <div
+              className={`${styles.questionIcon} ${styles.questionIconTwo}`}
+              aria-hidden="true"
+            >
               <MessageCircleQuestion size={30} strokeWidth={2.3} />
             </div>
-            <div className={`${styles.questionIcon} ${styles.questionIconThree}`} aria-hidden="true">
+            <div
+              className={`${styles.questionIcon} ${styles.questionIconThree}`}
+              aria-hidden="true"
+            >
               <Search size={26} strokeWidth={2.4} />
             </div>
 
-            <Lightbulb aria-hidden className={`${styles.doodle} ${styles.doodleBulb}`} size={54} strokeWidth={2.1} />
-            <Sparkles aria-hidden className={`${styles.doodle} ${styles.doodleSpark}`} size={42} strokeWidth={2.2} />
-            <ArrowUpRight aria-hidden className={`${styles.doodle} ${styles.doodleArrow}`} size={48} strokeWidth={2.2} />
+            <Lightbulb
+              aria-hidden
+              className={`${styles.doodle} ${styles.doodleBulb}`}
+              size={54}
+              strokeWidth={2.1}
+            />
+            <Sparkles
+              aria-hidden
+              className={`${styles.doodle} ${styles.doodleSpark}`}
+              size={42}
+              strokeWidth={2.2}
+            />
+            <ArrowUpRight
+              aria-hidden
+              className={`${styles.doodle} ${styles.doodleArrow}`}
+              size={48}
+              strokeWidth={2.2}
+            />
           </div>
         </Container>
       </section>
 
-      <section id="faq-explorer" className={styles.explorer} aria-labelledby="faq-list-title">
+      <section
+        id="faq-explorer"
+        className={styles.explorer}
+        aria-labelledby="faq-list-title"
+      >
         <Container>
           <div className={styles.explorerHeader}>
             <div>
@@ -362,10 +461,16 @@ export default function FaqsPage({ items }: FaqsPageProps) {
                 Mọi điều bạn muốn biết <br />
                 về Crown English
               </h2>
-              <p>Chọn chủ đề, tìm nhanh bằng từ khóa và xem câu trả lời ngay bên cạnh.</p>
+              <p>
+                Chọn chủ đề, tìm nhanh bằng từ khóa và xem câu trả lời ngay bên
+                cạnh.
+              </p>
             </div>
 
-            <div className={styles.filterPills} aria-label="Lọc câu hỏi theo chủ đề">
+            <div
+              className={styles.filterPills}
+              aria-label="Lọc câu hỏi theo chủ đề"
+            >
               {categories.map((item) => (
                 <button
                   key={item}
@@ -383,18 +488,25 @@ export default function FaqsPage({ items }: FaqsPageProps) {
 
           <div className={styles.resultBar}>
             <span>{resultCountLabel}</span>
-            {category !== "all" && <span>{categoryMeta[category].eyebrow}</span>}
+            {category !== "all" && (
+              <span>{categoryMeta[category].eyebrow}</span>
+            )}
           </div>
 
           {filteredFaqs.length > 0 ? (
             <>
               <div className={styles.desktopFaqGrid}>
-                <div className={styles.questionList} aria-label="Danh sách câu hỏi">
+                <div
+                  className={styles.questionList}
+                  aria-label="Danh sách câu hỏi"
+                >
                   {filteredFaqs.map((item, index) => (
                     <button
                       key={item.id}
                       type="button"
-                      className={selectedFaq?.id === item.id ? styles.questionActive : ""}
+                      className={
+                        selectedFaq?.id === item.id ? styles.questionActive : ""
+                      }
                       aria-pressed={selectedFaq?.id === item.id}
                       onClick={() => chooseFaq(item.id)}
                     >
@@ -419,7 +531,10 @@ export default function FaqsPage({ items }: FaqsPageProps) {
                   const open = visibleMobileOpenId === item.id;
                   const answerId = `answer-${item.id}`;
                   return (
-                    <article key={item.id} className={open ? styles.mobileItemOpen : ""}>
+                    <article
+                      key={item.id}
+                      className={open ? styles.mobileItemOpen : ""}
+                    >
                       <button
                         type="button"
                         aria-expanded={open}
@@ -452,11 +567,16 @@ export default function FaqsPage({ items }: FaqsPageProps) {
       </section>
 
       {featuredFaq && (
-        <section className={styles.featuredConversation} aria-labelledby="featured-faq-title">
+        <section
+          className={styles.featuredConversation}
+          aria-labelledby="featured-faq-title"
+        >
           <Container className={styles.featuredInner}>
             <div className={styles.conversationCopy}>
               <p className={styles.sectionEyebrow}>Câu hỏi được quan tâm</p>
-              <h2 id="featured-faq-title">Một cuộc trò chuyện ngắn với Crown</h2>
+              <h2 id="featured-faq-title">
+                Một cuộc trò chuyện ngắn với Crown
+              </h2>
               <div className={styles.chatStack}>
                 <div className={styles.chatQuestion}>
                   <span>Q</span>
@@ -473,20 +593,27 @@ export default function FaqsPage({ items }: FaqsPageProps) {
 
             <div className={styles.featuredVisual} aria-hidden="true">
               <Image
-                src={MS_KHANH_FEATURED_IMAGE}
+                src={MS_KHANH_FEATURED_IMAGE_2}
                 alt=""
                 fill
                 sizes="(min-width: 1024px) 420px, 86vw"
                 className={styles.featuredImage}
               />
-              <Lightbulb className={styles.featuredBulb} size={58} strokeWidth={2.2} />
+              <Lightbulb
+                className={styles.featuredBulb}
+                size={58}
+                strokeWidth={2.2}
+              />
             </div>
           </Container>
         </section>
       )}
 
       {policyFaqs.length > 0 && (
-        <section className={styles.infoStrip} aria-labelledby="info-strip-title">
+        <section
+          className={styles.infoStrip}
+          aria-labelledby="info-strip-title"
+        >
           <Container>
             <div className={styles.infoHeader}>
               <p className={styles.sectionEyebrow}>Thông tin cần nhớ</p>
@@ -514,7 +641,8 @@ export default function FaqsPage({ items }: FaqsPageProps) {
                 Vẫn còn <span>thắc mắc?</span>
               </h2>
               <p>
-                Đừng ngần ngại! Trò chuyện trực tiếp với đội ngũ Crown để được giải đáp nhanh và chính xác nhất.
+                Đừng ngần ngại! Trò chuyện trực tiếp với đội ngũ Crown để được
+                giải đáp nhanh và chính xác nhất.
               </p>
               <Button href="/lien-he" className={styles.ctaButton}>
                 Đăng ký tư vấn ngay
@@ -524,19 +652,39 @@ export default function FaqsPage({ items }: FaqsPageProps) {
 
             <div className={styles.ctaVisual} aria-hidden="true">
               <Image
-                src={MS_KHANH_FEATURED_IMAGE}
+                src={MS_KHANH_FEATURED_IMAGE_1}
                 alt=""
                 fill
                 sizes="(min-width: 1024px) 500px, 90vw"
                 className={styles.ctaImage}
               />
               {getFaqById(faqs, "qa-17-lo-trinh-mat-goc-den-6-5") && (
-                <SpeechBubble item={getFaqById(faqs, "qa-17-lo-trinh-mat-goc-den-6-5")!} tone="blue" className={styles.ctaBubbleBlue} />
+                <SpeechBubble
+                  item={getFaqById(faqs, "qa-17-lo-trinh-mat-goc-den-6-5")!}
+                  tone="blue"
+                  className={styles.ctaBubbleBlue}
+                />
               )}
-              {getFaqById(faqs, "qa-19-vi-sao-hoc-phi-re-hon-trung-tam-khac") && (
-                <SpeechBubble item={getFaqById(faqs, "qa-19-vi-sao-hoc-phi-re-hon-trung-tam-khac")!} tone="yellow" className={styles.ctaBubbleYellow} />
+              {getFaqById(
+                faqs,
+                "qa-19-vi-sao-hoc-phi-re-hon-trung-tam-khac",
+              ) && (
+                <SpeechBubble
+                  item={
+                    getFaqById(
+                      faqs,
+                      "qa-19-vi-sao-hoc-phi-re-hon-trung-tam-khac",
+                    )!
+                  }
+                  tone="yellow"
+                  className={styles.ctaBubbleYellow}
+                />
               )}
-              <HelpCircle className={styles.ctaDoodle} size={48} strokeWidth={2.2} />
+              <HelpCircle
+                className={styles.ctaDoodle}
+                size={48}
+                strokeWidth={2.2}
+              />
             </div>
           </div>
         </Container>

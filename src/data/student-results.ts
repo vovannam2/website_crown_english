@@ -22,6 +22,8 @@ import studentsResultsYenNhi70Image from "../../public/images/students/results/y
 import studentsThumbnailsYenPhuong70Image from "../../public/images/students/thumbnails/yen-phuong-7-0.png";
 import studentsThumbnailsVietBao70Image from "../../public/images/students/thumbnails/viet-bao-8-0.png";
 import studentsResultsYenPhuong70Image from "../../public/images/students/results/yen-phuong-7-0.jpg";
+import studentThumbnailsDiemHang75Image from "../../public/images/students/thumbnails/diem-hang-7-5.png";
+import studentResultsDiemHang75Image from "../../public/images/students/results/diem-hang-7-5.jpg";
 import studentsClassroomsClassroom01Image from "../../public/images/students/classrooms/classroom-01.jpg";
 import studentsClassroomsClassroom02Image from "../../public/images/students/classrooms/classroom-02.jpg";
 import studentsClassroomsClassroom03Image from "../../public/images/students/classrooms/classroom-03.jpg";
@@ -252,19 +254,19 @@ export const studentResultsPageData = {
     },
 
     {
-      id: "yen-nhi-7-0",
-      name: "Yến Nhi",
+      id: "diem-hang-7-5",
+      name: "Diễm Hằng",
       exam: "IELTS",
-      overall: "7.0",
+      overall: "7.5",
 
-      highlights: ["8.5 Writing", "7.0 Reading"],
+      highlights: ["8.5 Listening", "8.0 Reading"],
 
-      thumbnail: "",
+      thumbnail: studentThumbnailsDiemHang75Image.src,
 
-      fullImage: studentsResultsYenNhi70Image.src,
+      fullImage: studentResultsDiemHang75Image.src,
 
       feedback:
-        "Hi mọi người, mình là Yến Nhi. Mình đã theo học khóa kèm 1:1 focus speaking cấp tốc và rất vui khi đạt IELTS 7.0 Overall. Mình xin gửi lời cảm ơn chân thành đến đội ngũ giảng viên và admin đã luôn tận tình hỗ trợ, giảng dạy và đồng hành cùng mình trong suốt quá trình học. Chúc các bạn học viên khác sẽ luôn cố gắng và đạt được kết quả như mong muốn nhé!",
+        "Hi mọi người, mình là Diễm Hằng đây! Là một người chỉ có vỏn vẹn 2 tháng để chuẩn bị cho kỳ thi IELTS và còn khá lo lắng về Speaking, Writing, mình đã may mắn biết đến IELTS SHINEE qua TikTok và quyết định bắt đầu hành trình tại đây. Trong suốt quá trình ôn tập, mình được thầy cô hướng dẫn rất sát sao, giải đáp những phần mình còn yếu và được các chị QTV hỗ trợ nhiệt tình. Nhờ vậy, mình dần tự tin hơn, biết cách cải thiện từng kỹ năng và có định hướng rõ ràng. Cảm ơn IELTS SHINEE đã luôn đồng hành, hỗ trợ và giúp mình chinh phục được mục tiêu 7.5 trong khoảng thời gian thật đáng nhớ! ❤️",
     },
 
     {

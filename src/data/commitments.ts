@@ -52,8 +52,16 @@ export const commitmentsPageData = {
     },
     actions: [
       { label: "IELTS", href: "/khoa-hoc/ielts", variant: "primary" },
-      { label: "Tiếng Anh giao tiếp", href: "/khoa-hoc/giao-tiep", variant: "outline" },
-      { label: "IELTS 1:1", href: "/khoa-hoc/ielts-1-kem-1", variant: "outline" },
+      {
+        label: "Tiếng Anh giao tiếp",
+        href: "/khoa-hoc/giao-tiep",
+        variant: "outline",
+      },
+      {
+        label: "IELTS 1:1",
+        href: "/khoa-hoc/ielts-1-kem-1",
+        variant: "outline",
+      },
     ],
   },
 
@@ -72,8 +80,7 @@ export const commitmentsPageData = {
         number: "02",
         icon: "users",
         title: "Lớp học sĩ số nhỏ",
-        description:
-          "Tăng tương tác, giáo viên dễ theo sát từng học viên hơn.",
+        description: "Tăng tương tác, giáo viên dễ theo sát từng học viên hơn.",
       },
       {
         number: "03",
@@ -99,7 +106,7 @@ export const commitmentsPageData = {
       {
         icon: "book",
         title: "Cam kết về Chất lượng giảng dạy",
-        image: "/images/Design/TeamHoTro2.png",
+        image: "/images/Design/TeamHoTro3.png",
         imageAlt: "Học viên trong lớp học tại Crown English",
         description:
           "Chúng tôi đảm bảo tính minh bạch và chuẩn mực trong toàn bộ chương trình đào tạo. Đội ngũ giảng viên luôn đồng hành với tinh thần trách nhiệm và sự tận tụy cao nhất.",
@@ -191,11 +198,7 @@ export const commitmentsPageData = {
 
   policies: {
     ielts: {
-      outcomes: [
-        "FOUNDATION - 3.5+",
-        "NEWBIE - 5.0+",
-        "ADVANCE - 6.0+",
-      ],
+      outcomes: ["FOUNDATION - 3.5+", "NEWBIE - 5.0+", "ADVANCE - 6.0+"],
       conditions: [
         "Làm đủ trên 95% bài tập được giao",
         "Không nghỉ quá 2 buổi/tháng",
