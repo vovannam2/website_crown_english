@@ -37,7 +37,7 @@ export const commitmentsPageData = {
 
       description:
         "Tìm hiểu điều kiện cam kết đầu ra và chính sách hỗ trợ dành cho học viên IELTS và Tiếng Anh giao tiếp tại Crown English.",
-      image: "/images/Design/TeamHoTro2.png",
+      image: "",
     },
   },
 

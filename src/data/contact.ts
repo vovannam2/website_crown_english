@@ -37,7 +37,7 @@ export const contactPageData = {
 
       description:
         "Xem địa chỉ, hotline, Zalo, email, giờ làm việc và Google Maps của Crown English tại TP.HCM.",
-      image: "/images/Design/AnhTrungTamMoi.png",
+      image: "",
     },
   },
   hero: {
