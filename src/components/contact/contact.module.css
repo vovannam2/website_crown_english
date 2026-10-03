@@ -1,85 +1,97 @@
 .page {
-  --contact-navy: #151515;
-  --contact-blue: #2f6dd8;
+  --contact-ink: #171717;
+  --contact-muted: #637083;
   --contact-red: var(--color-brand-red);
-  --contact-muted: #5f6673;
-  --contact-line: #e6ebf1;
-  color: var(--contact-navy);
+  --contact-blue: #3f82f5;
+  --contact-line: #e6ebf2;
+  color: var(--contact-ink);
   overflow-x: clip;
   background: #fff;
 }
 
-.hero {
-  border-bottom: 1px solid #f0f2f5;
-  background: linear-gradient(180deg, #fff 0%, #fff 70%, #fafbfc 100%);
-}
-
-.heroInner {
-  display: grid;
-  gap: 36px;
-  align-items: center;
-  min-height: 620px;
-  padding-block: 78px 84px;
-}
-
-.heroCopy {
+.contactHero {
   position: relative;
-  max-width: 720px;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: calc(100svh - 84px);
+  border-bottom: 1px solid #eef1f6;
+  background:
+    linear-gradient(135deg, #f6f9ff 0%, #fff 42%, #fff5f5 100%);
+  padding-block: clamp(48px, 6.5vw, 76px) clamp(68px, 7vw, 96px);
+}
+
+.contactHero::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    linear-gradient(120deg, rgb(63 130 245 / 0.08), transparent 34%),
+    repeating-linear-gradient(135deg, rgb(23 23 23 / 0.026) 0 1px, transparent 1px 22px);
+  content: "";
+}
+
+.contactShell {
+  position: relative;
+  z-index: 1;
+}
+
+.heroTop {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(430px, 0.72fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+  margin-bottom: clamp(38px, 5vw, 62px);
+}
+
+.heroIntro {
+  max-width: 760px;
 }
 
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  min-height: 32px;
-  border: 1px solid rgb(212 37 37 / 0.13);
+  min-height: 30px;
+  border: 1px solid rgb(212 37 37 / 0.12);
   border-radius: 999px;
-  background: #fff6f6;
-  padding: 7px 14px;
+  background: #fff4f4;
+  padding: 6px 14px;
   color: var(--contact-red);
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   font-weight: 800;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.1em;
   line-height: 1.35;
   text-transform: uppercase;
+  box-shadow: 0 8px 20px rgb(212 37 37 / 0.07);
 }
 
-.hero h1 {
-  color: var(--contact-navy);
+.heroIntro h1 {
+  margin-top: 18px;
+  max-width: 760px;
+  color: var(--contact-ink);
+  font-size: clamp(2.35rem, 5.2vw, 4.85rem);
   font-weight: 800;
   letter-spacing: 0;
-  line-height: 1.08;
+  line-height: 1.04;
   text-wrap: balance;
 }
 
-.hero h1 {
-  margin-top: 18px;
-  max-width: 760px;
-  font-size: clamp(2.45rem, 4.8vw, 4.55rem);
+.heroIntro h1 span {
+  color: var(--contact-red);
 }
 
-.hero h1::after {
-  display: block;
-  width: 104px;
-  height: 6px;
-  margin-top: 22px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--contact-red), #f3b4a9);
-  content: "";
-}
-
-.heroCopy > p:not(.eyebrow) {
-  margin-top: 20px;
+.heroIntro > p:not(.eyebrow) {
+  margin-top: 16px;
   max-width: 650px;
   color: var(--contact-muted);
-  font-size: 1.04rem;
-  line-height: 1.75;
+  font-size: clamp(1rem, 0.28vw + 0.95rem, 1.1rem);
+  line-height: 1.72;
 }
 
 .heroActions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 30px;
+  margin-top: 28px;
 }
 
 .actionButton {
@@ -108,36 +120,24 @@
 .secondaryButton {
   border: 1px solid var(--contact-line);
   background: #fff;
-  color: var(--contact-navy);
+  color: var(--contact-ink);
   box-shadow: 0 12px 26px rgb(17 24 39 / 0.06);
 }
 
 .secondaryButton:hover {
   border-color: rgb(212 37 37 / 0.22);
   background: #fff8f8;
-  color: var(--contact-navy);
+  color: var(--contact-ink);
 }
 
 .heroPanel {
   position: relative;
-  min-height: 620px;
+  min-height: clamp(520px, 43vw, 650px);
   overflow: hidden;
   border: 1px solid var(--contact-line);
-  border-radius: 24px;
+  border-radius: var(--radius-md);
   background: #f6f8fb;
   box-shadow: 0 24px 58px rgb(17 24 39 / 0.1);
-}
-
-.heroPanel::before {
-  position: absolute;
-  z-index: 2;
-  top: 18px;
-  left: 18px;
-  width: 78px;
-  height: 6px;
-  border-radius: 999px;
-  background: var(--contact-red);
-  content: "";
 }
 
 .centerImage {
@@ -156,7 +156,7 @@
   align-items: flex-start;
   justify-content: space-between;
   border: 1px solid rgb(255 255 255 / 0.38);
-  border-radius: 18px;
+  border-radius: var(--radius-md);
   background: rgb(17 24 39 / 0.84);
   padding: 18px;
   color: #fff;
@@ -192,263 +192,316 @@
   color: #fff;
 }
 
-.contactHubSection {
-  background: #fff;
-  color: var(--contact-navy);
-  padding-block: clamp(72px, 8vw, 104px) clamp(96px, 9vw, 132px);
-}
-
-.contactHubGrid {
-  position: relative;
+.contactGrid {
   display: grid;
-  gap: 22px;
+  grid-template-columns: minmax(0, 1.45fr) minmax(420px, 0.9fr);
+  gap: clamp(18px, 2.4vw, 28px);
   align-items: stretch;
-  isolation: isolate;
-  overflow: hidden;
-  border: 1px solid rgb(17 24 39 / 0.09);
-  border-radius: 28px;
-  background:
-    linear-gradient(135deg, #fff1f1 0%, #fff7f7 30%, #fff 54%, #f3f7ff 100%);
-  padding: clamp(18px, 2.4vw, 32px);
-  box-shadow: 0 24px 62px rgb(17 24 39 / 0.09);
 }
 
-.contactHubGrid::before {
-  position: absolute;
-  z-index: 2;
-  inset: 0 0 auto;
-  height: 4px;
-  background: linear-gradient(90deg, var(--contact-red), rgb(212 37 37 / 0.35), transparent 72%);
-  content: "";
+.contactCards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 1.8vw, 18px);
 }
 
-.contactHubGrid::after {
-  position: absolute;
-  z-index: 0;
-  inset: 0;
-  background:
-    linear-gradient(90deg, rgb(212 37 37 / 0.055), transparent 40%),
-    repeating-linear-gradient(135deg, rgb(17 24 39 / 0.025) 0 1px, transparent 1px 18px);
-  content: "";
-}
-
-.contactPanel {
+.contactCard {
   position: relative;
-  z-index: 1;
-  height: 100%;
-  overflow: hidden;
-  border: 1px solid var(--contact-line);
-  border-radius: 20px;
-  background: rgb(255 255 255 / 0.9);
-  box-shadow: 0 16px 40px rgb(17 24 39 / 0.08);
-}
-
-.contactPanelHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  border-bottom: 1px solid var(--contact-line);
-  background:
-    linear-gradient(90deg, #fff6f6 0%, #fff 40%),
-    #fff;
-  padding: 22px 24px;
-}
-
-.contactPanelHeader p {
-  color: var(--contact-red);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  line-height: 1.35;
-  text-transform: uppercase;
-}
-
-.contactPanelHeader span {
-  color: var(--contact-muted);
-  font-size: 0.92rem;
-  font-weight: 650;
-  line-height: 1.45;
-}
-
-.contactList {
   display: grid;
-}
-
-.contactRow {
-  display: flex;
-  align-items: center;
-  min-height: 96px;
-  padding: 20px 24px;
-  transition: background 180ms ease;
-}
-
-.contactRow:hover {
-  background: #fff8f8;
-}
-
-.contactRow + .contactRow {
-  border-top: 1px solid var(--contact-line);
-}
-
-.contactRowMain {
-  display: flex;
-  min-width: 0;
-  align-items: center;
+  grid-template-columns: 48px minmax(0, 1fr);
   gap: 14px;
+  align-items: start;
+  min-height: 148px;
+  border: 1px solid var(--contact-line);
+  border-radius: var(--radius-md);
+  background: rgb(255 255 255 / 0.9);
+  padding: 20px 18px;
+  box-shadow: 0 18px 42px rgb(23 23 23 / 0.07);
+  backdrop-filter: blur(12px);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
-.contactRowText {
-  display: grid;
-  min-width: 0;
-  gap: 6px;
+.contactCard:hover {
+  border-color: rgb(212 37 37 / 0.18);
+  box-shadow: 0 22px 52px rgb(23 23 23 / 0.1);
+  transform: translateY(-2px);
 }
 
-.contactRowTitle {
-  display: block;
-  color: var(--contact-navy);
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  line-height: 1.3;
-  text-transform: uppercase;
-}
-
-.contactRowIcon {
+.contactIcon {
   display: inline-grid;
   width: 48px;
   height: 48px;
-  flex: 0 0 auto;
   place-items: center;
+  border: 1px solid rgb(212 37 37 / 0.15);
   border-radius: 999px;
-  border: 1px solid var(--contact-line);
-  background: #fff;
-  color: #1f2937;
-  box-shadow: 0 8px 22px rgb(17 24 39 / 0.04);
-}
-
-.contactRow:first-child .contactRowIcon {
-  border-color: rgb(212 37 37 / 0.18);
-  background: #fff7f7;
+  background: #fff5f5;
   color: var(--contact-red);
 }
 
-.contactRow:nth-child(2) .contactRowIcon {
-  border-color: rgb(47 109 216 / 0.18);
-  background: #f5f8ff;
-  color: #2f6dd8;
+.contactCard:nth-child(2) .contactIcon {
+  border-color: rgb(63 130 245 / 0.16);
+  background: #f3f7ff;
+  color: var(--contact-blue);
 }
 
-.contactRow:nth-child(3) .contactRowIcon {
-  border-color: rgb(20 139 210 / 0.18);
-  background: #f3faff;
+.contactCard:nth-child(3) .contactIcon {
+  border-color: rgb(20 139 210 / 0.16);
+  background: #f2faff;
   color: #148bd2;
 }
 
-.contactRow:nth-child(4) .contactRowIcon {
-  border-color: rgb(79 70 229 / 0.16);
+.contactCard:nth-child(4) .contactIcon {
+  border-color: rgb(79 70 229 / 0.14);
   background: #f7f7ff;
   color: #4f46e5;
 }
 
-.contactRowValues {
-  display: flex;
+.contactCardBody {
   min-width: 0;
-  flex-wrap: wrap;
-  gap: 6px 10px;
 }
 
-.contactRowValues a {
-  position: relative;
-  display: inline-block;
-  max-width: 100%;
-  overflow: hidden;
-  color: var(--contact-navy);
-  font-size: clamp(1rem, 0.32vw + 0.92rem, 1.12rem);
+.contactCardBody h2 {
+  color: var(--contact-ink);
+  font-size: 1rem;
   font-weight: 800;
-  line-height: 1.4;
-  text-overflow: ellipsis;
+  line-height: 1.25;
+}
+
+.contactValues {
+  display: flex;
+  min-width: 0;
+  flex-wrap: nowrap;
+  gap: 0;
+  margin-top: 8px;
+}
+
+.contactValues a {
+  width: fit-content;
+  max-width: 100%;
+  overflow-wrap: normal;
+  color: #071d49;
+  font-size: clamp(0.9rem, 0.16vw + 0.86rem, 0.98rem);
+  font-weight: 800;
+  line-height: 1.32;
   white-space: nowrap;
   transition: color 180ms ease;
 }
 
-.contactRowValues a:not(:last-child)::after {
-  margin-left: 8px;
+.contactValues a + a::before {
+  margin-inline: 8px;
   color: var(--contact-muted);
-  font-weight: 600;
+  font-weight: 650;
   content: "/";
 }
 
-.contactRowValues a:hover {
+.contactValues a:hover {
   color: var(--contact-red);
 }
 
-.contactRowValues a:focus-visible {
+.contactValues a:focus-visible,
+.contactCardAction:focus-visible,
+.directionLink:focus-visible {
   outline: 2px solid var(--contact-blue);
   outline-offset: 3px;
 }
 
-.mapPanel {
-  position: relative;
-  z-index: 1;
-  min-height: 520px;
-  overflow: hidden;
-  border: 1px solid var(--contact-line);
-  border-radius: 20px;
-  background: #fff;
-  color: var(--contact-navy);
-  box-shadow: 0 16px 40px rgb(17 24 39 / 0.08);
+.contactCardBody p {
+  margin-top: 10px;
+  padding-right: 42px;
+  color: var(--contact-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.55;
 }
 
-.mapPanel::before {
+.contactCardAction {
   position: absolute;
-  z-index: 2;
-  top: 16px;
-  left: 16px;
-  width: 68px;
-  height: 5px;
+  top: 50%;
+  right: 20px;
+  display: inline-grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 1px solid #e0e9f5;
   border-radius: 999px;
-  background: var(--contact-red);
-  content: "";
+  background: #fff;
+  color: #1d4ed8;
+  box-shadow: 0 8px 22px rgb(23 23 23 / 0.06);
+  transform: translateY(-50%);
+  transition: border-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.contactCardAction:hover {
+  border-color: rgb(212 37 37 / 0.22);
+  color: var(--contact-red);
+  transform: translate(2px, -50%);
+}
+
+.locationCard {
+  display: grid;
+  grid-template-rows: auto minmax(260px, 1fr) auto;
+  gap: 14px;
+  min-height: 100%;
+  border: 1px solid var(--contact-line);
+  border-radius: var(--radius-md);
+  background: rgb(255 255 255 / 0.92);
+  padding: 14px;
+  box-shadow: 0 18px 42px rgb(23 23 23 / 0.07);
+  backdrop-filter: blur(12px);
+}
+
+.locationHeader {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  padding: 2px 2px 0;
+}
+
+.locationIcon {
+  display: inline-grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border-radius: 999px;
+  background: #eef5ff;
+  color: var(--contact-blue);
+}
+
+.locationHeader p {
+  color: var(--contact-ink);
+  font-size: 0.96rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.locationHeader strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--contact-muted);
+  font-size: 0.9rem;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.directionLink {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid #dce7f6;
+  border-radius: 999px;
+  background: #fff;
+  padding: 0 14px;
+  color: #2f6dd8;
+  font-size: 0.84rem;
+  font-weight: 800;
+  line-height: 1.15;
+  white-space: nowrap;
 }
 
 .mapFrame {
   position: relative;
-  height: 100%;
-  min-height: 520px;
+  min-height: 286px;
   overflow: hidden;
+  border: 1px solid var(--contact-line);
+  border-radius: var(--radius-sm);
   background: #f8fbff;
 }
 
 .mapFrame iframe {
   width: 100%;
   height: 100%;
-  min-height: 520px;
+  min-height: 286px;
   border: 0;
 }
 
-@media (min-width: 760px) {
-  .heroInner {
-    grid-template-columns: minmax(0, 0.9fr) minmax(360px, 0.82fr);
+.locationFacts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  overflow: hidden;
+  border: 1px solid #edf1f6;
+  border-radius: var(--radius-sm);
+  background: #f9fbff;
+}
+
+.locationFact {
+  display: flex;
+  min-width: 0;
+  gap: 10px;
+  padding: 14px;
+  color: #16356c;
+}
+
+.locationFact + .locationFact {
+  border-left: 1px solid #edf1f6;
+}
+
+.locationFact svg {
+  flex: 0 0 auto;
+  color: #17366d;
+}
+
+.locationFact span {
+  display: block;
+  color: #16356c;
+  font-size: 0.74rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.locationFact strong {
+  display: block;
+  margin-top: 3px;
+  color: var(--contact-muted);
+  font-size: 0.78rem;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+@media (min-width: 1281px) {
+  .contactShell {
+    max-width: min(1240px, calc(100vw - 64px));
   }
 }
 
-@media (min-width: 1024px) {
-  .contactHubGrid {
-    grid-template-columns: minmax(0, 0.92fr) minmax(420px, 0.86fr);
+@media (max-width: 1280px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .locationCard {
+    grid-template-rows: auto minmax(330px, 1fr) auto;
+  }
+
+  .mapFrame,
+  .mapFrame iframe {
+    min-height: 330px;
   }
 }
 
-@media (max-width: 759px) {
-  .heroInner {
+@media (max-width: 860px) {
+  .contactHero {
     min-height: auto;
-    padding-block: 50px 58px;
+    padding-block: 44px 70px;
   }
 
-  .hero h1::after {
-    width: 76px;
-    height: 5px;
-    margin-top: 18px;
+  .heroTop {
+    grid-template-columns: 1fr;
+  }
+
+  .heroPanel {
+    min-height: 520px;
   }
 
   .heroActions {
@@ -459,60 +512,64 @@
   .actionButton {
     width: 100%;
   }
+}
 
+@media (max-width: 700px) {
+  .contactCards,
+  .locationFacts {
+    grid-template-columns: 1fr;
+  }
+
+  .contactCard {
+    grid-template-columns: 48px minmax(0, 1fr);
+    min-height: 0;
+    padding: 16px;
+  }
+
+  .contactValues {
+    flex-wrap: wrap;
+  }
+
+  .contactValues a {
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+
+  .contactIcon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .locationHeader {
+    grid-template-columns: 48px minmax(0, 1fr);
+  }
+
+  .locationIcon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .directionLink {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  .locationFact + .locationFact {
+    border-top: 1px solid #edf1f6;
+    border-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
   .heroPanel {
-    min-height: 520px;
-    border-radius: 20px;
+    min-height: 480px;
   }
 
-  .photoCaption {
-    right: 12px;
-    bottom: 12px;
-    left: 12px;
-    border-radius: 16px;
-    padding: 14px;
+  .contactCard {
+    grid-template-columns: 46px minmax(0, 1fr);
   }
 
-  .contactHubSection {
-    padding-block: 52px 82px;
-  }
-
-  .contactHubGrid {
-    gap: 12px;
-    border-radius: 22px;
-    padding: 12px;
-  }
-
-  .contactPanel {
-    border-radius: 16px;
-  }
-
-  .contactPanelHeader {
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 16px;
-  }
-
-  .contactRow {
-    padding: 16px;
-  }
-
-  .contactRowMain {
-    align-items: flex-start;
-  }
-
-  .contactRowIcon {
-    width: 42px;
-    height: 42px;
-  }
-
-  .mapPanel {
-    min-height: 360px;
-    border-radius: 16px;
-  }
-
-  .mapFrame,
-  .mapFrame iframe {
-    min-height: 360px;
+  .contactCardAction {
+    right: 16px;
   }
 }
