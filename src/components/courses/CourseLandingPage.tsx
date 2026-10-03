@@ -780,7 +780,7 @@ export default function CourseLandingPage({ data }: CourseDataProps) {
           </section>
         )}
 
-        <section className="grid items-center gap-6 rounded-[var(--radius-sm)] border border-[var(--color-line)] bg-[var(--color-surface-soft)] p-6 sm:p-8 lg:grid-cols-[1fr_auto]" aria-labelledby="course-cta-title">
+        <section className="mt-6 grid items-center gap-6 rounded-[var(--radius-sm)] border border-[var(--color-line)] bg-[var(--color-surface-soft)] p-6 sm:p-8 lg:grid-cols-[1fr_auto]" aria-labelledby="course-cta-title">
           <Reveal>
             <p className="home-eyebrow">TƯ VẤN LỘ TRÌNH</p>
             <h2 id="course-cta-title" className="mt-3 type-h2">{data.cta?.title || "Chưa chắc nên bắt đầu từ cấp độ nào?"}</h2>
