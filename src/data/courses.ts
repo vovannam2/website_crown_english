@@ -514,7 +514,7 @@ export const communicationPageData = {
 
       description:
         "Khóa học giao tiếp theo từng trình độ, tập trung nghe nói, phản xạ và phát âm tại Crown English.",
-      image: "/images/Design/LopHoc3.JPG",
+      image: "",
     },
   },
 
@@ -723,7 +723,7 @@ export const ieltsOneToOnePageData = {
 
       description:
         "Lộ trình IELTS 1 kèm 1 cá nhân hóa theo trình độ, lịch học linh hoạt và được giảng viên theo sát tại Crown English.",
-      image: "/images/Design/LopHoc2.JPG",
+      image: "",
     },
   },
 
