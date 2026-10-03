@@ -216,24 +216,18 @@
   overflow: hidden;
   animation: hero-background-fade 1.1s cubic-bezier(.22,1,.36,1) both;
 }
-.heroCampaignSlide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  animation: hero-banner-cycle 24s linear infinite;
-}
-.heroCampaignSlide:first-child { opacity: 1; }
 .heroCampaignImage {
   object-fit: cover;
   object-position: center;
+  filter: saturate(1.06) contrast(1.05);
   animation: hero-background-drift 18s ease-in-out infinite alternate;
   will-change: transform;
 }
 .heroCampaignTint {
   z-index: -2;
   background:
-    linear-gradient(90deg, #fffefcf7 0%, #fffdf9ee 38%, #fffdf9bd 55%, #fffdf942 74%, #fffdf917 100%),
-    linear-gradient(180deg, #f8f1e61f, #f8f1e633);
+    linear-gradient(90deg, #fffefcf3 0%, #fffdf9e4 37%, #fffdf99c 55%, #fffdf92e 74%, #fffdf900 100%),
+    linear-gradient(180deg, #f8f1e60f, #f8f1e61f);
 }
 .heroCampaignInner {
   width: 100%;
@@ -394,11 +388,6 @@
 .heroFilm:hover .heroFilmTrack { animation-play-state: paused; }
 @keyframes hero-background-fade { from { opacity: 0; transform: scale(1.025); } to { opacity: 1; transform: scale(1); } }
 @keyframes hero-background-drift { from { transform: scale(1); } to { transform: scale(1.025); } }
-@keyframes hero-banner-cycle {
-  0%, 24% { opacity: 1; }
-  29%, 95% { opacity: 0; }
-  100% { opacity: 1; }
-}
 @keyframes hero-film-scroll { to { transform: translateY(-50%); } }
 
 @media (max-width: 1050px) {
@@ -415,7 +404,7 @@
   .page .heroCampaign { min-height: auto; padding: 52px 20px 44px; }
   .heroCampaignBackground { inset: 0; }
   .heroCampaignImage { object-position: 66% center; }
-  .heroCampaignTint { background: linear-gradient(90deg, #fffdf9f7 0%, #fffdf9ed 66%, #fffdf9c7 100%); }
+  .heroCampaignTint { background: linear-gradient(90deg, #fffdf9f3 0%, #fffdf9df 58%, #fffdf9a8 100%); }
   .heroCampaignInner { display: block; }
   .heroCampaignCopy { max-width: 600px; }
   .heroCampaignTitle { font-size: clamp(61px, 18vw, 92px); }
@@ -438,8 +427,6 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .heroCampaignBackground, .heroCampaignImage, .heroFilmTrack { animation: none; }
-  .heroCampaignSlide { display: none; animation: none; }
-  .heroCampaignSlide:first-child { display: block; opacity: 1; }
 }
 
 /* Course posters */

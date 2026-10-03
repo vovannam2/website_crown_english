@@ -16,8 +16,8 @@ export const metadata: Metadata = {
       ? [
           {
             url: data.seo.openGraph.image,
-            width: 1200,
-            height: 630,
+            width: 2772,
+            height: 1024,
             alt: "Crown English IELTS & Tiếng Anh giao tiếp",
           },
         ]

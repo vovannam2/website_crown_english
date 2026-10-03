@@ -13,7 +13,7 @@ import type { AboutImageSlot } from "@/types/about";
 const images = {
   hero: {
     src: heroImage.src,
-    fallback: "/images/about/crown-hero.jpg",
+    fallback: heroImage.src,
     alt: "Giáo viên và học viên trong lớp học tại Crown English",
     position: "55% center",
     placeholder: "Crown English",
@@ -27,7 +27,7 @@ const images = {
 
   method: {
     src: methodImage.src,
-    fallback: "/images/about/crown-method.jpg",
+    fallback: methodImage.src,
     alt: "Giảng viên hướng dẫn học viên trong giờ học tại Crown English",
     position: "center 65%",
     placeholder: "Phương pháp đào tạo",
@@ -35,7 +35,7 @@ const images = {
 
   support: {
     src: supportImage.src,
-    fallback: "/images/about/crown-support.jpg",
+    fallback: supportImage.src,
     alt: "Giảng viên và học viên trao đổi trong quá trình học tại Crown English",
     position: "center 60%",
     placeholder: "Đồng hành cùng học viên",
@@ -104,7 +104,7 @@ export const aboutPageData = {
       description:
         "Tìm hiểu Crown English, giá trị cốt lõi, định hướng đào tạo và những điểm khác biệt trong hành trình học IELTS và Tiếng Anh học thuật.",
 
-      image: "/images/about/crown-hero.jpg",
+      image: heroImage.src,
     },
   },
 

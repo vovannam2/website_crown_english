@@ -25,7 +25,7 @@ export default function StudentResults({
   const [paused, setPaused] = useState(false);
   const [selected, setSelected] = useState<StudentResult | null>(null);
   const sortedResults = [...results].sort(
-    (a, b) => Number(a.overall) - Number(b.overall),
+    (a, b) => Number(b.overall) - Number(a.overall),
   );
   const repeats = Math.max(1, Math.ceil(5 / Math.max(1, results.length)));
   const loopItems = Array.from({ length: repeats }, () => sortedResults).flat();

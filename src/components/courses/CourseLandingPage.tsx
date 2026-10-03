@@ -1,3 +1,8 @@
+import localClassroom13Image from "../../../public/images/students/classrooms/classroom-13.jpg";
+import localClassroom04Image from "../../../public/images/students/classrooms/classroom-04.jpg";
+import localClassroom08Image from "../../../public/images/students/classrooms/classroom-08.jpg";
+import localClassroom01Image from "../../../public/images/students/classrooms/classroom-01.jpg";
+import localClassroom12Image from "../../../public/images/students/classrooms/classroom-12.jpg";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -226,9 +231,9 @@ type CoursesOverviewPageProps = {
 };
 
 const courseImages: Record<string, string> = {
-  ielts: "/images/students/classrooms/classroom-13.jpg",
-  "giao-tiep": "/images/students/classrooms/classroom-04.jpg",
-  "ielts-1-kem-1": "/images/students/classrooms/classroom-08.jpg",
+  ielts: localClassroom13Image.src,
+  "giao-tiep": localClassroom04Image.src,
+  "ielts-1-kem-1": localClassroom08Image.src,
 };
 
 const classTypeLabels: Record<string, string> = {
@@ -268,7 +273,7 @@ function getLevelTitle(level: LevelItem) {
 }
 
 function getCourseImage(data: CoursePageData) {
-  return data.hero.image || courseImages[data.id] || "/images/students/classrooms/classroom-01.jpg";
+  return data.hero.image || courseImages[data.id] || localClassroom01Image.src;
 }
 
 function getCourseDescription(data: CoursePageData) {
@@ -737,7 +742,7 @@ function CoursesAchievements({ data }: { data?: CoursesOverviewPageProps["achiev
   );
 }
 
-export function CoursesOverviewPage({ title, description, heroImage = "/images/students/classrooms/classroom-12.jpg", learningFormats, achievements, courses }: CoursesOverviewPageProps) {
+export function CoursesOverviewPage({ title, description, heroImage = localClassroom12Image.src, learningFormats, achievements, courses }: CoursesOverviewPageProps) {
   return (
     <Container className="py-8 sm:py-10 lg:py-12">
       <section className="grid items-center gap-9 py-4 lg:grid-cols-[0.95fr_1.05fr]" aria-labelledby="courses-title">

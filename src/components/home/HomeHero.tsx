@@ -8,27 +8,18 @@ import styles from "./home.module.css";
 
 export default function HomeHero() {
   const { hero } = data;
-  const banners = [hero.backgroundImage, ...hero.bannerAlternatives];
   return (
     <section className={styles.heroCampaign} aria-labelledby="home-title">
       <div className={styles.heroCampaignBackground} aria-hidden="true">
-        {banners.map((banner, index) => (
-          <div
-            className={styles.heroCampaignSlide}
-            style={{ animationDelay: `${index * 6}s` }}
-            key={banner.src}
-          >
-            <Image
-              className={styles.heroCampaignImage}
-              src={banner}
-              alt=""
-              fill
-              sizes="100vw"
-              quality={88}
-              preload={index === 0}
-            />
-          </div>
-        ))}
+        <Image
+          className={styles.heroCampaignImage}
+          src={hero.backgroundImage}
+          alt=""
+          fill
+          sizes="100vw"
+          quality={88}
+          preload
+        />
       </div>
       <div className={styles.heroCampaignTint} aria-hidden="true" />
 

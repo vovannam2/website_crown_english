@@ -30,9 +30,9 @@ const defaultTitle = "Crown English | IELTS & Tiếng Anh giao tiếp";
 const defaultDescription =
   "Crown English cung cấp các chương trình IELTS, Tiếng Anh giao tiếp và IELTS 1 kèm 1 với lộ trình rõ ràng, cam kết đầu ra và đội ngũ giảng viên đồng hành cùng học viên.";
 const defaultShareImage = {
-  url: "/images/og/crown-og.png",
-  width: 1200,
-  height: 630,
+  url: "/images/og/preview.jpg",
+  width: 2772,
+  height: 1024,
   alt: "Crown English IELTS & Tiếng Anh giao tiếp",
 };
 

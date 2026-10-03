@@ -8,7 +8,6 @@ import Reveal from "@/components/ui/Reveal";
 import styles from "./HomeFeedbackBoard.module.css";
 
 type FeedbackData = {
-  readonly imageDirectory: string;
   readonly boardTexture: string;
   readonly year: number;
   readonly months: readonly { readonly month: number; readonly images: readonly string[] }[];
@@ -16,10 +15,10 @@ type FeedbackData = {
 
 export default function HomeFeedbackBoard({ data }: { data: FeedbackData }) {
   const groups = [...data.months].filter((group) => group.images.length > 0).sort((a, b) => a.month - b.month);
-  const feedbacks = groups.flatMap((group) => group.images.map((filename, index) => ({
-    id: filename,
+  const feedbacks = groups.flatMap((group) => group.images.map((src, index) => ({
+    id: src,
     month: group.month,
-    src: `${data.imageDirectory.replace(/\/$/, "")}/${filename}`,
+    src,
     label: `Cảm nhận học viên tháng ${group.month}/${data.year} · Bảng ${index + 1}`,
   })));
   const firstMonth = groups[0]?.month;

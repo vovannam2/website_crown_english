@@ -1,3 +1,5 @@
+import localClassroom13Image from "../../public/images/students/classrooms/classroom-13.jpg";
+import localClassroom15Image from "../../public/images/students/classrooms/classroom-15.jpg";
 export const commitmentsPageData = {
   seo: {
     title: "Cam kết đầu ra | Crown English",
@@ -135,7 +137,7 @@ export const commitmentsPageData = {
         icon: "clipboard",
         title: "IELTS",
         href: "/khoa-hoc/ielts",
-        image: "/images/students/classrooms/classroom-13.jpg",
+        image: localClassroom13Image.src,
         imageAlt: "Lớp IELTS tại Crown English",
         bullets: [
           "Lộ trình theo band mục tiêu",
@@ -148,7 +150,7 @@ export const commitmentsPageData = {
         icon: "message",
         title: "Tiếng Anh giao tiếp",
         href: "/khoa-hoc/giao-tiep",
-        image: "/images/students/classrooms/classroom-15.jpg",
+        image: localClassroom15Image.src,
         imageAlt: "Lớp Tiếng Anh giao tiếp tại Crown English",
         bullets: [
           "Tăng phản xạ giao tiếp tự nhiên",

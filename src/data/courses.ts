@@ -1,3 +1,6 @@
+import localClassrom09Image from "../../public/images/Design/classrom09.png";
+import local8001Image from "../../public/images/Design/800_1.png";
+import localClassroom13Image from "../../public/images/students/classrooms/classroom-13.jpg";
 export const coursesPageData = {
   seo: {
     title: "Các khóa học tại Crown English | IELTS, Giao tiếp & 1:1",
@@ -26,14 +29,14 @@ export const coursesPageData = {
       title: "Các khóa học tại Crown English",
       description:
         "IELTS, Tiếng Anh giao tiếp và IELTS 1 kèm 1 tại Crown English.",
-      image: "/images/Design/classrom09.png",
+      image: localClassrom09Image.src,
     },
   },
 
   hero: {
     title: "Khóa học",
     description: "",
-    image: "/images/Design/classrom09.png",
+    image: localClassrom09Image.src,
   },
   learningFormats: {
     title: "Hình thức học linh hoạt",
@@ -113,7 +116,7 @@ export const ieltsPageData = {
       title: "Khóa học IELTS 0–7.5+ sĩ số nhỏ | Crown English",
       description:
         "Lộ trình IELTS cá nhân hóa, lớp học sĩ số nhỏ và học phí từ 800.000đ/tháng tại Crown English.",
-      image: "/images/Design/800_1.png",
+      image: local8001Image.src,
     },
   },
 
@@ -130,7 +133,7 @@ export const ieltsPageData = {
     highlight: "0-7.5+",
     description:
       "Lộ trình cá nhân hóa, lớp học sĩ số nhỏ, giảng viên giàu kinh nghiệm giúp bạn đạt mục tiêu IELTS trong thời gian ngắn nhất.",
-    image: "/images/students/classrooms/classroom-13.jpg",
+    image: localClassroom13Image.src,
     badge: {
       title: "Học thật - Ứng dụng thật",
       description: "Đạt mục tiêu thật",
@@ -192,7 +195,7 @@ export const ieltsPageData = {
       },
     ],
     featurePanel: {
-      image: "/images/Design/800_1.png",
+      image: local8001Image.src,
       alt: "Học phí IELTS từ 800.000đ một tháng, lớp Premium 6-8 học viên tại Crown English",
       ctaLabel: "Đăng ký tư vấn ngay",
     },
@@ -736,8 +739,7 @@ export const ieltsOneToOnePageData = {
         "Listening: Học theo sách Basic IELTS, ở mức A1–A2, để rèn luyện nền tảng nghe hiểu.",
         "Speaking: Ghép câu đơn, câu phức và áp dụng phản xạ nhanh ngữ pháp và từ vựng vào thực hành nói, phát triển câu đơn và câu phức.",
       ],
-      priceAfter18: "13.000.000",
-      priceBefore18: "12.000.000",
+      tuition: "Từ 600-800/ buổi",
     },
     {
       id: "newbie",
@@ -750,8 +752,7 @@ export const ieltsOneToOnePageData = {
         "Writing: Tập viết từng câu (câu đơn, câu phức) → phát triển thành đoạn, đồng thời học Writing Task 1 đủ 4 dạng chính.",
         "Speaking: Luyện nói với topic đơn giản (B1-B2), tập áp dụng grammar + vocab để tạo câu chính xác và mạch lạc và bám theo Forecast chuẩn IELTS.",
       ],
-      priceAfter18: "14.300.000",
-      priceBefore18: "13.000.000",
+      tuition: "Từ 600-800/ buổi",
     },
     {
       id: "advance",
@@ -763,8 +764,7 @@ export const ieltsOneToOnePageData = {
         "Speaking: Luyện forecast theo quý, tập trung phát triển phản xạ, fluency và coherence và ép từ vựng và phrases/ collocations.",
         "3 kỹ năng còn lại (Listening, Reading, Grammar/Vocab): Luyện theo hệ thống Bank Test để tăng tốc độ làm bài và cải thiện điểm số.",
       ],
-      priceAfter18: "15.600.000",
-      priceBefore18: "14.400.000",
+      tuition: "Từ 600-800/ buổi",
     },
     {
       id: "intense",
@@ -777,8 +777,7 @@ export const ieltsOneToOnePageData = {
         "Listening & Reading: Giải full test Cambridge & Kết Hợp Actual Tests để cọ xát độ khó thực trong phòng thi, học chiến lược “time management” để tối ưu điểm. Đồng thời phân tích sâu các dạng bẫy, dạng matching headings, multiple choice, map/diagram…",
         "Grammar & Vocabulary: Ôn tập tinh gọn, tập trung vào các cấu trúc nâng band và từ vựng học thuật (academic vocab), đồng thời tránh các lỗi thường gặp khiến trừ điểm ở mức band cao.",
       ],
-      priceAfter18: "18.200.000",
-      priceBefore18: "16.500.000",
+      tuition: "Từ 600-800/ buổi",
       refund: [
         "7.0: Được Hoàn 20% Học Phí",
         "7.5: Được Hoàn 50% Học Phí",

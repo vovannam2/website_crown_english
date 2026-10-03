@@ -1,13 +1,14 @@
 import Image from "next/image";
 import {
   ArrowUpRight,
-  Clock3,
-  Mail,
+  Headset,
+  MailCheck,
   MapPin,
-  MessageCircle,
+  MessageCircleMore,
   Navigation,
   PhoneCall,
-  Send,
+  Share2,
+  type LucideIcon,
 } from "lucide-react";
 import type { ReactNode } from "react";
 import Container from "@/components/ui/Container";
@@ -26,7 +27,7 @@ type ContactActionLink = {
 
 type ContactRow = {
   readonly label: string;
-  readonly icon: typeof PhoneCall;
+  readonly icon: LucideIcon;
   readonly links: readonly ContactActionLink[];
 };
 
@@ -64,7 +65,7 @@ export default function ContactPage({ data }: ContactPageProps) {
   const contactRows: ContactRow[] = [
     {
       label: "Hotline",
-      icon: PhoneCall,
+      icon: Headset,
       links: [
         { value: data.center.hotline, href: data.center.phoneHref },
         { value: data.center.zaloOA, href: phoneHrefFromDisplayNumber(data.center.zaloOA) },
@@ -72,12 +73,12 @@ export default function ContactPage({ data }: ContactPageProps) {
     },
     {
       label: "Email",
-      icon: Mail,
+      icon: MailCheck,
       links: [{ value: data.center.email, href: data.center.emailHref }],
     },
     {
       label: "Zalo",
-      icon: MessageCircle,
+      icon: MessageCircleMore,
       links: [
         { value: data.center.zaloOA, href: data.center.zaloUrl },
         { value: data.center.zaloHotline, href: data.center.zaloHotlineUrl },
@@ -85,7 +86,7 @@ export default function ContactPage({ data }: ContactPageProps) {
     },
     {
       label: "Fanpage",
-      icon: Send,
+      icon: Share2,
       links: [{ value: "facebook.com/ieltsgiaotiepcrown", href: data.center.fanpage }],
     },
   ];
@@ -131,82 +132,52 @@ export default function ContactPage({ data }: ContactPageProps) {
         </Container>
       </section>
 
-      <section className={styles.cardsSection} aria-labelledby="contact-channels-title">
+      <section className={styles.contactHubSection} aria-labelledby="contact-channels-title">
         <Container>
-          <div className={styles.sectionHeader}>
-            <p className={styles.eyebrow}>Kênh liên hệ</p>
-            <h2 id="contact-channels-title">Liên hệ Crown English</h2>
-          </div>
-
-          <Reveal className={styles.contactPanel}>
-            <div className={styles.contactPanelHeader}>
-              <p>Thông tin liên hệ</p>
-              <span>Hotline, Zalo, Email và Fanpage chính thức</span>
-            </div>
-            <div className={styles.contactList}>
-              {contactRows.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <article key={item.label} className={styles.contactRow} aria-label={`${item.label} Crown English`}>
-                    <div className={styles.contactRowMain}>
-                      <span className={styles.contactRowIcon}>
-                        <Icon aria-hidden size={22} strokeWidth={2.35} />
-                      </span>
-                      <div className={styles.contactRowText}>
-                        <span className={styles.contactRowTitle}>{item.label}</span>
-                        <div className={styles.contactRowValues}>
-                          {item.links.map((link) => (
-                            <a key={link.value} href={link.href} title={link.value} {...externalLinkProps(link.href)}>
-                              {link.value}
-                            </a>
-                          ))}
+          <div className={styles.contactHubGrid}>
+            <Reveal className={styles.contactPanel}>
+              <div className={styles.contactPanelHeader}>
+                <p>Thông tin liên hệ</p>
+                <span>Hotline, Zalo, Email và Fanpage chính thức</span>
+              </div>
+              <div className={styles.contactList}>
+                {contactRows.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <article key={item.label} className={styles.contactRow} aria-label={`${item.label} Crown English`}>
+                      <div className={styles.contactRowMain}>
+                        <span className={styles.contactRowIcon}>
+                          <Icon aria-hidden size={22} strokeWidth={2.35} />
+                        </span>
+                        <div className={styles.contactRowText}>
+                          <span className={styles.contactRowTitle}>{item.label}</span>
+                          <div className={styles.contactRowValues}>
+                            {item.links.map((link) => (
+                              <a key={link.value} href={link.href} title={link.value} {...externalLinkProps(link.href)}>
+                                {link.value}
+                              </a>
+                            ))}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
-          </Reveal>
-        </Container>
-      </section>
-
-      <section className={styles.mapSection} aria-labelledby="map-title">
-        <Container className={styles.mapInner}>
-          <Reveal className={styles.mapCopy}>
-            <p className={styles.eyebrow}>Google Maps</p>
-            <h2 id="map-title">Đến Crown English tại Nguyễn Gia Trí</h2>
-            <p>{data.center.address}</p>
-            <div className={styles.infoRows}>
-              <div>
-                <Clock3 aria-hidden size={18} strokeWidth={2.3} />
-                <span>{data.center.workingHours}</span>
+                    </article>
+                  );
+                })}
               </div>
-              <div>
-                <Mail aria-hidden size={18} strokeWidth={2.3} />
-                <span>{data.center.email}</span>
-              </div>
-            </div>
-            <ul>
-              {data.visitTips.map((tip) => (
-                <li key={tip}>{tip}</li>
-              ))}
-            </ul>
-            <ContactAction href={data.googleMaps.directUrl}>
-              <Navigation aria-hidden size={19} strokeWidth={2.4} />
-              Mở Google Maps
-            </ContactAction>
-          </Reveal>
+            </Reveal>
 
-          <Reveal preset="image" delay={120} className={styles.mapFrame}>
-            <iframe
-              title="Bản đồ IELTS & Giao Tiếp Crown"
-              src={data.googleMaps.embedUrl}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
-          </Reveal>
+            <Reveal preset="image" delay={120} className={styles.mapPanel}>
+              <div className={styles.mapFrame}>
+                <iframe
+                  title="Bản đồ IELTS & Giao Tiếp Crown"
+                  src={data.googleMaps.embedUrl}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
+              </div>
+            </Reveal>
+          </div>
         </Container>
       </section>
     </main>
