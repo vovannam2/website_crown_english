@@ -111,7 +111,7 @@ export default function ContactPage({ data }: ContactPageProps) {
               </div>
             </Reveal>
 
-            <Reveal preset="image" delay={120} className={styles.heroPanel}>
+            <Reveal preset="image" delay={100} className={styles.heroPanel}>
               <Image
                 src="/images/design/crown-english-center-daytime.png"
                 alt="Mặt tiền trung tâm Crown English tại Nguyễn Gia Trí"

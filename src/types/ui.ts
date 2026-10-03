@@ -37,4 +37,7 @@ export type RevealProps = {
   easing?: string;
   as?: "div" | "span";
   group?: boolean;
+  "aria-label"?: string;
+  "aria-live"?: "off" | "polite" | "assertive";
+  "aria-hidden"?: boolean;
 };

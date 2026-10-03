@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
+import Reveal from "@/components/ui/Reveal";
 import styles from "./faqs.module.css";
 
 import type {
@@ -289,8 +290,8 @@ export default function FaqsPage({ items }: FaqsPageProps) {
   return (
     <div className={styles.page}>
       <section className={styles.hero} aria-labelledby="faq-hero-title">
-        <Container className={styles.heroInner}>
-          <div className={styles.heroContent}>
+          <Container className={styles.heroInner}>
+            <div className={styles.heroContent}>
             <p className={styles.eyebrow}>Q &amp; A</p>
             <h1 id="faq-hero-title" className={styles.heroTitle}>
               Câu hỏi thường gặp <br />
@@ -340,9 +341,9 @@ export default function FaqsPage({ items }: FaqsPageProps) {
                   ))}
               </div>
             </div>
-          </div>
+            </div>
 
-          <div
+            <div
             className={styles.heroVisual}
             aria-label="Ms. Khanh giải đáp câu hỏi học viên"
           >
@@ -416,8 +417,8 @@ export default function FaqsPage({ items }: FaqsPageProps) {
               size={48}
               strokeWidth={2.2}
             />
-          </div>
-        </Container>
+            </div>
+          </Container>
       </section>
 
       <section
@@ -427,7 +428,7 @@ export default function FaqsPage({ items }: FaqsPageProps) {
       >
         <Container>
           <div className={styles.explorerHeader}>
-            <div>
+            <Reveal>
               <p className={styles.sectionEyebrow}>Giải đáp cùng Crown</p>
               <h2 id="faq-list-title">
                 Mọi điều bạn muốn biết <br />
@@ -437,10 +438,11 @@ export default function FaqsPage({ items }: FaqsPageProps) {
                 Chọn chủ đề, tìm nhanh bằng từ khóa và xem câu trả lời ngay bên
                 cạnh.
               </p>
-            </div>
+            </Reveal>
 
-            <div
+            <Reveal
               className={styles.filterPills}
+              delay={100}
               aria-label="Lọc câu hỏi theo chủ đề"
             >
               {categories.map((item) => (
@@ -455,47 +457,45 @@ export default function FaqsPage({ items }: FaqsPageProps) {
                   {categoryMeta[item].label}
                 </button>
               ))}
-            </div>
+            </Reveal>
           </div>
 
-          <div className={styles.resultBar}>
+          <Reveal className={styles.resultBar}>
             <span>{resultCountLabel}</span>
             {category !== "all" && (
               <span>{categoryMeta[category].eyebrow}</span>
             )}
-          </div>
+          </Reveal>
 
           {filteredFaqs.length > 0 ? (
             <>
               <div className={styles.desktopFaqGrid}>
-                <div
-                  className={styles.questionList}
-                  aria-label="Danh sách câu hỏi"
-                >
+                <div className={styles.questionList} aria-label="Danh sách câu hỏi">
                   {filteredFaqs.map((item, index) => (
-                    <button
-                      key={item.id}
-                      type="button"
-                      className={
-                        selectedFaq?.id === item.id ? styles.questionActive : ""
-                      }
-                      aria-pressed={selectedFaq?.id === item.id}
-                      onClick={() => chooseFaq(item.id)}
-                    >
-                      <span>{String(index + 1).padStart(2, "0")}</span>
-                      <strong>{item.question}</strong>
-                      <ChevronRight aria-hidden size={20} strokeWidth={2.3} />
-                    </button>
+                    <Reveal key={item.id} delay={Math.min(index, 5) * 55}>
+                      <button
+                        type="button"
+                        className={
+                          selectedFaq?.id === item.id ? styles.questionActive : ""
+                        }
+                        aria-pressed={selectedFaq?.id === item.id}
+                        onClick={() => chooseFaq(item.id)}
+                      >
+                        <span>{String(index + 1).padStart(2, "0")}</span>
+                        <strong>{item.question}</strong>
+                        <ChevronRight aria-hidden size={20} strokeWidth={2.3} />
+                      </button>
+                    </Reveal>
                   ))}
                 </div>
 
-                <div className={styles.detailPanel} aria-live="polite">
+                <Reveal className={styles.detailPanel} delay={100} aria-live="polite">
                   {selectedFaq && (
                     <div key={selectedFaq.id} className={styles.answerMotion}>
                       <QuestionAnswer item={selectedFaq} />
                     </div>
                   )}
-                </div>
+                </Reveal>
               </div>
 
               <div className={styles.mobileAccordion}>
@@ -503,37 +503,36 @@ export default function FaqsPage({ items }: FaqsPageProps) {
                   const open = visibleMobileOpenId === item.id;
                   const answerId = `answer-${item.id}`;
                   return (
-                    <article
-                      key={item.id}
-                      className={open ? styles.mobileItemOpen : ""}
-                    >
-                      <button
-                        type="button"
-                        aria-expanded={open}
-                        aria-controls={answerId}
-                        onClick={() => chooseFaq(item.id)}
-                      >
-                        <span>{String(index + 1).padStart(2, "0")}</span>
-                        <strong>{item.question}</strong>
-                        <ChevronRight aria-hidden size={20} strokeWidth={2.3} />
-                      </button>
-                      {open && (
-                        <div id={answerId} className={styles.mobileAnswer}>
-                          <QuestionAnswer item={item} compact />
-                        </div>
-                      )}
-                    </article>
+                    <Reveal key={item.id} delay={Math.min(index, 5) * 55}>
+                      <article className={open ? styles.mobileItemOpen : ""}>
+                        <button
+                          type="button"
+                          aria-expanded={open}
+                          aria-controls={answerId}
+                          onClick={() => chooseFaq(item.id)}
+                        >
+                          <span>{String(index + 1).padStart(2, "0")}</span>
+                          <strong>{item.question}</strong>
+                          <ChevronRight aria-hidden size={20} strokeWidth={2.3} />
+                        </button>
+                        {open && (
+                          <div id={answerId} className={styles.mobileAnswer}>
+                            <QuestionAnswer item={item} compact />
+                          </div>
+                        )}
+                      </article>
+                    </Reveal>
                   );
                 })}
               </div>
             </>
           ) : (
-            <div className={styles.emptyState}>
+            <Reveal className={styles.emptyState}>
               <MessageCircleQuestion aria-hidden size={44} strokeWidth={2.1} />
               <h3>Chưa tìm thấy câu hỏi phù hợp</h3>
               <p>Thử tìm với từ khóa khác hoặc liên hệ Crown để được hỗ trợ.</p>
               <Button href="/lien-he">Đăng ký tư vấn</Button>
-            </div>
+            </Reveal>
           )}
         </Container>
       </section>
@@ -544,7 +543,7 @@ export default function FaqsPage({ items }: FaqsPageProps) {
           aria-labelledby="featured-faq-title"
         >
           <Container className={styles.featuredInner}>
-            <div className={styles.conversationCopy}>
+            <Reveal className={styles.conversationCopy}>
               <p className={styles.sectionEyebrow}>Câu hỏi được quan tâm</p>
               <h2 id="featured-faq-title">
                 Một cuộc trò chuyện ngắn với Crown
@@ -561,9 +560,9 @@ export default function FaqsPage({ items }: FaqsPageProps) {
                   ))}
                 </div>
               </div>
-            </div>
+            </Reveal>
 
-            <div className={styles.featuredVisual} aria-hidden="true">
+            <Reveal className={styles.featuredVisual} preset="image" delay={120} aria-hidden>
               <Image
                 src={MS_KHANH_FEATURED_IMAGE_2}
                 alt=""
@@ -576,7 +575,7 @@ export default function FaqsPage({ items }: FaqsPageProps) {
                 size={58}
                 strokeWidth={2.2}
               />
-            </div>
+            </Reveal>
           </Container>
         </section>
       )}
@@ -587,17 +586,19 @@ export default function FaqsPage({ items }: FaqsPageProps) {
           aria-labelledby="info-strip-title"
         >
           <Container>
-            <div className={styles.infoHeader}>
+            <Reveal className={styles.infoHeader}>
               <p className={styles.sectionEyebrow}>Thông tin cần nhớ</p>
               <h2 id="info-strip-title">Một vài chính sách được hỏi nhiều</h2>
-            </div>
+            </Reveal>
             <div className={styles.infoGrid}>
-              {policyFaqs.map((item) => (
-                <article key={item.id}>
-                  <span>{categoryMeta[getCategoryKey(item)].shortLabel}</span>
-                  <h3>{item.question}</h3>
-                  <p>{item.answer[0]}</p>
-                </article>
+              {policyFaqs.map((item, index) => (
+                <Reveal key={item.id} delay={index * 80}>
+                  <article>
+                    <span>{categoryMeta[getCategoryKey(item)].shortLabel}</span>
+                    <h3>{item.question}</h3>
+                    <p>{item.answer[0]}</p>
+                  </article>
+                </Reveal>
               ))}
             </div>
           </Container>
@@ -606,7 +607,7 @@ export default function FaqsPage({ items }: FaqsPageProps) {
 
       <section className={styles.ctaSection} aria-labelledby="faq-cta-title">
         <Container>
-          <div className={styles.ctaCard}>
+          <Reveal className={styles.ctaCard}>
             <div className={styles.ctaCopy}>
               <p className={styles.sectionEyebrow}>Crown English</p>
               <h2 id="faq-cta-title">
@@ -659,7 +660,7 @@ export default function FaqsPage({ items }: FaqsPageProps) {
                 strokeWidth={2.2}
               />
             </div>
-          </div>
+          </Reveal>
         </Container>
       </section>
     </div>

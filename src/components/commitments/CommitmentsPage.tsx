@@ -86,7 +86,7 @@ function renderTitle(title: string, accent: string) {
 
 function HeroVisual({ visual }: CommitmentHeroVisualProps) {
   return (
-    <Reveal preset="image" delay={120} className={styles.heroVisual}>
+    <Reveal preset="image" delay={100} className={styles.heroVisual}>
       <HeroDecoration />
       <div className={styles.portraitCluster} aria-label="Đội ngũ giảng viên Crown English">
         {visual.portraits.map((portrait, index) => (

@@ -1,5 +1,5 @@
 .heroCopy { animation: heroEnter 650ms ease both; }
-.heroPortrait { animation: portraitEnter 750ms ease both; }
+.heroPortrait { animation: portraitEnter 650ms ease both; }
 
 @keyframes heroEnter {
   from { opacity: 0; transform: translateY(18px); }

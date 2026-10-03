@@ -44,7 +44,7 @@ export default function HomeHero() {
           <HeroMetrics />
         </Reveal>
 
-        <Reveal className={styles.heroFilmPlacement} delay={100} duration={750}>
+        <Reveal className={styles.heroFilmPlacement} delay={100}>
           <HeroFilmStrip />
         </Reveal>
       </div>

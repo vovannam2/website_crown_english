@@ -48,7 +48,7 @@ export default function HomeFeedbackBoard({ data }: HomeFeedbackBoardProps) {
       <span className={styles.date}>THÁNG {String(firstMonth).padStart(2, "0")}{!singleMonth && ` — ${String(lastMonth).padStart(2, "0")}`}<span>{data.year}</span></span>
     </Reveal>
 
-    <Reveal delay={100} duration={750}>
+    <Reveal delay={100}>
     <div className={styles.board} style={{ "--board-texture": `url("${data.boardTexture}")` } as CSSProperties}>
       <div className={styles.boardTop}>
         <span className={styles.boardLabel}>GÓC NHỎ · LỜI THẬT</span>

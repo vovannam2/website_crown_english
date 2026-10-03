@@ -31,7 +31,7 @@ export default function HomePage() {
   const videos = data.studentStories.featuredVideoIds.map((id) => studentResultsPageData.videos.find((item) => item.id === id)).filter((item) => item !== undefined);
   const [investment, commitment, team, experience] = data.whyCrown.items;
 
-  return <div className={styles.page} data-reveal-easing="ease">
+  return <div className={styles.page}>
     <HomeHero />
 
     <section className={styles.programs} id="programs">
@@ -64,7 +64,7 @@ export default function HomePage() {
         <Heading {...data.studentResults} />
       </Container>
       <Container>
-        <Reveal delay={100} duration={750} className={styles.hallOfFame}>
+        <Reveal delay={100} className={styles.hallOfFame}>
           <span className={styles.hallWatermark} aria-hidden="true">HALL OF FAME</span>
           <div className={styles.hallHeader}>
             <div>
@@ -138,7 +138,7 @@ export default function HomePage() {
           link={data.about.link}
         />
         <div className={styles.aboutShowcase}>
-          <Reveal duration={750} className={styles.aboutImage}><HomeVisual src={data.about.image} alt={data.about.title} label={data.hero.title} /></Reveal>
+          <Reveal className={styles.aboutImage}><HomeVisual src={data.about.image} alt={data.about.title} label={data.hero.title} /></Reveal>
           <Reveal delay={120} className={styles.aboutValues}>
             <div className={styles.valuesHeading}>
               <span aria-hidden="true" />

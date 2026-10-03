@@ -570,7 +570,7 @@ export function CoursesOverviewPage({ title, description, heroImage = localClass
             <Button href="#course-list" variant="outline">Xem khóa học</Button>
           </div>
         </Reveal>
-        <Reveal preset="image" className="relative aspect-square max-h-[540px] overflow-hidden rounded-[var(--radius-sm)] bg-[var(--color-surface-soft)]">
+        <Reveal preset="image" delay={100} className="relative aspect-square max-h-[540px] overflow-hidden rounded-[var(--radius-sm)] bg-[var(--color-surface-soft)]">
           <Image src={heroImage} alt="Lớp học IELTS và giao tiếp tại Crown English" fill sizes="(min-width: 1024px) 560px, 90vw" className="object-cover" priority />
         </Reveal>
       </section>
@@ -653,7 +653,7 @@ export default function CourseLandingPage({ data }: CourseDataProps) {
                 <CourseHeroStats data={data} />
               </Reveal>
             </div>
-            <Reveal preset="image" className="relative min-h-[340px] overflow-hidden rounded-[var(--radius-sm)] bg-[var(--color-surface-soft)] lg:min-h-[470px]">
+            <Reveal preset="image" delay={100} className="relative min-h-[340px] overflow-hidden rounded-[var(--radius-sm)] bg-[var(--color-surface-soft)] lg:min-h-[470px]">
               <span aria-hidden="true" className="absolute left-[-18px] top-14 z-10 grid gap-1.5">
                 <span className="block h-1.5 w-9 rotate-[-24deg] rounded-full bg-[var(--color-brand-red)]" />
                 <span className="block h-1.5 w-7 rotate-[-8deg] rounded-full bg-[var(--color-brand-red)]" />
