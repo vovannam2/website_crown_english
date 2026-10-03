@@ -43,12 +43,36 @@
   padding-block: 56px 34px;
 }
 
+.heroContent > *,
+.heroImageWrap,
+.heroVisual .speechBubble,
+.heroVisual .questionIcon,
+.heroVisual .doodle {
+  animation: heroEnter 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.heroContent > :nth-child(1) { animation-delay: 80ms; }
+.heroContent > :nth-child(2) { animation-delay: 160ms; }
+.heroContent > :nth-child(3) { animation-delay: 260ms; }
+.heroContent > :nth-child(4) { animation-delay: 360ms; }
+.heroContent > :nth-child(5) { animation-delay: 460ms; }
+.heroImageWrap { animation-delay: 220ms; }
+.heroVisual .heroBubbleOne { animation-delay: 520ms; }
+.heroVisual .heroBubbleTwo { animation-delay: 640ms; }
+.heroVisual .heroBubbleThree { animation-delay: 760ms; }
+.heroVisual .questionIcon,
+.heroVisual .doodle { animation-delay: 820ms; }
+
+@keyframes heroEnter {
+  from { opacity: 0; translate: 0 18px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
 .heroContent {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  animation: faqFadeUp 560ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .eyebrow,
@@ -215,7 +239,6 @@
   position: relative;
   min-height: 520px;
   isolation: isolate;
-  animation: faqFade 700ms 110ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .heroVisual::before,
@@ -966,28 +989,6 @@
   white-space: nowrap;
 }
 
-@keyframes faqFadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(22px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes faqFade {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
 @keyframes answerSwitch {
   from {
     opacity: 0;
@@ -1276,6 +1277,11 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .heroContent > *,
+  .heroImageWrap,
+  .heroVisual .speechBubble,
+  .heroVisual .questionIcon,
+  .heroVisual .doodle,
   .heroContent,
   .heroVisual,
   .answerMotion {
