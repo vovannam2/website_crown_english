@@ -63,9 +63,9 @@ const heroFilmSources = [
 
 export const homePageData = {
   seo: {
-    title: "Crown English | IELTS & Tiếng Anh giao tiếp",
+    title: "Crown English | IELTS, Tiếng Anh giao tiếp & 1 kèm 1",
     description:
-      "Crown English cung cấp các chương trình IELTS, Tiếng Anh giao tiếp và IELTS 1 kèm 1 với lộ trình rõ ràng, cam kết đầu ra và đội ngũ giảng viên đồng hành cùng học viên.",
+      "Crown English cung cấp các khóa học IELTS, Tiếng Anh giao tiếp và IELTS 1 kèm 1 với lộ trình cá nhân hóa, chương trình theo từng mục tiêu và đội ngũ giảng viên đồng hành cùng học viên.",
     h1: "Crown English",
     canonical: "/",
     searchIntent:
@@ -84,10 +84,10 @@ export const homePageData = {
       follow: true,
     },
     openGraph: {
-      title: "Crown English | IELTS & Tiếng Anh giao tiếp",
+      title: "Crown English | IELTS, Tiếng Anh giao tiếp & 1 kèm 1",
       description:
-        "Các chương trình IELTS, Tiếng Anh giao tiếp và IELTS 1 kèm 1 tại Crown English.",
-      image: "/images/og/preview.jpg",
+        "Khám phá các chương trình IELTS, Tiếng Anh giao tiếp và IELTS 1 kèm 1 tại Crown English.",
+      image: "/images/og/academic-team-ielts-share.jpg",
     },
   },
   hero: {
