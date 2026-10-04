@@ -673,7 +673,7 @@ export default function CourseLandingPage({ data }: CourseDataProps) {
                 </div>
               )}
               {data.hero.proofCard && (
-                <div className="absolute bottom-5 left-5 z-10 grid max-w-[280px] grid-cols-[72px_1fr] gap-3 rounded-[var(--radius-sm)] border border-white/80 bg-white/95 p-3 shadow-[var(--shadow-menu)] backdrop-blur sm:bottom-6 sm:left-6">
+                <div className="absolute top-5 left-5 z-10 grid max-w-[280px] grid-cols-[72px_1fr] gap-3 rounded-[var(--radius-sm)] border border-white/80 bg-white/95 p-3 shadow-[var(--shadow-menu)] backdrop-blur sm:top-6 sm:left-6">
                   <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-sm)] bg-[var(--color-surface-soft)]">
                     <Image
                       src={data.hero.proofCard.image}
