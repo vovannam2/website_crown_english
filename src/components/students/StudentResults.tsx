@@ -36,7 +36,7 @@ export default function StudentResults({ results }: StudentResultsProps) {
               title="Những thành tích nổi bật của học viên"
             />
           </div>
-          <div className="shrink-0">
+          <div className="hidden shrink-0 lg:block">
             <button
               type="button"
               aria-pressed={paused}

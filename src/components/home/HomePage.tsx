@@ -39,15 +39,11 @@ export default function HomePage() {
         <Heading {...data.programsSection} />
         <div className={styles.programGrid}>
           {data.programs.map((program, index) => {
-            const titleWords = program.label.split(" ");
-            const titleLines = program.titleBreakAfter
-              ? [titleWords.slice(0, program.titleBreakAfter).join(" "), titleWords.slice(program.titleBreakAfter).join(" ")]
-              : [program.label];
             return <Reveal key={program.courseId} delay={80 + index * 100}>
               <Link className={styles.program} href={program.href} data-tone={program.tone}>
                 <div className={styles.programIndex}><span>{program.category}</span><span>{program.number} / 03</span></div>
                 <div className={styles.programContent}>
-                  <h3>{titleLines.map((line) => <span key={line}>{line}</span>)}</h3>
+                  <h3>{program.label}</h3>
                   <span className={styles.programNote}>{program.note}</span>
                   <p>{program.description}</p>
                 </div>

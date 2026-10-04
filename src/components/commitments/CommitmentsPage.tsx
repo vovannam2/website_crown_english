@@ -145,7 +145,7 @@ export default function CommitmentsPage({ data }: CommitmentsPageProps) {
       <section className={styles.promiseBand} aria-labelledby="promise-title">
         <Container className={styles.promiseInner}>
           <Reveal className={styles.promiseIntro}>
-            <p className={styles.smallPill}>{data.mainCommitments.eyebrow}</p>
+            <p className={styles.eyebrow}>{data.mainCommitments.eyebrow}</p>
             <h2 id="promise-title">{data.mainCommitments.title}</h2>
             <span aria-hidden="true" />
           </Reveal>

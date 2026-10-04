@@ -106,6 +106,8 @@ button:not(:disabled) {
 .mobile-link-compact { display: inline-flex; width: fit-content; }
 .mobile-link.type-small { font-size: var(--text-small-size); line-height: var(--leading-small); }
 .mobile-link:hover, .mobile-link-active { background: var(--color-surface-soft); color: var(--color-brand-red); }
+.mobile-course-link:not(.mobile-link-active):hover { background: transparent; color: var(--color-ink-muted); }
+.mobile-course-item { width: 100%; white-space: nowrap; font-size: 15px; font-weight: 700; }
 .footer-heading { margin-bottom: 16px; color: #fff; font-size: var(--text-nav-size); font-weight: 700; letter-spacing: 0; line-height: 1.35; }
 .footer-link { color: rgba(255, 255, 255, 0.7); font-size: var(--text-small-size); line-height: var(--leading-small); overflow-wrap: anywhere; transition: color 180ms ease; }
 .footer-link:hover { color: var(--color-brand-gold); }

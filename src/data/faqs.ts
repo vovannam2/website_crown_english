@@ -120,8 +120,8 @@ export const faqsPageData = {
         "- Ưu điểm: Giúp cải thiện toàn diện và bền vững cả 4 kỹ năng (Nghe - Nói - Đọc - Viết), tạo nền tảng vững chắc cho việc học tập/làm việc trong môi trường quốc tế.",
         "- Thách thức: Yêu cầu lộ trình dài hạn (thường từ 6 tháng đến trên 1 năm), đòi hỏi sự kiên trì, nỗ lực và mục tiêu đầu ra rõ ràng để duy trì động lực.",
         "LỜI KHUYÊN TỪ CROWN ENGLISH:",
-        "● Nếu bạn chưa có nhu cầu lấy chứng chỉ gấp: Lựa chọn tối ưu là bắt đầu với khóa Giao tiếp thực chiến để xây dựng nền tảng phản xạ tự nhiên và cảm hứng ngôn ngữ. Khi phản xạ đã vững vàng, việc chuyển tiếp sang luyện thi IELTS sẽ trở nên nhẹ nhàng và hiệu quả hơn rất nhiều.",
-        "● Nếu bạn muốn phát triển toàn diện hoặc có mục tiêu du học, xét tuyển, thăng tiến: Hãy bắt đầu lộ trình IELTS ngay từ bây giờ để tối ưu hóa thời gian và nhận được sự bảo chứng chất lượng đầu ra tốt nhất.",
+        "Nếu bạn chưa có nhu cầu lấy chứng chỉ gấp: Lựa chọn tối ưu là bắt đầu với khóa Giao tiếp thực chiến để xây dựng nền tảng phản xạ tự nhiên và cảm hứng ngôn ngữ. Khi phản xạ đã vững vàng, việc chuyển tiếp sang luyện thi IELTS sẽ trở nên nhẹ nhàng và hiệu quả hơn rất nhiều.",
+        "Nếu bạn muốn phát triển toàn diện hoặc có mục tiêu du học, xét tuyển, thăng tiến: Hãy bắt đầu lộ trình IELTS ngay từ bây giờ để tối ưu hóa thời gian và nhận được sự bảo chứng chất lượng đầu ra tốt nhất.",
         "Đội ngũ cố vấn tại Crown English luôn sẵn sàng đánh giá trình độ miễn phí và tư vấn lộ trình cá nhân hóa giúp bạn tiết kiệm tối đa thời gian và chi phí.",
       ],
     },
@@ -195,7 +195,7 @@ export const faqsPageData = {
       reviewNote:
         "Câu trả lời trong ảnh kết thúc bằng dấu phẩy, có thể thiếu phần sau.",
       conflictsWith: ["qa-18-cam-ket-dau-ra"],
-      question: "chị chỉ cam kết 6.0-6.5 thôi hả? em muốn đạt 7.0 thì sao ạ?",
+      question: "Chị chỉ cam kết 6.0-6.5 thôi hả? em muốn đạt 7.0 thì sao ạ?",
       answer: [
         "Chị có khoá Intensive - level luyện thi chuyên sâu, được thiết kế để giúp học viên tập trung tối đa và hệ thống hóa toàn bộ kiến thức IELTS. Tuy nhiên, bên chị chỉ cam kết đầu ra 6.0 - 6.5 vì đây là mức điểm mà hầu hết học viên có thể đạt được nếu áp dụng đúng phương pháp học và kiến thức đã được giảng dạy trong khóa. Để đạt 7.0 hoặc cao hơn, Khóa intensive sẽ trang bị nền tảng vững chắc và kỹ thuật làm bài, nhưng để vươn lên 7.0+, học viên cần đầu tư thêm thời gian và nỗ lực cá nhân. Đây cũng là lý do tại sao bên chị chỉ cam kết 6.0 - 6.5,",
       ],
