@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/config/site";
+import { defaultShareImage } from "@/config/share-image";
 import HomePage from "@/components/home/HomePage";
 import { homePageData as data } from "@/data/home";
 
@@ -10,7 +12,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: data.seo.openGraph.title,
     description: data.seo.openGraph.description,
-    url: data.seo.canonical,
     type: "website",
     images: data.seo.openGraph.image
       ? [
@@ -21,16 +22,69 @@ export const metadata: Metadata = {
             alt: "Crown English IELTS & Tiếng Anh giao tiếp",
           },
         ]
-      : undefined,
+      : [defaultShareImage],
   },
   twitter: {
     card: "summary_large_image",
     title: data.seo.openGraph.title,
     description: data.seo.openGraph.description,
-    images: data.seo.openGraph.image ? [data.seo.openGraph.image] : undefined,
+    images: [data.seo.openGraph.image || defaultShareImage.url],
   },
 };
 
 export default function Page() {
-  return <HomePage />;
+  const siteUrl = siteConfig.url;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+
+    "@graph": [
+      {
+        "@type": "EducationalOrganization",
+        "@id": `${siteUrl}/#organization`,
+
+        name: "Crown English",
+        url: siteUrl,
+
+        description:
+          "Crown English cung cấp các chương trình IELTS, Tiếng Anh giao tiếp và IELTS 1 kèm 1.",
+
+        telephone: "089 819 26 33",
+
+        email: "ieltsgiaotiepcrown@gmail.com",
+
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "168/20 Nguyễn Gia Trí",
+          addressLocality: "TP.HCM",
+          addressCountry: "VN",
+        },
+      },
+
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+
+        url: siteUrl,
+        name: "Crown English",
+
+        publisher: {
+          "@id": `${siteUrl}/#organization`,
+        },
+      },
+    ],
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd),
+        }}
+      />
+
+      <HomePage />
+    </>
+  );
 }

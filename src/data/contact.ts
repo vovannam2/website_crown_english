@@ -2,39 +2,47 @@ import { siteConfig } from "@/config/site";
 
 export const contactPageData = {
   seo: {
-    title: "Liên hệ Crown English | Địa chỉ, Hotline, Zalo",
+    title: "Liên hệ Crown English | Địa chỉ & Hotline tại TP.HCM",
+
     description:
-      "Liên hệ Crown English qua hotline, email, Zalo OA, Fanpage hoặc đến trung tâm tại 168/20 Nguyễn Gia Trí, phường Thạnh Mỹ Tây, TPHCM.",
-    h1: "Liên hệ Crown English",
+      "Liên hệ Crown English tại 168/20 Nguyễn Gia Trí, phường Thạnh Mỹ Tây, TP.HCM qua hotline, email, Zalo hoặc Fanpage. Xem bản đồ và giờ làm việc của trung tâm.",
+
+    h1: "Liên hệ Crown English tại TP.HCM",
+
     canonical: "/lien-he",
-    searchIntent: "Tìm địa chỉ và thông tin liên hệ Crown English",
+
+    searchIntent:
+      "Tìm địa chỉ, hotline, giờ làm việc và các kênh liên hệ Crown English",
+
     primaryTopic: "liên hệ Crown English",
+
     secondaryTopics: [
       "địa chỉ Crown English",
       "hotline Crown English",
+      "giờ làm việc Crown English",
       "Zalo Crown English",
     ],
-    localSignals: [
-      "168/20 Nguyễn Gia Trí",
-      "phường Thạnh Mỹ Tây",
-      "TPHCM",
-    ],
+
+    localSignals: ["168/20 Nguyễn Gia Trí", "phường Thạnh Mỹ Tây", "TP.HCM"],
+
     schemaTypes: ["ContactPage"],
+
     robots: {
       index: true,
       follow: true,
     },
+
     openGraph: {
-      title: "Liên hệ Crown English",
+      title: "Liên hệ Crown English | Địa chỉ & Hotline",
+
       description:
-        "Địa chỉ, hotline, email, Zalo OA, Fanpage và Google Maps Crown English.",
-      image: "/images/Design/AnhTrungTamMoi.png",
+        "Xem địa chỉ, hotline, Zalo, email, giờ làm việc và Google Maps của Crown English tại TP.HCM.",
+      image: "",
     },
   },
-
   hero: {
     eyebrow: "Kết nối với Crown English",
-    title: "Cần tư vấn lộ trình? Crown luôn sẵn sàng hỗ trợ.",
+    title: "Cần tư vấn lộ trình? Crown luôn sẵn sàng hỗ trợ",
     description:
       "Chọn kênh liên hệ phù hợp để được đội ngũ Crown tư vấn khóa học, lịch học, học phí và hướng dẫn đến trung tâm.",
   },

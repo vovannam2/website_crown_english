@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 import { navigationItems } from "@/data/navigation";
 import { isActivePath as isActive } from "@/lib/navigation";
 
@@ -53,7 +54,7 @@ export default function DesktopNavigation() {
                   aria-haspopup="true"
                   onClick={() => setCoursesOpen((open) => !open)}
                 >
-                  <span aria-hidden="true" className={`transition-transform ${coursesOpen ? "rotate-180" : ""}`}>⌄</span>
+                  <ChevronDown aria-hidden="true" size={14} strokeWidth={2} className={`block transition-transform ${coursesOpen ? "rotate-180" : ""}`} />
                 </button>
               </div>
               {coursesOpen && (

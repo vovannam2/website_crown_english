@@ -1,14 +1,14 @@
-import type { Teacher } from "@/types/teachers";
+import type { TeacherDetailListProps, TeacherDetailProps } from "@/types/teachers";
 import TeacherImage from "./TeacherImage";
 import styles from "./teachers.module.css";
 
-function DetailList({ title, items }: { title: string; items: readonly string[] }) {
+function DetailList({ title, items }: TeacherDetailListProps) {
   if (!items.length) return null;
   return <section className="mt-6">
     <h4 className="type-label text-[var(--color-brand-red)]">{title}</h4>
     <ul className="mt-3 grid gap-2.5">
       {items.map((item, index) => (
-        <li key={`${index}-${item}`} className="type-small flex gap-2.5 text-[var(--color-ink-muted)]">
+        <li key={`${index}-${item}`} className="type-body flex gap-2.5 text-[var(--color-ink-muted)]">
           <span aria-hidden="true" className="text-[var(--color-brand-red)]">✓</span>
           <span>{item}</span>
         </li>
@@ -17,7 +17,7 @@ function DetailList({ title, items }: { title: string; items: readonly string[] 
   </section>;
 }
 
-export default function TeacherDetail({ teacher }: { teacher: Teacher }) {
+export default function TeacherDetail({ teacher }: TeacherDetailProps) {
   return <article className={`${styles.detail} overflow-hidden rounded-[var(--radius-md)] border border-[var(--color-line)]`} aria-labelledby="selected-teacher-name">
     <TeacherImage src={teacher.image} name={teacher.name} sizes="(min-width: 1200px) 410px, (min-width: 1024px) 36vw, (min-width: 640px) 480px, calc(100vw - 40px)" />
     <div className="px-6 pt-5 pb-7">

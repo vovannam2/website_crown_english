@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/config/site";
+import { getShareImage } from "@/config/share-image";
 import CommitmentsPage from "@/components/commitments/CommitmentsPage";
 import { commitmentsPageData as data } from "@/data/commitments";
 
@@ -10,28 +12,51 @@ export const metadata: Metadata = {
   openGraph: {
     title: data.seo.openGraph.title,
     description: data.seo.openGraph.description,
-    images: data.seo.openGraph.image ? [data.seo.openGraph.image] : undefined,
-    url: data.seo.canonical,
+    images: [getShareImage(data.seo.openGraph.image)],
     type: "website",
   },
 };
 
 export default function CommitmentPage() {
+  const siteUrl = siteConfig.url;
+
+  const pageUrl = `${siteUrl}${data.seo.canonical}`;
+
   const schema = {
     "@context": "https://schema.org",
-    "@type": data.seo.schemaTypes,
+
+    "@type": "WebPage",
+
+    "@id": `${pageUrl}#webpage`,
+
+    url: pageUrl,
+
     name: data.seo.h1,
+
     description: data.seo.description,
-    url: data.seo.canonical,
-    about: data.seo.secondaryTopics,
+
+    inLanguage: "vi-VN",
+
+    isPartOf: {
+      "@id": `${siteUrl}/#website`,
+    },
+
+    about: {
+      "@id": `${siteUrl}/#organization`,
+    },
+
+    keywords: data.seo.secondaryTopics.join(", "),
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
+        }}
       />
+
       <CommitmentsPage data={data} />
     </>
   );

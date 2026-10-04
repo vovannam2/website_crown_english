@@ -1,5 +1,6 @@
 import Container from "@/components/ui/Container";
 import Image from "next/image";
+import Link from "next/link";
 import Button from "@/components/ui/Button";
 import HeroDecoration from "@/components/ui/HeroDecoration";
 import { teachersPageData } from "@/data/teachers";
@@ -11,18 +12,19 @@ export default function TeachersHero() {
     .filter((teacher) => teacher !== undefined)
     .filter((teacher) => teacher.image);
   const heading = teachersPageData.seo.h1.split("giảng viên");
-  return <section className="bg-white py-14 sm:py-16" aria-labelledby="teachers-title">
-    <Container className="grid items-center gap-9 lg:grid-cols-[1.05fr_1fr] lg:gap-12">
+  return <section className="bg-white pb-14 pt-[var(--page-hero-top)] sm:pb-16" aria-labelledby="teachers-title">
+    <Container className="grid items-start gap-9 lg:grid-cols-[1.05fr_1fr] lg:gap-12">
       <div className={`${styles.heroCopy} max-lg:contents`}>
         <div>
-          <p className="home-eyebrow">ĐỘI NGŨ GIẢNG VIÊN</p>
-          <h1 id="teachers-title" className="mt-4 max-w-[800px] text-[length:var(--type-hero-size)] font-[750] leading-[1.15] tracking-[-0.035em] text-balance [&_span]:text-[var(--color-brand-red)]">{heading[0]}<span>giảng viên</span>{heading[1]}</h1>
+          <p className="hero-eyebrow-badge">ĐỘI NGŨ GIẢNG VIÊN</p>
+          <h1 id="teachers-title" className="mt-4 max-w-[800px] type-h1 [&_span]:text-[var(--color-brand-red)]">{heading[0]}<span>giảng viên</span>{heading[1]}</h1>
         </div>
         <div className="max-lg:order-3">
           <p className="max-w-[820px] text-[length:var(--type-intro-size)] leading-[1.8] text-[var(--color-ink-muted)] lg:mt-6">{teachersPageData.intro}</p>
           <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3 [&>a]:transition-[transform,background-color] [&>a]:duration-200 motion-safe:[&>a:hover]:-translate-y-0.5 motion-reduce:[&>a]:transition-none">
             <Button href="/lien-he">Đăng ký tư vấn</Button>
             <a className="inline-flex min-h-11 items-center gap-6 font-[650] text-[var(--color-brand-red)] hover:text-[var(--color-brand-red-dark)] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-brand-red-dark)]" href="#teacher-showcase">Gặp gỡ giảng viên <span aria-hidden="true">↘</span></a>
+            <Link className="inline-flex min-h-11 items-center font-[650] text-[var(--color-brand-red)] hover:text-[var(--color-brand-red-dark)] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-brand-red-dark)]" href="/khoa-hoc">Xem các khóa học</Link>
           </div>
         </div>
       </div>

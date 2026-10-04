@@ -20,11 +20,11 @@
 .neutralWord { position: relative; max-width: 100%; font-size: clamp(24px, 3vw, 40px); line-height: 1.2; letter-spacing: 0; font-weight: 550; overflow-wrap: anywhere; }
 .neutralWord span { display: block; }
 .neutralRule { position: absolute; width: 18%; height: 2px; bottom: 15%; background: var(--color-brand-red); }
-.hero { display: grid; grid-template-columns: 1.15fr 1fr; align-items: center; gap: 48px; padding-block: 56px 40px; }
+.hero { display: grid; grid-template-columns: 1.15fr 1fr; align-items: start; gap: 48px; padding-block: var(--page-hero-top) 40px; }
 .hero > *, .aboutGrid > *, .journeyGrid > * { min-width: 0; }
-.heroTitle { margin-block: 20px; font-size: var(--type-hero-size); font-weight: 750; line-height: 1.15; letter-spacing: -.035em; }
+.heroTitle { margin-block: 20px; font-size: var(--type-hero-size); font-weight: 750; line-height: var(--leading-heading-tight); letter-spacing: 0; }
 .heroTitle > span:last-child { color: var(--color-brand-red); }
-.heroCopy .bodyCopy { max-width: 520px; font-size: var(--type-intro-size); line-height: 1.8; }
+.heroCopy .bodyCopy { max-width: 520px; font-size: var(--type-intro-size); line-height: var(--leading-body-lg); }
 .heroImage { aspect-ratio: 4 / 4.5; }
 .aboutGrid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 48px; align-items: center; }
 .aboutImage { aspect-ratio: 4 / 4.5; }
@@ -40,10 +40,10 @@
 .valueChapter::before { content: ""; position: absolute; top: -4px; left: 0; width: 9px; height: 9px; border: 2px solid var(--color-brand-red); border-radius: 50%; background: #fff; box-shadow: 0 0 0 5px #fff; transition: background-color 250ms; }
 .chapterNumber { color: var(--color-line-strong); font-size: 44px; line-height: 1; letter-spacing: -.06em; transition: color 250ms; }
 .english { color: var(--color-ink-muted); font-size: 12px; letter-spacing: .06em; margin-block: 5px 12px; }
-.valueChapter .bodyCopy { font-size: 15px; }
+.valueChapter .bodyCopy { font-size: var(--type-body-size); }
 .philosophy { background: var(--color-brand-red-dark); color: #fff; border-radius: 8px; padding: 40px 48px; }
 .philosophy .eyebrow { color: #fff; }
-.philosophyIntro { margin-top: 12px; font-size: 15px; line-height: 1.8; }
+.philosophyIntro { margin-top: 12px; font-size: var(--type-body-size); line-height: var(--type-body-leading); }
 .statement { margin-top: 22px; font-size: clamp(28px, 3.6vw, 44px); line-height: 1.25; font-weight: 650; }
 .statementLead { display: block; font-weight: 450; margin-bottom: 8px; }
 .journeyGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: stretch; }
@@ -53,7 +53,7 @@
 .pathLine span { display: block; width: 100%; height: 100%; background: var(--color-brand-red); }
 .roadmap ol { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .node { position: relative; display: block; width: 9px; height: 9px; border-radius: 50%; background: var(--color-brand-red); outline: 5px solid #fff; margin-bottom: 18px; }
-.roadmap h3 { font-size: 16px; }
+.roadmap h3 { font-size: var(--type-card-size); }
 .roadmap li p { font-size: 32px; font-weight: 600; color: var(--color-brand-red); letter-spacing: 0; }
 .methodImage { aspect-ratio: 16 / 10; }
 .methods { display: grid; grid-template-rows: repeat(3, 1fr); height: 100%; }
@@ -99,14 +99,17 @@
   .heroCopy { display: contents; }
   .heroDetails { order: 3; }
   .hero .heroTitle { margin-bottom: 0; }
-  .heroTitle { font-size: var(--type-hero-size); font-weight: 750; line-height: 1.15; letter-spacing: -.035em; }
+  .heroTitle { font-size: var(--type-hero-size); font-weight: 750; line-height: var(--leading-heading-tight); letter-spacing: 0; }
   .heroImage { order: 2; aspect-ratio: 4 / 3; }
   .cta { grid-template-columns: 1fr; gap: 24px; }
 }
 @media (max-width: 767px) {
+  .actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .actions > * { min-width: 0; }
+  .actions a { width: 100%; height: 100%; min-width: 0; padding-inline: 10px; font-size: 14px; text-align: center; white-space: normal; }
   .section { padding-block: 36px; }
-  .hero { grid-template-columns: 1fr; padding-block: 36px 28px; }
-  .heroTitle { font-size: var(--type-hero-size); font-weight: 750; line-height: 1.15; letter-spacing: -.035em; }
+  .hero { grid-template-columns: 1fr; padding-block: var(--page-hero-top) 28px; }
+  .heroTitle { font-size: var(--type-hero-size); font-weight: 750; line-height: var(--leading-heading-tight); letter-spacing: 0; }
   .heroImage { aspect-ratio: 4 / 3; }
   .aboutGrid, .journeyGrid, .differenceRow { grid-template-columns: 1fr; gap: 24px; }
   .storyCopy { display: contents; }
@@ -134,7 +137,7 @@
   .cta { padding-block: 32px 48px; }
 }
 @media (max-width: 379px) {
-  .roadmap h3 { font-size: 14px; }
+  .roadmap h3 { font-size: var(--type-card-size); }
   .roadmap li p { font-size: 28px; }
 }
 @media (prefers-reduced-motion: reduce) {

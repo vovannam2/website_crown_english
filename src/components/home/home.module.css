@@ -199,7 +199,7 @@
 .page .heroCampaign {
   position: relative;
   min-height: 740px;
-  padding: 64px max(28px, calc((100vw - 1320px) / 2));
+  padding: var(--page-hero-top) max(28px, calc((100vw - 1320px) / 2));
   display: flex;
   align-items: center;
   isolation: isolate;
@@ -214,7 +214,7 @@
 .heroCampaignBackground {
   z-index: -3;
   overflow: hidden;
-  animation: hero-background-fade 1.1s cubic-bezier(.22,1,.36,1) both;
+  animation: hero-background-fade 650ms cubic-bezier(.22,1,.36,1) both;
 }
 .heroCampaignImage {
   object-fit: cover;
@@ -240,13 +240,6 @@
   position: relative;
   z-index: 2;
   width: min(100%, 720px);
-}
-.heroCampaignEyebrow {
-  color: var(--color-brand-red);
-  font-size: 11px;
-  font-weight: 750;
-  letter-spacing: .19em;
-  line-height: 1.6;
 }
 .heroCampaignTitle {
   margin-top: 20px;
@@ -281,8 +274,8 @@
   max-width: 535px;
   margin-top: 18px;
   color: #52565d;
-  font-size: 16px;
-  line-height: 1.75;
+  font-size: var(--text-body-lg-size);
+  line-height: var(--leading-body-lg);
 }
 .heroCampaignActions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 23px; }
 .heroMetrics {
@@ -401,14 +394,14 @@
   .heroMetricValue strong { font-size: 34px; }
 }
 @media (max-width: 760px) {
-  .page .heroCampaign { min-height: auto; padding: 52px 20px 44px; }
+  .page .heroCampaign { min-height: auto; padding: var(--page-hero-top) 20px 44px; }
   .heroCampaignBackground { inset: 0; }
   .heroCampaignImage { object-position: 66% center; }
   .heroCampaignTint { background: linear-gradient(90deg, #fffdf9f3 0%, #fffdf9df 58%, #fffdf9a8 100%); }
   .heroCampaignInner { display: block; }
   .heroCampaignCopy { max-width: 600px; }
   .heroCampaignTitle { font-size: clamp(61px, 18vw, 92px); }
-  .heroCampaignDescription { max-width: 470px; font-size: 15px; }
+  .heroCampaignDescription { max-width: 470px; }
   .heroMetrics { grid-template-columns: 1.18fr .88fr .94fr; margin-top: 30px; }
   .heroMetric { padding-inline: 10px; }
   .heroMetricValue { display: block; }
@@ -454,9 +447,7 @@
 .programIndex { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 10px; font-weight: 650; letter-spacing: .09em; }
 .programIndex > span:last-child { white-space: nowrap; font-variant-numeric: tabular-nums; }
 .programContent { display: flex; flex-direction: column; flex: 1; padding-top: 44px; }
-.program h3 { min-height: 62px; margin: 0 0 24px; padding: 0; color: inherit; text-transform: none; font-size: var(--type-card-size); font-weight: 700; line-height: 1.45; letter-spacing: normal; }
-.program h3 span { display: block; }
-.program h3 span + span { margin-top: 4px; }
+.program h3 { min-height: 62px; margin: 0 0 24px; padding: 0; color: inherit; text-transform: none; font-size: clamp(22px, 1.8vw, 28px); font-weight: 750; line-height: 1.3; letter-spacing: -.02em; white-space: nowrap; }
 .programNote { display: block; font-family: inherit; font-style: normal; font-size: var(--type-card-size); font-weight: 700; line-height: 1.45; letter-spacing: normal; }
 .program p { max-width: 32ch; margin: 14px 0 30px; color: inherit; font-size: var(--type-body-size); line-height: var(--type-body-leading); }
 .programCta { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: auto; padding-top: 18px; border-top: 1px solid currentColor; font-size: var(--type-link-size); font-weight: 650; }
@@ -469,13 +460,13 @@
   .programGrid { gap: 12px; }
   .program { padding: 20px; }
   .programIndex { font-size: 9px; letter-spacing: .02em; }
-  .program h3 { min-height: 62px; font-size: var(--type-card-size); font-weight: 700; line-height: 1.45; letter-spacing: normal; }
+  .program h3 { min-height: 62px; font-size: clamp(15px, 1.65vw, 20px); }
 }
 @media (max-width: 760px) {
   .programGrid { gap: 16px; }
   .program { min-height: 0; padding: 28px; gap: 0; align-items: stretch; }
   .programContent { padding-top: 32px; }
-  .program h3 { min-height: 0; margin-bottom: 22px; font-size: var(--type-card-size); font-weight: 700; line-height: 1.45; letter-spacing: normal; }
+  .program h3 { min-height: 0; margin-bottom: 22px; font-size: clamp(18px, 5vw, 26px); }
   .program p { max-width: 42ch; margin-bottom: 26px; }
 }
 @media (prefers-reduced-motion: reduce) {

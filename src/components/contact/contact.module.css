@@ -17,7 +17,7 @@
   border-bottom: 1px solid #eef1f6;
   background:
     linear-gradient(135deg, #f6f9ff 0%, #fff 42%, #fff5f5 100%);
-  padding-block: clamp(48px, 6.5vw, 76px) clamp(68px, 7vw, 96px);
+  padding-block: var(--page-hero-top) clamp(68px, 7vw, 96px);
 }
 
 .contactHero::before {
@@ -39,12 +39,19 @@
   display: grid;
   grid-template-columns: minmax(0, 0.92fr) minmax(430px, 0.72fr);
   gap: clamp(28px, 5vw, 72px);
-  align-items: center;
+  align-items: start;
   margin-bottom: clamp(38px, 5vw, 62px);
 }
 
 .heroIntro {
+  grid-column: 1;
+  grid-row: 1;
   max-width: 760px;
+}
+
+.heroDetails {
+  grid-column: 1;
+  grid-row: 2;
 }
 
 .eyebrow {
@@ -61,17 +68,16 @@
   letter-spacing: 0.1em;
   line-height: 1.35;
   text-transform: uppercase;
-  box-shadow: 0 8px 20px rgb(212 37 37 / 0.07);
 }
 
 .heroIntro h1 {
   margin-top: 18px;
   max-width: 760px;
   color: var(--contact-ink);
-  font-size: clamp(2.35rem, 5.2vw, 4.85rem);
-  font-weight: 800;
+  font-size: var(--text-h1-size);
+  font-weight: 750;
   letter-spacing: 0;
-  line-height: 1.04;
+  line-height: var(--leading-heading-tight);
   text-wrap: balance;
 }
 
@@ -79,12 +85,11 @@
   color: var(--contact-red);
 }
 
-.heroIntro > p:not(.eyebrow) {
-  margin-top: 16px;
+.heroDetails > p {
   max-width: 650px;
   color: var(--contact-muted);
-  font-size: clamp(1rem, 0.28vw + 0.95rem, 1.1rem);
-  line-height: 1.72;
+  font-size: var(--text-body-lg-size);
+  line-height: var(--leading-body-lg);
 }
 
 .heroActions {
@@ -132,7 +137,9 @@
 
 .heroPanel {
   position: relative;
-  min-height: clamp(520px, 43vw, 650px);
+  grid-column: 2;
+  grid-row: 1 / 3;
+  align-self: stretch;
   overflow: hidden;
   border: 1px solid var(--contact-line);
   border-radius: var(--radius-md);
@@ -183,8 +190,8 @@
 .photoCaption p {
   margin-top: 6px;
   color: rgb(255 255 255 / 0.82);
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: var(--text-body-size);
+  line-height: var(--leading-body);
 }
 
 .photoCaption svg {
@@ -208,8 +215,10 @@
 .contactCard {
   position: relative;
   display: grid;
-  grid-template-columns: 48px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: 48px auto;
   gap: 14px;
+  align-content: start;
   align-items: start;
   min-height: 148px;
   border: 1px solid var(--contact-line);
@@ -258,12 +267,13 @@
 
 .contactCardBody {
   min-width: 0;
+  text-align: left;
 }
 
 .contactCardBody h2 {
   color: var(--contact-ink);
-  font-size: 1rem;
-  font-weight: 800;
+  font-size: var(--text-h4-size);
+  font-weight: 700;
   line-height: 1.25;
 }
 
@@ -309,7 +319,7 @@
   margin-top: 10px;
   padding-right: 42px;
   color: var(--contact-muted);
-  font-size: 0.85rem;
+  font-size: var(--text-body-size);
   font-weight: 600;
   line-height: 1.55;
 }
@@ -493,14 +503,22 @@
 @media (max-width: 860px) {
   .contactHero {
     min-height: auto;
-    padding-block: 44px 70px;
+    padding-block: var(--page-hero-top) 70px;
   }
 
   .heroTop {
     grid-template-columns: 1fr;
   }
 
+  .heroDetails {
+    grid-row: 3;
+  }
+
   .heroPanel {
+    grid-column: 1;
+    grid-row: 2;
+    height: auto;
+    margin-top: 0;
     min-height: 520px;
   }
 
@@ -521,7 +539,6 @@
   }
 
   .contactCard {
-    grid-template-columns: 48px minmax(0, 1fr);
     min-height: 0;
     padding: 16px;
   }
@@ -563,10 +580,6 @@
 @media (max-width: 480px) {
   .heroPanel {
     min-height: 480px;
-  }
-
-  .contactCard {
-    grid-template-columns: 46px minmax(0, 1fr);
   }
 
   .contactCardAction {

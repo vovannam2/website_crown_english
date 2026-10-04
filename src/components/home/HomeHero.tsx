@@ -25,7 +25,7 @@ export default function HomeHero() {
 
       <div className={styles.heroCampaignInner}>
         <Reveal className={styles.heroCampaignCopy} duration={650} group>
-          <p className={styles.heroCampaignEyebrow}>{hero.eyebrow}</p>
+          <p className="hero-eyebrow-badge">{hero.eyebrow}</p>
           <h1 className={styles.heroCampaignTitle} id="home-title" aria-label={hero.title}>
             {hero.headlineLines.map((line) => (
               <span className={styles.heroHeadlineMask} key={line}>
@@ -44,7 +44,7 @@ export default function HomeHero() {
           <HeroMetrics />
         </Reveal>
 
-        <Reveal className={styles.heroFilmPlacement} delay={100} duration={750}>
+        <Reveal className={styles.heroFilmPlacement} delay={100}>
           <HeroFilmStrip />
         </Reveal>
       </div>

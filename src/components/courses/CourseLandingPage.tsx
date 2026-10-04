@@ -1,8 +1,8 @@
-import localClassroom13Image from "../../../public/images/students/classrooms/classroom-13.jpg";
-import localClassroom04Image from "../../../public/images/students/classrooms/classroom-04.jpg";
-import localClassroom08Image from "../../../public/images/students/classrooms/classroom-08.jpg";
-import localClassroom01Image from "../../../public/images/students/classrooms/classroom-01.jpg";
-import localClassroom12Image from "../../../public/images/students/classrooms/classroom-12.jpg";
+import localClassroom13Image from "../../../public/images/students/classrooms/ielts-class-social-post-study-tables.jpg";
+import localClassroom04Image from "../../../public/images/students/classrooms/teacher-tutoring-student-at-desk.jpg";
+import localClassroom08Image from "../../../public/images/students/classrooms/teacher-leading-small-ielts-class.jpg";
+import localClassroom01Image from "../../../public/images/students/classrooms/ielts-grammar-class-with-teacher.jpg";
+import localClassroom12Image from "../../../public/images/students/classrooms/ielts-class-social-post-side-view.jpg";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -27,208 +27,19 @@ import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 import CourseRoadmap from "./CourseRoadmap";
 
-type SeoData = {
-  title: string;
-  description: string;
-  h1: string;
-  primaryTopic: string;
-  secondaryTopics: readonly string[];
-  localSignals: readonly string[];
-};
-
-type RoadmapItem = {
-  name: string;
-  range?: string;
-  note?: string;
-  items?: readonly string[];
-  content?: readonly string[];
-};
-
-type LevelItem = {
-  id?: string;
-  name?: string;
-  level?: string;
-  sourceHeading?: string;
-  range?: string;
-  tuition?: string;
-  duration?: string;
-  sessions?: string;
-  suitableFor?: string;
-  entryRequirement?: string;
-  description?: string;
-  content?: string | readonly string[];
-  detail?: string | readonly string[];
-  schedule?: readonly string[];
-  refund?: readonly string[];
-  benefits?: readonly string[];
-  priceAfter18?: string;
-  priceBefore18?: string;
-};
-
-type TuitionItem = {
-  course: string;
-  duration?: string;
-  sessions?: string;
-  price?: string;
-  sessionDuration?: string;
-};
-
-type ClassType = {
-  title?: string;
-  description?: string;
-  classSize?: string;
-  frequency?: string;
-  schedule?: readonly string[];
-  standardTime?: string;
-  offline?: string;
-  evening?: string;
-  benefits?: readonly string[];
-  tuition?: readonly TuitionItem[];
-};
-
-type BenefitCard = {
-  title: string;
-  description: string;
-};
-
-type IconName =
-  | "book"
-  | "briefcase"
-  | "coins"
-  | "graduation"
-  | "layers"
-  | "target"
-  | "teacher"
-  | "trending"
-  | "users";
-
-type VisualTone = "red" | "blue" | "gold" | "green";
-
-type VisualCard = {
-  title: string;
-  description: string;
-  icon?: IconName;
-  tone?: VisualTone;
-};
-
-type HighlightItem = {
-  title: string;
-  description: string;
-  icon?: IconName;
-  tone?: VisualTone;
-};
-
-type CourseFeaturePanel = {
-  image: string;
-  alt: string;
-  ctaLabel?: string;
-};
-
-type CoursePageData = {
-  id: string;
-  href: string;
-  seo: SeoData;
-  hero: {
-    eyebrow?: string;
-    title: string;
-    titlePrefix?: string;
-    titleAccent?: string;
-    subtitle?: string;
-    highlight?: string;
-    description?: string;
-    image?: string;
-    badge?: {
-      title: string;
-      description: string;
-    };
-    proofCard?: {
-      eyebrow: string;
-      title: string;
-      description: string;
-      image: string;
-      alt: string;
-    };
-    stats?: readonly VisualCard[];
-  };
-  suitableFor: readonly string[];
-  studentProblems: readonly string[];
-  overview: {
-    eyebrow?: string;
-    title: string;
-    titleAccent?: string;
-    paragraphs: readonly string[];
-    cards?: readonly VisualCard[];
-    featurePanel?: CourseFeaturePanel;
-  };
-  roadmap: readonly RoadmapItem[];
-  levels?: readonly LevelItem[];
-  personalizedRoadmap?: readonly LevelItem[];
-  method?: {
-    title?: string;
-    description?: string;
-    paragraphs?: readonly string[];
-  };
-  benefits?: readonly string[] | readonly BenefitCard[] | Record<string, readonly string[]>;
-  highlights?: readonly HighlightItem[];
-  classTypes?: Record<string, ClassType>;
-  schedule?: readonly string[];
-  cta?: {
-    title?: string;
-    description?: string;
-    buttonLabel?: string;
-  };
-};
-
-type CourseSummary = {
-  id: string;
-  title: string;
-  href: string;
-  description: string;
-  levels: readonly string[];
-  image: string;
-};
-
-type LearningFormat = {
-  title: string;
-  description: string;
-  image: string;
-  icon?: "monitor" | "laptop";
-};
-
-type AchievementResult = {
-  id: string;
-  name: string;
-  exam: string;
-  overall: string;
-  highlights: readonly string[];
-  fullImage: string;
-  thumbnail?: string;
-};
-
-type AchievementVideo = {
-  id: string;
-  name: string;
-  result: string;
-  src: string;
-};
-
-type CoursesOverviewPageProps = {
-  title: string;
-  description: string;
-  heroImage?: string;
-  learningFormats?: {
-    title: string;
-    description: string;
-    items: readonly LearningFormat[];
-  };
-  achievements?: {
-    title: string;
-    description: string;
-    results: readonly AchievementResult[];
-    video?: AchievementVideo;
-  };
-  courses: readonly CourseSummary[];
-};
+import type {
+  ClassType,
+  CourseDataProps,
+  CoursePageData,
+  CoursesAchievementsProps,
+  CoursesLearningFormatsProps,
+  CoursesOverviewPageProps,
+  HighlightItem,
+  IconName,
+  LevelItem,
+  VisualCard,
+  VisualTone,
+} from "@/types/courses";
 
 const courseImages: Record<string, string> = {
   ielts: localClassroom13Image.src,
@@ -367,7 +178,7 @@ function getClassTypeBullets(classType: ClassType, notes: readonly string[]) {
   return bullets.filter(Boolean).slice(0, 6);
 }
 
-function renderAccentTitle(title: string, accent?: string) {
+function renderAccentTitle(title: string, accent?: string, underline = true) {
   const lines = title.split("\n");
 
   return (
@@ -382,7 +193,7 @@ function renderAccentTitle(title: string, accent?: string) {
             {hasAccent ? (
               <>
                 {beforeAccent}
-                <span className="relative inline-block text-[var(--color-brand-red)] after:absolute after:-bottom-1 after:left-0 after:h-1 after:w-full after:rounded-full after:bg-[var(--color-brand-red)] after:opacity-25">
+                <span className={`relative inline-block text-[var(--color-brand-red)] ${underline ? "after:absolute after:-bottom-1 after:left-0 after:h-1 after:w-full after:rounded-full after:bg-[var(--color-brand-red)] after:opacity-25" : ""}`}>
                   {accent}
                 </span>
                 {afterAccent}
@@ -398,12 +209,12 @@ function renderAccentTitle(title: string, accent?: string) {
   );
 }
 
-function CourseHeroTitle({ data }: { data: CoursePageData }) {
-  if (data.hero.titlePrefix) return renderAccentTitle(`${data.hero.titlePrefix} ${data.hero.titleAccent ?? ""}`.trim(), data.hero.titleAccent);
+function CourseHeroTitle({ data }: CourseDataProps) {
+  if (data.hero.titlePrefix) return renderAccentTitle(`${data.hero.titlePrefix} ${data.hero.titleAccent ?? ""}`.trim(), data.hero.titleAccent, data.id !== "ielts");
   return <>{data.seo.h1}</>;
 }
 
-function CourseHeroStats({ data }: { data: CoursePageData }) {
+function CourseHeroStats({ data }: CourseDataProps) {
   if (data.hero.stats && data.hero.stats.length > 0) {
     return (
       <dl className="mt-8 grid gap-5 sm:grid-cols-3">
@@ -418,7 +229,7 @@ function CourseHeroStats({ data }: { data: CoursePageData }) {
               </dt>
               <dd>
                 <p className="type-h4">{stat.title}</p>
-                <p className={`mt-1 type-small ${stat.tone === "red" ? "font-bold text-[var(--color-brand-red)]" : "text-[var(--color-ink-muted)]"}`}>
+                <p className={`mt-1 type-body ${stat.tone === "red" ? "font-bold text-[var(--color-brand-red)]" : "text-[var(--color-ink-muted)]"}`}>
                   {stat.description}
                 </p>
               </dd>
@@ -447,32 +258,59 @@ function CourseHeroStats({ data }: { data: CoursePageData }) {
   );
 }
 
-function CourseAudienceSection({ data }: { data: CoursePageData }) {
+function CourseAudienceSection({ data }: CourseDataProps) {
   const cards = getAudienceCards(data);
   const featurePanel = data.overview.featurePanel;
+  const TextWrapper = featurePanel ? "div" : Reveal;
+  const renderFeaturePanel = (className = "") => featurePanel && (
+    <Reveal delay={120} className={`relative overflow-hidden rounded-[var(--radius-sm)] bg-[#F7FCFF] shadow-[var(--shadow-menu)] lg:-mr-8 xl:-mr-10 ${className}`}>
+      <Image
+        src={featurePanel.image}
+        alt={featurePanel.alt}
+        width={1536}
+        height={1024}
+        sizes="(min-width: 1280px) 680px, (min-width: 1024px) 620px, 92vw"
+        className="h-auto w-full"
+      />
+      <Button href="/lien-he" className="absolute bottom-11 left-4 z-10 !min-h-0 !gap-1 rounded-full !px-2.5 !py-1 !text-[11px] shadow-[var(--shadow-menu)] sm:bottom-14 sm:left-7 sm:!px-4 sm:!py-2 sm:!text-xs">
+        {featurePanel.ctaLabel || data.cta?.buttonLabel || "Đăng ký tư vấn ngay"}
+        <ArrowRight aria-hidden="true" className="size-3 sm:size-3.5" />
+      </Button>
+    </Reveal>
+  );
+  const renderOverviewImage = (className = "") => data.overview.image ? (
+    <Reveal preset="image" delay={120} className={`relative mx-auto aspect-[482/651] w-full max-w-[440px] overflow-hidden rounded-[var(--radius-sm)] bg-white shadow-[var(--shadow-menu)] ${className}`}>
+      <Image src={data.overview.image} alt={data.overview.imageAlt || "Giảng viên hướng dẫn học viên tại Crown English"} fill sizes="(min-width: 1024px) 440px, 90vw" className="object-cover" />
+    </Reveal>
+  ) : (
+    <Reveal preset="image" delay={120} className={`relative min-h-[360px] overflow-hidden rounded-[var(--radius-sm)] bg-white shadow-[var(--shadow-menu)] ${className}`}>
+      <Image src={getCourseImage(data)} alt={`Không gian học ${data.hero.title} tại Crown English`} fill sizes="(min-width: 1024px) 480px, 90vw" className="object-cover" />
+    </Reveal>
+  );
 
   return (
     <section className="w-full bg-white py-16 sm:py-20" aria-labelledby="overview-title">
       <Container>
-        <div className="grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
-          <Reveal>
+        <div className={`grid gap-10 lg:items-center ${data.overview.image ? "lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-14" : "lg:grid-cols-[0.88fr_1.12fr]"}`}>
+          <TextWrapper>
             <div className="max-w-3xl">
               <p className="home-eyebrow">{data.overview.eyebrow || "TỔNG QUAN KHÓA HỌC"}</p>
               <h2 id="overview-title" className="mt-3 type-h2">
-                {renderAccentTitle(hasText(data.overview.title) ? data.overview.title : "Khóa học này dành cho ai?", data.overview.titleAccent)}
+                {renderAccentTitle(hasText(data.overview.title) ? data.overview.title : "Khóa học này dành cho ai?", data.overview.titleAccent, data.id !== "ielts")}
               </h2>
-              <div className="mt-6 space-y-4">
-                {(data.overview.paragraphs.length > 0
-                  ? data.overview.paragraphs
-                  : [data.seo.description]).map((paragraph) => (
-                  <p key={paragraph} className="type-body-lg text-[var(--color-ink-muted)]">
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
+              {featurePanel ? renderFeaturePanel("mt-6 lg:hidden") : renderOverviewImage("mt-6 lg:hidden")}
+            </div>
+            <div className="mt-6 space-y-4">
+              {(data.overview.paragraphs.length > 0
+                ? data.overview.paragraphs
+                : [data.seo.description]).map((paragraph) => (
+                <p key={paragraph} className="type-body-lg text-[var(--color-ink-muted)]">
+                  {paragraph}
+                </p>
+              ))}
             </div>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <div className={`mt-8 grid gap-4 ${cards.length === 1 ? "max-w-xl" : "sm:grid-cols-2"}`}>
               {cards.map((card) => {
                 const Icon = getIcon(card.icon, "graduation");
                 return (
@@ -481,40 +319,21 @@ function CourseAudienceSection({ data }: { data: CoursePageData }) {
                       <Icon aria-hidden="true" size={22} strokeWidth={2.2} />
                     </div>
                     <h3 className="mt-5 type-h4">{card.title}</h3>
-                    <p className="mt-2 type-small text-[var(--color-ink-muted)]">{card.description}</p>
+                    <p className="mt-2 type-body text-[var(--color-ink-muted)]">{card.description}</p>
                   </article>
                 );
               })}
             </div>
-          </Reveal>
+          </TextWrapper>
 
-          {featurePanel ? (
-          <Reveal delay={120} className="relative overflow-hidden rounded-[var(--radius-sm)] bg-[#F7FCFF] shadow-[var(--shadow-menu)] lg:-mr-8 xl:-mr-10">
-            <Image
-              src={featurePanel.image}
-              alt={featurePanel.alt}
-              width={1536}
-              height={1024}
-              sizes="(min-width: 1280px) 680px, (min-width: 1024px) 620px, 92vw"
-              className="h-auto w-full"
-            />
-            <Button href="/lien-he" className="absolute bottom-5 left-5 z-10 rounded-full px-7 py-4 shadow-[var(--shadow-menu)] sm:bottom-7 sm:left-7">
-              {featurePanel.ctaLabel || data.cta?.buttonLabel || "Đăng ký tư vấn ngay"}
-              <ArrowRight aria-hidden="true" size={18} />
-            </Button>
-          </Reveal>
-          ) : (
-          <Reveal preset="image" delay={120} className="relative min-h-[360px] overflow-hidden rounded-[var(--radius-sm)] bg-white shadow-[var(--shadow-menu)]">
-            <Image src={getCourseImage(data)} alt={`Không gian học ${data.hero.title} tại Crown English`} fill sizes="(min-width: 1024px) 480px, 90vw" className="object-cover" />
-          </Reveal>
-          )}
+          {featurePanel ? renderFeaturePanel("hidden lg:block") : renderOverviewImage("hidden lg:block")}
         </div>
       </Container>
     </section>
   );
 }
 
-function CourseHighlightsSection({ data }: { data: CoursePageData }) {
+function CourseHighlightsSection({ data }: CourseDataProps) {
   const highlights = getCourseHighlights(data);
   if (highlights.length === 0) return null;
 
@@ -536,7 +355,7 @@ function CourseHighlightsSection({ data }: { data: CoursePageData }) {
                       <Icon aria-hidden="true" size={20} strokeWidth={2.2} />
                     </div>
                     <h3 className="mt-4 type-h4">{item.title}</h3>
-                    <p className="mt-2 type-small text-[var(--color-ink-muted)]">{item.description}</p>
+                    <p className="mt-2 type-body text-[var(--color-ink-muted)]">{item.description}</p>
                   </article>
                 </Reveal>
               );
@@ -548,7 +367,7 @@ function CourseHighlightsSection({ data }: { data: CoursePageData }) {
   );
 }
 
-function CourseTuitionSection({ data }: { data: CoursePageData }) {
+function CourseTuitionSection({ data }: CourseDataProps) {
   if (!data.classTypes || Object.keys(data.classTypes).length === 0) return null;
 
   const title = data.id === "ielts"
@@ -597,12 +416,12 @@ function CourseTuitionSection({ data }: { data: CoursePageData }) {
                 <p className="mt-4 break-words text-[clamp(1.7rem,2.35vw,2.45rem)] font-black leading-none text-[var(--color-brand-red)]">
                   {getOptionPrice(classType)}
                 </p>
-                {classType.description && <p className="mt-4 type-small text-[var(--color-ink-muted)]">{classType.description}</p>}
+                {classType.description && <p className="mt-4 type-body text-[var(--color-ink-muted)]">{classType.description}</p>}
               </div>
 
               <ul className="mt-7 flex-1 space-y-3" aria-label={`Thông tin ${label} của ${data.seo.primaryTopic}`}>
                 {bullets.map((bullet) => (
-                  <li key={bullet} className="flex gap-3 type-small text-[var(--color-ink-muted)]">
+                  <li key={bullet} className="flex gap-3 type-body text-[var(--color-ink-muted)]">
                     <CheckCircle2 aria-hidden="true" className="mt-0.5 shrink-0 text-[var(--color-brand-red)]" size={17} />
                     <span>{bullet}</span>
                   </li>
@@ -617,7 +436,7 @@ function CourseTuitionSection({ data }: { data: CoursePageData }) {
                   <p className="type-label text-[var(--color-brand-red)]">Lưu ý cho Option {optionNumber}</p>
                   <ul className="mt-4 space-y-3">
                     {featuredNotes.map((note) => (
-                      <li key={note} className="flex gap-3 type-small text-[var(--color-ink-muted)]">
+                      <li key={note} className="flex gap-3 type-body text-[var(--color-ink-muted)]">
                         <ArrowRight aria-hidden="true" className="mt-0.5 shrink-0 text-[var(--color-brand-red)]" size={16} />
                         <span>{note}</span>
                       </li>
@@ -639,7 +458,7 @@ function CourseTuitionSection({ data }: { data: CoursePageData }) {
   );
 }
 
-function CoursesLearningFormats({ data }: { data?: CoursesOverviewPageProps["learningFormats"] }) {
+function CoursesLearningFormats({ data }: CoursesLearningFormatsProps) {
   if (!data || data.items.length === 0) return null;
 
   return (
@@ -662,7 +481,7 @@ function CoursesLearningFormats({ data }: { data?: CoursesOverviewPageProps["lea
                     </div>
                     <div>
                       <h3 className="type-h3 text-[#18345C]">{item.title}</h3>
-                      <p className="mt-3 type-small text-[var(--color-ink-muted)]">{item.description}</p>
+                      <p className="mt-3 type-body text-[var(--color-ink-muted)]">{item.description}</p>
                     </div>
                   </div>
                   <div className="relative min-h-[230px] bg-[var(--color-surface-soft)] md:min-h-full">
@@ -678,7 +497,7 @@ function CoursesLearningFormats({ data }: { data?: CoursesOverviewPageProps["lea
   );
 }
 
-function CoursesAchievements({ data }: { data?: CoursesOverviewPageProps["achievements"] }) {
+function CoursesAchievements({ data }: CoursesAchievementsProps) {
   if (!data || data.results.length === 0) return null;
 
   return (
@@ -731,7 +550,7 @@ function CoursesAchievements({ data }: { data?: CoursesOverviewPageProps["achiev
               <div className="p-4">
                 <h3 className="type-h4">{result.name}</h3>
                 {result.highlights.length > 0 && (
-                  <p className="mt-2 type-small text-[var(--color-ink-muted)]">{result.highlights.slice(0, 2).join(" · ")}</p>
+                  <p className="mt-2 type-body text-[var(--color-ink-muted)]">{result.highlights.slice(0, 2).join(" · ")}</p>
                 )}
               </div>
             </article>
@@ -744,18 +563,20 @@ function CoursesAchievements({ data }: { data?: CoursesOverviewPageProps["achiev
 
 export function CoursesOverviewPage({ title, description, heroImage = localClassroom12Image.src, learningFormats, achievements, courses }: CoursesOverviewPageProps) {
   return (
-    <Container className="py-8 sm:py-10 lg:py-12">
-      <section className="grid items-center gap-9 py-4 lg:grid-cols-[0.95fr_1.05fr]" aria-labelledby="courses-title">
-        <Reveal>
-          <p className="home-eyebrow">CHƯƠNG TRÌNH HỌC</p>
+    <Container className="pb-8 pt-[var(--page-hero-top)] sm:pb-10 lg:pb-12">
+      <section className="grid items-start gap-9 pb-4 lg:grid-cols-[0.95fr_1.05fr]" aria-labelledby="courses-title">
+        <Reveal className="lg:col-start-1 lg:row-start-1">
+          <p className="hero-eyebrow-badge">CHƯƠNG TRÌNH HỌC</p>
           <h1 id="courses-title" className="mt-4 type-h1">{title}</h1>
-          <p className="mt-6 max-w-2xl type-body-lg text-[var(--color-ink-muted)]">{description}</p>
+        </Reveal>
+        <Reveal className="order-3 lg:order-none lg:col-start-1 lg:row-start-2 lg:self-start">
+          <p className="max-w-2xl type-body-lg text-[var(--color-ink-muted)]">{description}</p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Button href="/lien-he">Đăng ký tư vấn</Button>
             <Button href="#course-list" variant="outline">Xem khóa học</Button>
           </div>
         </Reveal>
-        <Reveal preset="image" className="relative aspect-square max-h-[540px] overflow-hidden rounded-[var(--radius-sm)] bg-[var(--color-surface-soft)]">
+        <Reveal preset="image" delay={100} className="order-2 relative aspect-square max-h-[540px] overflow-hidden rounded-[var(--radius-sm)] bg-[var(--color-surface-soft)] lg:order-none lg:col-start-2 lg:row-span-2 lg:row-start-1">
           <Image src={heroImage} alt="Lớp học IELTS và giao tiếp tại Crown English" fill sizes="(min-width: 1024px) 560px, 90vw" className="object-cover" priority />
         </Reveal>
       </section>
@@ -805,7 +626,7 @@ export function CoursesOverviewPage({ title, description, heroImage = localClass
   );
 }
 
-export default function CourseLandingPage({ data }: { data: CoursePageData }) {
+export default function CourseLandingPage({ data }: CourseDataProps) {
   const levels = data.id === "ielts" ? [] : data.levels ?? data.personalizedRoadmap ?? [];
   const description = getCourseDescription(data);
   const methodParagraphs = data.method ? asList(data.method.description).concat(data.method.paragraphs ?? []) : [];
@@ -813,32 +634,32 @@ export default function CourseLandingPage({ data }: { data: CoursePageData }) {
 
   return (
     <article>
-        <section className="w-full bg-white py-12 sm:py-16 lg:py-20" aria-labelledby="course-title">
-          <Container className="grid items-center gap-10 lg:grid-cols-[1.02fr_0.98fr]">
-            <div>
-              <Reveal>
-                <p className="home-eyebrow">{data.hero.eyebrow || "KHÓA HỌC CROWN ENGLISH"}</p>
+        <section className="w-full bg-white pb-12 pt-[var(--page-hero-top)] sm:pb-16 lg:pb-20" aria-labelledby="course-title">
+          <Container className="grid items-start gap-10 max-lg:gap-6 lg:grid-cols-[1.02fr_0.98fr]">
+            <div className="max-lg:contents">
+              <Reveal className="max-lg:order-1">
+                <p className="hero-eyebrow-badge">{data.hero.eyebrow || "KHÓA HỌC CROWN ENGLISH"}</p>
                 <h1 id="course-title" className="mt-4 type-h1">
                   <CourseHeroTitle data={data} />
                 </h1>
               </Reveal>
-              <Reveal delay={90}>
-                <p className="mt-6 max-w-2xl type-body-lg text-[var(--color-ink-muted)]">
+              <Reveal delay={90} className="max-lg:order-3">
+                <p className="mt-6 max-w-2xl type-body-lg text-[var(--color-ink-muted)] max-lg:mt-0">
                   {description}
                 </p>
               </Reveal>
-              <Reveal delay={150} className="mt-7 flex flex-wrap gap-3">
-                <Button href="/lien-he">
+              <Reveal delay={150} className="mt-7 grid grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] gap-2 max-lg:order-4 max-lg:mt-0 lg:flex lg:flex-wrap lg:gap-3">
+                <Button href="/lien-he" className="max-lg:gap-1 max-lg:whitespace-nowrap max-lg:px-2 max-lg:!text-xs">
                   Đăng ký tư vấn ngay
-                  <ArrowRight aria-hidden="true" size={18} />
+                  <ArrowRight aria-hidden="true" size={18} className="max-lg:size-4" />
                 </Button>
-                <Button href="#lo-trinh" variant="outline">Xem lộ trình học</Button>
+                <Button href="#lo-trinh" variant="outline" className="max-lg:whitespace-nowrap max-lg:px-2 max-lg:!text-xs">Xem lộ trình học</Button>
               </Reveal>
-              <Reveal delay={220}>
+              <Reveal delay={220} className="max-lg:order-5">
                 <CourseHeroStats data={data} />
               </Reveal>
             </div>
-            <Reveal preset="image" className="relative min-h-[340px] overflow-hidden rounded-[var(--radius-sm)] bg-[var(--color-surface-soft)] lg:min-h-[470px]">
+            <Reveal preset="image" delay={100} className="relative min-h-[340px] overflow-hidden rounded-[var(--radius-sm)] bg-[var(--color-surface-soft)] max-lg:order-2 lg:min-h-[470px]">
               <span aria-hidden="true" className="absolute left-[-18px] top-14 z-10 grid gap-1.5">
                 <span className="block h-1.5 w-9 rotate-[-24deg] rounded-full bg-[var(--color-brand-red)]" />
                 <span className="block h-1.5 w-7 rotate-[-8deg] rounded-full bg-[var(--color-brand-red)]" />
@@ -852,7 +673,7 @@ export default function CourseLandingPage({ data }: { data: CoursePageData }) {
                 </div>
               )}
               {data.hero.proofCard && (
-                <div className="absolute bottom-5 left-5 z-10 grid max-w-[280px] grid-cols-[72px_1fr] gap-3 rounded-[var(--radius-sm)] border border-white/80 bg-white/95 p-3 shadow-[var(--shadow-menu)] backdrop-blur sm:bottom-6 sm:left-6">
+                <div className="absolute top-5 left-5 z-10 grid max-w-[280px] grid-cols-[72px_1fr] gap-3 rounded-[var(--radius-sm)] border border-white/80 bg-white/95 p-3 shadow-[var(--shadow-menu)] backdrop-blur sm:top-6 sm:left-6">
                   <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-sm)] bg-[var(--color-surface-soft)]">
                     <Image
                       src={data.hero.proofCard.image}
@@ -865,7 +686,7 @@ export default function CourseLandingPage({ data }: { data: CoursePageData }) {
                   <div className="min-w-0 self-center">
                     <p className="type-label text-[var(--color-brand-red)]">{data.hero.proofCard.eyebrow}</p>
                     <p className="mt-1 type-h4 text-[var(--color-ink)]">{data.hero.proofCard.title}</p>
-                    <p className="mt-1 type-small text-[var(--color-ink-muted)]">{data.hero.proofCard.description}</p>
+                    <p className="mt-1 type-body text-[var(--color-ink-muted)]">{data.hero.proofCard.description}</p>
                   </div>
                 </div>
               )}
@@ -908,11 +729,11 @@ export default function CourseLandingPage({ data }: { data: CoursePageData }) {
                         {(level.tuition || level.priceAfter18) && <p className="rounded-full bg-[var(--color-surface-soft)] px-3 py-1 type-small font-bold text-[var(--color-brand-red)]">{level.tuition ?? `Từ ${level.priceBefore18}`}</p>}
                       </div>
                       {(level.duration || level.sessions) && <p className="mt-4 type-small font-semibold text-[var(--color-ink)]">{level.duration ?? level.sessions}</p>}
-                      {level.suitableFor && <p className="mt-4 type-small text-[var(--color-ink-muted)]">{level.suitableFor}</p>}
-                      {level.entryRequirement && <p className="mt-4 rounded-[var(--radius-sm)] bg-[var(--color-surface-soft)] p-3 type-small text-[var(--color-ink-muted)]">{level.entryRequirement}</p>}
+                      {level.suitableFor && <p className="mt-4 type-body text-[var(--color-ink-muted)]">{level.suitableFor}</p>}
+                      {level.entryRequirement && <p className="mt-4 rounded-[var(--radius-sm)] bg-[var(--color-surface-soft)] p-3 type-body text-[var(--color-ink-muted)]">{level.entryRequirement}</p>}
                       <ul className="mt-5 space-y-3">
                         {asList(level.content).slice(0, 5).map((item) => (
-                          <li key={item} className="type-small text-[var(--color-ink-muted)]">{item}</li>
+                          <li key={item} className="type-body text-[var(--color-ink-muted)]">{item}</li>
                         ))}
                       </ul>
                       {[...asList(level.detail), ...asList(level.refund), ...asList(level.benefits)].length > 0 && (
@@ -920,7 +741,7 @@ export default function CourseLandingPage({ data }: { data: CoursePageData }) {
                           <summary className="cursor-pointer type-small font-bold text-[var(--color-brand-red)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-brand-red)]">Xem thêm chi tiết</summary>
                           <div className="mt-3 space-y-3">
                             {[...asList(level.detail), ...asList(level.refund), ...asList(level.benefits)].map((item) => (
-                              <p key={item} className="type-small text-[var(--color-ink-muted)]">{item}</p>
+                              <p key={item} className="type-body text-[var(--color-ink-muted)]">{item}</p>
                             ))}
                           </div>
                         </details>
@@ -941,7 +762,7 @@ export default function CourseLandingPage({ data }: { data: CoursePageData }) {
             </Reveal>
             <div className="mt-6 grid gap-5 lg:grid-cols-2">
               {methodParagraphs.map((paragraph) => (
-                <p key={paragraph} className="type-small text-white/85">{paragraph}</p>
+                <p key={paragraph} className="type-body text-white/85">{paragraph}</p>
               ))}
             </div>
           </section>
@@ -954,20 +775,22 @@ export default function CourseLandingPage({ data }: { data: CoursePageData }) {
               <h2 id="schedule-title" className="mt-3 type-h2">Tốc độ học có thể linh hoạt</h2>
             </Reveal>
             <div className="mt-6 grid gap-3 md:grid-cols-3">
-              {data.schedule.map((item) => <p key={item} className="rounded-[var(--radius-sm)] bg-[var(--color-surface-soft)] p-4 type-small text-[var(--color-ink-muted)]">{item}</p>)}
+              {data.schedule.map((item) => <p key={item} className="rounded-[var(--radius-sm)] bg-[var(--color-surface-soft)] p-4 type-body text-[var(--color-ink-muted)]">{item}</p>)}
             </div>
           </section>
         )}
 
-        <section className="grid items-center gap-6 rounded-[var(--radius-sm)] border border-[var(--color-line)] bg-[var(--color-surface-soft)] p-6 sm:p-8 lg:grid-cols-[1fr_auto]" aria-labelledby="course-cta-title">
+        <section className="mt-6 grid items-center gap-6 rounded-[var(--radius-sm)] border border-[var(--color-line)] bg-[var(--color-surface-soft)] p-6 sm:p-8 lg:grid-cols-[1fr_auto]" aria-labelledby="course-cta-title">
           <Reveal>
             <p className="home-eyebrow">TƯ VẤN LỘ TRÌNH</p>
             <h2 id="course-cta-title" className="mt-3 type-h2">{data.cta?.title || "Chưa chắc nên bắt đầu từ cấp độ nào?"}</h2>
-            <p className="mt-4 max-w-2xl type-small text-[var(--color-ink-muted)]">{data.cta?.description || "Crown English có thể tư vấn đầu vào để chọn đúng lớp, đúng nhịp học và tối ưu chi phí trước khi đăng ký."}</p>
+            <p className="mt-4 max-w-2xl type-body text-[var(--color-ink-muted)]">{data.cta?.description || "Crown English có thể tư vấn đầu vào để chọn đúng lớp, đúng nhịp học và tối ưu chi phí trước khi đăng ký."}</p>
           </Reveal>
           <Reveal delay={100} className="flex flex-wrap gap-3 lg:justify-end">
             <Button href="/lien-he">{data.cta?.buttonLabel || "Đăng ký tư vấn"}</Button>
             <Button href="/khoa-hoc" variant="outline">Xem 3 khóa học</Button>
+            <Link href="/cam-ket" className="inline-flex min-h-11 items-center type-small font-semibold text-[var(--color-brand-red)] underline-offset-4 hover:underline">Xem cam kết đầu ra</Link>
+            <Link href="/hoc-vien" className="inline-flex min-h-11 items-center type-small font-semibold text-[var(--color-brand-red)] underline-offset-4 hover:underline">Xem kết quả học viên</Link>
           </Reveal>
         </section>
         </Container>

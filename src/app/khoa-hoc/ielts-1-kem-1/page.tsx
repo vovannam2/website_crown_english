@@ -1,20 +1,61 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/config/site";
+import { getShareImage } from "@/config/share-image";
 import CourseLandingPage from "@/components/courses/CourseLandingPage";
-import { ieltsOneToOnePageData } from "@/data/courses";
+import { ieltsOneToOnePageData as data } from "@/data/courses";
 
 export const metadata: Metadata = {
-  title: { absolute: ieltsOneToOnePageData.seo.title },
-  description: ieltsOneToOnePageData.seo.description,
-  alternates: { canonical: ieltsOneToOnePageData.seo.canonical },
-  robots: ieltsOneToOnePageData.seo.robots,
+  title: { absolute: data.seo.title },
+  description: data.seo.description,
+  alternates: { canonical: data.seo.canonical },
+  robots: data.seo.robots,
   openGraph: {
-    title: ieltsOneToOnePageData.seo.openGraph.title,
-    description: ieltsOneToOnePageData.seo.openGraph.description,
-    url: ieltsOneToOnePageData.seo.canonical,
+    title: data.seo.openGraph.title,
+    description: data.seo.openGraph.description,
+    images: [getShareImage(data.seo.openGraph.image)],
     type: "website",
   },
 };
 
 export default function OneToOnePage() {
-  return <CourseLandingPage data={ieltsOneToOnePageData} />;
+  const siteUrl = siteConfig.url;
+
+  const pageUrl = `${siteUrl}${data.seo.canonical}`;
+
+  const schema = {
+    "@context": "https://schema.org",
+
+    "@type": "Course",
+
+    "@id": `${pageUrl}#course`,
+
+    url: pageUrl,
+
+    name: data.seo.h1,
+
+    description: data.seo.description,
+
+    inLanguage: "vi-VN",
+
+    provider: {
+      "@id": `${siteUrl}/#organization`,
+    },
+
+    isPartOf: {
+      "@id": `${siteUrl}/#website`,
+    },
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
+        }}
+      />
+
+      <CourseLandingPage data={data} />
+    </>
+  );
 }

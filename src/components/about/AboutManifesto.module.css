@@ -89,18 +89,18 @@
   .boardHeader { justify-content: center; margin-bottom: 1.5rem; }
   .label { font-size: .65rem; padding: .7rem .8rem; text-align: center; }
   .boardCaption { display: none; }
-  .notices { display: flex; flex-direction: column; gap: 0; }
-  .pathStep { display: flex; flex-direction: column; align-items: center; }
-  .noticeReveal { width: min(100%, 390px); }
+  .notices { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(.35rem, 1.5vw, .75rem); }
+  .noticeReveal { width: 100%; }
   .notice, .pathStep:nth-child(2) .notice, .pathStep:nth-child(3) .notice {
-    min-height: 168px; padding: 1.6rem 1.3rem 1.1rem; transform: rotate(-.5deg);
+    min-height: 160px; padding: 1.3rem clamp(.35rem, 1.5vw, .8rem) .7rem; transform: rotate(-.5deg);
   }
   .pathStep:nth-child(2) .notice { transform: rotate(.5deg); }
-  .notice .word { font-size: clamp(1.65rem, 6vw, 2.2rem); }
+  .notice .word { font-size: clamp(.8rem, 3.5vw, 1.5rem); overflow-wrap: anywhere; }
   .noticeNumber { margin-bottom: .4rem; }
+  .translation, .microcopy { font-size: clamp(.55rem, 1.8vw, .7rem); }
   .rule { margin-top: .6rem; }
   .microcopy { margin-top: .4rem; }
-  .connector { position: static; flex: 0 0 36px; width: 36px; height: 36px; transform: rotate(90deg); margin: 2px 0; }
+  .connector { display: none; }
   .messageReveal { width: min(100%, 430px); margin-top: 1.5rem; }
   .message { padding: 1.3rem 1rem 1rem; }
   .learningFlow { gap: .35rem; }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type PointerEvent } from "react";
-import type { Teacher } from "@/types/teachers";
+import type { HomeTeacherStageProps } from "@/types/home";
 import Reveal from "@/components/ui/Reveal";
 import HomeVisual from "./HomeVisual";
 import styles from "./home.module.css";
@@ -9,10 +9,7 @@ import styles from "./home.module.css";
 export default function HomeTeacherStage({
   teachers,
   label,
-}: {
-  teachers: readonly Teacher[];
-  label: string;
-}) {
+}: HomeTeacherStageProps) {
   const [activeId, setActiveId] = useState<string>();
   const [dragging, setDragging] = useState(false);
   const [hasDragged, setHasDragged] = useState(false);

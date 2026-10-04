@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { StudentResult } from "@/types/student-results";
+import type { StudentResult, StudentResultsProps } from "@/types/student-results";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Reveal from "@/components/ui/Reveal";
 import StudentImage from "./StudentImage";
@@ -17,11 +17,7 @@ const bulbColors = [
   "text-pink-400",
 ];
 
-export default function StudentResults({
-  results,
-}: {
-  results: readonly StudentResult[];
-}) {
+export default function StudentResults({ results }: StudentResultsProps) {
   const [paused, setPaused] = useState(false);
   const [selected, setSelected] = useState<StudentResult | null>(null);
   const sortedResults = [...results].sort(
@@ -40,7 +36,7 @@ export default function StudentResults({
               title="Những thành tích nổi bật của học viên"
             />
           </div>
-          <div className="shrink-0">
+          <div className="hidden shrink-0 lg:block">
             <button
               type="button"
               aria-pressed={paused}

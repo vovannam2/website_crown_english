@@ -1,6 +1,6 @@
-import localClassroom12Image from "../../public/images/students/classrooms/classroom-12.jpg";
-import localClassroom15Image from "../../public/images/students/classrooms/classroom-15.jpg";
-import localClassroom13Image from "../../public/images/students/classrooms/classroom-13.jpg";
+import localClassroom12Image from "../../public/images/students/classrooms/ielts-class-social-post-side-view.jpg";
+import localClassroom15Image from "../../public/images/students/classrooms/one-to-one-laptop-lesson-social-post.jpg";
+import localClassroom13Image from "../../public/images/students/classrooms/ielts-class-social-post-study-tables.jpg";
 import type { StudentResultsPageData } from "@/types/student-results";
 // Static imports give updated images a new URL automatically on dev/build.
 import studentsThumbnailsHaiNguyen70Image from "../../public/images/students/thumbnails/hai-nguyen-7-0.png";
@@ -18,52 +18,70 @@ import studentsResultsTraMy70Image from "../../public/images/students/results/tr
 import studentsThumbnailsVanDuc70Image from "../../public/images/students/thumbnails/van-duc-7-0.png";
 import studentsResultsVanDuc70Image from "../../public/images/students/results/van-duc-7-0.png";
 import studentsResultsVietBao80Image from "../../public/images/students/results/viet-bao-8-0.jpg";
-import studentsResultsYenNhi70Image from "../../public/images/students/results/yen-nhi-7-0.png";
 import studentsThumbnailsYenPhuong70Image from "../../public/images/students/thumbnails/yen-phuong-7-0.png";
 import studentsThumbnailsVietBao70Image from "../../public/images/students/thumbnails/viet-bao-8-0.png";
 import studentsResultsYenPhuong70Image from "../../public/images/students/results/yen-phuong-7-0.jpg";
-import studentsClassroomsClassroom01Image from "../../public/images/students/classrooms/classroom-01.jpg";
-import studentsClassroomsClassroom02Image from "../../public/images/students/classrooms/classroom-02.jpg";
-import studentsClassroomsClassroom03Image from "../../public/images/students/classrooms/classroom-03.jpg";
-import studentsClassroomsClassroom04Image from "../../public/images/students/classrooms/classroom-04.jpg";
-import studentsClassroomsClassroom05Image from "../../public/images/students/classrooms/classroom-05.jpg";
-import studentsClassroomsClassroom06Image from "../../public/images/students/classrooms/classroom-06.jpg";
-import studentsClassroomsClassroom07Image from "../../public/images/students/classrooms/classroom-07.jpg";
-import studentsClassroomsClassroom08Image from "../../public/images/students/classrooms/classroom-08.jpg";
-import studentsClassroomsClassroom09Image from "../../public/images/students/classrooms/classroom-09.jpg";
-import studentsClassroomsClassroom10Image from "../../public/images/students/classrooms/classroom-10.jpg";
-import studentsClassroomsClassroom11Image from "../../public/images/students/classrooms/classroom-11.jpg";
-import studentsClassroomsClassroom16Image from "../../public/images/students/classrooms/classroom-16.jpg";
-import studentsClassroomsClassroom17Image from "../../public/images/students/classrooms/classroom-17.jpg";
-import studentsClassroomsClassroom18Image from "../../public/images/students/classrooms/classroom-18.jpg";
-import studentsClassroomsClassroom19Image from "../../public/images/students/classrooms/classroom-19.png";
-import studentsClassroomsClassroom20Image from "../../public/images/students/classrooms/classroom-20.png";
+import studentThumbnailsDiemHang75Image from "../../public/images/students/thumbnails/diem-hang-7-5.png";
+import studentResultsDiemHang75Image from "../../public/images/students/results/diem-hang-7-5.jpg";
+import studentsClassroomsClassroom01Image from "../../public/images/students/classrooms/ielts-grammar-class-with-teacher.jpg";
+import studentsClassroomsClassroom02Image from "../../public/images/students/classrooms/teacher-at-desk-with-student.jpg";
+import studentsClassroomsClassroom03Image from "../../public/images/students/classrooms/students-working-on-ielts-exercises.jpg";
+import studentsClassroomsClassroom04Image from "../../public/images/students/classrooms/teacher-tutoring-student-at-desk.jpg";
+import studentsClassroomsClassroom05Image from "../../public/images/students/classrooms/students-and-teachers-group-photo.jpg";
+import studentsClassroomsClassroom06Image from "../../public/images/students/classrooms/student-writing-ielts-notes.jpg";
+import studentsClassroomsClassroom07Image from "../../public/images/students/classrooms/ielts-table-chart-lesson.jpg";
+import studentsClassroomsClassroom08Image from "../../public/images/students/classrooms/teacher-leading-small-ielts-class.jpg";
+import studentsClassroomsClassroom09Image from "../../public/images/students/classrooms/students-writing-in-class.jpg";
+import studentsClassroomsClassroom10Image from "../../public/images/students/classrooms/students-reading-ielts-materials.jpg";
+import studentsClassroomsClassroom11Image from "../../public/images/students/classrooms/students-practicing-ielts-in-class.jpg";
+import studentsClassroomsClassroom16Image from "../../public/images/students/classrooms/teacher-leading-ielts-writing-class.jpg";
+import studentsClassroomsClassroom17Image from "../../public/images/students/classrooms/students-practicing-ielts-writing.jpg";
+import studentsClassroomsClassroom18Image from "../../public/images/students/classrooms/teacher-teaching-ielts-writing.jpg";
+import studentsClassroomsClassroom19Image from "../../public/images/students/classrooms/students-working-independently.jpg";
+import studentsClassroomsClassroom20Image from "../../public/images/students/classrooms/teacher-leading-small-group.jpg";
 
 import nhuYThumbnail from "../../public/images/students/thumbnails/nhu-y-7-0.png";
 import phuongAnhThumbnail from "../../public/images/students/thumbnails/phuong-anh-7-5.png";
 
 export const studentResultsPageData = {
   seo: {
-    title: "Kết quả & Feedback học viên | Crown English",
+    title: "Kết quả IELTS & Feedback học viên | Crown English",
+
     description:
-      "Kết quả, bảng điểm, hình ảnh, video và feedback học viên tại Crown English.",
-    h1: "Kết quả học viên tại Crown English",
+      "Xem kết quả IELTS, bảng điểm, feedback và video chia sẻ thực tế từ học viên Crown English, cùng những cột mốc 7.0, 7.5 và 8.0 IELTS.",
+
+    h1: "Kết quả IELTS & Feedback học viên Crown English",
+
     canonical: "/hoc-vien",
-    searchIntent: "Xem kết quả và trải nghiệm thực tế của học viên",
+
+    searchIntent:
+      "Xem kết quả IELTS và trải nghiệm thực tế của học viên Crown English",
+
     primaryTopic: "kết quả học viên Crown English",
+
     secondaryTopics: [
+      "kết quả IELTS học viên Crown English",
       "feedback học viên Crown English",
-      "bảng điểm học viên IELTS",
+      "bảng điểm IELTS học viên",
+      "review Crown English",
+      "trải nghiệm học tại Crown English",
     ],
+
     localSignals: [],
+
     schemaTypes: ["CollectionPage"],
+
     robots: {
       index: true,
       follow: true,
     },
+
     openGraph: {
-      title: "Kết quả & Feedback học viên | Crown English",
-      description: "Kết quả và feedback học viên tại Crown English.",
+      title: "Kết quả IELTS & Feedback học viên | Crown English",
+
+      description:
+        "Khám phá kết quả IELTS, bảng điểm và những chia sẻ thực tế từ học viên Crown English.",
+
       image: "",
     },
   },
@@ -89,7 +107,7 @@ export const studentResultsPageData = {
   },
 
   intro:
-    "Tại Crown English, mỗi kết quả là một dấu mốc ghi nhận quá trình nỗ lực của học viên và sự đồng hành xuyên suốt từ đội ngũ giảng viên. Từ những cột mốc IELTS 7.0, 7.5 đến 8.0, các học viên đã chia sẻ những trải nghiệm thực tế về lộ trình học, quá trình cải thiện từng kỹ năng và sự hỗ trợ trong suốt quá trình học tập. Đây là nơi Crown English lưu lại những kết quả và cảm nhận chân thực từ chính học viên.",
+    "Tại Crown English, mỗi kết quả là một dấu mốc ghi nhận quá trình nỗ lực của học viên và sự đồng hành xuyên suốt từ đội ngũ giảng viên. Đây là nơi Crown English lưu lại những kết quả và cảm nhận chân thực từ chính học viên.",
 
   results: [
     {
@@ -252,19 +270,19 @@ export const studentResultsPageData = {
     },
 
     {
-      id: "yen-nhi-7-0",
-      name: "Yến Nhi",
+      id: "diem-hang-7-5",
+      name: "Diễm Hằng",
       exam: "IELTS",
-      overall: "7.0",
+      overall: "7.5",
 
-      highlights: ["8.5 Writing", "7.0 Reading"],
+      highlights: ["8.5 Listening", "8.0 Reading"],
 
-      thumbnail: "",
+      thumbnail: studentThumbnailsDiemHang75Image.src,
 
-      fullImage: studentsResultsYenNhi70Image.src,
+      fullImage: studentResultsDiemHang75Image.src,
 
       feedback:
-        "Hi mọi người, mình là Yến Nhi. Mình đã theo học khóa kèm 1:1 focus speaking cấp tốc và rất vui khi đạt IELTS 7.0 Overall. Mình xin gửi lời cảm ơn chân thành đến đội ngũ giảng viên và admin đã luôn tận tình hỗ trợ, giảng dạy và đồng hành cùng mình trong suốt quá trình học. Chúc các bạn học viên khác sẽ luôn cố gắng và đạt được kết quả như mong muốn nhé!",
+        "Hi mọi người, mình là Diễm Hằng đây! Là một người chỉ có vỏn vẹn 2 tháng để chuẩn bị cho kỳ thi IELTS và còn khá lo lắng về Speaking, Writing, mình đã may mắn biết đến IELTS SHINEE qua TikTok và quyết định bắt đầu hành trình tại đây. Trong suốt quá trình ôn tập, mình được thầy cô hướng dẫn rất sát sao, giải đáp những phần mình còn yếu và được các chị QTV hỗ trợ nhiệt tình. Nhờ vậy, mình dần tự tin hơn, biết cách cải thiện từng kỹ năng và có định hướng rõ ràng. Cảm ơn IELTS SHINEE đã luôn đồng hành, hỗ trợ và giúp mình chinh phục được mục tiêu 7.5 trong khoảng thời gian thật đáng nhớ! ❤️",
     },
 
     {

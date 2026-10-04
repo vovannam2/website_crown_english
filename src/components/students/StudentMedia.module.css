@@ -103,7 +103,7 @@
 .choiceScore { color: var(--color-brand-red); font-size: 12px; font-weight: 700; }
 .choiceBody { display: flex; align-items: center; gap: 12px; padding-block: 18px; }
 .smallPlay { display: grid; place-items: center; flex: 0 0 44px; height: 44px; padding-left: 2px; border-radius: 50%; background: #faf0eb; color: var(--color-brand-red); }
-.choiceBody strong { display: block; font-size: 18px; overflow-wrap: anywhere; }
+.choiceBody strong { display: block; font-size: var(--text-h4-size); overflow-wrap: anywhere; }
 .subtitle { display: block; margin-top: 3px; color: var(--color-ink-muted); font-size: 12px; }
 .choiceFooter { display: flex; justify-content: space-between; border-top: 1px solid #eee7dc; padding-top: 12px; color: var(--color-ink-muted); font-size: 12px; }
 .choice[aria-pressed="true"] { border-color: var(--color-brand-red); box-shadow: 0 0 0 1px var(--color-brand-red), 0 6px 20px rgb(212 37 37 / 0.06); }

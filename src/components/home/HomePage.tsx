@@ -1,5 +1,4 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
@@ -7,6 +6,7 @@ import Reveal from "@/components/ui/Reveal";
 import { homePageData as data } from "@/data/home";
 import { studentResultsPageData } from "@/data/student-results";
 import { teachersPageData } from "@/data/teachers";
+import type { HomeHeadingProps, HomeTextLinkProps } from "@/types/home";
 import HomeHero from "./HomeHero";
 import HomeVisual from "./HomeVisual";
 import HomeTeacherStage from "./HomeTeacherStage";
@@ -14,13 +14,11 @@ import HomeVideoTeaser from "./HomeVideoTeaser";
 import HomeFeedbackBoard from "./HomeFeedbackBoard";
 import styles from "./home.module.css";
 
-function TextLink({ href, children }: { href: string; children: ReactNode }) {
+function TextLink({ href, children }: HomeTextLinkProps) {
   return <Link className={styles.textLink} href={href}>{children}<span aria-hidden="true">↗</span></Link>;
 }
 
-function Heading({ eyebrow, title, description, link }: {
-  eyebrow: string; title: string; description?: string; link?: { href: string; label: string };
-}) {
+function Heading({ eyebrow, title, description, link }: HomeHeadingProps) {
   return <Reveal className={styles.heading}>
     <div><p className={styles.eyebrow}>{eyebrow}</p><h2>{title}</h2>{description && <p className={styles.description}>{description}</p>}</div>
     {link && <TextLink href={link.href}>{link.label}</TextLink>}
@@ -33,7 +31,7 @@ export default function HomePage() {
   const videos = data.studentStories.featuredVideoIds.map((id) => studentResultsPageData.videos.find((item) => item.id === id)).filter((item) => item !== undefined);
   const [investment, commitment, team, experience] = data.whyCrown.items;
 
-  return <div className={styles.page} data-reveal-easing="ease">
+  return <div className={styles.page}>
     <HomeHero />
 
     <section className={styles.programs} id="programs">
@@ -41,15 +39,11 @@ export default function HomePage() {
         <Heading {...data.programsSection} />
         <div className={styles.programGrid}>
           {data.programs.map((program, index) => {
-            const titleWords = program.label.split(" ");
-            const titleLines = program.titleBreakAfter
-              ? [titleWords.slice(0, program.titleBreakAfter).join(" "), titleWords.slice(program.titleBreakAfter).join(" ")]
-              : [program.label];
             return <Reveal key={program.courseId} delay={80 + index * 100}>
               <Link className={styles.program} href={program.href} data-tone={program.tone}>
                 <div className={styles.programIndex}><span>{program.category}</span><span>{program.number} / 03</span></div>
                 <div className={styles.programContent}>
-                  <h3>{titleLines.map((line) => <span key={line}>{line}</span>)}</h3>
+                  <h3>{program.label}</h3>
                   <span className={styles.programNote}>{program.note}</span>
                   <p>{program.description}</p>
                 </div>
@@ -66,7 +60,7 @@ export default function HomePage() {
         <Heading {...data.studentResults} />
       </Container>
       <Container>
-        <Reveal delay={100} duration={750} className={styles.hallOfFame}>
+        <Reveal delay={100} className={styles.hallOfFame}>
           <span className={styles.hallWatermark} aria-hidden="true">HALL OF FAME</span>
           <div className={styles.hallHeader}>
             <div>
@@ -89,7 +83,7 @@ export default function HomePage() {
           {results.map((result, index) => <Reveal key={result.id} delay={index * 100} className={styles.achievement}>
             <article>
               <strong className={styles.score}>{result.overall}<small>{result.exam}</small></strong>
-              <div className={styles.resultImage}><Image src={result.fullImage} alt={`Kết quả IELTS của ${result.name}`} fill sizes="(min-width: 900px) 330px, 76vw" /></div>
+              <div className={styles.resultImage}><Image src={result.fullImage} alt={`Kết quả ${result.exam} ${result.overall} của ${result.name}`} fill sizes="(min-width: 900px) 330px, 76vw" /></div>
               <h3>{result.name}</h3>
               {!!result.highlights.length && <ul className={styles.skillList}>{result.highlights.map((item) => <li key={item}>{item}</li>)}</ul>}
             </article>
@@ -140,7 +134,7 @@ export default function HomePage() {
           link={data.about.link}
         />
         <div className={styles.aboutShowcase}>
-          <Reveal duration={750} className={styles.aboutImage}><HomeVisual src={data.about.image} alt={data.about.title} label={data.hero.title} /></Reveal>
+          <Reveal className={styles.aboutImage}><HomeVisual src={data.about.image} alt={data.about.title} label={data.hero.title} /></Reveal>
           <Reveal delay={120} className={styles.aboutValues}>
             <div className={styles.valuesHeading}>
               <span aria-hidden="true" />

@@ -1,49 +1,49 @@
-import feedback11Image from "../../public/images/home/feedback-thang-1-1.jpg";
-import feedback12Image from "../../public/images/home/feedback-thang-1-2.jpg";
-import feedback13Image from "../../public/images/home/feedback-thang-1-3.jpg";
-import feedback14Image from "../../public/images/home/feedback-thang-1-4.jpg";
-import feedback21Image from "../../public/images/home/feedback-thang-2-1.jpg";
-import feedback22Image from "../../public/images/home/feedback-thang-2-2.jpg";
-import feedback23Image from "../../public/images/home/feedback-thang-2-3.jpg";
-import feedback31Image from "../../public/images/home/feedback-thang-3-1.jpg";
-import feedback32Image from "../../public/images/home/feedback-thang-3-2.jpg";
-import feedback33Image from "../../public/images/home/feedback-thang-3-3.jpg";
-import feedback41Image from "../../public/images/home/feedback-thang-4-1.jpg";
-import feedback42Image from "../../public/images/home/feedback-thang-4-2.jpg";
-import feedback43Image from "../../public/images/home/feedback-thang-4-3.jpg";
-import feedback44Image from "../../public/images/home/feedback-thang-4-4.jpg";
-import feedback51Image from "../../public/images/home/feedback-thang-5-1.jpg";
-import feedback52Image from "../../public/images/home/feedback-thang-5-2.jpg";
-import feedback53Image from "../../public/images/home/feedback-thang-5-3.jpg";
-import feedback54Image from "../../public/images/home/feedback-thang-5-4.jpg";
-import feedback61Image from "../../public/images/home/feedback-thang-6-1.jpg";
-import feedback62Image from "../../public/images/home/feedback-thang-6-2.jpg";
-import feedback63Image from "../../public/images/home/feedback-thang-6-3.jpg";
-import feedback64Image from "../../public/images/home/feedback-thang-6-4.jpg";
-import feedback71Image from "../../public/images/home/feedback-thang-7-1.jpg";
-import feedback72Image from "../../public/images/home/feedback-thang-7-2.jpg";
-import feedback73Image from "../../public/images/home/feedback-thang-7-3.jpg";
-import feedback74Image from "../../public/images/home/feedback-thang-7-4.jpg";
-import feedback81Image from "../../public/images/home/feedback-thang-8-1.jpg";
-import feedback82Image from "../../public/images/home/feedback-thang-8-2.jpg";
-import feedback83Image from "../../public/images/home/feedback-thang-8-3.jpg";
-import feedback84Image from "../../public/images/home/feedback-thang-8-4.jpg";
+import feedback11Image from "../../public/images/home/student-feedback-2026-01-01.jpg";
+import feedback12Image from "../../public/images/home/student-feedback-2026-01-02.jpg";
+import feedback13Image from "../../public/images/home/student-feedback-2026-01-03.jpg";
+import feedback14Image from "../../public/images/home/student-feedback-2026-01-04.jpg";
+import feedback21Image from "../../public/images/home/student-feedback-2026-02-01.jpg";
+import feedback22Image from "../../public/images/home/student-feedback-2026-02-02.jpg";
+import feedback23Image from "../../public/images/home/student-feedback-2026-02-03.jpg";
+import feedback31Image from "../../public/images/home/student-feedback-2026-03-01.jpg";
+import feedback32Image from "../../public/images/home/student-feedback-2026-03-02.jpg";
+import feedback33Image from "../../public/images/home/student-feedback-2026-03-03.jpg";
+import feedback41Image from "../../public/images/home/student-feedback-2026-04-01.jpg";
+import feedback42Image from "../../public/images/home/student-feedback-2026-04-02.jpg";
+import feedback43Image from "../../public/images/home/student-feedback-2026-04-03.jpg";
+import feedback44Image from "../../public/images/home/student-feedback-2026-04-04.jpg";
+import feedback51Image from "../../public/images/home/student-feedback-2026-05-01.jpg";
+import feedback52Image from "../../public/images/home/student-feedback-2026-05-02.jpg";
+import feedback53Image from "../../public/images/home/student-feedback-2026-05-03.jpg";
+import feedback54Image from "../../public/images/home/student-feedback-2026-05-04.jpg";
+import feedback61Image from "../../public/images/home/student-feedback-2026-06-01.jpg";
+import feedback62Image from "../../public/images/home/student-feedback-2026-06-02.jpg";
+import feedback63Image from "../../public/images/home/student-feedback-2026-06-03.jpg";
+import feedback64Image from "../../public/images/home/student-feedback-2026-06-04.jpg";
+import feedback71Image from "../../public/images/home/student-feedback-2026-07-01.jpg";
+import feedback72Image from "../../public/images/home/student-feedback-2026-07-02.jpg";
+import feedback73Image from "../../public/images/home/student-feedback-2026-07-03.jpg";
+import feedback74Image from "../../public/images/home/student-feedback-2026-07-04.jpg";
+import feedback81Image from "../../public/images/home/student-feedback-2026-08-01.jpg";
+import feedback82Image from "../../public/images/home/student-feedback-2026-08-02.jpg";
+import feedback83Image from "../../public/images/home/student-feedback-2026-08-03.jpg";
+import feedback84Image from "../../public/images/home/student-feedback-2026-08-04.jpg";
 // Homepage content and image slots. Featured IDs resolve against existing datasets.
 import { sharedMedia } from "./media";
-import homeBannerPrimary from "../../public/images/home/banner-01.png";
+import homeBannerPrimary from "../../public/images/home/idp-ielts-gold-partner-team.jpg";
 import homeAboutImage from "../../public/images/home/crown-hero.jpg";
-import homeFilm01 from "../../public/images/home/film-01.jpg";
-import homeFilm02 from "../../public/images/home/film-02.jpg";
-import homeFilm03 from "../../public/images/home/film-03.jpg";
-import homeFilm04 from "../../public/images/home/film-04.png";
-import homeFilm05 from "../../public/images/home/film-05.png";
-import homeFilm06 from "../../public/images/home/film-06.jpg";
-import homeFilm07 from "../../public/images/home/film-07.png";
-import homeFilm08 from "../../public/images/home/film-08.jpg";
-import homeFilm09 from "../../public/images/home/film-09.png";
-import homeFilm10 from "../../public/images/home/film-10.png";
-import homeFilm11 from "../../public/images/home/film-11.png";
-import homeFilm12 from "../../public/images/home/film-12.png";
+import homeFilm01 from "../../public/images/home/teacher-with-idp-ielts-partner-certificate.jpg";
+import homeFilm02 from "../../public/images/home/teacher-guiding-student-at-laptop.jpg";
+import homeFilm03 from "../../public/images/home/student-reading-at-desk.jpg";
+import homeFilm04 from "../../public/images/home/ms-khanh-teacher-profile.png";
+import homeFilm05 from "../../public/images/home/ielts-writing-class-session.jpg";
+import homeFilm06 from "../../public/images/home/hai-nguyen-ielts-7-0-testimonial.jpg";
+import homeFilm07 from "../../public/images/home/yen-nhi-ielts-7-0-testimonial.png";
+import homeFilm08 from "../../public/images/home/students-and-teachers-group-photo.jpg";
+import homeFilm09 from "../../public/images/home/students-listening-in-class.jpg";
+import homeFilm10 from "../../public/images/home/teacher-explaining-grammar.jpg";
+import homeFilm11 from "../../public/images/home/students-studying-at-desks.jpg";
+import homeFilm12 from "../../public/images/home/teacher-leading-english-class.jpg";
 import crownStudentHallOfFame from "../../public/images/home/crown-student-hall-of-fame.png";
 
 const heroFilmSources = [
@@ -64,27 +64,38 @@ const heroFilmSources = [
 export const homePageData = {
   seo: {
     title: "Crown English | IELTS, Tiếng Anh giao tiếp & 1 kèm 1",
+
     description:
       "Crown English cung cấp các khóa học IELTS, Tiếng Anh giao tiếp và IELTS 1 kèm 1 với lộ trình cá nhân hóa, chương trình theo từng mục tiêu và đội ngũ giảng viên đồng hành cùng học viên.",
+
     h1: "Crown English",
+
     canonical: "/",
+
     searchIntent:
-      "Thương hiệu + tìm hiểu trung tâm và các chương trình đào tạo",
+      "Tìm hiểu Crown English và các chương trình IELTS, Tiếng Anh giao tiếp, IELTS 1 kèm 1",
+
     primaryTopic: "Crown English",
+
     secondaryTopics: [
-      "khóa học IELTS",
-      "tiếng Anh giao tiếp",
-      "IELTS 1 kèm 1",
-      "trung tâm tiếng Anh",
+      "khóa học IELTS tại Crown English",
+      "khóa học Tiếng Anh giao tiếp",
+      "khóa học IELTS 1 kèm 1",
+      "trung tâm tiếng Anh Crown English",
     ],
-    localSignals: ["Bình Thạnh", "Nguyễn Gia Trí", "TP.HCM"],
+
+    localSignals: ["Nguyễn Gia Trí", "phường Thạnh Mỹ Tây", "TP.HCM"],
+
     schemaTypes: ["EducationalOrganization", "WebSite"],
+
     robots: {
       index: true,
       follow: true,
     },
+
     openGraph: {
       title: "Crown English | IELTS, Tiếng Anh giao tiếp & 1 kèm 1",
+
       description:
         "Khám phá các chương trình IELTS, Tiếng Anh giao tiếp và IELTS 1 kèm 1 tại Crown English.",
       image: "/images/og/academic-team-ielts-share.jpg",
@@ -205,7 +216,6 @@ export const homePageData = {
       number: "01",
       courseId: "ielts",
       label: "IELTS",
-      titleBreakAfter: 0,
       href: "/khoa-hoc/ielts",
       tone: "red",
       category: "LUYỆN THI IELTS",
@@ -217,7 +227,6 @@ export const homePageData = {
       number: "02",
       courseId: "giao-tiep",
       label: "Tiếng Anh Giao Tiếp",
-      titleBreakAfter: 2,
       href: "/khoa-hoc/giao-tiep",
       tone: "cream",
       category: "TIẾNG ANH MỖI NGÀY",
@@ -229,7 +238,6 @@ export const homePageData = {
       number: "03",
       courseId: "ielts-1-kem-1",
       label: "IELTS 1 Kèm 1",
-      titleBreakAfter: 1,
       href: "/khoa-hoc/ielts-1-kem-1",
       tone: "ink",
       category: "HỌC CÙNG GIẢNG VIÊN",

@@ -1,14 +1,5 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
-
-type ButtonProps = {
-  children: ReactNode;
-  href?: string;
-  variant?: "primary" | "secondary" | "outline";
-  className?: string;
-  onClick?: () => void;
-  type?: "button" | "submit" | "reset";
-};
+import type { ButtonProps } from "@/types/ui";
 
 const variantClasses = {
   primary: "bg-[var(--color-brand-red)] text-white hover:bg-[var(--color-brand-red-dark)]",

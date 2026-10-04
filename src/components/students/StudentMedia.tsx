@@ -2,23 +2,20 @@
 
 import { useId, useRef, useState } from "react";
 import { Play, Film, ChevronLeft, ChevronRight } from "lucide-react";
-import type { ClassMoment, StudentVideo } from "@/types/student-results";
+import type { StudentMediaProps, StudentCinemaProps, StudentVideo } from "@/types/student-results";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Reveal from "@/components/ui/Reveal";
 import ClassroomGallery from "./ClassroomGallery";
 import styles from "./StudentMedia.module.css";
 
-export default function StudentMedia({ videos, moments }: {
-  videos: readonly StudentVideo[];
-  moments: readonly ClassMoment[];
-}) {
+export default function StudentMedia({ videos, moments }: StudentMediaProps) {
   return <>
     <ClassroomGallery moments={moments} />
     {!!videos.length && <StudentCinema videos={videos} />}
   </>;
 }
 
-function StudentCinema({ videos }: { videos: readonly StudentVideo[] }) {
+function StudentCinema({ videos }: StudentCinemaProps) {
   const [selectedId, setSelectedId] = useState(videos[0].id);
   const [started, setStarted] = useState(false);
   const [error, setError] = useState(false);

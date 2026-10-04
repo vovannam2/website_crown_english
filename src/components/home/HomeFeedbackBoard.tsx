@@ -5,15 +5,10 @@ import { useEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 import { ArrowUpRight, X } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
+import type { HomeFeedbackBoardProps } from "@/types/home";
 import styles from "./HomeFeedbackBoard.module.css";
 
-type FeedbackData = {
-  readonly boardTexture: string;
-  readonly year: number;
-  readonly months: readonly { readonly month: number; readonly images: readonly string[] }[];
-};
-
-export default function HomeFeedbackBoard({ data }: { data: FeedbackData }) {
+export default function HomeFeedbackBoard({ data }: HomeFeedbackBoardProps) {
   const groups = [...data.months].filter((group) => group.images.length > 0).sort((a, b) => a.month - b.month);
   const feedbacks = groups.flatMap((group) => group.images.map((src, index) => ({
     id: src,
@@ -53,7 +48,7 @@ export default function HomeFeedbackBoard({ data }: { data: FeedbackData }) {
       <span className={styles.date}>THÁNG {String(firstMonth).padStart(2, "0")}{!singleMonth && ` — ${String(lastMonth).padStart(2, "0")}`}<span>{data.year}</span></span>
     </Reveal>
 
-    <Reveal delay={100} duration={750}>
+    <Reveal delay={100}>
     <div className={styles.board} style={{ "--board-texture": `url("${data.boardTexture}")` } as CSSProperties}>
       <div className={styles.boardTop}>
         <span className={styles.boardLabel}>GÓC NHỎ · LỜI THẬT</span>

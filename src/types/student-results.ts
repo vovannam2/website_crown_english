@@ -1,3 +1,25 @@
+import type { ReactNode } from "react";
+
+export type StudentImageProps = {
+  src: string;
+  alt: string;
+  sizes: string;
+  preload?: boolean;
+  fit?: "contain" | "cover";
+  fallback?: "image" | "avatar";
+};
+export type StudentDialogProps = {
+  title: string;
+  children: ReactNode;
+  onClose: () => void;
+  variant?: "image" | "result";
+};
+export type StudentDetailModalProps = { student: StudentResult; onClose: () => void };
+export type StudentMediaProps = { videos: readonly StudentVideo[]; moments: readonly ClassMoment[] };
+export type StudentCinemaProps = { videos: readonly StudentVideo[] };
+export type StudentResultsProps = { results: readonly StudentResult[] };
+export type ClassroomGalleryProps = { moments: readonly ClassMoment[] };
+
 export type StudentResult = {
   readonly id: string;
   readonly name: string;

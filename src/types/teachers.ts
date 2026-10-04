@@ -1,3 +1,11 @@
+import type { ReactNode } from "react";
+
+export type TeacherImageProps = { name: string; src: string; sizes: string };
+export type TeacherDetailListProps = { title: string; items: readonly string[] };
+export type TeacherDetailProps = { teacher: Teacher };
+export type TeacherShowcaseProps = { teachers: readonly Teacher[] };
+export type TeacherStandardCardProps = { children: ReactNode; index: number };
+
 export type Teacher = {
   readonly id: string;
   readonly name: string;

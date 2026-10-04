@@ -1,14 +1,22 @@
 import type { MetadataRoute } from "next";
-import { getSiteOrigin, sitemapEntries } from "@/config/seo";
+import { siteConfig } from "@/config/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteOrigin = getSiteOrigin();
-  const lastModified = new Date();
+  const routes = [
+    "",
+    "/gioi-thieu",
+    "/khoa-hoc",
+    "/khoa-hoc/ielts",
+    "/khoa-hoc/giao-tiep",
+    "/khoa-hoc/ielts-1-kem-1",
+    "/giang-vien",
+    "/hoc-vien",
+    "/cam-ket",
+    "/cau-hoi-thuong-gap",
+    "/lien-he",
+  ];
 
-  return sitemapEntries.map((entry) => ({
-    url: `${siteOrigin}${entry.path === "/" ? "" : entry.path}`,
-    lastModified,
-    changeFrequency: entry.changeFrequency,
-    priority: entry.priority,
+  return routes.map((route) => ({
+    url: `${siteConfig.url}${route}`,
   }));
 }

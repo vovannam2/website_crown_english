@@ -1,9 +1,9 @@
 import { Quote } from "lucide-react";
-import type { StudentResult } from "@/types/student-results";
+import type { StudentDetailModalProps } from "@/types/student-results";
 import StudentDialog from "./StudentDialog";
 import StudentImage from "./StudentImage";
 
-export default function StudentDetailModal({ student, onClose }: { student: StudentResult; onClose: () => void }) {
+export default function StudentDetailModal({ student, onClose }: StudentDetailModalProps) {
   return (
     <StudentDialog variant="result" title={`Thành tích của ${student.name} · ${student.exam} ${student.overall}`} onClose={onClose}>
       <div className="max-h-[calc(95dvh-72px)] overflow-y-auto overscroll-contain lg:grid lg:max-h-[calc(90dvh-72px)] lg:grid-cols-[minmax(0,0.57fr)_minmax(0,0.43fr)] lg:overflow-hidden">

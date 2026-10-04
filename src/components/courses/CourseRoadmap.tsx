@@ -1,20 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState, type CSSProperties } from "react";
+import type { CourseRoadmapProps, RoadmapItem } from "@/types/courses";
 import styles from "./CourseRoadmap.module.css";
-
-type RoadmapItem = {
-  name: string;
-  range?: string;
-  note?: string;
-  items?: readonly string[];
-  content?: readonly string[];
-};
-
-type CourseRoadmapProps = {
-  items: readonly RoadmapItem[];
-  courseTitle: string;
-};
 
 function asList(value?: readonly string[]) {
   return value ?? [];
@@ -140,19 +128,19 @@ export default function CourseRoadmap({ items, courseTitle }: CourseRoadmapProps
                   <div className={styles.contentGrid}>
                     <div className={styles.contentBlock}>
                       <p className="type-label text-[var(--color-ink-muted)]">Mục tiêu</p>
-                      <p className="type-small text-[var(--color-ink)]">{getStageGoal(item, index)}</p>
+                      <p className="type-body text-[var(--color-ink)]">{getStageGoal(item, index)}</p>
                     </div>
 
                     <div className={styles.contentBlock}>
                       <p className="type-label text-[var(--color-ink-muted)]">Nội dung học chính</p>
-                      <ul className={`${styles.list} type-small text-[var(--color-ink-muted)]`}>
+                      <ul className={`${styles.list} type-body text-[var(--color-ink-muted)]`}>
                         {content.map((contentItem) => <li key={contentItem}>{contentItem}</li>)}
                       </ul>
                     </div>
 
                     <div className={styles.contentBlock}>
                       <p className="type-label text-[var(--color-ink-muted)]">Kết quả sau giai đoạn</p>
-                      <p className="type-small text-[var(--color-ink)]">
+                      <p className="type-body text-[var(--color-ink)]">
                         {item.note || (item.range ? `Nắm vững mốc ${item.range} để chuyển sang chặng tiếp theo.` : "Sẵn sàng điều chỉnh lộ trình theo mục tiêu tiếp theo.")}
                       </p>
                     </div>

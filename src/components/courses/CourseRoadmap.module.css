@@ -211,8 +211,10 @@
   .journey {
     margin-top: 32px;
     display: flex;
+    align-items: stretch;
     gap: 16px;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     padding-bottom: 14px;
     scrollbar-color: var(--color-line-strong) transparent;
@@ -224,6 +226,7 @@
 
   .stage {
     min-width: min(82vw, 320px);
+    grid-template-rows: 48px minmax(0, 1fr);
     scroll-snap-align: start;
   }
 

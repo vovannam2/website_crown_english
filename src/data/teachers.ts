@@ -37,24 +37,43 @@ import teachersMsAnhLeImage from "../../public/images/teachers/ms-anh-le.png";
 
 export const teachersPageData = {
   seo: {
-    title: "Đội ngũ giảng viên | Crown English",
+    title: "Đội ngũ giảng viên IELTS & Giao tiếp | Crown English",
+
     description:
-      "Tìm hiểu đội ngũ giảng viên Crown English, chuyên môn, phương pháp đào tạo và cách giảng viên đồng hành cùng học viên trong quá trình học.",
+      "Tìm hiểu đội ngũ giảng viên IELTS và Tiếng Anh giao tiếp tại Crown English, cùng chuyên môn, kinh nghiệm giảng dạy, thế mạnh và phương pháp đồng hành với học viên.",
+
     h1: "Đội ngũ giảng viên Crown English",
+
     canonical: "/giang-vien",
-    searchIntent: "Tìm hiểu đội ngũ giảng viên và chuyên môn",
+
+    searchIntent:
+      "Tìm hiểu đội ngũ giảng viên, chuyên môn, kinh nghiệm và thế mạnh giảng dạy tại Crown English",
+
     primaryTopic: "giảng viên Crown English",
-    secondaryTopics: ["đội ngũ giảng viên IELTS", "giảng viên IELTS 7.5 8.0"],
+
+    secondaryTopics: [
+      "giảng viên IELTS Crown English",
+      "giảng viên Tiếng Anh giao tiếp Crown English",
+      "kinh nghiệm giảng dạy Crown English",
+      "chuyên môn giảng viên Crown English",
+      "phương pháp giảng dạy Crown English",
+    ],
+
     localSignals: [],
+
     schemaTypes: ["CollectionPage"],
+
     robots: {
       index: true,
       follow: true,
     },
+
     openGraph: {
-      title: "Đội ngũ giảng viên | Crown English",
+      title: "Đội ngũ giảng viên IELTS & Giao tiếp | Crown English",
+
       description:
-        "Đội ngũ giảng viên chuyên nghiệp và phương pháp đào tạo tại Crown English.",
+        "Khám phá chuyên môn, kinh nghiệm và thế mạnh của đội ngũ giảng viên tại Crown English.",
+
       image: "",
     },
   },

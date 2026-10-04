@@ -1,3 +1,8 @@
+import type { ReactNode } from "react";
+
+export type ManifestoMotionProps = { children: ReactNode };
+export type AboutMethodBadgeProps = { label: string; index: number };
+
 export type AboutImageSlot = {
   src: string;
   fallback?: string;
